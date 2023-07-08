@@ -1,4 +1,4 @@
-# Project Name
+# July 8th, 2023
 
 ## Button Component
 
@@ -39,8 +39,6 @@ const exampleOnClick = async () => {
 ```
 
 ### Button Code
-
-  
 
 ```jsx
 import React, { ButtonHTMLAttributes, useState } from 'react';
