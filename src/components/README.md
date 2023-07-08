@@ -2,7 +2,7 @@
 
 ## Button Component
 
-A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for a wide range of use cases.
+A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.
 
 ### Functionalities
 
@@ -36,3 +36,54 @@ const exampleOnClick = async () => {
         console.error(error);
     }
 };
+```
+
+### Button Code
+
+  
+
+```jsx
+import React, { ButtonHTMLAttributes, useState } from 'react';
+
+type ButtonProps = {
+    text: string;
+    variant?: 'primary' | 'destructive' | 'cancel' | 'warning' | 'success';
+    isDisabled?: boolean;
+    isFullWidth?: boolean;
+    handleClick?: () => Promise<void>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button: React.FC<ButtonProps> = ({ text, variant, isDisabled = false, isFullWidth = false, handleClick,
+    ...props
+}) => {
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const onClick = async () => {
+        if (!isDisabled && !isLoading && handleClick) {
+            setIsLoading(true);
+            try {
+                await handleClick();
+            } catch (error) {
+                console.error(error);
+            }
+            setIsLoading(false);
+        }
+    };
+
+    return (
+        <button
+            disabled={isDisabled}
+            onClick={onClick}
+            className={`${variant ? variant : ''} ${isFullWidth ? 'full-width' : ''} ${isLoading ? 'loading' : ''}`}
+            {...props}
+        >
+            {text}
+            
+        </button>
+    );
+};
+
+export default Button;
+
+
