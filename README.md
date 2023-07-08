@@ -30,7 +30,7 @@ To customize the error and success behavior, simply provide your own logic withi
 
 ```jsx
 import Button from './components/Button'
- const handleClick = async () => {
+const handleClick = async () => {
     try {
         // Simulating an asynchronous action
         await new Promise(resolve => setTimeout(resolve, 2000)); 
