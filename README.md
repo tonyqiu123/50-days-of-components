@@ -29,12 +29,13 @@ The button component accepts the following props:
 To customize the error and success behavior, simply provide your own logic within the `handleClick` function prop. Here's an example:
 
 ```jsx
-import Button from './components/Button'
+import Button from './components/Button' 
+
 const handleClick = async () => {
     try {
         // Simulating an asynchronous action
         await new Promise(resolve => setTimeout(resolve, 2000)); 
-        // Handle successful execution, e.g., redirecting the user
+        window.location.href = '/new-url';
     } catch (error) {
         console.error(error);
         // Handle error, e.g., displaying an error message
