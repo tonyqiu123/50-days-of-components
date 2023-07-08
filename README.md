@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# July 8th, 2023
 
-## Getting Started
+## Button Component
 
-First, run the development server:
+A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### Functionalities
+
+The button component provides the following functionalities:
+
+- Different visual styles: Choose from primary, secondary, success, destructive, cancel, disabled, and warning styles to match your design requirements.
+- Loading animation: While the button executes an action, it displays a loading animation to provide visual feedback to the user.
+- Customizable error and success handling: Developers can define their own error and success handling logic by utilizing the `handleClick` prop.
+- Flexible width options: The button can be configured to have either a full width or hug-content width, depending on the layout requirements.
+
+### Props
+
+The button component accepts the following props:
+
+- `text` (string): The text to be displayed on the button.
+- `variant` (optional): The visual variant of the button. Available options include 'primary', 'destructive', 'cancel', 'warning', and 'success'.
+- `isDisabled` (optional): Set this prop to `true` to disable the button.
+- `isFullWidth` (optional): Set this prop to `true` to make the button occupy the full width of its container.
+- `handleClick` (optional): A function that will be executed when the button is clicked. The function should return a promise with a `void` result.
+
+### Implementation Details
+
+To customize the error and success behavior, simply provide your own logic within the `handleClick` function prop. Here's an example:
+
+```jsx
+const exampleOnClick = async () => {
+    try {
+        await fetch(url);
+        // Handle successful execution, e.g., redirecting the user
+    } catch(error) {
+        console.error(error);
+    }
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Button Code
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+import React, { ButtonHTMLAttributes, useState } from 'react';
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+type ButtonProps = {
+    text: string;
+    variant?: 'primary' | 'destructive' | 'cancel' | 'warning' | 'success';
+    isDisabled?: boolean;
+    isFullWidth?: boolean;
+    handleClick?: () => Promise<void>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-## Learn More
+const Button: React.FC<ButtonProps> = ({ text, variant, isDisabled = false, isFullWidth = false, handleClick,
+    ...props
+}) => {
 
-To learn more about Next.js, take a look at the following resources:
+    const [isLoading, setIsLoading] = useState(false);
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    const onClick = async () => {
+        if (!isDisabled && !isLoading && handleClick) {
+            setIsLoading(true);
+            try {
+                await handleClick();
+            } catch (error) {
+                console.error(error);
+            }
+            setIsLoading(false);
+        }
+    };
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    return (
+        <button
+            disabled={isDisabled}
+            onClick={onClick}
+            className={`${variant ? variant : ''} ${isFullWidth ? 'full-width' : ''} ${isLoading ? 'loading' : ''}`}
+            {...props}
+        >
+            {text}
+            
+        </button>
+    );
+};
 
-## Deploy on Vercel
+export default Button;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
