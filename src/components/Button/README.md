@@ -4,7 +4,7 @@ July 8th, 2023 / October 16th, 2023
 
 ## Button Component
 
-<iframe width="528" height="938" src="https://www.youtube.com/embed/Bh9x_dJMDK4" title="button demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+![Button Demo Video](/public/button-demo.mp4)
 
 A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.
 
