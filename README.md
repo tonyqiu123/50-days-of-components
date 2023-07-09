@@ -1,62 +1,75 @@
-<!-- Button Component -->
+<!-- Select Dropdown Component -->
+<h2>Day 2/100</h2>
 
-<h2>Button Component</h2>
+<p>July 8th 2023, October 16th, 2023</p>
 
-![button demo](/public/button.png)
+<h2>Select Dropdown Component</h2>
 
-<p>A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.</p>
+<img src="/public/dropbown.png" alt="dropbown demo" />
 
-<h3>Functionalities</h3>
+<p>A custom select dropdown component that allows users to choose from a list of options. The component provides a dropdown menu with a stylish arrow icon and supports customization of its appearance.</p>
 
-<p>The button component provides the following functionalities:</p>
+<h3>Usage</h3>
+<p>To use the Select Dropdown component, follow these steps:</p>
+<ol>
+  <li>Import the component into your React project.</li>
+  <li>Define an array of values that will be displayed as options in the dropdown.</li>
+  <li>Provide a callback function, <code>handleSetState</code>, which will be invoked when the selected value changes. The selected value will be passed as an argument to this function.</li>
+  <li>Optionally, you can specify a label to display above the dropdown.</li>
+</ol>
 
-<ul>
-  <li>Different visual styles: Choose from primary, secondary, success, destructive, cancel, disabled, and warning styles to match your design requirements.</li>
-  <li>Loading animation: While the button executes an action, it displays a loading animation to provide visual feedback to the user.</li>
-  <li>Customizable error and success handling: Developers can define their own error and success handling logic by utilizing the <code>handleClick</code> prop.</li>
-  <li>Flexible width options: The button can be configured to have either a full width or hug-content width, depending on the layout requirements.</li>
-</ul>
+<h3>Example</h3>
+<p>Here's an example of how to use the Select Dropdown component:</p>
+<pre><code>import React, { ChangeEvent, useState } from 'react';
+import './Dropdown.css';
 
-<h3>Props</h3>
+interface SelectDropdownProps {
+  handleSetState: (value: any) => void;
+  values: any[];
+  label?: string;
+}
 
-<p>The button component accepts the following props:</p>
+const SelectDropdown: React.FC&lt;SelectDropdownProps&gt; = ({ handleSetState, values, label }) => {
+  const [selectedValue, setSelectedValue] = useState(values[0]);
 
-<dl>
-  <dt><code>text</code> (string)</dt>
-  <dd>The text to be displayed on the button.</dd>
-  <dt><code>variant</code> (optional)</dt>
-  <dd>The visual variant of the button. Available options include 'primary', 'destructive', 'cancel', 'warning', and 'success'.</dd>
-  <dt><code>isDisabled</code> (optional)</dt>
-  <dd>Set this prop to <code>true</code> to disable the button.</dd>
-  <dt><code>isFullWidth</code> (optional)</dt>
-  <dd>Set this prop to <code>true</code> to make the button occupy the full width of its container.</dd>
-  <dt><code>handleClick</code> (optional)</dt>
-  <dd>A function that will be executed when the button is clicked. The function should return a promise with a <code>void</code> result.</dd>
-</dl>
+  const handleChange = (e: ChangeEvent&lt;HTMLSelectElement&gt;) => {
+    const newValue = e.target.value;
+    setSelectedValue(newValue);
+    handleSetState(newValue);
+  };
 
-<h3>Implementation Details</h3>
+  return (
+    &lt;&gt;
+      {label &amp;&amp; &lt;p&gt;{label}&lt;/p&gt;}
+      &lt;select value={selectedValue} onChange={handleChange}&gt;
+        {values.map((value) =&gt; {
+          return &lt;option key={value} value={value}&gt;{value}&lt;/option&gt;
+        })}
+      &lt;/select&gt;
+    &lt;/&gt;
+  );
+};
 
-<p>To customize the error and success behavior, simply provide your own logic within the <code>handleClick</code> function prop. Here's an example:</p>
-
-<pre><code>&lt;script type="text/javascript"&gt;
-  function handleClick() {
-    try {
-      // Simulating an asynchronous action
-      setTimeout(function() {
-        window.location.href = '/new-url';
-      }, 2000);
-    } catch (error) {
-      console.error(error);
-      // Handle error, e.g., displaying an error message
-    }
-  }
-&lt;/script&gt;
-
-&lt;div&gt;
-  &lt;button onclick="handleClick()"&gt;Submit&lt;/button&gt;
-&lt;/div&gt;
+export default SelectDropdown;
 </code></pre>
 
-<p>Please note that the code provided is a simplified example and may require additional setup and styling in a real application.</p>
+<h3>Styling</h3>
+<p>The Select Dropdown component comes with default styling, but you can customize its appearance by modifying the CSS. The following CSS classes are available for styling:</p>
+<ul>
+  <li><code>select</code>: Represents the select element. You can apply styles to this class to change the appearance of the dropdown menu.</li>
+  <li><code>option</code>: Represents the options within the dropdown. You can apply styles to this class to modify the appearance of the individual options.</li>
+</ul>
+
+<p>Here's an example of how to style the dropdown arrow:</p>
+<pre><code>.select {
+  /* Other styles */
+  background-image: url('/dropDownIcon.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  background-size: 12px;
+}
+</code></pre>
+
+<p>Feel free to adjust the background image and positioning to achieve the desired look for the dropdown arrow.</p>
 
 <p>If you have any further questions or need additional assistance, please let me know!</p>
