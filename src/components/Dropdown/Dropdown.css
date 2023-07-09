@@ -1,0 +1,19 @@
+select {
+    padding: 10px;
+    padding-right: 49px;
+    width: 100%;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    border-radius: 8px;
+    appearance: none;
+    background-image: url('/dropDownIcon.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    background-size: 12px;
+    margin-top: 4px;
+}
+
+option {
+    font-weight: 500;
+}

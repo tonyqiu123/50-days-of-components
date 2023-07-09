@@ -1,4 +1,7 @@
 <!-- Button Component -->
+<h2>Day 1/100</h2>
+
+<p>July 7th 2023, October 16th, 2023</p>
 
 <h2>Button Component</h2>
 
