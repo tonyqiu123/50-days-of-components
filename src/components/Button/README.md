@@ -4,9 +4,7 @@ July 8th, 2023 / October 16th, 2023
 
 ## Button Component
 
-<video src="/button-demo.mp4" controls>
-  Sorry, your browser doesn't support embedded videos.
-</video>
+![Button Demo Video](/button-demo.mp4)
 
 A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.
 
