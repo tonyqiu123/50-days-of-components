@@ -1,0 +1,81 @@
+button {
+    font-size: 0.875rem;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+    display: flex;
+}
+
+button > p,
+button > img {
+    transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.primary {
+    background-color: #1f96ff;
+}
+
+.secondary {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid black;
+}
+
+.secondary > p {
+    color: black;
+}
+
+.secondary > img {
+    filter: brightness(0);
+}
+
+.destructive {
+    background-color: #dc2626;
+}
+
+.cancel {
+    background-color: #4b5563;
+}
+
+.warning {
+    background-color: #f59e0b;
+}
+
+.success {
+    background-color: #10b981;
+}
+
+button.loading > p {
+    opacity: 0;
+}
+
+button.loading > img {
+    opacity: 1;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+button > img {
+    opacity: 0;
+    width: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 2s infinite linear;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
