@@ -2,7 +2,7 @@
 
 <h2>Button Component</h2>
 
-<iframe width="528" height="938" src="https://www.youtube.com/embed/Bh9x_dJMDK4" title="button demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+![button demo](/public/button.png)
 
 <p>A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.</p>
 
