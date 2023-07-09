@@ -1,101 +1,62 @@
-# Day 1/100: 
-July 8th, 2023 / October 16th, 2023
+<!-- Button Component -->
 
-## Button Component
+<h2>Button Component</h2>
 
-A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.
+![button demo](/public/button.png)
 
-### Functionalities
+<p>A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.</p>
 
-The button component provides the following functionalities:
+<h3>Functionalities</h3>
 
-- Different visual styles: Choose from primary, secondary, success, destructive, cancel, disabled, and warning styles to match your design requirements.
-- Loading animation: While the button executes an action, it displays a loading animation to provide visual feedback to the user.
-- Customizable error and success handling: Developers can define their own error and success handling logic by utilizing the `handleClick` prop.
-- Flexible width options: The button can be configured to have either a full width or hug-content width, depending on the layout requirements.
+<p>The button component provides the following functionalities:</p>
 
-### Props
+<ul>
+  <li>Different visual styles: Choose from primary, secondary, success, destructive, cancel, disabled, and warning styles to match your design requirements.</li>
+  <li>Loading animation: While the button executes an action, it displays a loading animation to provide visual feedback to the user.</li>
+  <li>Customizable error and success handling: Developers can define their own error and success handling logic by utilizing the <code>handleClick</code> prop.</li>
+  <li>Flexible width options: The button can be configured to have either a full width or hug-content width, depending on the layout requirements.</li>
+</ul>
 
-The button component accepts the following props:
+<h3>Props</h3>
 
-- `text` (string): The text to be displayed on the button.
-- `variant` (optional): The visual variant of the button. Available options include 'primary', 'destructive', 'cancel', 'warning', and 'success'.
-- `isDisabled` (optional): Set this prop to `true` to disable the button.
-- `isFullWidth` (optional): Set this prop to `true` to make the button occupy the full width of its container.
-- `handleClick` (optional): A function that will be executed when the button is clicked. The function should return a promise with a `void` result.
+<p>The button component accepts the following props:</p>
 
-### Implementation Details
+<dl>
+  <dt><code>text</code> (string)</dt>
+  <dd>The text to be displayed on the button.</dd>
+  <dt><code>variant</code> (optional)</dt>
+  <dd>The visual variant of the button. Available options include 'primary', 'destructive', 'cancel', 'warning', and 'success'.</dd>
+  <dt><code>isDisabled</code> (optional)</dt>
+  <dd>Set this prop to <code>true</code> to disable the button.</dd>
+  <dt><code>isFullWidth</code> (optional)</dt>
+  <dd>Set this prop to <code>true</code> to make the button occupy the full width of its container.</dd>
+  <dt><code>handleClick</code> (optional)</dt>
+  <dd>A function that will be executed when the button is clicked. The function should return a promise with a <code>void</code> result.</dd>
+</dl>
 
-To customize the error and success behavior, simply provide your own logic within the `handleClick` function prop. Here's an example:
+<h3>Implementation Details</h3>
 
-```jsx
-import Button from './components/Button' 
+<p>To customize the error and success behavior, simply provide your own logic within the <code>handleClick</code> function prop. Here's an example:</p>
 
-const handleClick = async () => {
+<pre><code>&lt;script type="text/javascript"&gt;
+  function handleClick() {
     try {
-        // Simulating an asynchronous action
-        await new Promise(resolve => setTimeout(resolve, 2000)); 
+      // Simulating an asynchronous action
+      setTimeout(function() {
         window.location.href = '/new-url';
+      }, 2000);
     } catch (error) {
-        console.error(error);
-        // Handle error, e.g., displaying an error message
-    }   
-}
+      console.error(error);
+      // Handle error, e.g., displaying an error message
+    }
+  }
+&lt;/script&gt;
 
-<div>
-    <Button
-        text="Submit"
-        variant="primary"
-        handleClick={handleClick}
-        isFullWidth={true}
-    />
-</div>
-```
+&lt;div&gt;
+  &lt;button onclick="handleClick()"&gt;Submit&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
 
-### Button Code
+<p>Please note that the code provided is a simplified example and may require additional setup and styling in a real application.</p>
 
-```jsx
-import React, { ButtonHTMLAttributes, useState } from 'react';
-
-type ButtonProps = {
-    text: string;
-    variant?: 'primary' | 'destructive' | 'cancel' | 'warning' | 'success';
-    isDisabled?: boolean;
-    isFullWidth?: boolean;
-    handleClick?: () => Promise<void>;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-const Button: React.FC<ButtonProps> = ({ text, variant, isDisabled = false, isFullWidth = false, handleClick,
-    ...props
-}) => {
-
-    const [isLoading, setIsLoading] = useState(false);
-
-    const onClick = async () => {
-        if (!isDisabled && !isLoading && handleClick) {
-            setIsLoading(true);
-            try {
-                await handleClick();
-            } catch (error) {
-                console.error(error);
-            }
-            setIsLoading(false);
-        }
-    };
-
-    return (
-        <button
-            disabled={isDisabled}
-            onClick={onClick}
-            className={`${variant ? variant : ''} ${isFullWidth ? 'full-width' : ''} ${isLoading ? 'loading' : ''}`}
-            {...props}
-        >
-            {text}
-            
-        </button>
-    );
-};
-
-export default Button;
-
-
+<p>If you have any further questions or need additional assistance, please let me know!</p>
