@@ -5,7 +5,7 @@
 
 <h2>Select Dropdown Component</h2>
 
-<img src="/public/dropbown.png" alt="dropbown demo" />
+<img src="/public/dropdown.png" alt="dropdown demo" />
 
 <p>A custom select dropdown component that allows users to choose from a list of options. The component provides a dropdown menu with a stylish arrow icon and supports customization of its appearance.</p>
 
