@@ -1,66 +1,28 @@
 'use client'
 
-import React from 'react';
-import NavBar from '@/components/NavBar/NavBar';
+import React, { useState } from 'react';
+import Modal from '@/components/Modal/Modal';
+import Button from '@/components/Button/Button';
 
 
 export default function Home() {
-  const linksData = [
-    {
-      label: 'Home',
-      url: '/',
-    },
-    {
-      label: 'Products',
-      dropdown: {
-        links: [
-          {
-            title: 'Clothing',
-            url: '/',
-            image: 'https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png',
-          },
-          {
-            title: 'Accessories',
-            url: '/',
-            image: 'https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png',
-          },
-        ],
-      },
-    },
-    {
-      label: 'About Us',
-      dropdown: {
-        links: [
-          {
-            title: 'Clothing',
-            url: '/',
-            image: 'https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png',
-          },
-          {
-            title: 'Accessories',
-            url: '/',
-            image: 'https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png',
-          },
-        ],
-      },
-    },
-    {
-      label: 'Contact',
-      url: '/',
-    },
-  ];
 
-  const buttonsData = [
-    { text: "Button 1", url: "https://example.com/button1" },
-    { text: "Button 2", url: "https://example.com/button2" },
-  ];
-  
- 
+
+  const [showModal, setShowModal] = useState(false)
 
   return (
-    <div className="App">
-      <NavBar logo='https://logos-world.net/wp-content/uploads/2021/03/Stripe-Logo.png' linksData={linksData} buttonsData={buttonsData} />
-      {/* Rest of your app */}
+    <div>
+      <Button text='Toggle modal' variant='primary' handleClick={async () => setShowModal(!showModal)} />
+      <Modal showModal={showModal} setShowModal={setShowModal}>
+        <div style={{ display: 'flex', gap: '12px', flexDirection: 'column' }}>
+          <h3>Are you absolutely sure?</h3>
+          <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+          <div style={{ marginLeft: 'auto', display: 'flex', gap: '12px' }}>
+            <Button text='Cancel' variant='secondary' handleClick={async () => setShowModal(false)} />
+            <Button text='Continue' variant='primary' handleClick={async () => setShowModal(false)} />
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

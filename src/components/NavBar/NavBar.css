@@ -17,15 +17,8 @@
 }
 
 .navbar-link {
-    margin-left: 20px;
+    margin-left: 24px;
     position: relative;
-}
-
-.navbar-link button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
 }
 
 .navbar-link a {
@@ -37,32 +30,34 @@
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 20px;
+    padding: 16px;
     background-color: #fff;
     border: 1px solid #ddd;
     width: 200px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     opacity: 0;
     visibility: hidden;
     z-index: 1;
-    border-radius: 4px; /* Add border-radius here */
+    border-radius: 4px;
 }
-
 
 .navbar-link:hover .navbar-dropdown {
     opacity: 1;
     visibility: visible;
+    border-radius: 8px;
 }
 
 .navbar-dropdown h3 {
-    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .navbar-dropdown-link {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .navbar-dropdown-link img {
@@ -76,8 +71,11 @@
     color: #333;
 }
 
-.navbar-link a,
-.navbar-link button {
+.navbar-dropdown-link:hover {
+    background-color: rgb(233, 233, 233);
+}
+
+.navbar-link > a {
     padding: 10px 20px;
     background: none;
     border: none;
@@ -90,34 +88,4 @@
     display: flex;
     justify-content: flex-end;
     gap: 15px;
-}
-
-.navbar-button {
-    list-style-type: none;
-}
-
-.navbar-button a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007BFF;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-button a:hover {
-    background-color: #0056b3;
-}
-
-.navbar-button:first-child a {
-    color: #007BFF;
-    background-color: #fff;
-    border: 1px solid #007BFF;
-}
-
-.navbar-button:first-child a:hover {
-    color: #fff;
-    background-color: #0056b3;
 }

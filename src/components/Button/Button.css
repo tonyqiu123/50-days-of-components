@@ -16,12 +16,22 @@ button > img {
 }
 
 .primary {
-    background-color: #1f96ff;
+    border: 1px solid #78c0ff;
+    background-color: #1b83dd;
+}
+
+.primary:hover {
+    border: 1px solid #78c0ff;
+    background-color: #1e96ff;
 }
 
 .secondary {
-    background-color: rgba(255, 255, 255, 0);
-    border: 1px solid black;
+    background-color: #f0f0f0;
+    border: 1px solid #b8b8b8;
+}
+
+.secondary:hover {
+    background-color: rgb(226, 226, 226);
 }
 
 .secondary > p {
@@ -56,10 +66,6 @@ button.loading > img {
     opacity: 1;
 }
 
-button:hover {
-    opacity: 0.7;
-}
-
 button > img {
     opacity: 0;
     width: 14px;
@@ -76,6 +82,6 @@ button > img {
     }
 
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 }

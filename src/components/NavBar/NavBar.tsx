@@ -43,20 +43,18 @@ const NavBar: React.FC<NavBarProps> = ({ logo, linksData, buttonsData }) => {
                                 onMouseEnter={() => setOpenDropdownIndex(index)}
                                 onMouseLeave={() => setOpenDropdownIndex(null)}
                             >
-                                <p className="navbar-label">{linkData.label}</p>
-                                {openDropdownIndex === index && (
-                                    <div className="navbar-dropdown">
-                                        <h3>{linkData.label}</h3>
-                                        <ul>
-                                            {linkData.dropdown.links.map((link, linkIndex) => (
-                                                <li key={linkIndex} className="navbar-dropdown-link">
-                                                    <img src={link.image} alt={link.title} />
-                                                    <a href={link.url}>{link.title}</a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
+                                <p style={{ cursor: 'default' }} className="navbar-label">{linkData.label}</p>
+                                <div className={`navbar-dropdown`}>
+                                    <h3>{linkData.label}</h3>
+                                    <ul>
+                                        {linkData.dropdown.links.map((link, linkIndex) => (
+                                            <li style={{ cursor: 'pointer' }} key={linkIndex} className="navbar-dropdown-link">
+                                                <img src={link.image} alt={link.title} />
+                                                <a href={link.url}> {link.title}  </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         ) : (
                             <a href={linkData.url}>
@@ -68,7 +66,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, linksData, buttonsData }) => {
             </ul>
             <ul className="navbar-buttons">
                 {buttonsData.map((buttonData, index) => (
-                    <Button text={buttonData.text}/>
+                    <a href={buttonData.url}><Button text={buttonData.text} variant={index === 0 ? 'secondary' : 'primary'} /></a>
                 ))}
             </ul>
         </nav>
