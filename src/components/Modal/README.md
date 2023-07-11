@@ -4,6 +4,8 @@ July 10th / October 16th
 
 # Modal Component for React 
 
+![Modal Component Image]([url_to_image](https://cdn.discordapp.com/attachments/715319623637270638/1128369163388330004/image.png) "Modal Component Image")
+
 This is a customizable Modal component that can be easily integrated into any React project. It has light and dark modes and is smoothly animated for a modern, sleek look. 
 
 ## Features
