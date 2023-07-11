@@ -1,0 +1,123 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.navbar-logo {
+    height: 40px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar-link {
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar-link button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.navbar-link a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    border-radius: 4px; /* Add border-radius here */
+}
+
+
+.navbar-link:hover .navbar-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-dropdown h3 {
+    margin-top: 0;
+}
+
+.navbar-dropdown-link {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.navbar-dropdown-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.navbar-dropdown-link a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-link a,
+.navbar-link button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.navbar-button {
+    list-style-type: none;
+}
+
+.navbar-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-button a:hover {
+    background-color: #0056b3;
+}
+
+.navbar-button:first-child a {
+    color: #007BFF;
+    background-color: #fff;
+    border: 1px solid #007BFF;
+}
+
+.navbar-button:first-child a:hover {
+    color: #fff;
+    background-color: #0056b3;
+}
