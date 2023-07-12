@@ -6,6 +6,8 @@ July 12th / October 16th
 
 <a href="https://www.youtube.com/watch?v=nGdD2W0BxUc"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1128703602085605506/image.png"/></a> 
 
+<a href="https://www.youtube.com/watch?v=nGdD2W0BxUc">Watch live demo on youtube</a>
+
 This is a customizable Tooltip component that can be easily integrated into any React project. It supports dark and light modes and provides a tooltip with hover functionality.
 
 ## Features
