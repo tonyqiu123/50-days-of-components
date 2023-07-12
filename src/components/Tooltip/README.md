@@ -51,7 +51,7 @@ export default function AdminDashboard() {
 
 ```
 
-In this example, I created a button to toggle the ```jsx darkMode ``` prop in the Tooltip component. You can see that the Tooltip requires no extra styling, just simply wrap any text you want to add a tooltip to, light or dark!
+In this example, I created a button to toggle the ```darkMode``` prop in the Tooltip component. You can see that the Tooltip requires no extra styling, just simply wrap any text you want to add a tooltip to, light or dark!
 
 ## Props
 
