@@ -1,0 +1,24 @@
+input {
+    font-size: var(--font-size-sm);
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    min-width: 320px;
+}
+
+input:focus {
+    outline: 1px solid #cccccc;
+}
+
+input.darkMode {
+    color: white;
+    border: 1px solid #333333;
+}
+
+input.darkMode:focus {
+    color: white;
+    outline: 1px solid #333333;
+}
+input.darkMode::placeholder{
+    color: rgb(165, 169, 177);
+}
