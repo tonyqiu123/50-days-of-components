@@ -1,0 +1,43 @@
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #000000;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"].darkMode {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #fffefe;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  input[type="range"].darkMode::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #000000;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"].fullWidth {
+    width: 100%;
+  }
