@@ -91,6 +91,7 @@
 
 p {
   font-size: var(--font-size-sm);
+  line-height: 125%;
 }
 
 a {
