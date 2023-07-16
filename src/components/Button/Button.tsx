@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes, useState } from 'react';
 import './Button.css';
+import Image from 'next/image';
 
 type ButtonProps = {
   text: string;
@@ -35,12 +36,13 @@ const Button: React.FC<ButtonProps> = ({
     <button
       disabled={isDisabled}
       onClick={onClick}
-      className={`${variant ? variant : ''} ${isFullWidth ? 'full-width' : ''
-        } ${isLoading ? 'loading' : ''}`}
+      className={`${variant ? variant : ''} ${isFullWidth ? 'full-width' : ''} ${
+        isLoading ? 'loading' : ''
+      }`}
       {...props}
     >
       <p>{text}</p>
-      <img src='/loading.svg' alt="Loading" />
+      <Image src="/loading.svg" alt="Loading" width={14} height={14} />
     </button>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './SearchBar.css';
 
 type SearchBarProps = {
@@ -28,7 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 
     // Handle clicks outside SearchBar SearchBar component
-    const handleOutsideClick = (event: any, query = '') => {
+    const handleOutsideClick = useCallback((event: any, query = '') => {
         const searchBarDropdown = (event.target as HTMLElement).closest('.searchBarDropdown');
 
         // Close SearchBar dropdown if SearchBar click is outside SearchBar component
@@ -41,7 +41,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             setInputValue(query);
             handleSelect(query)
         }
-    };
+    }, [inputRef, setDropdownOpen, setInputValue, handleSelect]);
 
     // Handle key presses in SearchBar input field
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -96,7 +96,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, []);
+    }, [handleOutsideClick, queries]);
+
 
     // Update dropdown if it is overflowing so I can hide scrollbar.
     useEffect(() => {

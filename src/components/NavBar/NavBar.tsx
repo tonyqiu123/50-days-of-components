@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './NavBar.css';
 import Button from '@/components/Button/Button';
+import Image from 'next/image';
 
 type LinkItem = {
     title: string;
@@ -34,7 +35,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, linksData, buttonsData }) => {
 
     return (
         <nav className="navbar">
-            <img src={logo} alt="Logo" className="navbar-logo" />
+            <Image src={logo} alt="Logo" className="navbar-logo" />
             <ul className="navbar-links">
                 {linksData.map((linkData, index) => (
                     <li key={index} className="navbar-link">
@@ -49,7 +50,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, linksData, buttonsData }) => {
                                     <ul>
                                         {linkData.dropdown.links.map((link, linkIndex) => (
                                             <li style={{ cursor: 'pointer' }} key={linkIndex} className="navbar-dropdown-link">
-                                                <img src={link.image} alt={link.title} />
+                                                <Image src={link.image} alt={link.title} />
                                                 <a href={link.url}> {link.title}  </a>
                                             </li>
                                         ))}
@@ -66,7 +67,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, linksData, buttonsData }) => {
             </ul>
             <ul className="navbar-buttons">
                 {buttonsData.map((buttonData, index) => (
-                    <a href={buttonData.url}><Button text={buttonData.text} variant={index === 0 ? 'secondary' : 'primary'} /></a>
+                    <a key={index} href={buttonData.url}><Button text={buttonData.text} variant={index === 0 ? 'secondary' : 'primary'} /></a>
                 ))}
             </ul>
         </nav>

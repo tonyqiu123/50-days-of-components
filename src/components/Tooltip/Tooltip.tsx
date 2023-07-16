@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from 'react';
 import './Tooltip.css';
+import Image from 'next/image';
 
 interface TooltipProps {
     toolTipText: string;
@@ -15,9 +16,14 @@ const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = fal
     return (
         <div className={`tooltip ${darkMode && 'darkMode'}`}>
             {children}
-            <img src='/tooltipIcon.svg'
+            <Image
+                alt='tooltipicon'
+                src='/tooltipIcon.svg'
                 onMouseEnter={() => setHovering(true)}
-                onMouseLeave={() => setHovering(false)} />
+                onMouseLeave={() => setHovering(false)} 
+                width={16}
+                height={16}
+                />
             <p className={`tooltip-hoverBox ${hovering && 'active'}`}
             >{toolTipText}</p>
         </div>
