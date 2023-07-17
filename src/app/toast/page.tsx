@@ -7,7 +7,7 @@ import Tooltip from '@/components/Tooltip/Tooltip';
 import ToastProvider from '@/components/Toast/ToastProvider';
 
 
-export default function Home() {
+export default function toast() {
 
 
   const [isDarkMode, setIsDarkMode] = useState(false)

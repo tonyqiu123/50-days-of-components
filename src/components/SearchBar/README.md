@@ -3,9 +3,11 @@
 July 15th / October 16th
 
 #  SearchBar Component for React 
-<a href="https://www.youtube.com/watch?v=eiwNHE6AiKk">Watch live demo on youtube</a>
+<a href="https://www.youtube.com/watch?v=eiwNHE6AiKk" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://www.youtube.com/watch?v=eiwNHE6AiKk"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130155494800101476/image.png"/></a> 
+<a href="https://100daysofcomponents.netlify.app/searchBar" target="_blank">Demo it yourself</a>
+
+<a href="https://www.youtube.com/watch?v=eiwNHE6AiKk" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130155494800101476/image.png"/></a> 
 
 
 Today, I want to introduce a SearchBar component that can be easily integrated into any React project. It provides a convenient and interactive way for users to search through an array of items for quick access and retrieval. Let's dive into its features, installation, usage, props, and code.

@@ -13,11 +13,14 @@
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
-  border: 1px solid white;
 }
 
 .darkMode {
   background-color: black;
+}
+
+.darkMode * {
+  color: white;
 }
 
 .darkMode p {
