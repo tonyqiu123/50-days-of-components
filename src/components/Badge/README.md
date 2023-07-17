@@ -39,7 +39,7 @@ To use the Badge component in your project, follow these steps:
 2. `darkMode` (optional boolean): Select darkMode styling if true, lightMode styling if omitted. 
 3. `variant` (required string): Select which variant of the badge you want from `default`, `secondary`, `outline`, or `destructive`
 
-## Example Usage
+# Example Usage
 ```jsx
 'use client'
 
@@ -68,9 +68,9 @@ export default function ToastDemo() {
 ```
 In this example, I have the classic button to toggle `darkMode` on my Badge components. There are 4 total Badges, representing all the unique variants.
 
-## Component Code 
+# Component Code 
 
-# Toast.tsx
+## Badge.tsx
 ```jsx
 import './Badge.css'
 interface BadgeProps {
