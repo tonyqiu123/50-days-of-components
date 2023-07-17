@@ -1,21 +1,21 @@
-## Day 9/100
+# Day 10/100
 
-July 16th / October 16th
+July 17th / October 16th
 
 # Toast Component for React 
-<a href="https://www.youtube.com/watch?v=O49qJP5IMbQ" target="_blank">Watch live demo on youtube</a>
+<a href="https://www.youtube.com/watch?v=xHjMM87AXGw" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/toast" target="_blank">Demo it yourself</a>
 
-<a href="https://www.youtube.com/watch?v=O49qJP5IMbQ" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130571213870223492/image.png"/></a>  
+<a href="https://www.youtube.com/watch?v=xHjMM87AXGw" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130640257830899802/image.png"/></a>  
 
-## Description 
+# Description 
 
-The Toast component provides a toast notification feature. It allows you to display brief messages or notifications to the user in a non-intrusive way. What makes this toast unique among ones developed by shadcn or mantine, is that you can have multiple toasts at the same time that will stack on top of each other in the correct order as you activate them. Really cool stuff.
+Can't believe it's already been 10 days! I have to say, it's super rewarding to see this project gradually grow in terms of quality and features. For example, in Day 1, I created a basic button component and a shitty AI-generated readme haha. Now, each component has its own video, polished readme, demo, and much more practicality. Anyways, today is going to end the streak of complex components: a badge component. Badge components are often used to indicate status or an element's category.
 
-## Prerequisites
+# Prerequisites
 This package requires Node v14 or later to work correctly with NextJS framework version ^13
-The following dependencies are required by this package :
+The following dependencies were used in this project :
 1. "@types/node": "20.4.1",
 2. "@types/react": "18.2.14",
 3. "@types/react-dom": "18.2.6",
@@ -25,28 +25,19 @@ The following dependencies are required by this package :
 7. "typescript": "5.1.6"
 
 
-## Installation 
+# Installation 
 
-To use the Toast component in your project, follow these steps:
+To use the Badge component in your project, follow these steps:
 
-1. Create a new folder called 'Toast' in your project's components directory.
-2. Copy the `Toast.tsx`, `ToastProvider.tsx` and `Slider.css` files into the newly created 'Toast' folder.
+1. Create a new folder called 'Badge' in your project's components directory.
+2. Copy the `Badge.tsx` and `Badge.css` files into the newly created 'Badge' folder.
 
-## Props
+# Props 
 
-# Toast.tsx
+1. `text` (required string): Text for the badge.
 
-1. `setShowToast` (required): A function that updates the state to control the visibility of the toast. It is typically used to show or hide the toast based on user interactions or other events.
-
-2. `showToast` (required): A boolean value that determines whether the toast should be displayed or hidden. When set to true, the toast will be shown, and when set to false, it will be hidden.
-
-3. `darkMode` (optional): A boolean value that indicates whether the toast should be displayed in dark mode. When set to true, the toast will apply styles for dark mode, and when set to false or omitted, the default styles will be applied.
-
-4. `children` (optional): Content to be rendered inside the toast component. It can be any valid React node or component.
-
-# ToastProvider.tsx
-
-1. `children` (optional): Insert `Toast.tsx` inside the `ToastProvider.tsx` component.
+2. `darkMode` (optional boolean): Select darkMode styling if true, lightMode styling if omitted. 
+3. `variant` (required string): Select which variant of the badge you want from `default`, `secondary`, `outline`, or `destructive`
 
 ## Example Usage
 ```jsx
@@ -54,136 +45,47 @@ To use the Toast component in your project, follow these steps:
 
 import React, { useEffect, useState } from 'react';
 import Button from '@/components/Button/Button';
-import Toast from '@/components/Toast/Toast';
-import ToastProvider from '@/components/Toast/ToastProvider';
+import Badge from '@/components/Badge/Badge';
 
 
-export default function Home() {
+export default function ToastDemo() {
 
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const [showToast1, setShowToast1] = useState(false)
-  const [showToast2, setShowToast2] = useState(false)
 
-  return (
-    <>
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Button variant='secondary' text='Schedule meeting' handleClick={async () => setShowToast1(true)} />
-      <Button variant='secondary' text='Schedule webinar' handleClick={async () => setShowToast2(true)} />
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
-      <ToastProvider>
 
-        <Toast showToast={showToast1} setShowToast={setShowToast1} darkMode={isDarkMode} >
-          <h4>Meeting Scheduled: Project Update</h4>
-          <p>Thursday, September 15, 2022 at 10:00 AM</p>
-        </Toast>
-
-        <Toast showToast={showToast2} setShowToast={setShowToast2} darkMode={isDarkMode} >
-          <h4>Webinar Scheduled: Digital Marketing Strategies</h4>
-          <p>Wednesday, October 5, 2022 at 2:30 PM</p>
-        </Toast>
-
-      </ToastProvider>
-    </>
-  );
+    return (
+        <div className={`page ${isDarkMode && 'darkMode'}`}>
+            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            <Badge text='Default' darkMode={isDarkMode} variant='default' />
+            <Badge text='Secondary' darkMode={isDarkMode} variant='secondary' />
+            <Badge text='Outline' darkMode={isDarkMode} variant='outline' />
+            <Badge text='Destructive' darkMode={isDarkMode} variant='destructive' />
+        </div>
+    );
 };
 
 ```
-In this example, I have three buttons. The first button toggles dark mode, the second and third buttons trigger seperate Toast.tsx components. 
+In this example, I have the classic button to toggle `darkMode` on my Badge components. There are 4 total Badges, representing all the unique variants.
 
 ## Component Code 
 
 # Toast.tsx
 ```jsx
-import React, { useEffect, useState } from 'react';
-import './Toast.css';
-import Image from 'next/image';
-
-interface ToastProps {
-    children?: React.ReactNode;
-    setShowToast: React.Dispatch<React.SetStateAction<boolean>>;
-    showToast: boolean;
-    darkMode?: boolean;
+import './Badge.css'
+interface BadgeProps {
+    text: string
+    darkMode?: boolean
+    variant: 'default' | 'secondary' | 'outline' | 'destructive'
 }
 
-const Toast: React.FC<ToastProps> = ({
-    children,
-    setShowToast,
-    showToast,
-    darkMode = false,
-}) => {
-    const [shouldRender, setShouldRender] = useState(showToast);
-
-    useEffect(() => {
-        let timeout: NodeJS.Timeout | null = null;
-
-        if (showToast) {
-            setShouldRender(true);
-            if (timeout) {
-                clearTimeout(timeout);
-            }
-        } else {
-            timeout = setTimeout(() => {
-                setShouldRender(false);
-            }, 200);
-        }
-
-        return () => {
-            if (timeout) {
-                clearTimeout(timeout);
-            }
-        };
-    }, [showToast]);
-
-    useEffect(() => {
-        if (showToast) {
-            const timeout = setTimeout(() => {
-                setShowToast(false);
-            }, 3000);
-
-            return () => clearTimeout(timeout);
-        }
-    }, [showToast, setShowToast]);
-
-    if (!shouldRender) {
-        return null;
-    }
+const Badge: React.FC<BadgeProps> = ({ text, darkMode, variant }) => {
 
     return (
-        <div className={`${darkMode && 'darkMode'} toast ${showToast && 'showToast'}`}>
-            <Image
-                onMouseDown={() => setShowToast(false)}
-                width={12}
-                height={12}
-                alt="close toast"
-                src="/closeIcon.svg"
-            />
-            {children}
-        </div>
-    );
-};
-
-export default Toast;
-
-```
-
-# ToastProvider.tsx
-```jsx
-import React, { useEffect, useState, useRef } from 'react';
-import './Toast.css'
-
-interface ToastProviderProps {
-    children?: React.ReactNode
+        <p className={`badge ${darkMode && 'darkMode'} ${variant}`}>{text}</p>
+    )
 }
 
-const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
-
-    return (
-        <div className='toastProvider'>
-            {children}
-        </div>
-    );
-};
-
-export default ToastProvider;
-
+export default Badge
 ```
+ 
