@@ -30,7 +30,7 @@ The following dependencies are required by this package :
 To use the Toast component in your project, follow these steps:
 
 1. Create a new folder called 'Toast' in your project's components directory.
-2. Copy the `Toast.tsx`, `ToastProvider.tsx` and `Slider.css` files into the newly created 'Toast' folder.
+2. Copy the `Toast.tsx`, `ToastProvider.tsx` and `Badge.css` files into the newly created 'Toast' folder.
 
 ## Props
 

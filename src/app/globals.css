@@ -131,24 +131,24 @@ button>img {
   background-color: #1e96ff;
 }
 
-.secondary {
+button.secondary {
   background-color: #f0f0f0;
   border: 1px solid #b8b8b8;
 }
 
-.secondary:hover {
+button.secondary:hover {
   background-color: rgb(226, 226, 226);
 }
 
-.secondary>p {
+button.secondary>p {
   color: black;
 }
 
-.secondary>img {
+button.secondary>img {
   filter: brightness(0);
 }
 
-.destructive {
+button.destructive {
   background-color: #dc2626;
 }
 

@@ -12,8 +12,8 @@ button {
     width: fit-content;
 }
 
-button > p,
-button > img {
+button>p,
+button>img {
     transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -27,24 +27,25 @@ button > img {
     background-color: #1e96ff;
 }
 
-.secondary {
+button.secondary {
     background-color: #f0f0f0;
     border: 1px solid #b8b8b8;
 }
 
-.secondary:hover {
+button.secondary:hover {
     background-color: rgb(226, 226, 226);
 }
 
-.secondary > p {
+button.secondary>p {
     color: black;
 }
 
-.secondary > img {
+button.secondary>img {
     filter: brightness(0);
 }
 
-.destructive {
+
+button.destructive {
     background-color: #dc2626;
 }
 
@@ -60,15 +61,15 @@ button > img {
     background-color: #10b981;
 }
 
-button.loading > p {
+button.loading>p {
     opacity: 0;
 }
 
-button.loading > img {
+button.loading>img {
     opacity: 1;
 }
 
-button > img {
+button>img {
     opacity: 0;
     width: 14px;
     position: absolute;
