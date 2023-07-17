@@ -6,7 +6,7 @@ import SearchBar from '@/components/SearchBar/SearchBar';
 import Tooltip from '@/components/Tooltip/Tooltip';
 
 
-export default function searchBar() {
+export default function SearchBarDemo() {
 
 
   const [isDarkMode, setIsDarkMode] = useState(false)
