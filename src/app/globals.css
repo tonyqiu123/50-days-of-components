@@ -15,15 +15,11 @@
   align-items: flex-start;
 }
 
-.darkMode {
+.page.darkMode {
   background-color: black;
 }
 
-.darkMode * {
-  color: white;
-}
-
-.darkMode p {
+.page.darkMode * {
   color: white;
 }
 
