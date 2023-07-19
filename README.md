@@ -39,6 +39,7 @@ To use the Switch component in your project, follow these steps:
 2. `darkMode` (optional boolean): Select darkMode styling if true, lightMode styling if omitted. 
 
 # Example Usage
+### page.tsx
 ```jsx
 'use client'
 
@@ -72,7 +73,7 @@ In this example, I created a Switch component that toggles `darkMode` state. I t
 
 # Component Code 
 
-## Switch.tsx
+### Switch.tsx
 ```jsx
 import React, { useState } from 'react';
 import './Switch.css';
