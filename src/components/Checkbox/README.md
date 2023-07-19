@@ -2,7 +2,7 @@
 
 July 18th / October 16th
 
-# Toast Component for React 
+# Checkbox Component for React 
 <a href="https://youtu.be/cXnAICsWmyA" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/checkbox" target="_blank">Demo it yourself</a>

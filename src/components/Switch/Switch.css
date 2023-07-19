@@ -1,0 +1,39 @@
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border-radius: 17px;
+    background-color: #dfdede;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.switch.checked {
+    background-color: #1e8beb !important;
+}
+
+.slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.slider.checked {
+    transform: translateX(100%);
+}
+
+/* dark mode */
+.darkMode.switch {
+    background-color: #45464b;
+}
+
+.darkMode.switch>.slider {
+    background-color: #ffffff;
+}
