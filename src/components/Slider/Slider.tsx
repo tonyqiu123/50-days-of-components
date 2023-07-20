@@ -2,15 +2,15 @@ import React, { FC, ChangeEvent, useState } from 'react';
 import './Slider.css'; // Importing CSS for our slider
 
 interface SliderProps {
-  min: number;
-  max: number;
-  defaultValue: number;
+  min?: number;
+  max?: number;
+  defaultValue?: number;
   darkMode?: boolean;
   fullWidth?: boolean;
   onChange?: (value: number) => void;
 }
 
-const Slider: FC<SliderProps> = ({ min, max, defaultValue, onChange = () => { }, darkMode = false, fullWidth=false }) => {
+const Slider: FC<SliderProps> = ({ min=0, max=100, defaultValue = 0, onChange = () => { }, darkMode = false, fullWidth=false }) => {
 
   const [value, setValue] = useState(defaultValue)
 

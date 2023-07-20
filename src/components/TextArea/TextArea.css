@@ -1,0 +1,52 @@
+.textarea {
+    padding: 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+/* dark mode */
+.darkMode.textarea {
+    background-color: #0a0a0a;
+    border: 1px solid #494949;
+    color: #fff;
+}
+
+.darkMode.textarea::placeholder {
+    color: #a4a9af;
+}
+
+/* Scrollbar */
+
+.textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.textarea::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 4px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 184, 184);
+    border-radius: 4px;
+}
+
+/* Darkmode */
+.textarea.darkMode {
+    border: 1px solid #333333;
+}
+
+.textarea.darkMode::-webkit-scrollbar-track {
+    background-color: #1f1d1d;
+}
+
+.textarea.darkMode::-webkit-scrollbar-thumb {
+    background-color: rgb(126, 126, 126);
+}
