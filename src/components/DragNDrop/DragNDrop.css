@@ -1,0 +1,19 @@
+/* CSS FOR DEMO IMPLEMENTATION  */
+.item1 {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.item2 {
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 4px 0;
+}
+
+/* Note: there is no pre-requisite css for the actual component */
