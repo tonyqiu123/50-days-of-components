@@ -3,7 +3,7 @@
 July 22th / October 16th
 
 # DragNDrop
-<a href="https://www.youtube.com/watch?v=i70Cjnq2tYE target="_blank">Watch live demo on youtube</a>
+<a href="https://www.youtube.com/watch?v=i70Cjnq2tYE" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/DragNDrop" target="_blank">Demo it yourself</a>
 
