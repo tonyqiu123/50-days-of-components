@@ -11,7 +11,7 @@ July 22th / October 16th
 
 # Description 
 
-The DragNDrop components is a rare component compared to the other ones I've developed so far. This component is special because it is optimized for the developer experience. For example, simply throw any jsx elements inside a <DragNDrop> element, and boom, your elements are draggable with all the right context.
+I am proud of today's component, as I put in extra effort to make it optimized for the developer experience. In particular, I made it so that developers can simply throw any jsx elements inside a <DragNDrop> element, and boom, those elements are draggable with proper context.
 
 One of my favorite usecases of the DragNDrop component is formtasy.com - a web app using AI to build online forms. Formtasy uses the DragNDrop component to rearrange inputs in a form and it works so incredibly well, both in the visuals and the functionality.
 
