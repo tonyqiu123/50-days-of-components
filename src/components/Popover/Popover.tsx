@@ -4,9 +4,10 @@ import './Popover.css'
 
 type PopoverProps = {
     children: React.ReactElement[];
+    darkMode?: boolean
 };
 
-const Popover: React.FC<PopoverProps> = ({ children }) => {
+const Popover: React.FC<PopoverProps> = ({ children, darkMode = false }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const trigger = React.cloneElement(children[0], {
@@ -21,7 +22,7 @@ const Popover: React.FC<PopoverProps> = ({ children }) => {
         : null;
 
     return (
-        <div className='popover'>
+        <div className={`popover ${darkMode && 'darkMode'}`}>
             {trigger}
             {content}
         </div>
