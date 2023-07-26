@@ -31,7 +31,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 onChange={handleCheckboxChange}
             />
             <div className='checkmark'>
-                <Image width={10} height={10} src='/checkmark.svg' alt='checkmark' />
+                <Image width={10} height={10} src='/Checkbox/checkmark.svg' alt='checkmark' />
             </div>
             <div className="text-container">
                 <p className="primary-text">{primaryText}</p>

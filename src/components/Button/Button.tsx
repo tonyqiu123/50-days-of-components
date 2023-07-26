@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       <p>{text}</p>
-      <Image src="/loading.svg" alt="Loading" width={14} height={14} />
+      <Image src="/Button/loading.svg" alt="Loading" width={14} height={14} />
     </button>
   );
 };

@@ -59,7 +59,7 @@ const Toast: React.FC<ToastProps> = ({
                 width={12}
                 height={12}
                 alt="close toast"
-                src="/closeIcon.svg"
+                src="/Toast/closeIcon.svg"
             />
             {children}
         </div>

@@ -19,9 +19,9 @@ export default function IconDemo() {
                 <p>Icon Component</p>
             </Tooltip>
             <div style={{ display: 'flex', gap: '2px' }}>
-                <Icon text='Github' image='/githubIcon.png' invert={isDarkMode && true} />
-                <Icon text='Twitter' image='/twitterIcon.png' invert={isDarkMode && true} />
-                <Icon text='Threads' image='/threadsIcon.png' invert={isDarkMode && true} />
+                <Icon text='Github' image='/Icon/githubIcon.png' invert={isDarkMode && true} />
+                <Icon text='Twitter' image='/Icon/twitterIcon.png' invert={isDarkMode && true} />
+                <Icon text='Threads' image='/Icon/threadsIcon.png' invert={isDarkMode && true} />
             </div>
         </div>
     );

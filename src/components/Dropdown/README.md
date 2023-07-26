@@ -5,7 +5,7 @@
 
 <h2>Select Dropdown Component</h2>
 
-<img src="/public/dropbown.png" alt="dropbown demo" />
+<img src="https://cdn.discordapp.com/attachments/715319623637270638/1133487035223654582/image.png" alt="dropbown demo" />
 
 <p>A custom select dropdown component that allows users to choose from a list of options. The component provides a dropdown menu with a stylish arrow icon and supports customization of its appearance.</p>
 
@@ -63,7 +63,7 @@ export default SelectDropdown;
 <p>Here's an example of how to style the dropdown arrow:</p>
 <pre><code>.select {
   /* Other styles */
-  background-image: url('/dropDownIcon.svg');
+  background-image: url('/DropDown/dropDownIcon.svg');
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
   background-size: 12px;

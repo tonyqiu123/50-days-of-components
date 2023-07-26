@@ -1,0 +1,65 @@
+.prettycodeContainer {
+    padding: 16px 20px;
+    border-radius: 8px;
+    background: rgb(249, 249, 249);
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.prettycodeHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: -16px -20px 16px -20px;
+    padding: 8px 20px;
+    background-color: rgb(230, 231, 233);
+}
+
+.prettycodeContainer * {
+    font-size: 14px !important;
+    line-height: 150% !important;
+
+}
+
+.darkMode.prettycodeContainer {
+    background: #1e1e1e;
+    border: 1px solid rgb(97, 97, 97);
+}
+
+.darkMode.prettycodeContainer>.prettycodeHeader {
+    background-color: rgb(68, 69, 73);
+}
+
+
+/* Scrollbar */
+
+.prettycode::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.prettycode::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 4px;
+}
+
+.prettycode::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 184, 184);
+    border-radius: 4px;
+}
+
+/* Scrollbar Darkmode */
+.darkMode.prettycodeContainer>.prettycode::-webkit-scrollbar-track {
+    background-color: #353333;
+}
+
+.darkMode.prettycodeContainer>.prettycode::-webkit-scrollbar-thumb {
+    background-color: rgb(126, 126, 126);
+}
+
+/* do not touch */
+.prettycode,
+.prettycode * {
+    border: none !important;
+    padding: 0 !important;
+    background-color: rgba(255, 0, 0, 0) !important;
+}
+

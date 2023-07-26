@@ -5,7 +5,7 @@
 
 <h2>Button Component</h2>
 
-![button demo](/public/button.png)
+<img src='https://cdn.discordapp.com/attachments/715319623637270638/1133486849621512283/image.png'/>
 
 <p>A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.</p>
 

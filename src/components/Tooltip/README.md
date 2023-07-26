@@ -85,7 +85,7 @@ const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = fal
     <div className={`tooltip ${darkMode && 'darkMode'}`}>
       {children}
       <img
-        src="/tooltipIcon.svg"
+        src="/Tooltip/tooltipIcon.svg"
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
       />
