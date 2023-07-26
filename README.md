@@ -7,7 +7,7 @@ July 25th / October 16th
 
 <a href="https://100daysofcomponents.netlify.app/PrettyCode" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/PrettyCode" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1133469502957420605/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/PrettyCode" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1133874301892841543/image.png"/></a>  
 
 # Description 
 
