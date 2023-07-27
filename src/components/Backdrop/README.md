@@ -38,14 +38,18 @@ To use the Backdrop component in your project, follow these steps:
 import Button from '@/components/Button/Button';
 import Backdrop from '@/components/Backdrop/Backdrop';
 
-const [isDarkMode, setIsDarkMode] = useState(false)
-const [showBackdrop, setShowBackdrop] = useState(false)
-
 const BackdropDemo: React.FC = () => {
-    <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-    <Button handleClick={async () => setShowBackdrop(true)} variant='secondary' text='Open Backdrop' />
-    <Backdrop darkMode={isDarkMode} showBackdrop={showBackdrop} setShowBackdrop={setShowBackdrop} />;
-}
+
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [showBackdrop, setShowBackdrop] = useState(false)
+
+    return (
+        <>
+            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            <Button handleClick={async () => setShowBackdrop(true)} variant='secondary' text='Open Backdrop' />
+            <Backdrop darkMode={isDarkMode} showBackdrop={showBackdrop} setShowBackdrop={setShowBackdrop} />;
+        </>
+)}
 
 export default BackdropDemo;
 ```
