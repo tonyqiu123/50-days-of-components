@@ -126,10 +126,6 @@ a {
   color: rgb(236, 235, 235);
 }
 
-.darkMode.page img {
-  filter: invert();
-}
-
 .prettycodeDemo .prettycode {
   max-height: 922px;
   overflow: scroll;

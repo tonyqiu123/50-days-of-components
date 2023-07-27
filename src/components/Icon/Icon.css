@@ -1,4 +1,6 @@
 .avatar {
+    cursor: pointer;
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -8,11 +10,11 @@
 }
 
 .avatar:hover {
-    background-color: rgb(239, 241, 243);
+    background-color: rgb(231, 232, 233);
 }
 
 .inverted.avatar:hover {
-    background-color: rgb(45, 46, 48);
+    background-color: rgb(67, 68, 71);
 }
 
 .inverted.avatar>img {

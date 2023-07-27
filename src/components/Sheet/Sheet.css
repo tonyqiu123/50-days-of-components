@@ -1,0 +1,32 @@
+.sheetContent {
+    width: 100%;
+    max-width: 320px;
+    position: fixed;
+    height: 100%;
+    padding: 24px;
+    border-left: 1px solid rgb(208, 208, 211);
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    background-color: rgb(248, 248, 248);
+    box-shadow: -10px 0 15px -3px rgba(0, 0, 0, 0.1), -4px 0 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.sheetContent>.avatar {
+    position: absolute;
+    top: 8px; 
+    right: 8px;
+    padding: 6px;
+}
+
+.active.sheetContent {
+    transform: unset;
+}
+
+/* darkmode */
+.darkMode.sheet>.sheetContent {
+    box-shadow: -10px 0 15px -3px rgba(252, 252, 252, 0.1), -4px 0 6px -2px rgba(247, 247, 247, 0.05);
+    border-left: 1px solid rgb(74, 74, 75);
+    background-color: rgb(26, 26, 27);
+}

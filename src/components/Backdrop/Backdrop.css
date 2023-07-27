@@ -1,0 +1,21 @@
+.backdrop {
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.808);
+    backdrop-filter: blur(2px);
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: all 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.backdrop.darkMode {
+    background-color: rgba(0, 0, 0, 0.596);
+}
+
+.showBackdrop {
+    pointer-events: unset;
+    opacity: 1;
+}
