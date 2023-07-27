@@ -1,0 +1,38 @@
+.tabs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabsTrigger {
+    padding: 8px 24px;
+    cursor: pointer;
+    color: rgba(124, 124, 124, 0.973);
+}
+
+.active.tabsTrigger {
+    border-bottom: 2px solid rgb(15, 15, 15);
+    color: black;
+}
+
+.tabsContent {
+    border-top: 2px solid rgba(141, 141, 141, 0.253);
+    margin-top: -2px;
+    padding-top: 16px;
+    width: 100%;
+}
+
+
+/* Darkmode */
+.darkMode.tabs>.tabsTrigger {
+    color: rgba(158, 157, 157, 0.973);
+}
+
+.darkMode.tabs>.active.tabsTrigger {
+    border-bottom: 2px solid rgb(238, 238, 238);
+    color: rgb(243, 243, 243);
+}
+
+.darkMode.tabs>.tabsContent {
+    border-top: 2px solid rgba(255, 255, 255, 0.253);
+}

@@ -1,6 +1,6 @@
 # Day 17/100
 
-July 25th / October 16th
+July 24th / October 16th
 
 # HoverCard
 <a href="https://www.youtube.com/watch?v=QVJPWRHIs-8" target="_blank">Watch live demo on youtube</a>

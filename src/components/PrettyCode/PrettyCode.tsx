@@ -11,7 +11,7 @@ interface PrettyCodeProps {
   className?: string;
 }
 
-const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = false, className }) => {
+const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = true, className }) => {
 
   const [copied, setCopied] = useState('Copy code 📋');
 
