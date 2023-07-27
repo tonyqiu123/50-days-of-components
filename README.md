@@ -31,8 +31,6 @@ To use the Tabs component in your project, follow these steps:
 
 `children` (required ReactNode): This property represents the content of the TabsTrigger component, which is usually the label of the tab.
 
-`active` (optional boolean): This property indicates whether this tab is currently active. It is controlled by the parent Tabs component and it changes based on the user's interaction.
- 
 ### TabsContent
 `value` (required string): This is a unique identifier for a specific tab's content. It should match the value of the corresponding TabsTrigger to ensure correct display of content when that tab is active.
 
