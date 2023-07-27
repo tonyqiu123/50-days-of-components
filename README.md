@@ -21,12 +21,12 @@ To use the Tabs component in your project, follow these steps:
 2. Copy the `Tabs.tsx` and `Tabs.css` files into the newly created 'Tabs' folder.
 
 # Props 
-### <Tabs></Tabs>
+### Tabs
 `children` (required jsx): These are the child elements or components that the Tabs component wraps around. They usually consist of a combination of TabsTrigger and TabsContent components.
 
 `darkMode` (optional boolean): This property controls the display mode of the tabs. If true, it switches the tabs to a dark theme. The default is a light theme if this prop is false or not provided.
 
-### <TabsTrigger></TabsTrigger>
+### TabsTrigger
 `value` (required string): This is a unique identifier for a particular tab. It's used to determine which tab is currently active and when clicked, it will change the active tab state in the parent Tabs component.
 
 `children` (required ReactNode): This property represents the content of the TabsTrigger component, which is usually the label of the tab.
@@ -35,7 +35,7 @@ To use the Tabs component in your project, follow these steps:
 
 `setActiveTab` (optional React.Dispatch<React.SetStateAction<string>>): This is a function that changes the currently active tab. It's provided by the parent Tabs component and it's invoked when the tab is clicked.
  
-### <TabsContent></TabsContent>
+### TabsContent
 `value` (required string): This is a unique identifier for a specific tab's content. It should match the value of the corresponding TabsTrigger to ensure correct display of content when that tab is active.
 
 `children` (required ReactNode): This property represents the actual content of the tab that gets displayed when the tab is active.
