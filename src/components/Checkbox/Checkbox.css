@@ -37,8 +37,13 @@
 }
 
 /* dark mode */
+
+.darkMode.checkbox-container .text-container .primary-text {
+    color: rgb(227, 228, 233);
+}
+
 .darkMode.checkbox-container .text-container .sub-text {
-    color: rgb(176, 179, 189);
+    color: rgb(146, 149, 160);
 }
 
 .darkMode.checkbox-container>.checkmark {

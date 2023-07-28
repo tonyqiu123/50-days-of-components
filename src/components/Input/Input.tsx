@@ -5,12 +5,16 @@ type InputProps = {
     placeHolder?: string;
     darkMode?: boolean;
     fullWidth?: boolean;
+    title?: string;
 } & InputHTMLAttributes<HTMLInputElement>
 
-const Input: React.FC<InputProps> = ({ placeHolder = '', darkMode = false, fullWidth, ...props }) => {
+const Input: React.FC<InputProps> = ({ placeHolder = '', title, darkMode = false, fullWidth, ...props }) => {
 
     return (
-        <input placeholder={placeHolder} className={`${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`} type="text" {...props} />
+        <div className='input'>
+            {title && <p>{title}</p>}
+            <input placeholder={placeHolder} className={`${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`} type="text" {...props} />
+        </div>
     );
 };
 

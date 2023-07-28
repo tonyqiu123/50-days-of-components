@@ -10,10 +10,6 @@ interface BackdropProps {
 
 const Backdrop: React.FC<BackdropProps> = ({ setShowBackdrop, showBackdrop, darkMode = false }) => {
 
-    useEffect(() => {
-        console.log(showBackdrop)
-    }, [showBackdrop])
-
     return (
         <div onClick={() => setShowBackdrop(false)} className={`${darkMode && 'darkMode'} backdrop ${showBackdrop ? 'showBackdrop' : ''}`}>
         </div>

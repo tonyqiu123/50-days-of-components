@@ -7,6 +7,7 @@ type CheckboxProps = {
     subText?: string;
     onChange?: (checked: boolean) => void;
     darkMode?: boolean;
+    className?: string
 };
 
 const Checkbox: React.FC<CheckboxProps> = ({
@@ -14,6 +15,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     subText = '',
     onChange = () => { },
     darkMode = false,
+    className
 }) => {
     const [isChecked, setIsChecked] = useState(false);
 
@@ -24,7 +26,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     };
 
     return (
-        <label className={`${darkMode && 'darkMode'} checkbox-container`}>
+        <label className={`${className} ${darkMode && 'darkMode'} checkbox-container`}>
             <input
                 type="checkbox"
                 checked={isChecked}

@@ -1,17 +1,17 @@
-# Day 19/100
+# Day 20/100
 
-July 26th / October 16th
+July 28th / October 16th
 
 # Sheet
-<a href="https://www.youtube.com/watch?v=q2HqHt8Bcmc" target="_blank">Watch live demo on youtube</a>
+<a href="https://youtu.be/pUb4ClANeB8" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/Sheet" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Sheet" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134152788717359144/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Sheet" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134520983810736200/image.png"/></a>  
 
 # Description 
 
-The "Sheet" component serves to display a jsx element on demand. The visual design is borrowed from shadcn while the developer experience is enhanced by eliminating unnecessary nested components. I highly recommend using this component in your next.js projects. Enjoy.
+The sheet component is a crucial user interface design element widely utilized in popular software applications such as Google Sheets for data management, Microsoft Excel for financial analysis, and Adobe XD for planning and prototyping user interfaces. In these varied contexts, it provides a structured, flexible canvas where users can input, modify, and visualize information. 
 
 # Installation 
 
@@ -26,43 +26,47 @@ To use the Sheet component in your project, follow these steps:
 
 `darkMode` (optional boolean): This property controls the display mode of the tabs. If true, it switches the tabs to a dark theme. The default is a light theme if this prop is false or not provided.
 
-### SheetTrigger
-`value` (required string): This is a unique identifier for a particular tab. It's used to determine which tab is currently active and when clicked, it will change the active tab state in the parent Sheet component.
+`showSheet` (required boolean): This property controls the visibility of the Sheet component. If true, the Sheet component is displayed. If false or not provided, the Sheet component is hidden.
 
-`children` (required ReactNode): This property represents the content of the SheetTrigger component, which is usually the label of the tab.
+`setShowSheet` (required function): This is a function, typically a state setter function from the useState hook in React, that is used to change the visibility of the Sheet component. It accepts a boolean value - true to show the Sheet component, and false to hide it.
 
-### SheetContent
-`value` (required string): This is a unique identifier for a specific tab's content. It should match the value of the corresponding SheetTrigger to ensure correct display of content when that tab is active.
-
-`children` (required ReactNode): This property represents the actual content of the tab that gets displayed when the tab is active.
+`className` (optional string): This property allows the user to add additional CSS classes to the Sheet component. It's useful for customizing the appearance of the component beyond the basic styling provided by default. If this prop is not provided, no additional classes are added.
 
 # Example Usage
 ### page.tsx
 ```jsx
-'use client'
-
-import React, { useState } from 'react';
-import { Sheet, SheetTrigger, SheetContent } from '@/components/Sheet/Sheet';
-import PrettyCode from '@/components/PrettyCode/PrettyCode';
-
+import Button from '@/components/Button/Button';
+import Sheet from '@/components/Sheet/Sheet';
+import Input from '@/components/Input/Input';
+import Checkbox from '@/components/Checkbox/Checkbox';
+import SearchBar from '@/components/SearchBar/SearchBar';
+    
 const SheetDemo: React.FC = () => {
 
-  const reactCode = `console.log('hi')`;
-
-  return (
-      <Sheet>
-
-        <SheetTrigger value='preview'><p>Preview</p></SheetTrigger>
-        <SheetTrigger value='code'><p>Code</p></SheetTrigger>
-
-        <SheetContent value='preview'><div className='demoBox'></div></SheetContent>
-        <SheetContent value='code'><PrettyCode language='jsx' code={reactCode} /></SheetContent>
-
-      </Sheet>
-  );
-};
-
-export default SheetDemo;
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [showSheet, setShowSheet] = useState(false)
+    
+    return (
+        <>
+            <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
+            <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
+                <h3>Example Sheet</h3>
+                <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />
+                <Input title='Last Name' darkMode={isDarkMode} placeHolder='Last Name' />
+                <SearchBar
+                title='Birth Year'
+                placeholder='Select Year'
+                fullWidth={true}
+                darkMode={isDarkMode}
+                queries={years}
+                maxHeight='500px'
+                />
+                <Checkbox className='checkbox' darkMode={isDarkMode} primaryText='Accept terms and conditions' subText='Agree to our Terms of Service and Privacy Policy.' />
+                <Button handleClick={async () => setShowSheet(false)} variant='primary' text='submit' />
+            </Sheet>
+        </>
+    )
+}
 ```
 
 # Prerequisites

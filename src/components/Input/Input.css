@@ -1,3 +1,9 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 input[type="text"] {
   font-size: var(--font-size-sm);
   border: 1px solid #cccccc;

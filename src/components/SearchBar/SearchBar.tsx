@@ -7,7 +7,8 @@ type SearchBarProps = {
     fullWidth?: boolean;
     queries?: string[];
     maxHeight?: string;
-    handleSelect?: (inputValue: string) => void;
+    title?: string;
+    handleSelect?: ((inputValue: string) => void) | null;
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -15,8 +16,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
     darkMode = false,
     fullWidth = false,
     queries = [],
-    maxHeight = '100%',
-    handleSelect = (_) => { },
+    maxHeight = '200px',
+    handleSelect = null,
+    title
 }) => {
 
     const [inputValue, setInputValue] = useState('');
@@ -39,7 +41,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
         if (query !== '') {
             setDropdownOpen(false);
             setInputValue(query);
-            handleSelect(query)
+            if (handleSelect) {
+                handleSelect(query);
+            }
         }
     }, [inputRef, setDropdownOpen, setInputValue, handleSelect]);
 
@@ -113,6 +117,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     // Render SearchBar SearchBar component
     return (
         <div className={`searchBarComponent ${fullWidth && 'fullWidth'}`}>
+            {title && <p>{title}</p>}
             <input
                 ref={inputRef}
                 placeholder={placeholder}

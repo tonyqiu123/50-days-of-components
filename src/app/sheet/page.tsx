@@ -5,22 +5,79 @@ import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
 import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/Sheet/Sheet';
+import Sheet from '@/components/Sheet/Sheet';
+import Input from '@/components/Input/Input';
+import Checkbox from '@/components/Checkbox/Checkbox';
+import SearchBar from '@/components/SearchBar/SearchBar';
 
 const SheetDemo: React.FC = () => {
 
 
     const [isDarkMode, setIsDarkMode] = useState(false)
+    const [showSheet, setShowSheet] = useState(false)
 
-    const reactCode = `console.log('hi)`;
+    const reactCode = `import Button from '@/components/Button/Button';
+import Sheet from '@/components/Sheet/Sheet';
+import Input from '@/components/Input/Input';
+import Checkbox from '@/components/Checkbox/Checkbox';
+import SearchBar from '@/components/SearchBar/SearchBar';
+    
+const SheetDemo: React.FC = () => {
+
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [showSheet, setShowSheet] = useState(false)
+    
+    return (
+        <>
+            <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
+            <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
+                <h3>Example Sheet</h3>
+                <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />
+                <Input title='Last Name' darkMode={isDarkMode} placeHolder='Last Name' />
+                <SearchBar
+                title='Birth Year'
+                placeholder='Select Year'
+                fullWidth={true}
+                darkMode={isDarkMode}
+                queries={years}
+                maxHeight='500px'
+                />
+                <Checkbox className='checkbox' darkMode={isDarkMode} primaryText='Accept terms and conditions' subText='Agree to our Terms of Service and Privacy Policy.' />
+                <Button
+                    handleClick={async () => {
+                        return new Promise<void>(resolve => {
+                            try {
+                                setTimeout(() => {
+                                    setShowSheet(false);
+                                    resolve();
+                                }, 500);
+                            } catch (error) {
+                                console.error(error);
+                                throw error
+                            }
+                        });
+                    }}
+                    variant='primary'
+                    text='Save changes'
+                />
+            </Sheet>
+        </>
+    )
+}`;
+
+
+    const years = Array.from({ length: 21 }, (_, index) => 2023 - index).map(year => year.toString());
 
 
 
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <div className={`sheetDemo page ${isDarkMode && 'darkMode'}`}>
 
             <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText='A stack of content sections, referred to as tab panels, that are displayed individually, one after the other.'><p>Tabs component</p></Tooltip>
+            <Tooltip darkMode={isDarkMode} toolTipText="A sheet component is a slide-out panel that emerges from the side of the screen, providing additional content or options without leaving the current view. It's often used in applications for navigation, contextual information, or additional settings and adjustments.">
+                <p>Sheet component</p>
+            </Tooltip>
+
 
             <Tabs darkMode={isDarkMode}>
 
@@ -29,11 +86,37 @@ const SheetDemo: React.FC = () => {
 
                 <TabsContent value='preview'>
                     <div className='demoBox'>
-                        <Sheet darkMode={isDarkMode}>
-                            <SheetTrigger><Button variant='secondary' text='Open sheet' /></SheetTrigger>
-                            <SheetContent>
-                                <p>This is the content of the sheet</p>
-                            </SheetContent>
+                        <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
+                        <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
+                            <h3>Example Sheet</h3>
+                            <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />
+                            <Input title='Last Name' darkMode={isDarkMode} placeHolder='Last Name' />
+                            <SearchBar
+                                title='Birth Year'
+                                placeholder='Select Year'
+                                fullWidth={true}
+                                darkMode={isDarkMode}
+                                queries={years}
+                                maxHeight='500px'
+                            />
+                            <Checkbox className='checkbox' darkMode={isDarkMode} primaryText='Accept terms and conditions' subText='Agree to our Terms of Service and Privacy Policy.' />
+                            <Button
+                                handleClick={async () => {
+                                    return new Promise<void>(resolve => {
+                                        try {
+                                            setTimeout(() => {
+                                                setShowSheet(false);
+                                                resolve();
+                                            }, 500);
+                                        } catch (error) {
+                                            console.error(error);
+                                            throw error
+                                        }
+                                    });
+                                }}
+                                variant='primary'
+                                text='Save changes'
+                            />
                         </Sheet>
                     </div>
                 </TabsContent>

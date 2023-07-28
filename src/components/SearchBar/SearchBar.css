@@ -1,5 +1,8 @@
 .searchBarComponent {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 input[type="text"] {
@@ -17,6 +20,7 @@ input[type="text"]:focus {
 input[type="text"].darkMode {
     color: white;
     border: 1px solid #333333;
+    background-color: rgb(15, 15, 15);
 }
 
 .fullWidth {
@@ -33,7 +37,9 @@ input[type="text"].darkMode::placeholder {
 }
 
 .searchBarDropdown {
+    z-index: 2;
     width: 100%;
+    gap: 4px;
     pointer-events: none;
     overflow-y: scroll;
     top: 100%;
@@ -94,16 +100,17 @@ input[type="text"].darkMode::placeholder {
 
 /* Darkmode */
 .searchBarDropdown.darkMode {
+    background-color: rgb(10, 10, 10);
     border: 1px solid #333333;
 }
 
 .searchBarDropdown.darkMode>p:hover,
 .darkMode>.focusedQuery {
-    background-color: #292a2c;
+    background-color: #333333;
 }
 
 .searchBarDropdown.darkMode::-webkit-scrollbar-track {
-    background-color: #1f1d1d;
+    background-color: #333333;
 }
 
 .searchBarDropdown.darkMode::-webkit-scrollbar-thumb {
