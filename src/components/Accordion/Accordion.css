@@ -1,0 +1,40 @@
+.accordionProvider {
+    display: flex;
+    flex-direction: column;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(143, 146, 146);
+    padding: 16px 0;
+}
+
+.accordionTrigger {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+}
+
+.accordionTrigger>img {
+    transition: all 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.active.accordionTrigger>img {
+    transform: rotate(-180deg) scaleX(-1);
+}
+
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.active.accordionContent {
+    margin-top: 16px;
+}
+
+/* darkMode */
+.darkMode.accordion {
+    border-bottom: 1px solid rgb(163, 164, 165);
+}

@@ -120,6 +120,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
 .darkMode.page .demoBox {
@@ -140,4 +141,9 @@ a {
 /* sheet demo */
 .sheetDemo .checkbox {
   margin: 8px 0;
+}
+
+/* accordion demo */
+.accordionDemo {
+  max-width: 1500px;
 }
