@@ -11,7 +11,7 @@ July 31th / October 16th
 
 # Description 
 
-###### The Skeleton component in web development is a UI element that rotates through a series of content items when interacted with. Skeletons are typically used in software like e-commerce websites to display a variety of products in a limited space, photo galleries for showcasing a collection of images, mobile apps for onboarding screens, and homepages for highlighting multiple pieces of important content, offering a visually engaging way to compact multiple pieces of content on a single screen.
+###### The Skeleton component in web development is a design tool for improving user experience during content loading. Used extensively by sites like Facebook, LinkedIn, and YouTube, it shows a blank version of the page to give the impression that content is about to be placed, minimizing perceived load time and maintaining user engagement even on slower connections.
 
 There is a lot more to this component than you expect. Firstly, the skeleton's are positioned absolutely. This is done to allow the developer to mimic Stripe's incredible UI in their payment page, where you have a loading animation that sits over components. There is nuance to this including handling pointer-events, z-indices, and animations. This component is heavily in beta, and I do not recommend using it in your projects. Cheers.
 
