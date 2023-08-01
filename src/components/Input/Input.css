@@ -1,10 +1,21 @@
-.input {
+.inputContainer {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
 }
 
-input[type="text"] {
+.inputContainer > img {
+  position: absolute;
+  top: 50%;
+  transform: translate(12px ,-50%);
+}
+
+.input.inputWithImg {
+  padding-left: 36px;
+}
+
+.input {
   font-size: var(--font-size-sm);
   border: 1px solid #cccccc;
   border-radius: 6px;
@@ -12,24 +23,25 @@ input[type="text"] {
   min-width: 320px;
 }
 
-input[type="text"]:focus {
+.input:focus {
   outline: 1px solid #cccccc;
 }
 
-input[type="text"].fullWidth {
+.input.fullWidth {
   width: 100%;
 }
 
-input[type="text"].darkMode {
+.input.darkMode {
   color: white;
   border: 1px solid #333333;
+  background-color: rgb(15, 15, 15);
 }
 
-input[type="text"].darkMode:focus {
+.input.darkMode:focus {
   color: white;
   outline: 1px solid #333333;
 }
 
-input[type="text"].darkMode::placeholder {
+.input.darkMode::placeholder {
   color: rgb(165, 169, 177);
 }

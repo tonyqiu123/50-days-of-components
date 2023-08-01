@@ -1,0 +1,70 @@
+'use client'
+
+import React, { useEffect, useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import Button from '@/components/Button/Button';
+import Tooltip from '@/components/Tooltip/Tooltip';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { Command, CommandInput, CommandList, CommandGroup, CommandItem, CommandSeparator } from '@/components/Command/Command';
+
+const CommandDemo: React.FC = () => {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const reactCode = `<Command darkMode={isDarkMode}>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandGroup heading="Suggestions">
+      <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
+      <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
+      <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem text='Profile' imageSrc='/command/profile.svg' />
+      <CommandItem text='Billing' imageSrc='/command/card.svg' />
+      <CommandItem text='Settings' imageSrc='/command/settings.svg' />
+    </CommandGroup>
+  </CommandList>
+</Command>`;
+
+
+
+
+  return (
+    <div className={`page ${isDarkMode && 'darkMode'}`}>
+      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      <Tooltip darkMode={isDarkMode} toolTipText="A special modal that is usable by keyboard commands.">
+        <p>Command component</p>
+      </Tooltip>
+
+      <Tabs darkMode={isDarkMode}>
+        <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+        <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+        <TabsContent value='preview'>
+          <div className='demoBox'>
+            <Command darkMode={isDarkMode}>
+              <CommandInput placeholder="Type a command or search..." />
+              <CommandList>
+                <CommandGroup heading="Suggestions">
+                  <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
+                  <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
+                  <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
+                </CommandGroup>
+                <CommandSeparator />
+                <CommandGroup heading="Settings">
+                  <CommandItem text='Profile' imageSrc='/command/profile.svg' />
+                  <CommandItem text='Billing' imageSrc='/command/card.svg' />
+                  <CommandItem text='Settings' imageSrc='/command/settings.svg' />
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </div>
+        </TabsContent>
+        <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+      </Tabs>
+    </div>
+  );
+};
+
+export default CommandDemo;

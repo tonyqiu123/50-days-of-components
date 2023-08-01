@@ -15,6 +15,8 @@ const SheetDemo: React.FC = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [showSheet, setShowSheet] = useState(false)
+    const [input1, setInput1] = useState('')
+    const [input2, setInput2] = useState('')
 
     const reactCode = `import Button from '@/components/Button/Button';
 import Sheet from '@/components/Sheet/Sheet';
@@ -89,10 +91,12 @@ const SheetDemo: React.FC = () => {
                         <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
                         <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
                             <h3>Example Sheet</h3>
-                            <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />
-                            <Input title='Last Name' darkMode={isDarkMode} placeHolder='Last Name' />
+                            <p>First Name</p>
+                            <Input search={input1} setSearch={setInput1} darkMode={isDarkMode} placeHolder='First Name' />
+                            <p>Last Name</p>
+                            <Input search={input2} setSearch={setInput2} darkMode={isDarkMode} placeHolder='Last Name' />
+                            <p>Birthday</p>
                             <SearchBar
-                                title='Birth Year'
                                 placeholder='Select Year'
                                 fullWidth={true}
                                 darkMode={isDarkMode}
