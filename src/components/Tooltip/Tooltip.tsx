@@ -21,7 +21,7 @@ const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = fal
         if (invisibleRef.current) {
             setTooltipWidth(invisibleRef.current.offsetWidth);
         }
-    }, [invisibleRef.current]);
+    }, []);
 
 
     return (

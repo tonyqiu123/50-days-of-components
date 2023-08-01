@@ -1,0 +1,77 @@
+/* SKELELOAD */
+.skeletonProvider {
+    display: flex;
+    flex-direction: column;
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    gap: 40px;
+    top: 0;
+    left: 0;
+}
+.row.skeletonProvider {
+    flex-direction: row;
+}
+
+.skeleton {
+    background-color: #dddddd;
+    height: 42px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to left, rgba(15, 15, 15, 0), rgba(255, 255, 255, 0.575), rgba(22, 21, 21, 0));
+    height: 100%;
+    width: 100%;
+    animation: loading 2s infinite forwards;
+}
+
+@keyframes loading {
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.skeleExit {
+    animation: skele-exit 0.4s forwards;
+}
+
+@keyframes skele-exit {
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.contentLoaded {
+    opacity: 0;
+    animation: loadedContainer 0.5s .15s forwards;
+}
+
+@keyframes loadedContainerloadedContainer {
+    to {
+        opacity: 1;
+    }
+}
+
+/* darkMode */
+.darkMode.skeletonProvider .skeleton {
+    background-color: #2e2e2e;
+}
+
+.darkMode.skeletonProvider .skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to left, rgba(15, 15, 15, 0), rgba(133, 133, 133, 0.219), rgba(22, 21, 21, 0));
+    height: 100%;
+    width: 100%;
+    animation: loading 2s infinite forwards;
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useRef, useEffect } from 'react';
+import React, { createContext, useState, useContext, useRef, useEffect, useCallback } from 'react';
 import './Accordion.css'
 import Icon from '@/components/Icon/Icon';
 
@@ -82,11 +82,11 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ name, childr
 
     const isActive = name === activeName;
 
-    const updateHeightOnResize = () => {
+    const updateHeightOnResize = useCallback(() => {
         if (isActive) {
             setHeight(contentRef.current?.scrollHeight);
         }
-    };
+    }, [isActive]);
 
     useEffect(() => {
         window.addEventListener('resize', updateHeightOnResize);
@@ -94,7 +94,8 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ name, childr
         return () => {
             window.removeEventListener('resize', updateHeightOnResize);
         };
-    }, [isActive, updateHeightOnResize]);
+    }, [updateHeightOnResize]);
+
 
     useEffect(() => {
         setHeight(isActive ? contentRef.current?.scrollHeight : 0);

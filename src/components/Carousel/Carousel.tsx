@@ -58,13 +58,13 @@ const Carousel: React.FC<CarouselProps> = ({ children, className = '' }) => {
         <div className={`carousel ${className}`}>
             <Image onClick={handleLeftArrowClick} src='/Carousel/leftArrow.svg' alt='' width={26} height={26} />
             {childrenArray.map((child, index) => (
-                <div className={`${getClassName(index)} carouselImage`}>
+                <div key={index} className={`${getClassName(index)} carouselImage`}>
                     {child}
                 </div>
             ))}
             <div className='carouselDotContainer'>
                 {childrenArray.map((_, index) => (
-                    <div className={`${currentIndex === index && 'active'} carouselDot`}></div>
+                    <div key={index} className={`${currentIndex === index && 'active'} carouselDot`}></div>
                 ))}
             </div>
             <Image onClick={handleRightArrowClick} src='/Carousel/rightArrow.svg' alt='' width={26} height={26} />
