@@ -3,7 +3,7 @@
 August 2nd / October 16th
 
 # OutsideClick
-<a href="https://youtu.be/0yIhtC0RUVY" target="_blank">Watch live demo on youtube</a>
+<a href="https://youtu.be/FwKfbIFAN38" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/OutsideClick" target="_blank">Demo it yourself</a>
 
@@ -13,7 +13,7 @@ August 2nd / October 16th
 
 ###### The OutsideClick component allows developers to execute a function whenever a user clicks outside a component.
 
-The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentailly cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare state, add wrapper with the setState passed as prop. That's it.
+The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentially cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare a state, and add wrapper with the setState passed as a prop. That's it.
 
 # Installation 
 
