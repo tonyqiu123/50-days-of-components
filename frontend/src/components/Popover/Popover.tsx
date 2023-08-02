@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Popover.css'
+import OutsideClick from '@/components/OutsideClick/OutsideClick';
 
 
 type PopoverProps = {
     children: React.ReactElement[];
-    darkMode?: boolean
 };
 
-const Popover: React.FC<PopoverProps> = ({ children, darkMode = false }) => {
+const Popover: React.FC<PopoverProps> = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const trigger = React.cloneElement(children[0], {
@@ -22,10 +22,12 @@ const Popover: React.FC<PopoverProps> = ({ children, darkMode = false }) => {
         : null;
 
     return (
-        <div className={`popover ${darkMode && 'darkMode'}`}>
-            {trigger}
-            {content}
-        </div>
+        <OutsideClick onClickOutside={() => setIsOpen(false)}>
+            <div className='popover'>
+                {trigger}
+                {content}
+            </div>
+        </OutsideClick>
     );
 };
 

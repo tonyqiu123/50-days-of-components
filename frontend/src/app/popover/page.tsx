@@ -28,7 +28,7 @@ const PopoverDemo: React.FC = () => {
                     {/* Second child is the popover content */}
                     <div className='column'>
                         <h4>This is the content of the popover.</h4>
-                        <Image style={{ marginTop: '16px' }} src='/Popover/losangeles.jpg' alt='los angeles' width={400} height={200} />
+                        <Image style={{ marginTop: '16px' }} src='/Popover/losangeles.webp' alt='los angeles' width={400} height={200} />
                     </div>
                 </Popover>
 

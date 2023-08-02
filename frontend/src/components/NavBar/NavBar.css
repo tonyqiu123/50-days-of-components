@@ -1,0 +1,31 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    gap: 24px;
+}
+
+.navbarLeft {
+    font-weight: 500;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+}
+.navbarRight {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+}
+
+/* darkMode */
+.darkMode.navbarLeft > img {
+    filter: invert(1)
+}
+.darkMode.navbar {
+    border-bottom: 1px solid #4B5563;
+}

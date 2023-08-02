@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './SearchBar.css';
 
 type SearchBarProps = {
+    className?: string;
     placeholder?: string;
     darkMode?: boolean;
     fullWidth?: boolean;
@@ -12,6 +13,7 @@ type SearchBarProps = {
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({
+    className = '',
     placeholder = 'Search',
     darkMode = false,
     fullWidth = false,
@@ -116,12 +118,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
     // Render SearchBar SearchBar component
     return (
-        <div className={`searchBarComponent ${fullWidth && 'fullWidth'}`}>
+        <div className={`searchBarComponent ${fullWidth && 'fullWidth'} ${className}`}>
             {title && <p>{title}</p>}
             <input
                 ref={inputRef}
                 placeholder={placeholder}
-                className={`${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`}
+                className={` ${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`}
                 type="text"
                 onKeyDown={handleKeyPress}
                 onChange={(e) => {
