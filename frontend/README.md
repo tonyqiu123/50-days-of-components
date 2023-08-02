@@ -1,83 +1,39 @@
-# Day 25/100
+# Day 26/100
 
-August 1st / October 16th
+August 2nd / October 16th
 
-# Command
-<a href="https://youtu.be/0yIhtC0RUVY" target="_blank">Watch live demo on youtube</a>
+# OutsideClick
+<a href="https://youtu.be/FwKfbIFAN38" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Command" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/OutsideClick" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Command" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136028712056393840/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/OutsideClick" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136348631461527704/image.png"/></a>  
 
 # Description 
 
-###### The command web dev component is a searchable modal interface, optimized for user accessibility and functionality, allowing categorized queries to be input through keyboard commands. This unique blend of features enhances user experience by making information readily available and easily navigable, all through a simple keypress.
+###### The OutsideClick component allows developers to execute a function whenever a user clicks outside a component.
 
-The command component is a dropdown that is navigatable with keyboard commands. My implementation is a clone of ShadCn's version, except I opted to not use the cmdk library. Because of this, I couldn't for the life of me figure out how to implement several features due to React's limitations with parsing through children. As such, I do not recommend using this component in your projects. Have fun.
+The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentially cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare a state, and add wrapper with the setState passed as a prop. That's it.
 
 # Installation 
 
-To use the Command component in your project, follow these steps:
+To use the OutsideClick component in your project, follow these steps:
 
-1. Create a new folder called 'Command' in your project's components directory.
-2. Copy the `Command.tsx` and `Command.css` files into the newly created 'Command' folder.
+1. Create a new folder called 'OutsideClick' in your project's components directory.
+2. Copy the `OutsideClick.tsx` file into the newly created 'OutsideClick' folder.
 
 # Props 
-### Command:
-`classname` (optional string): This property enables the user to add additional CSS classes to the Command component.
+### OutsideClick:
+`children` (required ReactElement): Only 1 child component allowed.
 
-`children` (required ReactNode): This represents the child components or elements that the Command component is wrapping around.
-
-`darkMode` (optional boolean): This property is used to determine whether the Command component should be displayed in dark mode. If set to true, the Command will be rendered in dark mode.
-
-`handleSelect` (optional function): This function is called when a command is selected.
-
-### CommandInput:
-`classname` (optional string): This property enables the user to append additional CSS classes to the CommandInput component.
-
-`placeholder` (required string): This property specifies a short hint that describes the expected value of an input field. It gets displayed in the input field before the user enters a value.
-
-### CommandList:
-`classname` (optional string): This property allows the user to append additional CSS classes to the CommandList component.
-
-`children` (required ReactNode): This represents the child components or elements that the CommandList component is wrapping around.
-
-### CommandGroup:
-`classname` (optional string): This property allows the user to add additional CSS classes to the CommandGroup component.
-
-`heading` (required string): This property sets the heading of the CommandGroup component.
-
-`children` (required ReactNode): This represents the child components or elements that the CommandGroup component is wrapping around.
-
-### CommandItem:
-`classname` (optional string): This property allows the user to add additional CSS classes to the CommandItem component.
-
-`text` (required string): This property sets the text of the CommandItem component.
-
-`imageSrc` (optional string): This property sets the source URL of the image in the CommandItem component.
-
-### CommandSeparator:
-`classname` (optional string): This property allows the user to add additional CSS classes to the CommandSeparator component.
+`handleClickOutside` (required void function): Called function when a mousedown event is detected outside the children. If you are state toggling, please please please make sure you are not doing something along the following:  `onClickOutside={() => setShowModal(!showModal)}`. Instead, refer to my implementation below.
 
 # Example Usage
 ### page.tsx
 ```jsx
-<Command darkMode={isDarkMode}>
-  <CommandInput placeholder="Type a command or search..." />
-  <CommandList>
-    <CommandGroup heading="Suggestions">
-      <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
-      <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
-      <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
-    </CommandGroup>
-    <CommandSeparator />
-    <CommandGroup heading="Settings">
-      <CommandItem text='Profile' imageSrc='/command/profile.svg' />
-      <CommandItem text='Billing' imageSrc='/command/card.svg' />
-      <CommandItem text='Settings' imageSrc='/command/settings.svg' />
-    </CommandGroup>
-  </CommandList>
-</Command>
+<OutsideClick onClickOutside={() => setShowModal(showModal => !showModal)}>
+    {showModal && <SomeModal>text</SomeModal>}
+</OutsideClick>
 ```
 
 # Prerequisites
