@@ -37,7 +37,7 @@ button.secondary:hover {
 }
 
 button.secondary>p {
-    color: black;
+    color: black !important;
 }
 
 button.secondary>img {
