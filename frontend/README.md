@@ -1,42 +1,50 @@
-# Day 26/100
+# Day 27/100
 
-August 2nd / October 16th
+August 3rd / October 16th
 
-# OutsideClick
-<a href="https://youtu.be/FwKfbIFAN38" target="_blank">Watch live demo on youtube</a>
+# ShowMore
+<a href="https://youtu.be/UK7svbfuLI0" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/OutsideClick" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/ShowMore" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/OutsideClick" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136348631461527704/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/ShowMore" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136780128052060320/image.png"/></a>  
 
-# Description 
+## Description 
 
-###### The OutsideClick component allows developers to execute a function whenever a user clicks outside a component.
+###### The ShowMore gradient component is a visually appealing element that acts as a clickable label, prompting users to reveal more content. When clicked, it expands the container to display the full content, providing a user-friendly "Show more" functionality.
 
-The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentially cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare a state, and add wrapper with the setState passed as a prop. That's it.
+Another simple component meant to power custom components. The ShowMore.tsx component enables you to implement a 'Show more' effect found in Medium, Youtube, Netflix, and Reddit. Enjoy.
 
-# Installation 
+## Installation 
 
-To use the OutsideClick component in your project, follow these steps:
+To use the ShowMore component in your project, follow these steps:
 
-1. Create a new folder called 'OutsideClick' in your project's components directory.
-2. Copy the `OutsideClick.tsx` file into the newly created 'OutsideClick' folder.
+1. Create a new folder called 'ShowMore' in your project's components directory.
+2. Copy the `ShowMore.tsx` and `ShowMore.css` file into the newly created 'ShowMore' folder.
 
 # Props 
-### OutsideClick:
+### ShowMore:
 `children` (required ReactElement): Only 1 child component allowed.
 
-`handleClickOutside` (required void function): Called function when a mousedown event is detected outside the children. If you are state toggling, please please please make sure you are not doing something along the following:  `onClickOutside={() => setShowModal(!showModal)}`. Instead, refer to my implementation below.
+`height` (optional number): Represents the height (in pixels) of the ShowMore container when it is collapsed. By default 200 pixels.
 
-# Example Usage
+`text` (optional string): Represents the text to be displayed. By default will be "Show more".
+
+`darkMode` (optional boolean): This prop is optional and represents whether the ShowMore component should be displayed in dark mode or not.  
+
+## Example Usage
 ### page.tsx
 ```jsx
-<OutsideClick onClickOutside={() => setShowModal(showModal => !showModal)}>
-    {showModal && <SomeModal>text</SomeModal>}
-</OutsideClick>
+<ShowMore height={400} darkMode={isDarkMode}>
+    <Image src='/ShowMore/california.jpg' alt='' height={750} width={750} />
+</ShowMore>
+
+<ShowMore height={300} darkMode={isDarkMode}>
+    <Image src='/ShowMore/mcBuilding.png' alt='' height={550} width={700} />
+</ShowMore>
 ```
 
-# Prerequisites
+## Prerequisites
 This component requires Node v14 or later to work correctly with NextJS framework version ^13
 The following dependencies were used for this component:
 1. "@types/node": "20.4.1",
