@@ -173,3 +173,8 @@ a {
 .drawerDemo {
   height: 1000px
 }
+
+/* expandable demo */
+.expandableDemo {
+  max-width: 1000px;
+}
