@@ -41,6 +41,7 @@
     display: flex;
     gap: 8px;
 }
+
 .carouselDot {
     width: 5px;
     height: 5px;
@@ -48,6 +49,7 @@
     background-color: rgba(255, 255, 255, 0.459);
     transition: all 200ms cubic-bezier(.2, .69, .56, .76);
 }
+
 .active.carouselDot {
     width: 24px;
     background-color: rgba(255, 255, 255, 0.959) !important;
@@ -64,19 +66,19 @@
 }
 
 .inViewToLeft {
-    animation: inViewToLeft 500ms cubic-bezier(0, .33, .27, .99) forwards;
+    animation: inViewToLeft 500ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
 .inViewToRight {
-    animation: inViewToRight 500ms cubic-bezier(0, .33, .27, .99) forwards;
+    animation: inViewToRight 500ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
 .rightToInView {
-    animation: rightToInView 500ms cubic-bezier(0, .33, .27, .99) forwards;
+    animation: rightToInView 500ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
 .leftToInView {
-    animation: leftToInView 500ms cubic-bezier(0, .33, .27, .99) forwards;
+    animation: leftToInView 500ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
 
 @keyframes inViewToLeft {
