@@ -1,4 +1,4 @@
-import React, { cloneElement, useRef, ReactElement, useState, useEffect } from 'react';
+import React, { cloneElement, useRef, ReactElement, useState, useEffect, useCallback } from 'react';
 import './Swipeable.css'
 
 
@@ -27,7 +27,7 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
   const modalRef = useRef<any>()
 
 
-  const handleMouseDown = (event: any) => {
+  const handleMouseDown = useCallback((event: any) => {
     const target = event.target;
     const interactiveElements = ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'];
     if (interactiveElements.includes(target.tagName) || target.isContentEditable) {
@@ -43,10 +43,10 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
     setTransitionStyle('');
-  };
+  }, [closeDirection]);
 
 
-  const handleMouseMove = (event: any) => {
+  const handleMouseMove = useCallback((event: any) => {
     if (dragging) {
       switch (closeDirection) {
         case 'up':
@@ -65,9 +65,9 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
         setTransform(`translate${closeDirection === 'up' || closeDirection === 'down' ? 'Y' : 'X'}(${closeDirection === 'up' || closeDirection === 'left' ? '-' : ''}${dragTravel}px)`)
       }
     }
-  };
+  }, [closeDirection]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     document.removeEventListener('mousemove', handleMouseMove)
     document.removeEventListener('mouseup', handleMouseUp)
     setTransitionStyle(transition)
@@ -79,7 +79,7 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
       setTransform('')
     }
     dragTravel = 0
-  };
+  }, [closeTravel, transformToHide]);
 
 
   useEffect(() => {
