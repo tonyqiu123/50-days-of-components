@@ -56,8 +56,8 @@ const DrawerDemo: React.FC = () => {
         <>
             <Backdrop showBackdrop={drawerVisible} setShowBackdrop={setDrawerVisible}/> 
             <Button variant='primary' text='Show drawer' handleClick={async () => setDrawerVisible(true)} />
-            <Swipeable closeTravel={400} closeDirection='down' visible={drawerVisible} setVisible={setDrawerVisible}>
-                <h1 style={{ height: '1000px', border: '1px solid black', background: 'white' }}>Tony Qiu</h1>
+            <Swipeable closeDirection='down' visible={drawerVisible} setVisible={setDrawerVisible}>
+                <h1>Drawer component</h1>
             </Swipeable>
         </>
     )

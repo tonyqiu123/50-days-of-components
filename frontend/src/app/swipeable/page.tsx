@@ -18,54 +18,29 @@ const SwipeableDemo: React.FC = () => {
     const [input1, setInput1] = useState('')
     const [input2, setInput2] = useState('')
 
-    const reactCode = `import Button from '@/components/Button/Button';
-import Sheet from '@/components/Sheet/Sheet';
-import Input from '@/components/Input/Input';
-import Checkbox from '@/components/Checkbox/Checkbox';
-import SearchBar from '@/components/SearchBar/SearchBar';
-    
-const SheetDemo: React.FC = () => {
+    const reactCode = `'use client'
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
-    const [showSheet, setShowSheet] = useState(false)
-    
+import React, { useState } from 'react';
+import Button from '@/components/Button/Button';
+import Swipeable from '@/components/Swipeable/Swipeable';
+import Backdrop from '@/components/Backdrop/Backdrop';
+
+const DrawerDemo: React.FC = () => {
+
+    const [drawerVisible, setDrawerVisible] = useState(false)
+
     return (
         <>
-            <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
-            <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
-                <h3>Example Sheet</h3>
-                <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />
-                <Input title='Last Name' darkMode={isDarkMode} placeHolder='Last Name' />
-                <SearchBar
-                title='Birth Year'
-                placeholder='Select Year'
-                fullWidth={true}
-                darkMode={isDarkMode}
-                queries={years}
-                maxHeight='500px'
-                />
-                <Checkbox className='checkbox' darkMode={isDarkMode} primaryText='Accept terms and conditions' subText='Agree to our Terms of Service and Privacy Policy.' />
-                <Button
-                    handleClick={async () => {
-                        return new Promise<void>(resolve => {
-                            try {
-                                setTimeout(() => {
-                                    setShowSheet(false);
-                                    resolve();
-                                }, 500);
-                            } catch (error) {
-                                console.error(error);
-                                throw error
-                            }
-                        });
-                    }}
-                    variant='primary'
-                    text='Save changes'
-                />
-            </Sheet>
+            <Backdrop showBackdrop={drawerVisible} setShowBackdrop={setDrawerVisible}/> 
+            <Button variant='primary' text='Show drawer' handleClick={async () => setDrawerVisible(true)} />
+            <Swipeable closeDirection='down' visible={drawerVisible} setVisible={setDrawerVisible}>
+                <h1>Drawer component</h1>
+            </Swipeable>
         </>
     )
-}`;
+};
+
+export default DrawerDemo;`;
 
 
     const years = Array.from({ length: 21 }, (_, index) => 2023 - index).map(year => year.toString());

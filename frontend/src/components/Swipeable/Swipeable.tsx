@@ -26,16 +26,25 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
   let dragTravel = 0
   const modalRef = useRef<any>()
 
-  const handleMouseDown = (event: any) => {
-    event.preventDefault();
-    dragging = true
-    mouseDownClientY = event.clientY
-    mouseDownClientX = event.clientX
 
-    document.addEventListener('mousemove', handleMouseMove)
-    document.addEventListener('mouseup', handleMouseUp)
-    setTransitionStyle('')
+  const handleMouseDown = (event: any) => {
+    const target = event.target;
+    const interactiveElements = ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'];
+    if (interactiveElements.includes(target.tagName) || target.isContentEditable) {
+      // Allow interactive elements and contenteditable elements to receive focus
+      return;
+    }
+
+    event.preventDefault();
+    dragging = true;
+    mouseDownClientY = event.clientY;
+    mouseDownClientX = event.clientX;
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    setTransitionStyle('');
   };
+
 
   const handleMouseMove = (event: any) => {
     if (dragging) {

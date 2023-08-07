@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
-import './Drawer.css';
-import Swipeable from '../Swipeable/Swipeable';
+import React, { ReactNode } from "react";
+import './Drawer.css'
+import Backdrop from "@/components/Backdrop/Backdrop";
+import Swipeable from "@/components/Swipeable/Swipeable";
 
 interface DrawerProps {
-  visible: boolean;
-  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  children: React.ReactNode;
+  children: ReactNode;
+  darkMode?: boolean;
+  showDrawer: boolean
+  setShowDrawer: React.Dispatch<React.SetStateAction<boolean>>;
   className?: string
 }
 
-const Drawer: React.FC<DrawerProps> = ({ children, className, visible, setVisible }) => {
-
-  const [showDrawer, setShowDrawer] = useState(false)
+const Drawer: React.FC<DrawerProps> = ({ children, darkMode = false, showDrawer = false, setShowDrawer, className = '' }) => {
 
   return (
-    <Swipeable closeDirection='down' visible={visible} setVisible={setVisible}>
-      {children}
-    </Swipeable>
+    <div className={`drawer ${darkMode && "darkMode"} ${className}`}>
+      <Backdrop darkMode={darkMode} showBackdrop={showDrawer} setShowBackdrop={setShowDrawer} />
+      <Swipeable className={`drawerContent ${className}`} closeDirection="down" visible={showDrawer} setVisible={setShowDrawer}>
+        {children}
+      </Swipeable>
+    </div>
   );
 };
 
-export default Drawer;
+export default Drawer
