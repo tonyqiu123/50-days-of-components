@@ -98,7 +98,7 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
         modal.removeEventListener('mousedown', handleMouseDown)
       }
     }
-  }, [modal, visible]);
+  }, [modal, visible, handleMouseDown, handleMouseMove, handleMouseUp, transformToHide]);
 
 
   return (
