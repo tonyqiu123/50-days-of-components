@@ -39,7 +39,9 @@ const DrawerDemo: React.FC = () => {
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
                         <button onClick={() => setDrawerVisible(true)}>Show Drawer</button>
-                        <Drawer visible={drawerVisible} setVisible={setDrawerVisible} />
+                        <Drawer visible={drawerVisible} setVisible={setDrawerVisible}>
+                            <p>Hi</p>
+                        </Drawer>
                     </div>
                 </TabsContent>
                 <TabsContent value='code'>

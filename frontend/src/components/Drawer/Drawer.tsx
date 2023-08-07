@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Drawer.css';
+import Swipeable from '../Swipeable/Swipeable';
 
 interface DrawerProps {
-  direction?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+  visible: boolean;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
-  darkMode?: boolean;
+  className?: string
 }
 
-const Drawer: React.FC<DrawerProps> = ({ direction = 'top-center', children, darkMode = false }) => {
+const Drawer: React.FC<DrawerProps> = ({ children, className, visible, setVisible }) => {
+
+  const [showDrawer, setShowDrawer] = useState(false)
+
   return (
-    <div>
-      <div className={`Drawer ${direction}`}></div>
+    <Swipeable closeDirection='down' visible={visible} setVisible={setVisible}>
       {children}
-    </div>
+    </Swipeable>
   );
 };
 

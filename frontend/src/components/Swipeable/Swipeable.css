@@ -1,0 +1,28 @@
+.up {
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.down {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.left {
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.right {
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.swipeable {
+    position: fixed;
+    z-index: 1001;
+}

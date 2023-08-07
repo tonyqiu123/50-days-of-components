@@ -17,7 +17,7 @@ const Sheet: React.FC<SheetProps> = ({ children, darkMode = false, showSheet = f
     return (
         <div className={`sheet ${darkMode && "darkMode"} ${className}`}>
             <Backdrop darkMode={darkMode} showBackdrop={showSheet} setShowBackdrop={setShowSheet} />
-            <Swipeable closeDirection="left" visible={showSheet} setVisible={setShowSheet}>
+            <Swipeable closeDirection="right" visible={showSheet} setVisible={setShowSheet}>
                 <div className={`sheetContent ${showSheet && "active"}`}>
                     <Icon handleClick={() => setShowSheet(false)} width={12} height={12} image='/Sheet/closeIcon.svg' invert={darkMode} />
                     {children}
