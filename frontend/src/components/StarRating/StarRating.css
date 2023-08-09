@@ -1,0 +1,17 @@
+.rating-star {
+  display: inline-block;
+}
+
+.star {
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star:hover {
+  color: gold;
+}
+
+.filled {
+  color: gold !important;
+}
