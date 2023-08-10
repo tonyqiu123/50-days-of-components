@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14  # Change this to your preferred Node.js version
+          node-version: 18  # Change this to your preferred Node.js version
 
       - name: Navigate to Subfolder
         run: cd frontend  # Replace 'frontend' with your subfolder name
