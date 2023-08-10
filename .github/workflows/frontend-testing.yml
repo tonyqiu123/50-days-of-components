@@ -10,14 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Check out repository code
         uses: actions/checkout@v2
-
-      - name: Navigate to Subfolder
-        run: cd ./frontend # Replace 'frontend' with your subfolder name
-
+    
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+    
       - name: Install dependencies
         run: npm install
-
-      - name: Run Jest Tests
+        working-directory: ./frontend
+    
+      - name: Run tests
         run: npm test
+        working-directory: ./frontend
