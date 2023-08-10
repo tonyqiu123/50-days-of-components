@@ -1,47 +1,41 @@
-# Day 27/100
+# Day 34/100
 
-August 3rd / October 16th
+August 10th / October 16th
 
-# ShowMore
-<a href="https://youtu.be/UK7svbfuLI0" target="_blank">Watch live demo on youtube</a>
+# Pagination
+<a href="https://youtu.be/FK7lXagTPp4" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/ShowMore" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/ShowMore" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136780128052060320/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
 
 ## Description 
 
-###### The ShowMore gradient component is a visually appealing element that acts as a clickable label, prompting users to reveal more content. When clicked, it expands the container to display the full content, providing a user-friendly "Show more" functionality.
+###### The pagination component in web development facilitates the organization and navigation of large sets of content by dividing it into manageable pages, enhancing user experience. It typically includes controls like "Previous" and "Next" buttons, enabling users to navigate through the content sequentially.
 
-Another simple component meant to power custom components. The ShowMore.tsx component enables you to implement a 'Show more' effect found in Medium, Youtube, Netflix, and Reddit. Enjoy.
+Show the currently active page and enable navigation among multiple pages.
 
-## Installation 
+# Installation 
 
-To use the ShowMore component in your project, follow these steps:
+To use the Pagination component in your project, follow these steps:
 
-1. Create a new folder called 'ShowMore' in your project's components directory.
-2. Copy the `ShowMore.tsx` and `ShowMore.css` file into the newly created 'ShowMore' folder.
+1. Create a new folder called 'Pagination' in your project's components directory.
+2. Copy the `Pagination.tsx` and `Pagination.css` file into the newly created 'Pagination' folder.
 
 # Props 
-### ShowMore:
-`children` (required ReactElement): Only 1 child component allowed.
+### Pagination:
+`totalQueries` (required number): Specifies the overall count of queries available for pagination.
 
-`height` (optional number): Represents the height (in pixels) of the ShowMore container when it is collapsed. By default 200 pixels.
+`queriesPerPage` (required number): Sets the quantity of queries displayed on each pagination page.
 
-`text` (optional string): Represents the text to be displayed. By default will be "Show more".
+`darkMode` (optional boolean): Enables the pagination component to adapt to a dark mode theme if set to true.
 
-`darkMode` (optional boolean): This prop is optional and represents whether the ShowMore component should be displayed in dark mode or not.  
+`handleClick` (optional function): Provides an optional callback function to handle click events within the pagination component, allowing interaction with specific page indices and query ranges.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-<ShowMore height={400} darkMode={isDarkMode}>
-    <Image src='/ShowMore/california.jpg' alt='' height={750} width={750} />
-</ShowMore>
-
-<ShowMore height={300} darkMode={isDarkMode}>
-    <Image src='/ShowMore/mcBuilding.png' alt='' height={550} width={700} />
-</ShowMore>
+<Pagination handleClick={(index, start, end, numberOfQueries) => exampleFunction(index, numberOfQueries)} totalQueries={25} queriesPerPage={5} />
 ```
 
 ## Prerequisites
@@ -54,3 +48,4 @@ The following dependencies were used for this component:
 5. "react": "18.2.0",
 6. "react-dom": "18.2.0",
 7. "typescript": "5.1.6"
+

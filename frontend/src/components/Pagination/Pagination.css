@@ -1,0 +1,45 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination * {
+    user-select: none;
+}
+
+.pagination > * {
+    width: 24px;
+}
+
+.indicator {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;  
+    line-height: 32px;  
+    border-radius: 4px;
+    transition: all 200ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+.indicator:hover {
+    background-color: #E5E7EB;
+}
+
+.selected {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* darkMode */
+.darkMode.pagination .selected {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.darkMode.pagination .indicator:hover {
+    background-color: rgb(66, 66, 66)
+}

@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './PrettyCode.css'
 
-interface PrettyCodeProps {
+interface PrettyCodeProps extends React.HTMLProps<HTMLDivElement> {
   code: string;
   darkMode?: boolean;
   language: string;
@@ -11,7 +11,7 @@ interface PrettyCodeProps {
   className?: string;
 }
 
-const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = true, className }) => {
+const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = true, className, ...props }) => {
 
   const [copied, setCopied] = useState('Copy code 📋');
 
@@ -31,7 +31,7 @@ const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, languag
   };
 
   return (
-    <div className={`prettycodeContainer ${darkMode && 'darkMode'} ${className}`}>
+    <div {...props} className={`prettycodeContainer ${darkMode && 'darkMode'} ${className}`}>
       <div className='prettycodeHeader'>
         {language}
         {copy && <p onClick={handleCopy} style={{ cursor: 'pointer' }}>{copied}</p>}
