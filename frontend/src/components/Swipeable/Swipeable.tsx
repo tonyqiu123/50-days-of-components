@@ -1,18 +1,17 @@
-import React, { cloneElement, useRef, ReactElement, useState, useEffect, useCallback } from 'react';
+import React, { cloneElement, useRef, ReactElement, useState, useEffect, useCallback, HTMLAttributes } from 'react';
 import './Swipeable.css'
 
 
-interface SwipeableProps {
+type SwipeableProps = {
   visible: boolean;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   closeDirection?: 'up' | 'down' | 'left' | 'right';
   closeTravel?: number;
   children: React.ReactNode;
   transition?: string;
-  className?: string;
-}
+} & HTMLAttributes<HTMLElement>;
 
-const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisible, closeDirection = 'right', closeTravel = 150, children, transition = 'transform 500ms cubic-bezier(0.32, 0.72, 0, 1)' }) => {
+const Swipeable: React.FC<SwipeableProps> = ({ visible, setVisible, closeDirection = 'right', closeTravel = 150, children, transition = 'transform 500ms cubic-bezier(0.32, 0.72, 0, 1)', ...props }) => {
 
   let transformToHide = `translate${closeDirection === 'up' || closeDirection === 'down' ? 'Y' : 'X'}(${closeDirection === 'up' || closeDirection === 'left' ? '-' : ''}100%)`
 
@@ -90,6 +89,7 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
       } else {
         setTransform(transformToHide)
       }
+      console.log(transition)
     }
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
@@ -102,7 +102,7 @@ const Swipeable: React.FC<SwipeableProps> = ({ className = '', visible, setVisib
 
 
   return (
-    <div className={`swipeable ${className} ${closeDirection}`} ref={modalRef} onMouseDown={handleMouseDown} style={{ position: 'fixed', transition: `${transitionStyle}`, transform: `${transform}` }} >
+    <div {...props} className={`swipeable ${props.className ? props.className : ''}  ${closeDirection}`} ref={modalRef} onMouseDown={handleMouseDown} style={{ position: 'fixed', transition: `${transitionStyle}`, transform: `${transform}` }} >
       {children}
     </div>
   );

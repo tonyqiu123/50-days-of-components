@@ -70,7 +70,7 @@ export default function SearchBarDemo() {
     <div className={`page ${isDarkMode && 'darkMode'}`}>
 
       <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Button variant='secondary' text={isFullWidth ? 'Untoggle full width' : 'Toggle full width'} handleClick={async () => setIsFullWidth(!isFullWidth)} />
+      <Button variant='secondary' darkMode={isDarkMode} text={isFullWidth ? 'Untoggle full width' : 'Toggle full width'} handleClick={async () => setIsFullWidth(!isFullWidth)} />
       <Tooltip darkMode={isDarkMode} toolTipText='A versatile search bar allowing users to efficiently search through an array of items for quick access and retrieval.'>
         <p>SearchBar Component</p>
       </Tooltip>

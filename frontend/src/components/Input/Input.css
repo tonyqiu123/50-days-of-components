@@ -16,15 +16,14 @@
 }
 
 .input {
-  font-size: var(--font-size-sm);
-  border: 1px solid #cccccc;
-  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #d4d4d4;
   padding: 8px 12px;
   min-width: 320px;
 }
 
 .input:focus {
-  outline: 1px solid #cccccc;
+  outline: 1px solid #d4d4d4;
 }
 
 .input.fullWidth {
@@ -33,15 +32,15 @@
 
 .input.darkMode {
   color: white;
-  border: 1px solid #333333;
-  background-color: rgb(15, 15, 15);
+  border: 1px solid #313131;
+  background-color: rgb(0, 0, 0);
 }
 
 .input.darkMode:focus {
   color: white;
-  outline: 1px solid #333333;
+  outline: 1px solid #313131;
 }
 
 .input.darkMode::placeholder {
-  color: rgb(165, 169, 177);
+  color: #A0A0A0;
 }

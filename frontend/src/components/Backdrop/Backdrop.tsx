@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useState } from 'react';
 import './Backdrop.css'
 
 
-interface BackdropProps {
+type BackdropProps = {
     setShowBackdrop: React.Dispatch<React.SetStateAction<boolean>>;
     showBackdrop: boolean
     darkMode?: boolean
-}
+} & HTMLAttributes<HTMLElement>
 
-const Backdrop: React.FC<BackdropProps> = ({ setShowBackdrop, showBackdrop, darkMode = false }) => {
+const Backdrop: React.FC<BackdropProps> = ({ setShowBackdrop, showBackdrop, darkMode = false, ...props }) => {
 
     return (
-        <div onClick={() => setShowBackdrop(false)} className={`${darkMode && 'darkMode'} backdrop ${showBackdrop ? 'showBackdrop' : ''}`}>
+        <div {...props} onClick={() => setShowBackdrop(false)} className={` ${props.className ? props.className : ''} ${darkMode && 'darkMode'} backdrop ${showBackdrop ? 'showBackdrop' : ''}`}>
         </div>
     );
 };

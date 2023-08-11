@@ -20,7 +20,7 @@ interface PrettyCodeProps {
   code: string;
   darkMode?: boolean
   language: string
-  copy?: boolean
+  showTab?: boolean
 }
 
 const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = false }) => {
@@ -61,12 +61,12 @@ export default PrettyCode;`;
   return (
     <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-      <Button variant='secondary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Button variant='secondary' text={copyProp ? 'Untoggle copy prop' : 'Toggle copy prop'} handleClick={async () => setCopyProp(!copyProp)} />
+      <Button variant='secondary' darkMode={isDarkMode} text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      <Button variant='secondary' darkMode={isDarkMode} text={copyProp ? 'Untoggle copy prop' : 'Toggle copy prop'} handleClick={async () => setCopyProp(!copyProp)} />
       <Tooltip darkMode={isDarkMode} toolTipText='Display code on the browser with appropriate colouring.'><p>PrettyCode component</p></Tooltip>
       <div className='demoBox'>
 
-        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} copy={copyProp} darkMode={isDarkMode} />
+        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} showTab={copyProp} darkMode={isDarkMode} />
 
       </div>
     </div>

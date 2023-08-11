@@ -1,9 +1,9 @@
-import React, { ReactNode, createContext, useContext, useState, Dispatch, SetStateAction, useEffect } from 'react';
+import React, { ReactNode, createContext, useContext, useState, Dispatch, SetStateAction, useEffect, HTMLAttributes } from 'react';
 import Input from '@/components/Input/Input';
 import './Command.css'
 import Image from 'next/image';
 
-interface CommandContextType {
+type CommandContextType = {
     search: string;
     setSearch: Dispatch<SetStateAction<string>>;
     darkMode: boolean;
@@ -15,20 +15,19 @@ const CommandContext = createContext<CommandContextType>({ search: '', setSearch
 export const useCommand = () => useContext(CommandContext);
 
 // Command
-interface CommandProps {
-    classname?: string;
+type CommandProps = {
     children: ReactNode;
     darkMode?: boolean;
     handleSelect?: ((inputValue: string) => void);
-}
+} & HTMLAttributes<HTMLElement>
 
-const Command: React.FC<CommandProps> = ({ classname = '', children, darkMode = false, handleSelect = () => { } }) => {
+const Command: React.FC<CommandProps> = ({ children, darkMode = false, handleSelect = () => { }, ...props }) => {
 
     const [search, setSearch] = useState('');
 
     return (
         <CommandContext.Provider value={{ search, setSearch, darkMode, handleSelect }} >
-            <div className={`command ${classname} ${darkMode && 'darkMode'}`}>
+            <div {...props} className={`command ${props.className ? props.className : ''}  ${darkMode && 'darkMode'}`}>
                 {children}
             </div>
         </CommandContext.Provider>
@@ -36,42 +35,39 @@ const Command: React.FC<CommandProps> = ({ classname = '', children, darkMode = 
 };
 
 // CommandInput
-interface CommandInputProps {
-    classname?: string;
+type CommandInputProps = {
     placeholder: string;
-}
+} & HTMLAttributes<HTMLElement>
 
-const CommandInput: React.FC<CommandInputProps> = ({ classname, placeholder }) => {
+const CommandInput: React.FC<CommandInputProps> = ({ placeholder, ...props }) => {
 
     const { darkMode, search, setSearch } = useCommand();
 
-    return <Input search={search} setSearch={setSearch} darkMode={darkMode} iconSrc='/Command/search.svg' placeHolder={placeholder} className={`commandInput ${classname} ${darkMode && 'darkMode'}`} />
+    return <Input {...props} search={search} setSearch={setSearch} darkMode={darkMode} iconSrc='/Command/search.svg' placeHolder={placeholder} className={`commandInput ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`} />
 }
 
 // CommandList
-interface CommandListProps {
-    classname?: string;
+type CommandListProps = {
     children: ReactNode;
-}
+} & HTMLAttributes<HTMLElement>
 
-const CommandList: React.FC<CommandListProps> = ({ classname, children }) => {
+const CommandList: React.FC<CommandListProps> = ({ children, ...props }) => {
     const { darkMode } = useCommand();
-    return <div className={`commandList ${classname} ${darkMode && 'darkMode'}`}>{children}</div>;
+    return <div {...props} className={`commandList ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`}>{children}</div>;
 }
 
 
 // CommandGroup
 type CommandGroupProps = {
-    classname?: string;
     heading: string;
     children: React.ReactNode;
-};
+} & HTMLAttributes<HTMLElement>
 
-const CommandGroup: React.FC<CommandGroupProps> = ({ classname, heading, children }) => {
+const CommandGroup: React.FC<CommandGroupProps> = ({ heading, children, ...props }) => {
 
     const { darkMode } = useCommand();
     return (
-        <div className={`commandGroup ${classname} ${darkMode && 'darkMode'}`}>
+        <div {...props} className={`commandGroup ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`}>
             <h3>{heading}</h3>
             {children}
         </div>
@@ -80,20 +76,19 @@ const CommandGroup: React.FC<CommandGroupProps> = ({ classname, heading, childre
 
 
 // CommandItem
-interface CommandItemProps {
-    classname?: string;
+type CommandItemProps = {
     text: string;
     imageSrc?: string;
-}
+} & HTMLAttributes<HTMLElement>
 
-const CommandItem: React.FC<CommandItemProps> = ({ classname, text, imageSrc = '' }) => {
+const CommandItem: React.FC<CommandItemProps> = ({ text, imageSrc = '', ...props }) => {
 
 
     const { search, handleSelect, darkMode } = useCommand();
 
     return (
         text.toLowerCase().includes(search) ?
-            <div onClick={() => handleSelect(text)} className={`commandItem ${classname} ${darkMode && 'darkMode'}`}>
+            <div {...props} onClick={() => handleSelect(text)} className={`commandItem ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`}>
                 <Image alt='' src={imageSrc} height={16} width={16} />
                 <p>{text}</p>
             </div>
@@ -102,16 +97,15 @@ const CommandItem: React.FC<CommandItemProps> = ({ classname, text, imageSrc = '
 }
 
 // CommandSeparator
-interface CommandSeparatorProps {
-    classname?: string;
-}
+type CommandSeparatorProps = {
+} & HTMLAttributes<HTMLElement>
 
-const CommandSeparator: React.FC<CommandSeparatorProps> = ({ classname }) => {
+const CommandSeparator: React.FC<CommandSeparatorProps> = ({ ...props }) => {
 
     const { search, darkMode } = useCommand();
     return (
         search ? null :
-            <div className={`commandSeparator ${classname} ${darkMode && 'darkMode'}`} ></div>
+            <div {...props} className={`commandSeparator ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`} ></div>
     )
 }
 

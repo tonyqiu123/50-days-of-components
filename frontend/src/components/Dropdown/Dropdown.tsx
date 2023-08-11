@@ -1,13 +1,12 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, HTMLAttributes, useState } from 'react';
 import './Dropdown.css'
 
-interface SelectDropdownProps {
+type SelectDropdownProps = {
     handleSetState: (value: any) => void;
     values: any[];
-    label?: string;
-}
+} & HTMLAttributes<HTMLElement>
 
-const SelectDropdown: React.FC<SelectDropdownProps> = ({ handleSetState, values, label }) => {
+const SelectDropdown: React.FC<SelectDropdownProps> = ({ handleSetState, values, ...props }) => {
     const [selectedValue, setSelectedValue] = useState(values[0]);
 
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -17,14 +16,11 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({ handleSetState, values,
     }
 
     return (
-        <>
-            {label && <p>{label}</p>}
-            <select value={selectedValue} onChange={handleChange}>
-                {values.map((value) => {
-                    return <option key={value} value={value}>{value}</option>
-                })}
-            </select>
-        </>
+        <select  value={selectedValue} onChange={handleChange}>
+            {values.map((value) => {
+                return <option key={value} value={value}>{value}</option>
+            })}
+        </select>
     )
 };
 

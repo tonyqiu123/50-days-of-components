@@ -48,7 +48,7 @@ const SheetDemo: React.FC = () => {
     
     return (
         <>
-            <Button handleClick={async () => setShowSheet(true)} variant='secondary' text='Open sheet' />
+            <Button handleClick={async () => setShowSheet(true)} variant='secondary' darkMode={isDarkMode} text='Open sheet' />
             <Sheet setShowSheet={setShowSheet} showSheet={showSheet} darkMode={isDarkMode}>
                 <h3>Example Sheet</h3>
                 <Input title='First Name' darkMode={isDarkMode} placeHolder='First Name' />

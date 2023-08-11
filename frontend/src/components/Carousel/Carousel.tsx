@@ -1,13 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, HTMLAttributes } from 'react';
 import './Carousel.css'
 import Image from 'next/image';
 
 type CarouselProps = {
     children: React.ReactNode;
-    className?: string;
-};
+} & HTMLAttributes<HTMLElement>
 
-const Carousel: React.FC<CarouselProps> = ({ children, className = '' }) => {
+const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [btnClicked, setBtnClicked] = useState<'left' | 'right'>('left')
@@ -55,7 +54,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, className = '' }) => {
     }
 
     return (
-        <div className={`carousel ${className}`}>
+        <div {...props} className={`carousel ${props.className ? props.className : ''} `}>
             <Image onClick={handleLeftArrowClick} src='/Carousel/leftArrow.svg' alt='' width={26} height={26} />
             {childrenArray.map((child, index) => (
                 <div key={index} className={`${getClassName(index)} carouselImage`}>

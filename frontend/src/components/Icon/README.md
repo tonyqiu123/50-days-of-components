@@ -102,7 +102,7 @@ const Avatar: React.FC<AvatarProps> = ({ image, alt = 'avatar', width = 20, heig
 
     return (
         <a href={href}  className={`${invert && 'inverted'} avatar`} style={{ height: `${height + 20}px` }}>
-            <Image {...props} width={width} height={height} alt={alt} src={image} />
+            <Image  width={width} height={height} alt={alt} src={image} />
             {text && <p>{text}</p>}
         </a>
     );

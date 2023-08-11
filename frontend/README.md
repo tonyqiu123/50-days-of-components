@@ -1,41 +1,45 @@
-# Day 34/100
+# Day 35/100
 
-August 10th / October 16th
+August 11th / October 16th
 
-# Pagination
+# Card
 <a href="https://youtu.be/FK7lXagTPp4" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/Card" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
 
 ## Description 
 
-###### The pagination component in web development facilitates the organization and navigation of large sets of content by dividing it into manageable pages, enhancing user experience. It typically includes controls like "Previous" and "Next" buttons, enabling users to navigate through the content sequentially.
+###### The card component elegantly structures and presents content, offering an organized format for displaying information or data. Its versatility makes it a valuable tool for creating visually appealing user interfaces.
 
-Show the currently active page and enable navigation among multiple pages.
+A straight up div with border + padding + flex column. While redeveloping the design of this project, realized I needed a lot of cards so here we are. 
 
 # Installation 
 
-To use the Pagination component in your project, follow these steps:
+To use the Card component in your project, follow these steps:
 
-1. Create a new folder called 'Pagination' in your project's components directory.
-2. Copy the `Pagination.tsx` and `Pagination.css` file into the newly created 'Pagination' folder.
+1. Create a new folder called 'Card' in your project's components directory.
+2. Copy the `Card.tsx` and `Card.css` file into the newly created 'Card' folder.
 
 # Props 
-### Pagination:
-`totalQueries` (required number): Specifies the overall count of queries available for pagination.
+### Card:
+`darkMode` (optional boolean): Enables Card component to adapt to dark mode when true.
 
-`queriesPerPage` (required number): Sets the quantity of queries displayed on each pagination page.
-
-`darkMode` (optional boolean): Enables the pagination component to adapt to a dark mode theme if set to true.
-
-`handleClick` (optional function): Provides an optional callback function to handle click events within the pagination component, allowing interaction with specific page indices and query ranges.
+`size` (optional 's' | 'm' | 'l'): Adjusts Card dimensions for customized display.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-<Pagination handleClick={(index, start, end, numberOfQueries) => exampleFunction(index, numberOfQueries)} totalQueries={25} queriesPerPage={5} />
+<Card style={{ display: 'flex', flexDirection: 'column', gap: '4px' }} darkMode={isDarkMode}>
+    <h2>Create project</h2>
+    <p>Deply your new project in one-click.</p>
+    <p style={{ marginTop: '16px' }}>Name</p>
+    <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
+    <p style={{ marginTop: '16px' }}>Framework</p>
+    <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
+    <Button style={{ marginTop: '16px' }} darkMode={isDarkMode} variant='primary' text='Submit' />
+</Card>
 ```
 
 ## Prerequisites

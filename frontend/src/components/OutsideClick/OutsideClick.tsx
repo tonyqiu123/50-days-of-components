@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, ReactElement, FC } from 'react';
+import React, { useEffect, useRef, ReactElement, FC, HTMLAttributes } from 'react';
 
 type Props = {
     children: ReactElement;
     onClickOutside: () => void;
-}
+} & HTMLAttributes<HTMLElement>
 
-const OutsideClick: FC<Props> = ({ children, onClickOutside }) => {
+const OutsideClick: FC<Props> = ({ children, onClickOutside, ...props }) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -22,7 +22,7 @@ const OutsideClick: FC<Props> = ({ children, onClickOutside }) => {
     });
 
     return (
-        <div ref={wrapperRef}>
+        <div {...props} className={`${props.className ? props.className : ''}`} ref={wrapperRef}>
             {children}
         </div>
     )

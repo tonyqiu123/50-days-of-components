@@ -1,13 +1,12 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, HTMLAttributes } from "react";
 
-interface CounterProps {
+type CounterProps = {
     target: number;
     increment?: number;
     duration?: number;
-    className?: string;
-}
+} & HTMLAttributes<HTMLElement>
 
-const Counter: React.FC<CounterProps> = ({ target = 100, increment = 1, duration = 1000, className = '' }) => {
+const Counter: React.FC<CounterProps> = ({ target = 100, increment = 1, duration = 1000, ...props }) => {
     const [currentValue, setCurrentValue] = useState(0);
     const numberRef = useRef<HTMLHeadingElement>(null);
 
@@ -31,7 +30,7 @@ const Counter: React.FC<CounterProps> = ({ target = 100, increment = 1, duration
     }, [target, increment, duration]);
 
     return (
-        <h1 className={className} ref={numberRef}>{currentValue}</h1>
+        <h1 className={`${props.className ? props.className : ''}`}  ref={numberRef}>{currentValue}</h1>
     );
 };
 

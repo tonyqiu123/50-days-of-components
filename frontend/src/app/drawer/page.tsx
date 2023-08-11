@@ -72,7 +72,7 @@ const DrawerDemo: React.FC = () => {
 
                 <TabsContent value='preview'>
                     <div className='demoBox'>
-                        <Button handleClick={async () => setShowDrawer(true)} variant='secondary' text='Open drawer' />
+                        <Button handleClick={async () => setShowDrawer(true)} variant='secondary' darkMode={isDarkMode} text='Open drawer' />
                         <Drawer className='drawerDemo' setShowDrawer={setShowDrawer} showDrawer={showDrawer} darkMode={isDarkMode}>
                             <h3>Example Drawer</h3>
                             <p></p>

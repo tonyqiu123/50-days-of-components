@@ -1,14 +1,14 @@
-import React, { useState, ReactNode, useRef, useEffect } from 'react';
+import React, { useState, ReactNode, useRef, useEffect, HTMLAttributes } from 'react';
 import './Tooltip.css';
 import Image from 'next/image';
 
-interface TooltipProps {
+type TooltipProps = {
     toolTipText: string;
     children?: ReactNode;
     darkMode?: boolean
-}
+} & HTMLAttributes<HTMLElement>;
 
-const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = false }) => {
+const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = false, ...props }) => {
 
     const [hovering, setHovering] = useState(false)
     const [tooltipWidth, setTooltipWidth] = useState(0);
@@ -19,13 +19,13 @@ const Tooltip: React.FC<TooltipProps> = ({ toolTipText, children, darkMode = fal
 
     useEffect(() => {
         if (invisibleRef.current) {
-            setTooltipWidth(invisibleRef.current.offsetWidth/2);
+            setTooltipWidth(invisibleRef.current.offsetWidth / 2);
         }
     }, []);
 
 
     return (
-        <div className={`tooltip ${darkMode && 'darkMode'}`}>
+        <div {...props} className={`${props.className ? props.className : ''} tooltip ${darkMode && 'darkMode'}`}>
             {children}
             <Image
                 alt='tooltipicon'

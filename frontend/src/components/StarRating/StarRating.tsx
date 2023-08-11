@@ -47,7 +47,7 @@ const StarRating: React.FC<StarRatingProps> = ({ totalStars, size = 24, handleCl
     return stars;
   };
 
-  return <div style={{ fontSize: `${size}px` }} {...props} className='starRating'>{renderStars()}</div>;
+  return <div {...props} style={{ fontSize: `${size}px` }}  className={`${props.className ? props.className : ''} starRating`}>{renderStars()}</div>;
 };
 
 export default StarRating;

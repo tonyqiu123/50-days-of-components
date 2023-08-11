@@ -1,16 +1,16 @@
-import React, { FC, ChangeEvent, useState } from 'react';
+import React, { FC, ChangeEvent, useState, HTMLAttributes } from 'react';
 import './Slider.css'; // Importing CSS for our slider
 
-interface SliderProps {
+type SliderProps = {
   min?: number;
   max?: number;
   defaultValue?: number;
   darkMode?: boolean;
   fullWidth?: boolean;
   onChange?: (value: number) => void;
-}
+} & HTMLAttributes<HTMLElement>;
 
-const Slider: FC<SliderProps> = ({ min=0, max=100, defaultValue = 0, onChange = () => { }, darkMode = false, fullWidth=false }) => {
+const Slider: FC<SliderProps> = ({ min = 0, max = 100, defaultValue = 0, onChange = () => { }, darkMode = false, fullWidth = false, ...props }) => {
 
   const [value, setValue] = useState(defaultValue)
 
@@ -20,14 +20,15 @@ const Slider: FC<SliderProps> = ({ min=0, max=100, defaultValue = 0, onChange = 
   };
 
   return (
-      <input
-        type="range"
-        className={`${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`}
-        min={min}
-        max={max}
-        value={value}
-        onChange={handleChange}
-      />
+    <input
+    {...props}
+      type="range"
+      className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} ${fullWidth && 'fullWidth'}`}
+      min={min}
+      max={max}
+      value={value}
+      onChange={handleChange}
+    />
   );
 };
 

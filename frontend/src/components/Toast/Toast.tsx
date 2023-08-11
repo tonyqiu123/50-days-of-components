@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useState } from 'react';
 import './Toast.css';
 import Image from 'next/image';
+import Swipeable from '../Swipeable/Swipeable';
 
-interface ToastProps {
+type ToastProps = {
     children?: React.ReactNode;
     setShowToast: React.Dispatch<React.SetStateAction<boolean>>;
     showToast: boolean;
     darkMode?: boolean;
-}
+} & HTMLAttributes<HTMLElement>;
 
 const Toast: React.FC<ToastProps> = ({
     children,
     setShowToast,
     showToast,
     darkMode = false,
+    ...props
 }) => {
     const [shouldRender, setShouldRender] = useState(showToast);
 
@@ -53,7 +55,7 @@ const Toast: React.FC<ToastProps> = ({
     }
 
     return (
-        <div className={`${darkMode && 'darkMode'} toast ${showToast && 'showToast'}`}>
+        <div {...props} className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} toast ${showToast && 'showToast'}`}>
             <Image
                 onMouseDown={() => setShowToast(false)}
                 width={12}

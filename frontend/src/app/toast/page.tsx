@@ -22,11 +22,11 @@ export default function ToastDemo() {
     <div className={`page ${isDarkMode && 'darkMode'}`}>
 
       <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Button variant='secondary' text='Schedule meeting' handleClick={async () => setShowToast1(true)} />
-      <Button variant='secondary' text='Schedule webinar' handleClick={async () => setShowToast2(true)} />
-      <Button variant='secondary' text='Schedule interview' handleClick={async () => setShowToast3(true)} />
-      <Button variant='secondary' text='Schedule appointment' handleClick={async () => setShowToast4(true)} />
-      <Button variant='secondary' text='Schedule conference' handleClick={async () => setShowToast5(true)} />
+      <Button variant='secondary' darkMode={isDarkMode} text='Schedule meeting' handleClick={async () => setShowToast1(true)} />
+      <Button variant='secondary' darkMode={isDarkMode} text='Schedule webinar' handleClick={async () => setShowToast2(true)} />
+      <Button variant='secondary' darkMode={isDarkMode} text='Schedule interview' handleClick={async () => setShowToast3(true)} />
+      <Button variant='secondary' darkMode={isDarkMode} text='Schedule appointment' handleClick={async () => setShowToast4(true)} />
+      <Button variant='secondary' darkMode={isDarkMode} text='Schedule conference' handleClick={async () => setShowToast5(true)} />
       <Tooltip darkMode={isDarkMode} toolTipText='Display brief notifications to the user in a non-intrusive way'>
         <p>Toast Component</p>
       </Tooltip>

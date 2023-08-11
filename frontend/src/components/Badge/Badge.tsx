@@ -1,14 +1,15 @@
+import { HTMLAttributes } from 'react'
 import './Badge.css'
-interface BadgeProps {
+type BadgeProps = {
     text: string
     darkMode?: boolean
-    variant: 'default' | 'secondary' | 'outline' | 'destructive'
-}
+    variant: 'default' | 'secondary' | 'outline' | 'destructive' | 'success'
+} & HTMLAttributes<HTMLElement>
 
-const Badge: React.FC<BadgeProps> = ({ text, darkMode, variant }) => {
+const Badge: React.FC<BadgeProps> = ({ text, darkMode, variant, ...props }) => {
 
     return (
-        <p className={`badge ${darkMode && 'darkMode'} ${variant}`}>{text}</p>
+        <p {...props} className={`badge ${props.className ? props.className : ''} ${darkMode && 'darkMode'} ${variant}`}>{text}</p>
     )
 }
 

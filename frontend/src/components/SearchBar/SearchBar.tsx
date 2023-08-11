@@ -1,26 +1,25 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, HTMLAttributes } from 'react';
 import './SearchBar.css';
 
-type SearchBarProps = {
-    className?: string;
+type SearchBarProps = { 
     placeholder?: string;
     darkMode?: boolean;
     fullWidth?: boolean;
-    queries?: string[];
+    queries: string[];
     maxHeight?: string;
     title?: string;
     handleSelect?: ((inputValue: string) => void) | null;
-};
+} & HTMLAttributes<HTMLElement>;
 
-const SearchBar: React.FC<SearchBarProps> = ({
-    className = '',
+const SearchBar: React.FC<SearchBarProps> = ({ 
     placeholder = 'Search',
     darkMode = false,
     fullWidth = false,
-    queries = [],
+    queries,
     maxHeight = '200px',
     handleSelect = null,
-    title
+    title,
+    ...props
 }) => {
 
     const [inputValue, setInputValue] = useState('');
@@ -118,7 +117,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
     // Render SearchBar SearchBar component
     return (
-        <div className={`searchBarComponent ${fullWidth && 'fullWidth'} ${className}`}>
+        <div {...props} className={`${props.className ? props.className : ''} searchBarComponent ${fullWidth && 'fullWidth'}  `}>
             {title && <p>{title}</p>}
             <input
                 ref={inputRef}

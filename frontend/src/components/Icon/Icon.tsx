@@ -10,12 +10,12 @@ interface AvatarProps extends React.HTMLProps<HTMLAnchorElement> {
     invert?: boolean
     text?: string
     handleClick?: () => void
-}
+} 
 
 const Avatar: React.FC<AvatarProps> = ({ image, alt = 'avatar', width = 20, height = 20, invert = false, text = '', handleClick = () => { }, ...props }) => {
 
     return (
-        <a onClick={handleClick} className={`${invert && 'inverted'} avatar`} {...props}>
+        <a {...props} onClick={handleClick} className={`${props.className ? props.className : ''} ${invert && 'inverted'} avatar`} >
             <Image width={width} height={height} alt={alt} src={image} />
             {text && <p>{text}</p>}
         </a>

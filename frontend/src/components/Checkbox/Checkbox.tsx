@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { HTMLAttributes, useState } from 'react';
 import './Checkbox.css';
 import Image from 'next/image';
 
@@ -7,15 +7,14 @@ type CheckboxProps = {
     subText?: string;
     onChange?: (checked: boolean) => void;
     darkMode?: boolean;
-    className?: string
-};
+} & HTMLAttributes<HTMLElement>
 
 const Checkbox: React.FC<CheckboxProps> = ({
     primaryText,
     subText = '',
     onChange = () => { },
     darkMode = false,
-    className
+    ...props
 }) => {
     const [isChecked, setIsChecked] = useState(false);
 
@@ -26,7 +25,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     };
 
     return (
-        <label className={`${className} ${darkMode && 'darkMode'} checkbox-container`}>
+        <label {...props} className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} checkbox-container`}>
             <input
                 type="checkbox"
                 checked={isChecked}

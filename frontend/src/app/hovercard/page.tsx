@@ -16,7 +16,7 @@ const HoverCardDemo: React.FC = () => {
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-            <Button variant='secondary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            <Button variant='secondary' darkMode={isDarkMode} text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
             <Tooltip darkMode={isDarkMode} toolTipText='Add a modal to a component on hover.'><p>HoverCard component</p></Tooltip>
             <div className='demoBox'>
 

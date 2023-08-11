@@ -1,17 +1,17 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, HTMLAttributes } from "react";
 import './Tabs.css'
 
 
-interface TabsProps {
+type TabsProps = {
     children: ReactNode;
     darkMode: boolean;
-}
+} & HTMLAttributes<HTMLElement>;
 
-export const Tabs: React.FC<TabsProps> = ({ children, darkMode }) => {
+export const Tabs: React.FC<TabsProps> = ({ children, darkMode, ...props }) => {
     const [activeTab, setActiveTab] = useState((children as any)[0].props.value);
 
     return (
-        <div className={`tabs ${darkMode && "darkMode"}`}>
+        <div {...props} className={` ${props.className ? props.className : ''} tabs ${darkMode && "darkMode"}`}>
             {React.Children.map(children, (child: any) => {
                 // clone the child with the active state
                 return React.cloneElement(child, { active: child.props.value === activeTab, setActiveTab: setActiveTab });
@@ -20,14 +20,14 @@ export const Tabs: React.FC<TabsProps> = ({ children, darkMode }) => {
     );
 };
 
-interface TabsTriggerProps {
+type TabsTriggerProps = {
     value: string;
     children: ReactNode;
     active?: boolean;
     setActiveTab?: React.Dispatch<React.SetStateAction<string>>;
-}
+} & HTMLAttributes<HTMLElement>;
 
-export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, active, setActiveTab }) => {
+export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, active, setActiveTab, ...props }) => {
     const handleClick = () => {
         if (setActiveTab) {
             setActiveTab(value);
@@ -35,25 +35,25 @@ export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, activ
     };
 
     return (
-        <div className={`tabsTrigger ${active ? "active" : ""}`} onClick={handleClick}>
+        <div {...props} className={`${props.className ? props.className : ''} tabsTrigger ${active ? "active" : ""}`} onClick={handleClick}>
             {children}
         </div>
     );
 };
 
-interface TabsContentProps {
+type TabsContentProps = {
     value: string;
     children: ReactNode;
     active?: boolean;
-}
+} & HTMLAttributes<HTMLElement>;
 
-export const TabsContent: React.FC<TabsContentProps> = ({ children, active = false }) => {
+export const TabsContent: React.FC<TabsContentProps> = ({ children, active = false, ...props }) => {
     if (!active) {
         return null;
     }
 
     return (
-        <div className="tabsContent">
+        <div {...props} className={`tabsContent ${props.className ? props.className : ''}`}>
             {children}
         </div>
     );

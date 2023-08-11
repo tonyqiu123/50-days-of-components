@@ -7,35 +7,36 @@ interface PrettyCodeProps extends React.HTMLProps<HTMLDivElement> {
   code: string;
   darkMode?: boolean;
   language: string;
-  copy?: boolean;
-  className?: string;
+  showTab?: boolean;
 }
 
-const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, copy = true, className, ...props }) => {
+const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, language, showTab = true, ...props }) => {
 
-  const [copied, setCopied] = useState('Copy code 📋');
+  const [copied, setCopied] = useState('Copy code');
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(code);
-      setCopied('Copied ✅');
+      setCopied('Copied');
 
       setTimeout(() => {
-        setCopied('Copy code 📋');
+        setCopied('Copy code');
       }, 2000);
 
     } catch (err) {
       console.error('Failed to copy text: ', err);
-      setCopied('Failed to copy ❌');
+      setCopied('Failed to copy');
     }
   };
 
   return (
-    <div {...props} className={`prettycodeContainer ${darkMode && 'darkMode'} ${className}`}>
-      <div className='prettycodeHeader'>
-        {language}
-        {copy && <p onClick={handleCopy} style={{ cursor: 'pointer' }}>{copied}</p>}
-      </div>
+    <div {...props} className={`prettycodeContainer ${darkMode && 'darkMode'} ${props.className ? props.className : ''}`}>
+      {showTab &&
+        <div className='prettycodeHeader'>
+          {language}
+          <p onClick={handleCopy} style={{ cursor: 'pointer' }}>{copied}</p>
+        </div>
+      }
       <SyntaxHighlighter className='prettycode' language={language} style={darkMode ? vscDarkPlus : prism}>
         {code}
       </SyntaxHighlighter>

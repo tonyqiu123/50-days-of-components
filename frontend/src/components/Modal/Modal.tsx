@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useState } from 'react';
 import './Modal.css'
+import Backdrop from '../Backdrop/Backdrop';
 
 
-interface ModalProps {
+type ModalProps = {
     children?: React.ReactNode
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
     showModal: boolean
     darkMode?: boolean
-}
+} & HTMLAttributes<HTMLElement>
 
-const Modal: React.FC<ModalProps> = ({ children, setShowModal, showModal, darkMode = false }) => {
+const Modal: React.FC<ModalProps> = ({ children, setShowModal, showModal, darkMode = false, ...props }) => {
 
     return (
-        <>
-            <div className={`${darkMode && 'darkMode'} modal ${showModal && 'showModal'}`}>
+        <React.Fragment >
+            <div {...props} className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} modal ${showModal && 'showModal'}`}>
                 {children}
             </div>
-            <div onClick={() => setShowModal(false)} className={`${darkMode && 'darkMode'} backdrop ${showModal ? 'showModal' : ''}`}>
-            </div>
-        </>
+            <Backdrop darkMode={darkMode} showBackdrop={showModal} setShowBackdrop={setShowModal} />
+        </React.Fragment>
     );
 };
 

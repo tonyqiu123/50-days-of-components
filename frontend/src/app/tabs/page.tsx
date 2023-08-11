@@ -78,7 +78,7 @@ const TabsDemo: React.FC = () => {
   return (
     <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-      <Button variant='secondary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      <Button variant='secondary' darkMode={isDarkMode} text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
       <Tooltip darkMode={isDarkMode} toolTipText='A stack of content sections, referred to as tab panels, that are displayed individually, one after the other.'><p>Tabs component</p></Tooltip>
 
       <Tabs darkMode={isDarkMode}>

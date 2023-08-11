@@ -1,21 +1,20 @@
-import React, { useState, ReactNode, useEffect } from "react";
+import React, { useState, ReactNode, useEffect, HTMLAttributes } from "react";
 import './Sheet.css'
 import Icon from "@/components/Icon/Icon";
 import Backdrop from "@/components/Backdrop/Backdrop";
 import Swipeable from "@/components/Swipeable/Swipeable";
 
-interface SheetProps {
+type SheetProps = {
     children: ReactNode;
     darkMode?: boolean;
     showSheet: boolean
-    setShowSheet: React.Dispatch<React.SetStateAction<boolean>>;
-    className?: string
-}
+    setShowSheet: React.Dispatch<React.SetStateAction<boolean>>; 
+} & HTMLAttributes<HTMLElement>;
 
-const Sheet: React.FC<SheetProps> = ({ children, darkMode = false, showSheet = false, setShowSheet, className = '' }) => {
+const Sheet: React.FC<SheetProps> = ({ children, darkMode = false, showSheet = false, setShowSheet, ...props }) => {
 
     return (
-        <div className={`sheet ${darkMode && "darkMode"} ${className}`}>
+        <div {...props} className={`${props.className ? props.className : ''} sheet ${darkMode && "darkMode"}  `}>
             <Backdrop darkMode={darkMode} showBackdrop={showSheet} setShowBackdrop={setShowSheet} />
             <Swipeable closeDirection="right" visible={showSheet} setVisible={setShowSheet}>
                 <div className={`sheetContent ${showSheet && "active"}`}>

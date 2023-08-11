@@ -23,13 +23,13 @@
 <pre><code>import React, { ChangeEvent, useState } from 'react';
 import './Dropdown.css';
 
-interface SelectDropdownProps {
+interface DropdownProps {
   handleSetState: (value: any) => void;
   values: any[];
   label?: string;
 }
 
-const SelectDropdown: React.FC&lt;SelectDropdownProps&gt; = ({ handleSetState, values, label }) => {
+const Dropdown: React.FC&lt;DropdownProps&gt; = ({ handleSetState, values, label }) => {
   const [selectedValue, setSelectedValue] = useState(values[0]);
 
   const handleChange = (e: ChangeEvent&lt;HTMLSelectElement&gt;) => {
@@ -50,7 +50,7 @@ const SelectDropdown: React.FC&lt;SelectDropdownProps&gt; = ({ handleSetState, v
   );
 };
 
-export default SelectDropdown;
+export default Dropdown;
 </code></pre>
 
 <h3>Styling</h3>
