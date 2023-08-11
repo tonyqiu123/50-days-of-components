@@ -3,11 +3,11 @@
 August 11th / October 16th
 
 # Card
-<a href="https://youtu.be/FK7lXagTPp4" target="_blank">Watch live demo on youtube</a>
+<a href="https://www.youtube.com/watch?v=CQMOWi0HVhQ" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/Card" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139675213106262037/image.png"/></a>  
 
 ## Description 
 
