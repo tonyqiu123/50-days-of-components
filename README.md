@@ -1,79 +1,47 @@
-'use client'
+# Day 36/100
 
-import React, { useState } from 'react';
-import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
-import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import Separator from '@/components/Separator/Separator';
-import ShowMore from '@/components/ShowMore/ShowMore';
-import Input from '@/components/Input/Input';
-import SearchBar from '@/components/SearchBar/SearchBar';
-import Card from '@/components/Card/Card';
+August 12th / October 16th
 
-const SeparatorDemo: React.FC = () => {
+# Separator
+<a href="https://youtu.be/S4sjJpji5Hs" target="_blank">Watch live demo on youtube</a>
 
+<a href="https://100daysofcomponents.netlify.app/Separator" target="_blank">Demo it yourself</a>
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
-    const [name, setName] = useState('')
+<a href="https://100daysofcomponents.netlify.app/Separator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139928649697599498/image.png"/></a>  
 
-    const reactCode = `<Separator orientation='h' darkMode={isDarkMode} />`;
+## Description 
 
-    const exampleFunction = async () => {
-        return new Promise<void>(resolve => {
-            try {
-                setTimeout(() => {
-                    resolve();
-                }, 500);
-            } catch (error) {
-                console.error(error);
-                throw error
-            }
-        });
-    }
+###### The card component elegantly structures and presents content, offering an organized format for displaying information or data. Its versatility makes it a valuable tool for creating visually appealing user interfaces.
 
+The separator component is a vital feature within software systems, enabling the organized segregation of data or elements.
 
-    return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+# Installation 
 
-            <Button darkMode={isDarkMode} variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The separator component visually divides content for improved organization and aesthetics, using lines or spaces to guide the eye.">
-                <p>Separator component</p>
-            </Tooltip>
+To use the Separator component in your project, follow these steps:
 
+1. Create a new folder called 'Separator' in your project's components directory.
+2. Copy the `Separator.tsx` and `Separator.css` file into the newly created 'Separator' folder.
 
-            <Tabs darkMode={isDarkMode}>
+# Props 
+### Separator:
+`darkMode` (optional boolean): Enables Separator component to adapt to dark mode when true.
 
-                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
-                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+`orientation` (rqeuired 'h' | 'v'): Make the orientation either horizontal or vertical.
 
-                <TabsContent value='preview'>
-                    <div className='demoBox'>
-                        <Card style={{ display: 'flex', flexDirection: 'column', gap: '16px' }} darkMode={isDarkMode}>
-                            <div>
-                                <h2>Create project</h2>
-                                <p style={{ marginTop: '8px' }}>Deply your new project in one-click.</p>
-                            </div>
-                            <Separator orientation='h' darkMode={isDarkMode} />
-                            <p>Name</p>
-                            <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
-                            <p>Framework</p>
-                            <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
-                            <Separator orientation='h' darkMode={isDarkMode} />
-                            <Button darkMode={isDarkMode} variant='primary' text='Submit' handleClick={exampleFunction} />
-                        </Card>
-                    </div>
-                </TabsContent>
-                <TabsContent value='code'>
-                    <ShowMore text='Reveal' height={300} darkMode={isDarkMode}>
-                        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
-                    </ShowMore>
-                </TabsContent>
+## Example Usage
+### page.tsx
+```jsx
+  <Separator orientation='h' darkMode={isDarkMode} />
+```
 
-            </Tabs>
+## Prerequisites
+This component requires Node v14 or later to work correctly with NextJS framework version ^13
+The following dependencies were used for this component:
+1. "@types/node": "20.4.1",
+2. "@types/react": "18.2.14",
+3. "@types/react-dom": "18.2.6",
+4. "next": "13.4.9",
+5. "react": "18.2.0",
+6. "react-dom": "18.2.0",
+7. "typescript": "5.1.6"
 
-        </div>
-    );
-};
-
-export default SeparatorDemo;
