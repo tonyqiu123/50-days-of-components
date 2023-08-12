@@ -1,55 +1,79 @@
-# Day 35/100
+'use client'
 
-August 11th / October 16th
+import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import Button from '@/components/Button/Button';
+import Tooltip from '@/components/Tooltip/Tooltip';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Separator from '@/components/Separator/Separator';
+import ShowMore from '@/components/ShowMore/ShowMore';
+import Input from '@/components/Input/Input';
+import SearchBar from '@/components/SearchBar/SearchBar';
+import Card from '@/components/Card/Card';
 
-# Card
-<a href="https://www.youtube.com/watch?v=CQMOWi0HVhQ" target="_blank">Watch live demo on youtube</a>
+const SeparatorDemo: React.FC = () => {
 
-<a href="https://100daysofcomponents.netlify.app/Card" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139675213106262037/image.png"/></a>  
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [name, setName] = useState('')
 
-## Description 
+    const reactCode = `<Separator orientation='h' darkMode={isDarkMode} />`;
 
-###### The card component elegantly structures and presents content, offering an organized format for displaying information or data. Its versatility makes it a valuable tool for creating visually appealing user interfaces.
+    const exampleFunction = async () => {
+        return new Promise<void>(resolve => {
+            try {
+                setTimeout(() => {
+                    resolve();
+                }, 500);
+            } catch (error) {
+                console.error(error);
+                throw error
+            }
+        });
+    }
 
-A straight up div with border + padding + flex column. While redeveloping the design of this project, realized I needed a lot of cards so here we are. 
 
-# Installation 
+    return (
+        <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-To use the Card component in your project, follow these steps:
+            <Button darkMode={isDarkMode} variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            <Tooltip darkMode={isDarkMode} toolTipText="The separator component visually divides content for improved organization and aesthetics, using lines or spaces to guide the eye.">
+                <p>Separator component</p>
+            </Tooltip>
 
-1. Create a new folder called 'Card' in your project's components directory.
-2. Copy the `Card.tsx` and `Card.css` file into the newly created 'Card' folder.
 
-# Props 
-### Card:
-`darkMode` (optional boolean): Enables Card component to adapt to dark mode when true.
+            <Tabs darkMode={isDarkMode}>
 
-`size` (optional 's' | 'm' | 'l'): Adjusts Card dimensions for customized display.
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
-## Example Usage
-### page.tsx
-```jsx
-<Card style={{ display: 'flex', flexDirection: 'column', gap: '4px' }} darkMode={isDarkMode}>
-    <h2>Create project</h2>
-    <p>Deply your new project in one-click.</p>
-    <p style={{ marginTop: '16px' }}>Name</p>
-    <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
-    <p style={{ marginTop: '16px' }}>Framework</p>
-    <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
-    <Button style={{ marginTop: '16px' }} darkMode={isDarkMode} variant='primary' text='Submit' />
-</Card>
-```
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                        <Card style={{ display: 'flex', flexDirection: 'column', gap: '16px' }} darkMode={isDarkMode}>
+                            <div>
+                                <h2>Create project</h2>
+                                <p style={{ marginTop: '8px' }}>Deply your new project in one-click.</p>
+                            </div>
+                            <Separator orientation='h' darkMode={isDarkMode} />
+                            <p>Name</p>
+                            <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
+                            <p>Framework</p>
+                            <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
+                            <Separator orientation='h' darkMode={isDarkMode} />
+                            <Button darkMode={isDarkMode} variant='primary' text='Submit' handleClick={exampleFunction} />
+                        </Card>
+                    </div>
+                </TabsContent>
+                <TabsContent value='code'>
+                    <ShowMore text='Reveal' height={300} darkMode={isDarkMode}>
+                        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
+                    </ShowMore>
+                </TabsContent>
 
-## Prerequisites
-This component requires Node v14 or later to work correctly with NextJS framework version ^13
-The following dependencies were used for this component:
-1. "@types/node": "20.4.1",
-2. "@types/react": "18.2.14",
-3. "@types/react-dom": "18.2.6",
-4. "next": "13.4.9",
-5. "react": "18.2.0",
-6. "react-dom": "18.2.0",
-7. "typescript": "5.1.6"
+            </Tabs>
 
+        </div>
+    );
+};
+
+export default SeparatorDemo;

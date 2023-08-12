@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, HTMLAttributes } from 'react';
 import './SearchBar.css';
 
-type SearchBarProps = { 
+type SearchBarProps = {
     placeholder?: string;
     darkMode?: boolean;
     fullWidth?: boolean;
@@ -11,7 +11,7 @@ type SearchBarProps = {
     handleSelect?: ((inputValue: string) => void) | null;
 } & HTMLAttributes<HTMLElement>;
 
-const SearchBar: React.FC<SearchBarProps> = ({ 
+const SearchBar: React.FC<SearchBarProps> = ({
     placeholder = 'Search',
     darkMode = false,
     fullWidth = false,
@@ -41,10 +41,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
         if (query !== '') {
             setDropdownOpen(false);
-            setInputValue(query);
             if (handleSelect) {
                 handleSelect(query);
             }
+            setInputValue(query);
         }
     }, [inputRef, setDropdownOpen, setInputValue, handleSelect]);
 
