@@ -21,6 +21,4 @@ db.connect(err => {
   console.log('Connected to the database');
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports = db;

@@ -11,19 +11,19 @@ import ShowMore from '@/components/ShowMore/ShowMore';
 const BreadcrumbDemo: React.FC = () => {
 
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(true)
 
-    const reactCode = `<Breadcrumb handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={10} />
-<Breadcrumb handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={200} />`;
+    const reactCode = `<Breadcrumb darkMode={isDarkMode} />
+<Breadcrumb darkMode={isDarkMode} start={3} end={4} />`;
 
 
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
-
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="Rate and display feedback using a visually intuitive star-based system.">
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <Tooltip darkMode={isDarkMode} toolTipText="The breadcrumb component generates a navigation trail reflecting the current page's URL segments.">
                 <p>Breadcrumb component</p>
             </Tooltip>
+            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
 
 
             <Tabs darkMode={isDarkMode}>
@@ -34,12 +34,12 @@ const BreadcrumbDemo: React.FC = () => {
 
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
-                        <Breadcrumb handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={10} />
+                        <Breadcrumb darkMode={isDarkMode} />
                     </div>
                 </TabsContent>
                 <TabsContent value='preview2'>
                     <div className='demoBox'>
-                        <Breadcrumb handleClick={(numOfStars) => console.log(numOfStars)} totalStars={1000} />
+                        <Breadcrumb darkMode={isDarkMode} start={3} end={4} />
                     </div>
                 </TabsContent>
                 <TabsContent value='code'>
