@@ -22,7 +22,7 @@ To use the Breadcrumb component in your project, follow these steps:
 1. Create a new folder called 'Breadcrumb' in your project's components directory.
 2. Copy the `Breadcrumb.tsx` file into the newly created 'Breadcrumb' folder.
 
-# Props 
+## Props 
 ### Breadcrumb:
 `darkMode` (optional boolean): Switch to dark mode for better visibility.
 
@@ -33,7 +33,7 @@ To use the Breadcrumb component in your project, follow these steps:
 `className` (optional string): Customize CSS classes for styling.
 
 ## Example Usage
-### page.tsx
+###$ page.tsx
 ```jsx
 <Breadcrumb darkMode={isDarkMode} />
 <Breadcrumb darkMode={isDarkMode} start={3} end={4} />
