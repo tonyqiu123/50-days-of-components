@@ -17,6 +17,7 @@ const SheetDemo: React.FC = () => {
     const [showSheet, setShowSheet] = useState(false)
     const [input1, setInput1] = useState('')
     const [input2, setInput2] = useState('')
+    const [search, setSearch] = useState<string>('')
 
     const reactCode = `import Button from '@/components/Button/Button';
 import Sheet from '@/components/Sheet/Sheet';
@@ -97,6 +98,8 @@ const SheetDemo: React.FC = () => {
                             <Input search={input2} setSearch={setInput2} darkMode={isDarkMode} placeHolder='Last Name' />
                             <p>Birthday</p>
                             <SearchBar
+                                search={search}
+                                setSearch={setSearch}
                                 placeholder='Select Year'
                                 fullWidth={true}
                                 darkMode={isDarkMode}

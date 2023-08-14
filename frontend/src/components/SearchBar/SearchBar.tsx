@@ -8,7 +8,8 @@ type SearchBarProps = {
     queries: string[];
     maxHeight?: string;
     title?: string;
-    handleSelect?: ((inputValue: string) => void) | null;
+    search: string
+    setSearch: React.Dispatch<React.SetStateAction<string>>
 } & HTMLAttributes<HTMLElement>;
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -17,13 +18,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
     fullWidth = false,
     queries,
     maxHeight = '200px',
-    handleSelect = null,
+    search,
+    setSearch,
     title,
     ...props
 }) => {
 
-    const [inputValue, setInputValue] = useState('');
-    const [shownQueries, setShownQueries] = useState<string[]>([]); // Queries that match SearchBar inputValue
+    const [shownQueries, setShownQueries] = useState<string[]>([]); // Queries that match SearchBar search
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [focusedQueryIndex, setFocusedQueryIndex] = useState(0);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -41,12 +42,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
         if (query !== '') {
             setDropdownOpen(false);
-            if (handleSelect) {
-                handleSelect(query);
-            }
-            setInputValue(query);
+            setSearch(query);
         }
-    }, [inputRef, setDropdownOpen, setInputValue, handleSelect]);
+    }, [inputRef, setDropdownOpen, setSearch]);
 
     // Handle key presses in SearchBar input field
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -83,10 +81,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
     useEffect(() => {
         // Filter SearchBar queries based on SearchBar input value and update SearchBar shownQueries state
-        const relatedQueries = queries.filter(query => query.toLowerCase().includes(inputValue.toLowerCase()));
+        const relatedQueries = queries.filter(query => query.toLowerCase().includes(search.toLowerCase()));
         setShownQueries(relatedQueries);
         setFocusedQueryIndex(0);
-    }, [inputValue, queries]);
+    }, [search, queries]);
 
 
     // Set initial state and add event listeners when SearchBar component is mounted
@@ -126,11 +124,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
                 type="text"
                 onKeyDown={handleKeyPress}
                 onChange={(e) => {
-                    setInputValue(e.target.value);
+                    setSearch(e.target.value);
                     setDropdownOpen(true);
                 }}
                 onMouseDown={() => setDropdownOpen(true)}
-                value={inputValue}
+                value={search}
             />
             <div style={{ maxHeight: `${maxHeight}`, overflowY: isDropdownOverflowing ? 'scroll' : 'hidden' }} className={`searchBarDropdown ${isDropdownOpen && 'visible'} ${darkMode && 'darkMode'}`}>
                 {shownQueries.length > 0 ? (

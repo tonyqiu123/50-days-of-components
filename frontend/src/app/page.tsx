@@ -15,6 +15,7 @@ export default function Home() {
 
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [componentIdea, setComponentIdea] = useState('')
+  const [search, setSearch] = useState<string>('')
 
   const componentNames = [
     "Accordion",
@@ -58,7 +59,7 @@ export default function Home() {
           <a href=''><p>Documentation</p></a>
         </NavBarLeft>
         <NavBarRight>
-          <SearchBar placeholder='Search components' className='homeSearchbar' darkMode={isDarkMode} queries={componentNames} />
+          <SearchBar search={search} setSearch={setSearch} placeholder='Search components' className='homeSearchbar' darkMode={isDarkMode} queries={componentNames} />
           <Icon href='https://github.com/tonyqiu123/100-days-of-components' invert={isDarkMode} image='/Icon/githubIcon.png' />
           <Icon handleClick={async () => setIsDarkMode(!isDarkMode)} invert={isDarkMode} image={isDarkMode ? '/Home/moon.svg' : '/Home/sun.svg'} />
         </NavBarRight>

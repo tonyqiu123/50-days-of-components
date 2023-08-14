@@ -15,6 +15,7 @@ const CardDemo: React.FC = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [name, setName] = useState('')
+    const [search, setSearch] = useState<string>('')
 
     const reactCode = `<Card style={{ display: 'flex', flexDirection: 'column', gap: '4px' }} darkMode={isDarkMode}>
     <h2>Create project</h2>
@@ -62,7 +63,7 @@ const CardDemo: React.FC = () => {
                             <p style={{ marginTop: '16px' }}>Name</p>
                             <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
                             <p style={{ marginTop: '16px' }}>Framework</p>
-                            <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
+                            <SearchBar search={search} setSearch={setSearch} darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
                             <Button style={{ marginTop: '16px' }} darkMode={isDarkMode} variant='primary' text='Submit' handleClick={exampleFunction} />
                         </Card>
                     </div>

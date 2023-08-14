@@ -17,6 +17,7 @@ const SwipeableDemo: React.FC = () => {
     const [showSheet, setShowSheet] = useState(false)
     const [input1, setInput1] = useState('')
     const [input2, setInput2] = useState('')
+    const [search, setSearch] = useState<string>('')
 
     const reactCode = `'use client'
 
@@ -72,6 +73,8 @@ export default DrawerDemo;`;
                             <Input search={input2} setSearch={setInput2} darkMode={isDarkMode} placeHolder='Last Name' />
                             <p>Birthday</p>
                             <SearchBar
+                                search={search}
+                                setSearch={setSearch}
                                 placeholder='Select Year'
                                 fullWidth={true}
                                 darkMode={isDarkMode}

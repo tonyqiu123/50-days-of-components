@@ -11,6 +11,7 @@ export default function SearchBarDemo() {
 
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isFullWidth, setIsFullWidth] = useState(false)
+  const [search, setSearch] = useState<string>('')
 
   const foodProducts = [
     "Chocolate Chip Cookies",
@@ -75,14 +76,13 @@ export default function SearchBarDemo() {
         <p>SearchBar Component</p>
       </Tooltip>
       <SearchBar
+        search={search}
+        setSearch={setSearch}
         placeholder='Search foods'
         fullWidth={isFullWidth}
         darkMode={isDarkMode}
         queries={foodProducts}
         maxHeight='500px'
-        handleSelect={(inputValue) => console.log(inputValue)}
-
-
       />
     </div>
   );

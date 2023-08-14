@@ -16,6 +16,7 @@ const SeparatorDemo: React.FC = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [name, setName] = useState('')
+    const [search, setSearch] = useState<string>('')
 
     const reactCode = `<Separator orientation='h' darkMode={isDarkMode} />`;
 
@@ -58,7 +59,7 @@ const SeparatorDemo: React.FC = () => {
                             <p>Name</p>
                             <Input darkMode={isDarkMode} search={name} setSearch={setName} placeHolder='Name of your project' />
                             <p>Framework</p>
-                            <SearchBar darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
+                            <SearchBar search={search} setSearch={setSearch} darkMode={isDarkMode} queries={['Next.js', 'SvelteKit', 'Vue.js', 'Nuxt.js']} />
                             <Separator orientation='h' darkMode={isDarkMode} />
                             <Button darkMode={isDarkMode} variant='primary' text='Submit' handleClick={exampleFunction} />
                         </Card>

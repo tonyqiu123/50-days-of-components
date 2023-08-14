@@ -1,0 +1,35 @@
+.multiSelect {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.multiSelectRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.multiSelectRow > p {
+    cursor: pointer;
+    transition: opacity 300ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.multiSelectRow > p:hover {
+    opacity: .7;
+}
+
+.multiSelectSelected {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.multiSelectSelected > img {
+    cursor: pointer;
+    transition: opacity 300ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.multiSelectSelected > img:hover {
+    opacity: .7
+}
+.multiSelectError {
+    color: #ff4d61 !important; 
+}
+
+/* darkMode */

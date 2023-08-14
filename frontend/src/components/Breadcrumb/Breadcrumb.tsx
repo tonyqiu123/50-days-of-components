@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes, useEffect } from 'react';
 import './Breadcrumb.css';
 
 type BreadcrumbProps = {
@@ -8,11 +8,16 @@ type BreadcrumbProps = {
 } & HTMLAttributes<HTMLElement>;
 
 const Breadcrumb: FC<BreadcrumbProps> = ({ darkMode = false, start = 2, end, ...props }) => {
-    // Get the current URL from the window location
-    const currentURL = window.location.href;
+    // Initialize a state to hold the current URL
+    const [currentURL, setCurrentURL] = React.useState('');
+
+    useEffect(() => {
+        // Get the current URL from the window location
+        setCurrentURL(window.location.href);
+    }, []);
 
     // Split the URL into parts using '/'
-    const urlParts = currentURL.split('/')
+    const urlParts = currentURL.split('/');
 
     const endIndex = end !== undefined ? end : urlParts.length;
 
