@@ -32,7 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 
     // Handle clicks outside SearchBar SearchBar component
-    const handleOutsideClick = useCallback((event: any, query = '') => {
+    const handleClick = useCallback((event: any, query = '') => {
         const searchBarDropdown = (event.target as HTMLElement).closest('.searchBarDropdown');
 
         // Close SearchBar dropdown if SearchBar click is outside SearchBar component
@@ -70,7 +70,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             case 'Enter':
                 // If query is currently focused, set it as SearchBar input value and close SearchBar dropdown
                 if (focusedQueryIndex !== -1) {
-                    handleOutsideClick(e as any, shownQueries[focusedQueryIndex]);
+                    handleClick(e as any, shownQueries[focusedQueryIndex]);
                 }
                 break;
             default:
@@ -93,13 +93,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
         setDropdownOpen(false);
         setFocusedQueryIndex(0);
 
-        document.addEventListener('mousedown', handleOutsideClick);
+        document.addEventListener('mousedown', handleClick);
 
         // Clean up event listener when SearchBar component is unmounted
         return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
+            document.removeEventListener('mousedown', handleClick);
         };
-    }, [handleOutsideClick, queries]);
+    }, [handleClick, queries]);
 
 
     // Update dropdown if it is overflowing so I can hide scrollbar.
@@ -136,14 +136,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
                         <p
                             key={index}
                             // Handle click on SearchBar dropdown 
-                            onMouseDown={(e) => handleOutsideClick(e, query)}
+                            onMouseDown={(e) => handleClick(e, query)}
                             className={focusedQueryIndex === index ? 'focusedQuery' : ''}
                         >
                             {query}
                         </p>
                     ))
                 ) : (
-                    <p className="noResults" onMouseDown={(e) => handleOutsideClick(e, '')}>
+                    <p className="noResults" onMouseDown={(e) => handleClick(e, '')}>
                         no results
                     </p>
                 )}

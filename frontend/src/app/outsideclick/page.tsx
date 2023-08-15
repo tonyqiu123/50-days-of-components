@@ -12,6 +12,8 @@ import { Command, CommandInput, CommandList, CommandGroup, CommandItem, CommandS
 const OutsideClickDemo: React.FC = () => {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  
 
   const reactCode = `<Popover>
 <Button text='Toggle command' variant='primary' />
@@ -50,7 +52,7 @@ const OutsideClickDemo: React.FC = () => {
         <TabsTrigger value='code'><p>Code</p></TabsTrigger>
         <TabsContent value='preview'>
           <div className='demoBox'>
-            <Popover>
+            <Popover isOpen={isOpen} setIsOpen={setIsOpen}>
               <Button text='Toggle command' variant='primary' />
               <div>
                 <Command darkMode={isDarkMode}>

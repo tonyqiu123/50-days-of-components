@@ -51,11 +51,11 @@ body.darkMode::-webkit-scrollbar-thumb {
   --destructive-4: #ffadc6;
 
   /* Neutral Colors */
-  --gray-100: #F7F7F7;
   /* lightmode hover */
+  --gray-100: #F7F7F7;
   --gray-200: #EDEDED;
-  --gray-300: #E2E2E2;
   /* lightmode border */
+  --gray-300: #E2E2E2;
   --gray-400: #d4d4d4;
   /* lightmode faded out text */
   --gray-500: #A0A0A0;
@@ -168,7 +168,7 @@ a {
 
 .darkMode.page .demoBox {
   border: 1px solid rgb(65, 65, 66);
-  background-color: rgb(34, 35, 36);
+  background-color: rgb(13, 13, 14);
 }
 
 .darkMode.page * {

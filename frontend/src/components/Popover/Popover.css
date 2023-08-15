@@ -10,9 +10,9 @@
     left: 50%;
     margin: auto;
     perspective: 1000px;
-    transform: translate(-50%, 4px) scale(0.95);
+    transform: translate(-50%, -8px) scale(0.95);
     z-index: 1001;
-    transition: all 100ms cubic-bezier(0.32, 0.72, 0, 1);
+    transition: all 150ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 
@@ -22,5 +22,5 @@
 }
 
 .popoverContent.showPopoverContent {
-    transform: translate(-50%, 4px) scale(1);
+    transform: translate(-50%, 2px) scale(1);
 }

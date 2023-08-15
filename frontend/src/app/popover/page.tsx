@@ -10,7 +10,7 @@ const PopoverDemo: React.FC = () => {
 
 
     const [isDarkMode, setIsDarkMode] = useState(false)
-
+    const [isOpen, setIsOpen] = useState(false);
 
 
     return (
@@ -22,7 +22,7 @@ const PopoverDemo: React.FC = () => {
 
 
 
-                <Popover>
+                <Popover isOpen={isOpen} setIsOpen={setIsOpen}>
                     {/* First child is the trigger */}
                     <Button text='Toggle popover' variant='primary' />
                     {/* Second child is the popover content */}

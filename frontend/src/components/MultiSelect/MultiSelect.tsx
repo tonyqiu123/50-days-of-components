@@ -31,6 +31,9 @@ const MultiSelect: FC<MultiSelectProps> = ({ selected, setSelected, darkMode = f
             else if (selected.includes(search)) {
                 setError('Duplicate')
             }
+            else {
+                setSelected(prev => [...prev, search])
+            }
         }
 
         // no search bar validation

@@ -48,7 +48,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       <React.Fragment>
         <p>{text}</p>
-        {imageSrc && <Image src={imageSrc} alt='' height={14} width={14} />}
+        {imageSrc && <Image style={{ filter: `${darkMode ? 'invert(1)' : 'invert(0)'}` }} src={imageSrc} alt='' height={14} width={14} />}
       </React.Fragment>
       <Image className='loading' src="/Button/loading.svg" alt="Loading" width={14} height={14} />
     </button>

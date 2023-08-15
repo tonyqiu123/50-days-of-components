@@ -1,60 +1,61 @@
-# Day 38/100
+# Day 39/100
 
-August 14th / October 16th
+August 15th / October 16th
 
-# MultiSelect
-<a href="https://youtu.be/HLqfz7WPbsw" target="_blank">Watch live demo on youtube</a>
+# Select
+<a href="https://youtu.be/_eCPKuCeCGs" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/MultiSelect" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/Select" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/MultiSelect" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1140725960501637271/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Select" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141153709259243711/image.png"/></a>  
 
 ## Description 
 
-###### The multiselect component offers an intuitive user experience by presenting a dynamic interface that permits the simultaneous selection of multiple items from a comprehensive list. This feature not only simplifies data input and filtering for users but also enhances the flexibility of interaction by accommodating various selection scenarios, making it a valuable addition to applications that require efficient and user-friendly data management.
+###### The select web development component plays a pivotal role in enhancing user interaction by presenting a dropdown menu that enables users to conveniently choose from a range of options. This intuitive interface element not only simplifies data input but also contributes to a seamless and engaging user experience, making it an indispensable tool for creating dynamic and user-centric web applications.
 
-The multiselect component streamlines user interaction by allowing them to effortlessly pick multiple choices from a list, enhancing versatility in data selection.
+Offer a user-friendly dropdown menu for option selection.
 
 ## Installation 
 
-To use the MultiSelect component in your project, follow these steps:
+To use the Select component in your project, follow these steps:
 
-1. Create a new folder called 'MultiSelect' in your project's components directory.
-2. Copy the `MultiSelect.tsx` file into the newly created 'MultiSelect' folder.
+1. Create a new folder called 'Select' in your project's components directory.
+2. Copy the `Select.tsx` and `Select.css` file into the newly created 'Select' folder.
 
 ## Props 
-### MultiSelect:
-`darkMode` (optional boolean): Indicates whether the component should be displayed in a dark mode theme.
+### Select:
+`selected` (required string): Represents the currently selected option in the dropdown menu.
 
-`queries` (optional string array): Provides a predefined list of options for selection within the component.
+`setSelected` (required React.Dispatch<React.SetStateAction<string>>): A function used to update the selected state with a new value when a dropdown option is clicked.
 
-`placeholder` (optional string): Specifies the placeholder text for the search input.
+`darkMode` (optional boolean): Determines whether the component should be displayed in a dark mode theme.
 
-`selected` (required string array): Manages the array of currently selected items.
+`queries` (required string[]): An array of strings containing the options to be displayed in the dropdown menu.
 
-`setSelected` (required React.Dispatch<React.SetStateAction<string[]>>): A state setter function to update the selected array.
+`placeholder` (optional string): Specifies the placeholder text to be displayed in the dropdown when no option is selected.
+
+`...props` (optional HTMLAttributes<HTMLElement>): Additional HTML attributes that can be passed to the underlying HTML element like style or className.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-const [selected2, setSelected2] = useState<string[]>([])
-    
-const languages = [
-    "JavaScript",
-    "Python",
-    "Java",
-    "C++",
-    "Ruby",
-    "Swift",
-    "PHP",
-    "C#",
-    "TypeScript",
-    "Go",
-    "Rust",
-    "Kotlin"
+const animals = [
+    'Cat',
+    'Dolphin',
+    'Panda',
+    'Koala',
+    'Horse',
+    'Owl',
+    'Squirrel',
+    'Rabbit',
+    'Gorilla',
+    'Zebra',
+    'Crocodile'
 ];
 
-<MultiSelect selected={selected2} setSelected={setSelected2} queries={languages} darkMode={isDarkMode} />
+const [selected1, setSelected1] = useState<string>('')
+
+<Select style={{ minWidth: '200px' }} queries={animals} selected={selected1} setSelected={setSelected1} darkMode={isDarkMode} />
 ```
 
 ## Prerequisites
