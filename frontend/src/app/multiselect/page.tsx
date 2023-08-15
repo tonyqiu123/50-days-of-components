@@ -14,11 +14,11 @@ const MultiSelectDemo: React.FC = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(true)
 
-    const [selected1, setSelected1] = useState<string[]>([])
+    const [selected1, setSelected1] = useState<string[]>(['opt'])
     const [selected2, setSelected2] = useState<string[]>([])
 
     const reactCode = `const [selected2, setSelected2] = useState<string[]>([])
-    
+
 const languages = [
     "JavaScript",
     "Python",
@@ -74,7 +74,7 @@ const languages = [
                 </TabsContent>
                 <TabsContent value='preview2'>
                     <div className='demoBox'>
-                        <MultiSelect selected={selected2} setSelected={setSelected2} queries={languages} darkMode={isDarkMode} />
+                        <MultiSelect selected={['Python']} setSelected={setSelected2} queries={languages} darkMode={isDarkMode} />
                     </div>
                 </TabsContent>
                 <TabsContent value='code'>

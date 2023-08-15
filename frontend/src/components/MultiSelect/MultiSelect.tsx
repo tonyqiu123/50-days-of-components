@@ -25,6 +25,12 @@ const MultiSelect: FC<MultiSelectProps> = ({ selected, setSelected, darkMode = f
             if (!queries.includes(search)) {
                 setError('Not found within list')
             }
+            else if (search === '') {
+                setError('Cannot be empty')
+            }
+            else if (selected.includes(search)) {
+                setError('Duplicate')
+            }
         }
 
         // no search bar validation

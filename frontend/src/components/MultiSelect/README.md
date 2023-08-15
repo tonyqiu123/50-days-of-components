@@ -20,7 +20,7 @@ The multiselect component streamlines user interaction by allowing them to effor
 To use the MultiSelect component in your project, follow these steps:
 
 1. Create a new folder called 'MultiSelect' in your project's components directory.
-2. Copy the `MultiSelect.tsx` file into the newly created 'MultiSelect' folder.
+2. Copy the `MultiSelect.tsx` and `MultiSelect.css` file into the newly created 'MultiSelect' folder.
 
 ## Props 
 ### MultiSelect:
