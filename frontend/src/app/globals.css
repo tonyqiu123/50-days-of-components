@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #F7F7F7;
+  background-color: #f8f8f8;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -52,8 +52,8 @@ body.darkMode::-webkit-scrollbar-thumb {
 
   /* Neutral Colors */
   /* lightmode hover */
-  --gray-100: #F7F7F7;
-  --gray-200: #EDEDED;
+  --gray-100: #f8f8f8;
+  --gray-200: #f3f3f3;
   /* lightmode border */
   --gray-300: #E2E2E2;
   --gray-400: #d4d4d4;

@@ -1,0 +1,45 @@
+.table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thead>.tr {
+    border-top: none;
+}
+
+.th {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+
+.tr {
+    border-top: 1px solid #E2E2E2;
+    transition: all 200ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+.tr:hover {
+    background-color: #f8f8f8;
+}
+
+.td {
+    font-size: 14px;
+    padding: 16px;
+    text-align: left;
+}
+
+/* Dark Mode Styles */
+.darkMode.table {
+    background-color: black;
+}
+
+.darkMode.table .tr {
+    border-top: 1px solid #313131;
+}
+
+.darkMode.table .tr:hover {
+    background-color: #313131;
+}

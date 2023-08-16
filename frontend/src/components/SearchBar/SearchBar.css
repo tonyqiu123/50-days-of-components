@@ -70,7 +70,7 @@ input[type="text"].darkMode::placeholder {
 
 .searchBarDropdown>p:hover,
 .focusedQuery {
-    background-color: #F7F7F7;
+    background-color: #f8f8f8;
 }
 
 .noResults {
@@ -86,7 +86,7 @@ input[type="text"].darkMode::placeholder {
 }
 
 .searchBarDropdown::-webkit-scrollbar-track {
-    background-color: #F7F7F7;
+    background-color: #f8f8f8;
 }
 
 .searchBarDropdown::-webkit-scrollbar-thumb {

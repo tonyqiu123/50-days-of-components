@@ -9,7 +9,7 @@
     justify-content: space-between;
     margin: -16px -20px 16px -20px;
     padding: 8px 20px;
-    background-color: #EDEDED;
+    background-color: #f3f3f3;
 }
 
 .prettycodeContainer * {
@@ -36,7 +36,7 @@
 }
 
 .prettycode::-webkit-scrollbar-track {
-    background-color: #EDEDED;
+    background-color: #f3f3f3;
 }
 
 .prettycode::-webkit-scrollbar-thumb {

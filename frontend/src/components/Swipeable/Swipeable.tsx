@@ -89,7 +89,6 @@ const Swipeable: React.FC<SwipeableProps> = ({ visible, setVisible, closeDirecti
       } else {
         setTransform(transformToHide)
       }
-      console.log(transition)
     }
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)

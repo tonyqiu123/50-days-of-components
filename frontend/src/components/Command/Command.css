@@ -36,12 +36,12 @@
 }
 
 .commandItem:hover {
-    background-color: #EDEDED;
+    background-color: #f3f3f3;
 }
 
 .commandSeparator {
     height: 1px;
-    background-color: #EDEDED;
+    background-color: #f3f3f3;
     margin: 4px -4px;
 }
 

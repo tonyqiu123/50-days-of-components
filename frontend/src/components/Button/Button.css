@@ -43,7 +43,7 @@
 
 /* secondary */
 .secondary.button {
-    background-color: #EDEDED;
+    background-color: #f3f3f3;
     border: none;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .outline.button:hover {
-    background-color: #F7F7F7;
+    background-color: #f8f8f8;
 }
 
 .outline.button>.loading {

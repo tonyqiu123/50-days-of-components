@@ -52,7 +52,6 @@ describe('Input Component', () => {
     );
 
     const inputContainer = container.querySelector('.input');
-    console.log(inputContainer?.innerHTML)
     expect(inputContainer).toHaveClass('fullWidth');
   });
 
