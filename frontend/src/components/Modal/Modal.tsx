@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({ children, setShowModal, showModal, darkMo
 
     return (
         <React.Fragment >
-            <div {...props} className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} modal ${showModal && 'showModal'}`}>
+            <div {...props} className={`${props.className ? props.className : ''} ${darkMode && 'darkMode'} modal ${showModal ? 'showModal' : ''}`}>
                 {children}
             </div>
             <Backdrop darkMode={darkMode} showBackdrop={showModal} setShowBackdrop={setShowModal} />

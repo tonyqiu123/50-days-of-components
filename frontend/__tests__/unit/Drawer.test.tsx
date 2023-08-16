@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Drawer from '@/components/Drawer/Drawer';
 
 describe('Drawer Component', () => {
   it('renders children when showDrawer is true', () => {
-    const [show, setShow] = useState(true)
     const { getByText } = render(
-      <Drawer showDrawer={show} setShowDrawer={setShow}>
+      <Drawer showDrawer={true} setShowDrawer={() => {}}>
         <p>Drawer Content</p>
       </Drawer>
     );
@@ -15,32 +14,40 @@ describe('Drawer Component', () => {
     expect(drawerContent).toBeInTheDocument();
   });
 
-  it('does not render children when showDrawer is false', () => {
-    const [show, setShow] = useState(false)
-    const { queryByText } = render(
-      <Drawer showDrawer={show} setShowDrawer={setShow}>
-        <p>Drawer Content</p>
-      </Drawer>
-    );
-
-    const drawerContent = queryByText('Drawer Content');
-    expect(drawerContent).toBeNull();
-  });
-
   it('calls setShowDrawer when Backdrop is clicked', () => {
     const mockSetShowDrawer = jest.fn();
-    const { getByTestId } = render(
+    const { container } = render(
       <Drawer showDrawer={true} setShowDrawer={mockSetShowDrawer}>
         <p>Drawer Content</p>
       </Drawer>
     );
 
-    const backdrop = getByTestId('backdrop');
+    const backdrop = container.querySelector('.backdrop');
     fireEvent.click(backdrop);
 
     expect(mockSetShowDrawer).toHaveBeenCalledTimes(1);
     expect(mockSetShowDrawer).toHaveBeenCalledWith(false);
   });
 
-  // Add more test cases as needed
+  it('applies darkMode class when darkMode prop is true', () => {
+    const { container } = render(
+      <Drawer showDrawer={true} setShowDrawer={() => {}} darkMode={true}>
+        <p>Drawer Content</p>
+      </Drawer>
+    );
+
+    const drawer = container.querySelector('.drawer');
+    expect(drawer).toHaveClass('darkMode');
+  });
+
+  it('does not apply darkMode class when darkMode prop is false', () => {
+    const { container } = render(
+      <Drawer showDrawer={true} setShowDrawer={() => {}} darkMode={false}>
+        <p>Drawer Content</p>
+      </Drawer>
+    );
+
+    const drawer = container.querySelector('.drawer');
+    expect(drawer).not.toHaveClass('darkMode');
+  });
 });

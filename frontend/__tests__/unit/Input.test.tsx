@@ -1,68 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Input from '@/components/Input/Input';
 
 describe('Input Component', () => {
-  const [search, setSearch] = useState('')
-  it('renders with placeholder', () => {
-    const { getByPlaceholderText } = render(
-      <Input search={search} setSearch={setSearch} placeHolder="Enter text" />
+  it('renders input with placeholder and value', () => {
+    const { getByPlaceholderText, getByDisplayValue } = render(
+      <Input placeHolder="Search..." search="Example" setSearch={() => { }} />
     );
 
-    const inputElement = getByPlaceholderText('Enter text');
-    expect(inputElement).toBeInTheDocument();
+    const inputWithPlaceholder = getByPlaceholderText('Search...');
+    const inputWithDisplayValue = getByDisplayValue('Example');
+
+    expect(inputWithPlaceholder).toBeInTheDocument();
+    expect(inputWithDisplayValue).toBeInTheDocument();
   });
 
-  it('renders with search value', () => {
-    const [search, setSearch] = useState('Search Query')
-    const { getByDisplayValue } = render(
-      <Input search={search} setSearch={setSearch} placeHolder="Enter text" />
-    );
-
-    const inputElement = getByDisplayValue('Search Query');
-    expect(inputElement).toBeInTheDocument();
-  });
-
-  it('calls setSearch on input change', () => {
+  it('invokes setSearch function on input change', () => {
     const mockSetSearch = jest.fn();
     const { getByPlaceholderText } = render(
-      <Input search="" setSearch={mockSetSearch} />
+      <Input placeHolder="Search..." search="" setSearch={mockSetSearch} />
     );
 
-    const inputElement = getByPlaceholderText('Enter text');
-    fireEvent.change(inputElement, { target: { value: 'New Value' } });
+    const input = getByPlaceholderText('Search...');
+    fireEvent.change(input, { target: { value: 'New Value' } });
 
     expect(mockSetSearch).toHaveBeenCalledTimes(1);
     expect(mockSetSearch).toHaveBeenCalledWith('New Value');
   });
 
-  it('renders with dark mode', () => {
+  it('applies darkMode class when darkMode prop is true', () => {
     const { container } = render(
-      <Input search="" setSearch={() => {}} darkMode />
+      <Input placeHolder="Search..." search="" setSearch={() => { }} darkMode={true} />
     );
 
-    const inputContainer = container.querySelector('.inputContainer');
+    const inputContainer = container.querySelector('.input');
     expect(inputContainer).toHaveClass('darkMode');
   });
 
-  it('renders with icon', () => {
-    const { getByAltText } = render(
-      <Input search="" setSearch={() => {}} iconSrc="/path/to/icon.png" />
+  it('renders input with icon when iconSrc prop is provided', () => {
+    const { container } = render(
+      <Input placeHolder="Search..." search="" setSearch={() => { }} iconSrc="/path/to/icon.png" />
     );
 
-    const inputIcon = getByAltText('');
-    expect(inputIcon).toBeInTheDocument();
-    expect(inputIcon).toHaveAttribute('src', '/path/to/icon.png');
+    const iconImage = container.querySelector('img');
+    expect(iconImage).toBeInTheDocument();
   });
 
-  it('renders with fullWidth', () => {
+  it('renders input with fullWidth class when fullWidth prop is true', () => {
     const { container } = render(
-      <Input search="" setSearch={() => {}} fullWidth />
+      <Input placeHolder="Search..." search="" setSearch={() => { }} fullWidth={true} />
     );
 
-    const inputContainer = container.querySelector('.inputContainer');
+    const inputContainer = container.querySelector('.input');
+    console.log(inputContainer?.innerHTML)
     expect(inputContainer).toHaveClass('fullWidth');
   });
 
-  // Add more tests as needed
+  // Add more test cases as needed
 });

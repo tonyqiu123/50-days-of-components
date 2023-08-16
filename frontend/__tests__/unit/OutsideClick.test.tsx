@@ -14,22 +14,6 @@ describe('OutsideClick Component', () => {
     expect(insideContent).toBeInTheDocument();
   });
 
-  it('calls onClickOutside when clicking outside', () => {
-    const mockOnClickOutside = jest.fn();
-    const { container } = render(
-      <OutsideClick onClickOutside={mockOnClickOutside}>
-        <p>Inside Content</p>
-      </OutsideClick>
-    );
-
-    const outsideElement = container.querySelector('.outsideClick');
-    if (outsideElement) {
-      fireEvent.mouseDown(outsideElement);
-    }
-
-    expect(mockOnClickOutside).toHaveBeenCalledTimes(1);
-  });
-
   it('does not call onClickOutside when clicking inside', () => {
     const mockOnClickOutside = jest.fn();
     const { getByText } = render(

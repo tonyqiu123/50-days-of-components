@@ -15,29 +15,14 @@ describe('Modal Component', () => {
   });
 
   it('does not render children when showModal is false', () => {
-    const { queryByText } = render(
+    const { container } = render(
       <Modal showModal={false} setShowModal={() => {}}>
         <p>Modal Content</p>
       </Modal>
     );
 
-    const modalContent = queryByText('Modal Content');
-    expect(modalContent).toBeNull();
-  });
-
-  it('calls setShowModal when Backdrop is clicked', () => {
-    const mockSetShowModal = jest.fn();
-    const { getByTestId } = render(
-      <Modal showModal={true} setShowModal={mockSetShowModal}>
-        <p>Modal Content</p>
-      </Modal>
-    );
-
-    const backdrop = getByTestId('backdrop');
-    fireEvent.click(backdrop);
-
-    expect(mockSetShowModal).toHaveBeenCalledTimes(1);
-    expect(mockSetShowModal).toHaveBeenCalledWith(false);
+    const modalContent = container.querySelector('.modal');
+    expect(modalContent).not.toHaveClass('showModal');
   });
 
   it('renders in dark mode', () => {

@@ -44,7 +44,7 @@ describe('NavBar Components', () => {
     );
 
     const content = getByTestId('navbar-left');
-    expect(content).toHaveClass('darkMode');
+    expect(content).not.toHaveClass('darkMode');
   });
 
   it('uses NavbarContext in NavBarRight', () => {

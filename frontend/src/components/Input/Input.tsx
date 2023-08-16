@@ -16,7 +16,7 @@ const Input: React.FC<InputProps> = ({ search, setSearch, placeHolder = '', dark
     return (
         <div {...props} className={'inputContainer'}>
             {iconSrc && <Image alt='' width={16} height={16} src={iconSrc} />}
-            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={placeHolder} className={`${props.className ? props.className : ''} input ${darkMode && 'darkMode'} ${iconSrc && 'inputWithImg'} ${fullWidth ? 'fullWidth' : ''}`} type="text" />
+            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={placeHolder} className={`${props.className ? props.className : ''} input ${darkMode ? 'darkMode' : ''} ${iconSrc ? 'inputWithImg' : ''} ${fullWidth ? 'fullWidth' : ''}`} type="text" />
         </div>
     );
 };

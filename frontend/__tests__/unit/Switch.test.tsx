@@ -1,37 +1,29 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; // For better assertions
 import Switch from '@/components/Switch/Switch';
 
-describe('Switch Component', () => {
-  it('renders correctly', () => {
-    const onChange = jest.fn();
-    render(<Switch onChange={onChange} />);
-    const switchElement = screen.getByTestId('switch');
-    expect(switchElement).toBeInTheDocument();
-  });
+describe('Switch component', () => {
+    it('renders without crashing', () => {
+        const { container } = render(<Switch isChecked={false} setIsChecked={() => {}} />);
+        expect(container).toBeInTheDocument();
+    });
 
-  it('calls onChange when clicked', () => {
-    const onChange = jest.fn();
-    render(<Switch onChange={onChange} />);
-    const switchElement = screen.getByTestId('switch');
-    fireEvent.click(switchElement);
-    expect(onChange).toHaveBeenCalledWith(true);
-  });
+    it('renders with dark mode class when darkMode prop is true', () => {
+        const { container } = render(<Switch isChecked={false} setIsChecked={() => {}} darkMode />);
+        expect(container.firstChild).toHaveClass('darkMode');
+    });
 
-  it('updates checked state on click', () => {
-    const onChange = jest.fn();
-    render(<Switch onChange={onChange} />);
-    const switchElement = screen.getByTestId('switch');
-    fireEvent.click(switchElement);
-    expect(switchElement).toHaveClass('checked');
-  });
+    it('renders checked class when isChecked prop is true', () => {
+        const { container } = render(<Switch isChecked={true} setIsChecked={() => {}} />);
+        expect(container.firstChild).toHaveClass('checked');
+    });
 
-  it('applies darkMode class', () => {
-    const onChange = jest.fn();
-    render(<Switch onChange={onChange} darkMode />);
-    const switchElement = screen.getByTestId('switch');
-    expect(switchElement).toHaveClass('darkMode');
-  });
+    it('calls setIsChecked when clicked', () => {
+        const setIsCheckedMock = jest.fn();
+        const { container } = render(<Switch isChecked={false} setIsChecked={setIsCheckedMock} />);
 
-  // Add more tests as needed
+        fireEvent.click(container.firstChild);
+        expect(setIsCheckedMock).toHaveBeenCalledTimes(1);
+    });
 });

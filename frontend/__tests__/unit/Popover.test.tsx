@@ -3,68 +3,56 @@ import { render, fireEvent } from '@testing-library/react';
 import Popover from '@/components/Popover/Popover';
 
 describe('Popover Component', () => {
-  it('renders trigger element', () => {
+  it('renders trigger and content when isOpen is true', () => {
     const { getByText } = render(
-      <Popover>
-        <button>Trigger</button>
-        <div>Content</div>
+      <Popover isOpen={true} setIsOpen={() => {}}>
+        <button>Open Popover</button>
+        <div>Popover Content</div>
       </Popover>
     );
 
-    const trigger = getByText('Trigger');
-    expect(trigger).toBeInTheDocument();
-  });
+    const triggerButton = getByText('Open Popover');
+    const content = getByText('Popover Content');
 
-  it('toggles popover content on trigger click', () => {
-    const { getByText, queryByText } = render(
-      <Popover>
-        <button>Trigger</button>
-        <div>Content</div>
-      </Popover>
-    );
-
-    const trigger = getByText('Trigger');
-    fireEvent.click(trigger);
-
-    const content = getByText('Content');
-    expect(content).toBeInTheDocument();
-
-    fireEvent.click(trigger);
-
-    expect(queryByText('Content')).not.toBeInTheDocument();
-  });
-
-  it('renders popover content', () => {
-    const { getByText } = render(
-      <Popover>
-        <button>Trigger</button>
-        <div>Content</div>
-      </Popover>
-    );
-
-    const trigger = getByText('Trigger');
-    fireEvent.click(trigger);
-
-    const content = getByText('Content');
+    expect(triggerButton).toBeInTheDocument();
     expect(content).toBeInTheDocument();
   });
 
-  it('hides popover content on outside click', () => {
-    const { getByText, queryByText } = render(
-      <Popover>
-        <button>Trigger</button>
-        <div>Content</div>
+  it('toggles isOpen when trigger is clicked', () => {
+    const { getByText } = render(
+      <Popover isOpen={false} setIsOpen={() => {}}>
+        <button>Open Popover</button>
+        <div>Popover Content</div>
       </Popover>
     );
 
-    const trigger = getByText('Trigger');
-    fireEvent.click(trigger);
+    const triggerButton = getByText('Open Popover');
+    fireEvent.click(triggerButton);
 
-    const outsideElement = document.body;
-    fireEvent.mouseDown(outsideElement);
-
-    expect(queryByText('Content')).not.toBeInTheDocument();
+    const content = getByText('Popover Content');
+    expect(content).toBeInTheDocument();
   });
 
-  // Add more tests as needed
+  it('closes popover when outside click occurs', () => {
+    const { getByText, queryByText, container } = render(
+      <div>
+        <button>Outside</button>
+        <Popover isOpen={false} setIsOpen={() => {}}>
+          <button>Open Popover</button>
+          <div>Popover Content</div>
+        </Popover>
+      </div>
+    );
+
+    const triggerButton = getByText('Open Popover');
+    fireEvent.click(triggerButton);
+
+    const outsideButton = getByText('Outside');
+    fireEvent.click(outsideButton);
+
+    const content = queryByText('Popover Content');
+    expect(content).not.toHaveClass('showPopoverContent');
+  });
+
+  // Add more test cases as needed
 });

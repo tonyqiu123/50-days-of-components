@@ -1,54 +1,55 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import SearchBar from '@/components/SearchBar/SearchBar';
 
-describe('SearchBar Component', () => {
-  it('renders SearchBar with placeholder', () => {
-    const { getByPlaceholderText } = render(
-      <SearchBar placeholder="Test Placeholder" queries={[]} />
-    );
-
-    const inputElement = getByPlaceholderText('Test Placeholder');
-    expect(inputElement).toBeInTheDocument();
+describe('SearchBar', () => {
+  it('renders without crashing', () => {
+    render(<SearchBar search="" setSearch={() => { }} queries={[]} />);
   });
 
-  it('renders SearchBar with queries', () => {
-    const queries = ['apple', 'banana', 'cherry'];
-    const { getByText } = render(<SearchBar queries={queries} />);
-
-    const queryElements = queries.map(query => getByText(query));
-    queryElements.forEach(element => {
-      expect(element).toBeInTheDocument();
-    });
+  it('displays the provided search value', () => {
+    const searchValue = 'Test Search';
+    render(<SearchBar search={searchValue} setSearch={() => { }} queries={[]} />);
+    const inputElement = screen.getByPlaceholderText('Search');
+    expect(inputElement).toHaveValue(searchValue);
   });
 
-  it('filters and displays matching queries', () => {
-    const queries = ['apple', 'banana', 'cherry'];
-    const { getByPlaceholderText, getByText } = render(
-      <SearchBar placeholder="Search" queries={queries} />
-    );
-
+  it('updates search value when typing', () => {
+    const setSearch = jest.fn();
+    const { getByPlaceholderText } = render(<SearchBar search="" setSearch={setSearch} queries={[]} />);
     const inputElement = getByPlaceholderText('Search');
-    fireEvent.change(inputElement, { target: { value: 'ba' } });
+    const newSearchValue = 'New Search Value';
 
-    const matchingQueryElements = ['banana'].map(query => getByText(query));
-    matchingQueryElements.forEach(element => {
-      expect(element).toBeInTheDocument();
-    });
+    fireEvent.change(inputElement, { target: { value: newSearchValue } });
+
+    expect(setSearch).toHaveBeenCalledWith(newSearchValue);
   });
 
-  it('handles click on query', () => {
-    const handleSelect = jest.fn();
+  it('opens dropdown when clicking on input', () => {
+    const { container } = render(<SearchBar search="" setSearch={() => { }} queries={[]} />);
+    const inputElement = screen.getByPlaceholderText('Search');
+
+    fireEvent.mouseDown(inputElement);
+
+    const dropdownElement = container.querySelector('.searchBarDropdown');
+    expect(dropdownElement).toHaveClass('visible');
+  });
+
+
+  it('calls setSearch when clicking on a query', () => {
+    const setSearch = jest.fn();
     const queries = ['apple', 'banana', 'cherry'];
-    const { getByText } = render(
-      <SearchBar queries={queries} handleSelect={handleSelect} />
-    );
+    const { getByText } = render(<SearchBar search="" setSearch={setSearch} queries={queries} />);
 
-    const queryElement = getByText('banana');
-    fireEvent.mouseDown(queryElement);
+    const inputElement = screen.getByPlaceholderText('Search');
+    fireEvent.change(inputElement, { target: { value: 'a' } });
 
-    expect(handleSelect).toHaveBeenCalledWith('banana');
+    const appleElement = getByText('apple');
+    fireEvent.mouseDown(appleElement);
+
+    expect(setSearch).toHaveBeenCalledWith('apple');
   });
 
-  // Add more tests as needed
+  // Add more test cases as needed
+
 });

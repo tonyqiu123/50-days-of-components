@@ -8,7 +8,7 @@ describe('Toast Component', () => {
     const showToast = true;
     const darkMode = false;
     render(
-      <Toast setShowToast={setShowToast} showToast={showToast} darkMode={darkMode}>
+      <Toast data-testid='toast' setShowToast={setShowToast} showToast={showToast} darkMode={darkMode}>
         This is a toast message.
       </Toast>
     );

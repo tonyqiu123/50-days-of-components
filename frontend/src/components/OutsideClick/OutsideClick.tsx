@@ -22,7 +22,7 @@ const OutsideClick: FC<Props> = ({ children, onClickOutside, ...props }) => {
     });
 
     return (
-        <div {...props} className={`${props.className ? props.className : ''}`} ref={wrapperRef}>
+        <div {...props} className={`outsideClick ${props.className ? props.className : ''}`} ref={wrapperRef}>
             {children}
         </div>
     )

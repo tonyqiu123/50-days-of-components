@@ -27,12 +27,12 @@ describe('HoverCard Component', () => {
     fireEvent.mouseEnter(triggerElement);
 
     const contentElement = getByText('Card Content');
-    expect(contentElement).toBeInTheDocument();
+    expect(contentElement).toHaveClass('showHoverCardContent');
 
     fireEvent.mouseLeave(triggerElement);
 
     const closedContentElement = queryByText('Card Content');
-    expect(closedContentElement).toBeNull();
+    expect(closedContentElement).not.toHaveClass('showHoverCardContent');
   });
 
   it('renders in dark mode', () => {

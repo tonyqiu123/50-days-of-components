@@ -2,23 +2,21 @@ import React, { HTMLAttributes, useState } from 'react';
 import './Switch.css';
 
 type SwitchProps = {
-    onChange: (checked: boolean) => void;
+    isChecked: boolean
+    setIsChecked: React.Dispatch<React.SetStateAction<boolean>>
     darkMode?: boolean
 } & HTMLAttributes<HTMLElement>;
 
-const Switch: React.FC<SwitchProps> = ({ onChange, darkMode = false, ...props }) => {
-
-    const [isChecked, setIsChecked] = useState(false);
+const Switch: React.FC<SwitchProps> = ({ isChecked, setIsChecked, darkMode = false, ...props }) => {
 
     const handleToggle = () => {
         const newChecked = !isChecked;
         setIsChecked(newChecked);
-        onChange(newChecked);
     };
 
     return (
         <div
-        {...props}
+            {...props}
             className={`${props.className ? props.className : ''} switch ${isChecked ? 'checked' : ''} ${darkMode && 'darkMode'}`}
             onClick={handleToggle}
         >

@@ -1,51 +1,34 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; // For better assertions
 import Button from '@/components/Button/Button';
 
-describe('Button Component', () => {
-  it('renders with default props', () => {
-    const { getByText } = render(<Button text="Click me" variant="primary" />);
-    const buttonElement = getByText('Click me');
-
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass('button');
-    expect(buttonElement).toHaveClass('primary');
-  });
-
-  it('renders with secondary variant and image', () => {
-    const { getByText, getByAltText } = render(
-      <Button text="Submit" variant="secondary" imageSrc="/path/to/image.png" />
-    );
-    const buttonElement = getByText('Submit');
-    const imageElement = getByAltText('');
-
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass('button');
-    expect(buttonElement).toHaveClass('secondary');
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', '/path/to/image.png');
-  });
-
-  it('calls handleClick when clicked', async () => {
-    const mockHandleClick = jest.fn(() => Promise.resolve());
-    const { getByText } = render(
-      <Button text="Submit" variant="primary" handleClick={mockHandleClick} />
-    );
-    const buttonElement = getByText('Submit');
-
-    fireEvent.click(buttonElement);
-
-    await waitFor(() => {
-      expect(mockHandleClick).toHaveBeenCalledTimes(1);
+describe('Button component', () => {
+    it('renders without crashing', () => {
+        const { container } = render(<Button text="Click me" variant="primary" />);
+        expect(container).toBeInTheDocument();
     });
-  });
 
-  it('disables the button when isDisabled is true', () => {
-    const { getByText } = render(<Button text="Disabled" variant="primary" isDisabled />);
-    const buttonElement = getByText('Disabled');
+    it('renders with the correct text', () => {
+        const buttonText = 'Click me';
+        const { getByText } = render(<Button text={buttonText} variant="primary" />);
+        expect(getByText(buttonText)).toBeInTheDocument();
+    });
 
-    expect(buttonElement).toBeDisabled();
-  });
+    it('renders with the primary variant class', () => {
+        const { container } = render(<Button text="Click me" variant="primary" />);
+        expect(container.firstChild).toHaveClass('primary');
+    });
 
-  // Add more test cases as needed
+    it('disables the button when isDisabled is true', () => {
+        const { container } = render(<Button text="Click me" variant="primary" isDisabled />);
+        expect(container.firstChild).toBeDisabled();
+    });
+
+    it('calls handleClick when clicked and is not disabled', async () => {
+        const handleClickMock = jest.fn(() => Promise.resolve());
+        const { getByText } = render(<Button text="Click me" variant="primary" handleClick={handleClickMock} />);
+        fireEvent.click(getByText('Click me'));
+        await waitFor(() => expect(handleClickMock).toHaveBeenCalledTimes(1));
+    });
 });

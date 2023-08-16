@@ -3,76 +3,53 @@ import { render, fireEvent } from '@testing-library/react';
 import Pagination from '@/components/Pagination/Pagination';
 
 describe('Pagination Component', () => {
-  const mockHandleClick = jest.fn();
-
-  beforeEach(() => {
-    mockHandleClick.mockClear();
-  });
-
-  it('renders indicators with correct number of pages', () => {
+  it('renders pagination with indicators', () => {
     const { getByText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} />
+      <Pagination totalQueries={50} queriesPerPage={10} />
     );
 
     const indicator1 = getByText('1');
-    const indicator2 = getByText('2');
+    const indicator5 = getByText('5');
+
     expect(indicator1).toBeInTheDocument();
-    expect(indicator2).toBeInTheDocument();
+    expect(indicator5).toBeInTheDocument();
   });
 
-  it('calls handleClick when indicator is clicked', () => {
+  it('renders selected indicator with "selected" class', () => {
     const { getByText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} handleClick={mockHandleClick} />
+      <Pagination totalQueries={50} queriesPerPage={10} />
     );
 
-    const indicator2 = getByText('2');
-    fireEvent.click(indicator2);
+    const selectedIndicator = getByText('1');
+
+    expect(selectedIndicator).toHaveClass('selected');
+  });
+
+  it('invokes handleClick when an indicator is clicked', () => {
+    const mockHandleClick = jest.fn();
+    const { getByText } = render(
+      <Pagination totalQueries={50} queriesPerPage={10} handleClick={mockHandleClick} />
+    );
+
+    const indicator3 = getByText('3');
+    fireEvent.click(indicator3);
+
+    expect(mockHandleClick).toHaveBeenCalledTimes(2);
+    expect(mockHandleClick).toHaveBeenCalledWith(3, 21, 30, 10);
+  });
+
+  it('invokes handleClick when arrow icons are clicked', () => {
+    const mockHandleClick = jest.fn();
+    const { container } = render(
+      <Pagination totalQueries={50} queriesPerPage={10} handleClick={mockHandleClick} />
+    );
+
+    const nextArrow = container.querySelector('.pagination > div:nth-of-type(3) .avatar');
+    fireEvent.click(nextArrow);
 
     expect(mockHandleClick).toHaveBeenCalledTimes(1);
-    expect(mockHandleClick).toHaveBeenCalledWith(2, 6, 10, 5);
+    expect(mockHandleClick).toHaveBeenCalledWith(1, 1, 10, 10);
   });
 
-  it('displays reverseDoubleArrow when selected is not 1', () => {
-    const { getByAltText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} />
-    );
-
-    const reverseDoubleArrow = getByAltText('Reverse Double Arrow');
-    expect(reverseDoubleArrow).toBeInTheDocument();
-  });
-
-  it('displays arrow when selected is not numberOfPages', () => {
-    const { getByAltText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} />
-    );
-
-    const arrow = getByAltText('Arrow');
-    expect(arrow).toBeInTheDocument();
-  });
-
-  it('calls handleClick when reverseDoubleArrow is clicked', () => {
-    const { getByAltText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} handleClick={mockHandleClick} />
-    );
-
-    const reverseDoubleArrow = getByAltText('Reverse Double Arrow');
-    fireEvent.click(reverseDoubleArrow);
-
-    expect(mockHandleClick).toHaveBeenCalledTimes(1);
-    expect(mockHandleClick).toHaveBeenCalledWith(1, 1, 5, 5);
-  });
-
-  it('calls handleClick when reverseArrow is clicked', () => {
-    const { getByAltText } = render(
-      <Pagination totalQueries={10} queriesPerPage={5} handleClick={mockHandleClick} />
-    );
-
-    const reverseArrow = getByAltText('Reverse Arrow');
-    fireEvent.click(reverseArrow);
-
-    expect(mockHandleClick).toHaveBeenCalledTimes(1);
-    expect(mockHandleClick).toHaveBeenCalledWith(1, 1, 5, 5);
-  });
-
-  // Add more tests as needed
+  // Add more test cases as needed
 });

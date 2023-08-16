@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={isDisabled}
       onClick={onClick}
       {...props}
-      className={`${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''} button ${size} ${variant} ${isLoading ? 'loading' : ''
+      className={`button ${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''} ${size} ${variant} ${isLoading ? 'loading' : ''
         }`}
 
     >
