@@ -2,60 +2,151 @@
 
 August 15th / October 16th
 
-# Select
-<a href="https://youtu.be/_eCPKuCeCGs" target="_blank">Watch live demo on youtube</a>
+# Table
+<a href="https://youtu.be/VtWweL7ZNb0" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Select" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/Table" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Select" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141153709259243711/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Table" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141496528909905930/image.png"/></a>  
 
 ## Description 
 
-###### The select web development component plays a pivotal role in enhancing user interaction by presenting a dropdown menu that enables users to conveniently choose from a range of options. This intuitive interface element not only simplifies data input but also contributes to a seamless and engaging user experience, making it an indispensable tool for creating dynamic and user-centric web applications.
+###### The table component is a versatile solution for systematically arranging and displaying data, proving particularly advantageous in scenarios like financial portfolio tracking, academic result summaries, and e-commerce product listings, where organized data presentation aids in easy comparison, assessment, and informed decision-making.
 
-Offer a user-friendly dropdown menu for option selection.
+This component serves as a necessary precursor for Day 50, where I will be adding a dynamic table component with sorting functionality, pagination, individual actions, and data exportability.
 
 ## Installation 
 
-To use the Select component in your project, follow these steps:
+To use the Table component in your project, follow these steps:
 
-1. Create a new folder called 'Select' in your project's components directory.
-2. Copy the `Select.tsx` and `Select.css` file into the newly created 'Select' folder.
+1. Create a new folder called 'Table' in your project's components directory.
+2. Copy the `Table.tsx` and `Table.css` file into the newly created 'Table' folder.
 
 ## Props 
-### Select:
-`selected` (required string): Represents the currently selected option in the dropdown menu.
+### Table
+`darkMode` (optional boolean): Determines whether the table should be displayed in dark mode or not.
 
-`setSelected` (required React.Dispatch<React.SetStateAction<string>>): A function used to update the selected state with a new value when a dropdown option is clicked.
+`children` (required React.ReactNode): The content to be rendered within the table component.
 
-`darkMode` (optional boolean): Determines whether the component should be displayed in a dark mode theme.
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the table element, such as className, style, and others.
 
-`queries` (required string[]): An array of strings containing the options to be displayed in the dropdown menu.
+### TableHeader
+`children` (required React.ReactNode): The content to be rendered within the table header component.
 
-`placeholder` (optional string): Specifies the placeholder text to be displayed in the dropdown when no option is selected.
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the thead element, such as className, style, and others.
 
-`...props` (optional HTMLAttributes<HTMLElement>): Additional HTML attributes that can be passed to the underlying HTML element like style or className.
+### TableHead
+`children` (required React.ReactNode): The content to be rendered within the table head (header cell) component.
+
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the th (table head cell) element, such as className, style, and others.
+
+### TableBody
+`children` (required React.ReactNode): The content to be rendered within the table body component.
+
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the tbody element, such as className, style, and others.
+
+### TableRow
+`children` (required React.ReactNode): The content to be rendered within the table row component.
+
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the tr (table row) element, such as className, style, and others.
+
+### TableCell
+`children` (required React.ReactNode): The content to be rendered within the table cell component.
+
+`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the td (table cell) element, such as className, style, and others.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-const animals = [
-    'Cat',
-    'Dolphin',
-    'Panda',
-    'Koala',
-    'Horse',
-    'Owl',
-    'Squirrel',
-    'Rabbit',
-    'Gorilla',
-    'Zebra',
-    'Crocodile'
-];
-
-const [selected1, setSelected1] = useState<string>('')
-
-<Select style={{ minWidth: '200px' }} queries={animals} selected={selected1} setSelected={setSelected1} darkMode={isDarkMode} />
+const chessOpenings = [
+        {
+            opening: "Ruy Lopez",
+            status: "Popular",
+            complexity: "High",
+            startingMoves: "1.e4 e5 2.Nf3 Nc6 3.Bb5",
+        },
+        {
+            opening: "Sicilian Defense",
+            status: "Common",
+            complexity: "Medium",
+            startingMoves: "1.e4 c5",
+        },
+        {
+            opening: "King's Gambit",
+            status: "Aggressive",
+            complexity: "High",
+            startingMoves: "1.e4 e5 2.f4",
+        },
+        {
+            opening: "French Defense",
+            status: "Solid",
+            complexity: "Medium",
+            startingMoves: "1.e4 e6",
+        },
+        {
+            opening: "Caro-Kann Defense",
+            status: "Solid",
+            complexity: "Medium",
+            startingMoves: "1.e4 c6",
+        },
+        {
+            opening: "English Opening",
+            status: "Versatile",
+            complexity: "Medium",
+            startingMoves: "1.c4",
+        },
+        {
+            opening: "Italian Game",
+            status: "Popular",
+            complexity: "Medium",
+            startingMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4",
+        },
+        {
+            opening: "Pirc Defense",
+            status: "Solid",
+            complexity: "High",
+            startingMoves: "1.e4 d6",
+        },
+        {
+            opening: "Nimzo-Indian Defense",
+            status: "Strategic",
+            complexity: "High",
+            startingMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4",
+        },
+        {
+            opening: "Grünfeld Defense",
+            status: "Dynamic",
+            complexity: "High",
+            startingMoves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5",
+        },
+        {
+            opening: "Scandinavian Defense",
+            status: "Uncommon",
+            complexity: "Medium",
+            startingMoves: "1.e4 d5",
+        },
+    ];
+    
+    <Table darkMode={isDarkMode}>
+    <TableHeader>
+        <TableRow>
+            <TableHead>Opening</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Complexity</TableHead>
+            <TableHead>Starting Moves</TableHead>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        {chessOpenings.map((opening) => (
+            <TableRow key={opening.opening}>
+                <TableCell>{opening.opening}</TableCell>
+                <TableCell>{opening.status}</TableCell>
+                <TableCell>{opening.complexity}</TableCell>
+                <TableCell>{opening.startingMoves}</TableCell>
+            </TableRow>
+        ))}
+    </TableBody>
+</Table>
 ```
 
 ## Prerequisites
