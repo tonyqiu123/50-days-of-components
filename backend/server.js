@@ -6,10 +6,10 @@ const port = 3000;
 
 // MySQL Database Configuration
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'tonyqiu12345',
-  database: '100_days_of_components'
+  host: process.env,MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE
 });
 
 // Connect to MySQL Database
