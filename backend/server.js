@@ -1,25 +1,25 @@
 const express = require('express');
-const mysql = require('mysql');
+import { pool } from '.db.js'
 
-const app = express();
 const port = process.env.PORT || 3000;
 
-// MySQL Database Configuration
-const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE
-});
+const app = express()
 
-// Connect to MySQL Database
-db.connect(err => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
-  console.log('Connected to the database');
-});
+app.get('/', async (req, res) => {
+  const [rows] = await pool.query('SELECT * FROM users')
+  res.json(rows)
+})
+
+app.get('/ping', async (req, res) => {
+  const [result] = await pool.query('SELECT "hello world" as RESULT')
+  res.json(result[0])
+})
+
+app.create('/create', async (req, res) => {
+  const result = await pool.query('INSERT INTO users(name) VALUES("John")')
+  res.json(result)
+  res.send('Welcome to Server')
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
