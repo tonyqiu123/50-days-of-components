@@ -9,7 +9,7 @@ const db = mysql.createConnection({
   host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
   password: process.env.MYSQLPASSWORD,
-  database: '100_days_of_components'
+  database: process.env.MYSQLDATABASE
 });
 
 // Connect to MySQL Database
