@@ -1,33 +1,49 @@
 const express = require('express');
-const { pool } = require('./db.js');
+const { pool } = require('./db.js')
 
 const port = process.env.PORT || 3000;
 
-const app = express();
+const app = express()
 
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error('Error connecting to database:', err);
-  } else {
+const promisePool = pool.promise();
+
+promisePool.getConnection()
+  .then(connection => {
     console.log('Connected to database');
-    connection.release(); 
+    connection.release();
+  })
+  .catch(error => {
+    console.error('Error connecting to database:', error);
+  });
+
+app.get('/', async (req, res) => {
+  try {
+    const [rows] = await promisePool.query('SELECT * FROM users');
+    res.json(rows);
+  } catch (error) {
+    console.error('Error querying database:', error);
+    res.status(500).send('Internal Server Error');
   }
 });
 
-app.get('/', async (req, res) => {
-  const [rows] = await pool.query('SELECT * FROM users');
-  res.json(rows);
-});
-
 app.get('/ping', async (req, res) => {
-  const [result] = await pool.query('SELECT "hello world" as RESULT');
-  res.json(result[0]);
+  try {
+    const [result] = await promisePool.query('SELECT "hello world" as RESULT');
+    res.json(result[0]);
+  } catch (error) {
+    console.error('Error querying database:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.post('/create', async (req, res) => {
-  const result = await pool.query('INSERT INTO users(name) VALUES("John")');
-  res.json(result);
-  res.send('Welcome to Server');
+  try {
+    const [result] = await promisePool.query('INSERT INTO users(name) VALUES("John")');
+    res.json(result);
+  } catch (error) {
+    console.error('Error querying database:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.listen(port, () => {
