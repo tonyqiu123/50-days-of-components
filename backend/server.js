@@ -1,5 +1,5 @@
 const express = require('express');
-import { pool } from '.db.js'
+const { pool } = require('./db.js')
 
 const port = process.env.PORT || 3000;
 
@@ -15,7 +15,7 @@ app.get('/ping', async (req, res) => {
   res.json(result[0])
 })
 
-app.create('/create', async (req, res) => {
+app.post('/create', async (req, res) => {
   const result = await pool.query('INSERT INTO users(name) VALUES("John")')
   res.json(result)
   res.send('Welcome to Server')
