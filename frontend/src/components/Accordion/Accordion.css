@@ -2,26 +2,23 @@
     display: flex;
     flex-direction: column;
 }
+
 .accordion {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid rgb(143, 146, 146);
-    padding: 16px 0;
 }
 
 .accordionTrigger {
+    padding: 16px 0;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     align-items: center;
 }
 
 .accordionTrigger>a {
-    transition: all 300ms cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.active.accordionTrigger>a {
-    transform: rotate(-180deg) scaleX(-1);
+    transition: all 500ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .accordionContent {
@@ -30,8 +27,12 @@
     transition: all 300ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+/* active */
 .active.accordionContent {
-    margin-top: 16px;
+    padding-bottom: 16px;
+}
+.active.accordionTrigger>a {
+    transform: rotate(-180deg) scaleX(-1);
 }
 
 /* darkMode */

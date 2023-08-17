@@ -151,6 +151,7 @@ a {
 
 
 .demoBox {
+  overflow: hidden;
   position: relative;
   border: 1px solid #E5E7EB;
   background-color: #faf9f9;

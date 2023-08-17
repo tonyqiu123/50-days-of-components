@@ -80,7 +80,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ name, childr
 
     const updateHeightOnResize = useCallback(() => {
         if (isActive) {
-            setHeight(contentRef.current?.scrollHeight);
+            setHeight(contentRef.current?.scrollHeight + 16);
         }
     }, [isActive]);
 
@@ -94,7 +94,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ name, childr
 
 
     useEffect(() => {
-        setHeight(isActive ? contentRef.current?.scrollHeight : 0);
+        setHeight(isActive ? contentRef.current?.scrollHeight + 16 : 0);
     }, [isActive]);
 
     return (
