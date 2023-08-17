@@ -1,6 +1,6 @@
-# Day 39/100
+# Day 40/100
 
-August 15th / October 16th
+August 16th / October 16th
 
 # Table
 <a href="https://youtu.be/VtWweL7ZNb0" target="_blank">Watch live demo on youtube</a>
