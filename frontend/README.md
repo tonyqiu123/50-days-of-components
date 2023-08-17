@@ -1,152 +1,62 @@
-# Day 40/100
+# Day 41/100
 
-August 16th / October 16th
+August 17th / October 16th
 
-# Table
-<a href="https://youtu.be/VtWweL7ZNb0" target="_blank">Watch live demo on youtube</a>
+# AspectRatio
+<a href="https://youtu.be/bJvV43ZRd0A" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Table" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/AspectRatio" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Table" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141496528909905930/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/AspectRatio" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141804467243728906/image.png"/></a>  
 
 ## Description 
 
-###### The table component is a versatile solution for systematically arranging and displaying data, proving particularly advantageous in scenarios like financial portfolio tracking, academic result summaries, and e-commerce product listings, where organized data presentation aids in easy comparison, assessment, and informed decision-making.
+###### The AspectRatio component intelligently maintains a given aspect ratio for its content, dynamically adjusting both width and height. It seamlessly adapts to varying dimensions while elegantly handling maximum height constraints, making it ideal for responsive designs requiring consistent proportions.
 
-This component serves as a necessary precursor for Day 50, where I will be adding a dynamic table component with sorting functionality, pagination, individual actions, and data exportability.
+
+The Aspect Ratio component is useful for maintaining an image's aspect ratio when either its height or width changes. In order to apply a maxHeight or maxWidth, pass a number to the maxHeight prop.
 
 ## Installation 
 
-To use the Table component in your project, follow these steps:
+To use the AspectRatio component in your project, follow these steps:
 
-1. Create a new folder called 'Table' in your project's components directory.
-2. Copy the `Table.tsx` and `Table.css` file into the newly created 'Table' folder.
+1. Create a new folder called 'AspectRatio' in your project's components directory.
+2. Copy the `AspectRatio.tsx` and `AspectRatio.css` file into the newly created 'AspectRatio' folder.
 
 ## Props 
-### Table
-`darkMode` (optional boolean): Determines whether the table should be displayed in dark mode or not.
+### AspectRatio
+`ratio` (required number): Aspect ratio of the content (width-to-height). E.g., 16 / 9 for a 16:9 aspect ratio.
 
-`children` (required React.ReactNode): The content to be rendered within the table component.
+`children` (required ReactNode): Elements to be rendered within the AspectRatio component, maintaining the specified aspect ratio.
 
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the table element, such as className, style, and others.
+`maxHeight` (optional number): Max height while maintaining aspect ratio. Content may scale down if needed.
 
-### TableHeader
-`children` (required React.ReactNode): The content to be rendered within the table header component.
-
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the thead element, such as className, style, and others.
-
-### TableHead
-`children` (required React.ReactNode): The content to be rendered within the table head (header cell) component.
-
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the th (table head cell) element, such as className, style, and others.
-
-### TableBody
-`children` (required React.ReactNode): The content to be rendered within the table body component.
-
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the tbody element, such as className, style, and others.
-
-### TableRow
-`children` (required React.ReactNode): The content to be rendered within the table row component.
-
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the tr (table row) element, such as className, style, and others.
-
-### TableCell
-`children` (required React.ReactNode): The content to be rendered within the table cell component.
-
-`...props` (optional HTMLAttributes): Additional HTML attributes that can be applied to the td (table cell) element, such as className, style, and others.
+`...props` (optional HTMLAttributes<HTMLElement>): Additional HTML attributes for the underlying <div>.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-const chessOpenings = [
-        {
-            opening: "Ruy Lopez",
-            status: "Popular",
-            complexity: "High",
-            startingMoves: "1.e4 e5 2.Nf3 Nc6 3.Bb5",
-        },
-        {
-            opening: "Sicilian Defense",
-            status: "Common",
-            complexity: "Medium",
-            startingMoves: "1.e4 c5",
-        },
-        {
-            opening: "King's Gambit",
-            status: "Aggressive",
-            complexity: "High",
-            startingMoves: "1.e4 e5 2.f4",
-        },
-        {
-            opening: "French Defense",
-            status: "Solid",
-            complexity: "Medium",
-            startingMoves: "1.e4 e6",
-        },
-        {
-            opening: "Caro-Kann Defense",
-            status: "Solid",
-            complexity: "Medium",
-            startingMoves: "1.e4 c6",
-        },
-        {
-            opening: "English Opening",
-            status: "Versatile",
-            complexity: "Medium",
-            startingMoves: "1.c4",
-        },
-        {
-            opening: "Italian Game",
-            status: "Popular",
-            complexity: "Medium",
-            startingMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4",
-        },
-        {
-            opening: "Pirc Defense",
-            status: "Solid",
-            complexity: "High",
-            startingMoves: "1.e4 d6",
-        },
-        {
-            opening: "Nimzo-Indian Defense",
-            status: "Strategic",
-            complexity: "High",
-            startingMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4",
-        },
-        {
-            opening: "Grünfeld Defense",
-            status: "Dynamic",
-            complexity: "High",
-            startingMoves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5",
-        },
-        {
-            opening: "Scandinavian Defense",
-            status: "Uncommon",
-            complexity: "Medium",
-            startingMoves: "1.e4 d5",
-        },
-    ];
-    
-    <Table darkMode={isDarkMode}>
-    <TableHeader>
-        <TableRow>
-            <TableHead>Opening</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Complexity</TableHead>
-            <TableHead>Starting Moves</TableHead>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
-        {chessOpenings.map((opening) => (
-            <TableRow key={opening.opening}>
-                <TableCell>{opening.opening}</TableCell>
-                <TableCell>{opening.status}</TableCell>
-                <TableCell>{opening.complexity}</TableCell>
-                <TableCell>{opening.startingMoves}</TableCell>
-            </TableRow>
-        ))}
-    </TableBody>
-</Table>
+// Do not specify maxWidth, only maxHeight
+    <AspectRatio style={{ border: '1px solid red' }} maxHeight={700} ratio={1 / 1}>
+    <img
+        src="https://cdn.discordapp.com/attachments/715319623637270638/1141796329564147772/image.png"
+        alt="Photo by Drew Beamer"
+    />
+</AspectRatio>
+
+<AspectRatio style={{ border: '1px solid red' }} ratio={3 / 1}>
+    <img
+        src="https://media.tacdn.com/media/attractions-content--1x-1/10/5a/80/a6.jpg"
+        alt="Photo by Drew Beamer"
+    />
+</AspectRatio>
+
+<AspectRatio style={{ border: '1px solid red' }} ratio={2 / 1}>
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Lunch_atop_a_Skyscraper_-_Charles_Clyde_Ebbets.jpg"
+        alt="Photo by Drew Beamer"
+    />
+</AspectRatio>
 ```
 
 ## Prerequisites

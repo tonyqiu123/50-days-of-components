@@ -11,9 +11,10 @@ August 17th / October 16th
 
 ## Description 
 
-###### The AspectRatio web development component plays a pivotal role in enhancing user interaction by presenting a dropdown menu that enables users to conveniently choose from a range of options. This intuitive interface element not only simplifies data input but also contributes to a seamless and engaging user experience, making it an indispensable tool for creating dynamic and user-centric web applications.
+###### The AspectRatio component intelligently maintains a given aspect ratio for its content, dynamically adjusting both width and height. It seamlessly adapts to varying dimensions while elegantly handling maximum height constraints, making it ideal for responsive designs requiring consistent proportions.
 
-Offer a user-friendly dropdown menu for option AspectRatioion.
+
+The Aspect Ratio component is useful for maintaining an image's aspect ratio when either its height or width changes. In order to apply a maxHeight or maxWidth, pass a number to the maxHeight prop.
 
 ## Installation 
 
