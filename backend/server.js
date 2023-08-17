@@ -1,9 +1,19 @@
 const express = require('express');
-const { pool } = require('./db.js')
+const rateLimit = require('express-rate-limit');
+const { pool } = require('./db.js');
 
 const port = process.env.PORT || 3000;
 
-const app = express()
+const app = express();
+
+// Rate limiting configuration
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+
+// Apply the rate limiter to all routes
+app.use(limiter);
 
 const promisePool = pool.promise();
 
