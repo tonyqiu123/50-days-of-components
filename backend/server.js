@@ -18,7 +18,7 @@ promisePool.getConnection()
 
 app.get('/', async (req, res) => {
   try {
-    const [rows] = await promisePool.query('SELECT * FROM users');
+    const [rows] = await promisePool.query('SELECT * FROM 100_days_of_components');
     res.json(rows);
   } catch (error) {
     console.error('Error querying database:', error);
@@ -38,7 +38,7 @@ app.get('/ping', async (req, res) => {
 
 app.post('/create', async (req, res) => {
   try {
-    const [result] = await promisePool.query('INSERT INTO users(name) VALUES("John")');
+    const [result] = await promisePool.query('INSERT INTO 100_days_of_components(name) VALUES("John")');
     res.json(result);
   } catch (error) {
     console.error('Error querying database:', error);
