@@ -8,13 +8,13 @@ type ShowMoreProps = {
     darkMode?: boolean
 } & HTMLAttributes<HTMLElement>;
 
-const ShowMore: React.FC<ShowMoreProps> = ({ children, height = 200, text = 'Show more', darkMode = false, ...props }) => {
+const ShowMore: React.FC<ShowMoreProps> = ({ children, height, text = 'Show more', darkMode = false, ...props }) => {
 
     const [showFull, setShowFull] = useState(false);
 
 
     return (
-        <div {...props} className={`${props.className ? props.className : ''} ${darkMode ? 'darkMode' : ''} showMoreContainer`} style={{ height: `${showFull ? 'auto ' : `${height}px`}` }}>
+        <div {...props} className={`${props.className ? props.className : ''} ${darkMode ? 'darkMode' : ''} showMoreContainer`} style={{ height: `${showFull || !height ? 'auto ' : `${height}px`}` }}>
             {!showFull && (
                 <div className="gradient" onClick={() => setShowFull(true)}>
                     <p className="showMoreText">{text}</p>
