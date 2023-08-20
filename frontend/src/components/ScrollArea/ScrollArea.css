@@ -1,0 +1,26 @@
+.scrollArea {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex: 0 0 auto;
+}
+
+.scrollArea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+    background-color: #d4d4d4;
+    
+}
+
+.scrollArea.darkMode::-webkit-scrollbar-track {
+    background-color: #3a3a3a;
+}
+
+.scrollArea.darkMode::-webkit-scrollbar-thumb {
+    background-color: rgb(126, 126, 126);
+}

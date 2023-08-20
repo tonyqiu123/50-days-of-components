@@ -1,10 +1,11 @@
 .verticalNavigation {
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     gap: 2px;
     justify-content: space-between;
-    max-width: 300px;
     background-color: white;
+    flex: 0 0 auto;
 }
 
 .verticalNavigationHeader {
@@ -37,9 +38,11 @@
 .darkMode.verticalNavigation {
     background-color: black;
 }
-.darkMode.verticalNavigation > .verticalNavigationHeader {
+
+.darkMode.verticalNavigation>.verticalNavigationHeader {
     color: #A0A0A0;
 }
+
 .darkMode.verticalNavigation>.verticalNavigationLink:hover,
 .darkMode.verticalNavigation>.selected.verticalNavigationLink {
     background-color: #313131;
