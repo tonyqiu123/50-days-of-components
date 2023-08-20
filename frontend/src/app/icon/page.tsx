@@ -1,28 +1,43 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
-import Button from '@/components/Button/Button';
+import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Icon from '@/components/Icon/Icon';
-import Tooltip from '@/components/Tooltip/Tooltip';
 
+const CarouselDemo: React.FC = () => {
 
-export default function IconDemo() {
+    const { isDarkMode, setIsDarkMode } = useGlobal();
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
-
+    const reactCode = `<Icon text='Github' image='/Icon/githubIcon.png' invert={isDarkMode && true} />
+    <Icon text='Twitter' image='/Icon/twitterIcon.png' invert={isDarkMode && true} />
+    <Icon text='Threads' image='/Icon/threadsIcon.png' invert={isDarkMode && true} />`;
 
     return (
+        <React.Fragment >
 
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText='A flexible image icon component.'>
-                <p>Icon Component</p>
-            </Tooltip>
-            <div style={{ display: 'flex', gap: '2px' }}>
-                <Icon text='Github' image='/Icon/githubIcon.png' invert={isDarkMode && true} />
-                <Icon text='Twitter' image='/Icon/twitterIcon.png' invert={isDarkMode && true} />
-                <Icon text='Threads' image='/Icon/threadsIcon.png' invert={isDarkMode && true} />
-            </div>
-        </div>
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Icon component</h1>
+            <Tabs darkMode={isDarkMode}>
+
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                        <Icon text='Github' image='/Icon/githubIcon.png' invert={isDarkMode && true} />
+                        <Icon text='Twitter' image='/Icon/twitterIcon.png' invert={isDarkMode && true} />
+                        <Icon text='Threads' image='/Icon/threadsIcon.png' invert={isDarkMode && true} />
+                    </div>
+                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+
+            </Tabs>
+
+        </React.Fragment>
     );
 };
+
+export default CarouselDemo; 

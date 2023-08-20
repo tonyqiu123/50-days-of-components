@@ -1,5 +1,6 @@
 .hoverCard {
     position: relative;
+    width: fit-content;
 }
 
 .hoverCardContent {

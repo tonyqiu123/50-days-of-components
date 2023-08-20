@@ -45,7 +45,7 @@ const BackdropDemo: React.FC = () => {
 
     return (
         <>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Button handleClick={async () => setShowBackdrop(true)} variant='secondary' darkMode={isDarkMode} text='Open Backdrop' />
             <Backdrop darkMode={isDarkMode} showBackdrop={showBackdrop} setShowBackdrop={setShowBackdrop} />;
         </>

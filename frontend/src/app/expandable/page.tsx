@@ -2,16 +2,18 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { ExpandableProvider, Expandable } from '@/components/Expandable/Expandable';
-import ShowMore from '@/components/ShowMore/ShowMore';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import Button from '@/components/Button/Button';
+import Input from '@/components/Input/Input';
+import Drawer from '@/components/Drawer/Drawer';
+import SearchBar from '@/components/SearchBar/SearchBar';
+import { Expandable, ExpandableProvider } from '@/components/Expandable/Expandable';
 
-const ExpandableDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { isDarkMode, setIsDarkMode } = useGlobal();
 
     const reactCode = `<ExpandableProvider className='expandableDemo' darkMode={isDarkMode}>
     <Expandable open={true} iconSrc='/Expandable/paperclip.svg' text='Attach Files'>
@@ -39,16 +41,11 @@ const ExpandableDemo: React.FC = () => {
     </Expandable>
 </ExpandableProvider>`;
 
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The Expandable component is used for nesting navigation.">
-                <p>Expandable component</p>
-            </Tooltip>
-
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Expandable component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
@@ -83,16 +80,13 @@ const ExpandableDemo: React.FC = () => {
                         </ExpandableProvider>
                     </div>
                 </TabsContent>
-                <TabsContent value='code'>
-                    <ShowMore text='Reveal' height={600} darkMode={isDarkMode}>
-                        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
-                    </ShowMore>
-                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
             </Tabs>
 
-        </div>
+        </React.Fragment>
     );
 };
 
-export default ExpandableDemo;
+export default CarouselDemo;
+

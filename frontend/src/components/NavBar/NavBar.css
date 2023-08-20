@@ -8,6 +8,8 @@
     justify-content: space-between;
     padding: 8px 16px;
     gap: 24px;
+    background-color: white;
+    z-index: 2000;
 }
 
 .navbarLeft {
@@ -27,5 +29,8 @@
     filter: invert(1)
 }
 .darkMode.navbar {
-    border-bottom: 1px solid #4B5563;
+    border-bottom: 1px solid #313131;
+}
+.darkMode.navbar {
+    background-color: black;
 }

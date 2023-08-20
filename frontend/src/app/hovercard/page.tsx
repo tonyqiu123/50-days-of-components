@@ -1,41 +1,56 @@
 'use client'
 
 import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import HoverCard from '@/components/HoverCard/HoverCard';
-import Button from '@/components/Button/Button';
 import Image from 'next/image';
-import Tooltip from '@/components/Tooltip/Tooltip';
 
-const HoverCardDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
+    const { isDarkMode, setIsDarkMode } = useGlobal();
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
-
-
+    const reactCode = `<HoverCard darkMode={isDarkMode}>
+    {/* First child is the trigger */}
+    <Image width={24} height={24} src='/HoverCard/Heart.svg' alt='heart' />
+    {/* Second child is the popover content */}
+    <div className='column'>
+        <p>Add to liked songs</p>
+    </div>
+</HoverCard>`;
 
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button variant='secondary' darkMode={isDarkMode} text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText='Add a modal to a component on hover.'><p>HoverCard component</p></Tooltip>
-            <div className='demoBox'>
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>HoverCard component</h1>
+            <Tabs darkMode={isDarkMode}>
 
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
-
-                <HoverCard darkMode={isDarkMode}>
-                    {/* First child is the trigger */}
-                    <Image width={24} height={24} src='/HoverCard/Heart.svg' alt='heart' />
-                    {/* Second child is the popover content */}
-                    <div className='column'>
-                        <p>Add to liked songs</p>
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                        <HoverCard darkMode={isDarkMode}>
+                            {/* First child is the trigger */}
+                            <Image width={24} height={24} src='/HoverCard/Heart.svg' alt='heart' />
+                            {/* Second child is the popover content */}
+                            <div className='column'>
+                                <p>Add to liked songs</p>
+                            </div>
+                        </HoverCard>
                     </div>
-                </HoverCard>
+                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
+            </Tabs>
 
-
-            </div>
-        </div>
+        </React.Fragment>
     );
 };
 
-export default HoverCardDemo;
+export default CarouselDemo;
+
+

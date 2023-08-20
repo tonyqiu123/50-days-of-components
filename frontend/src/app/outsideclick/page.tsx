@@ -42,7 +42,7 @@ const OutsideClickDemo: React.FC = () => {
 
   return (
     <div className={`page ${isDarkMode && 'darkMode'}`}>
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      
       <Tooltip darkMode={isDarkMode} toolTipText="Run a function when you click outside a wrapped component.">
         <p>OutsideClick component</p>
       </Tooltip>

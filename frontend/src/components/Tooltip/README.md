@@ -41,7 +41,7 @@ export default function AdminDashboard() {
 
   return (
     <div> 
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      
       <Tooltip darkMode={isDarkMode} toolTipText='By strategically combining different EC2 purchase options within a single EC2 Auto Scaling Group (ASG), you can achieve an optimal balance between cost savings and performance for your infrastructure.'>
         <p>Combine EC2 purchase options in a single EC2 ASG</p>
       </Tooltip>

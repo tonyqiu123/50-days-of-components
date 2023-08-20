@@ -3,15 +3,15 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
 import Carousel from '@/components/Carousel/Carousel';
 import Image from 'next/image';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const CarouselDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Use the global state
 
     const reactCode = `<Carousel className='carouselDemo'>
     <Image src='/Carousel/dorm.png' alt='dorm' layout="fill" objectFit="cover" />
@@ -23,16 +23,11 @@ const CarouselDemo: React.FC = () => {
     <Image src='/Carousel/poolTable.png' alt='poolTable' layout="fill" objectFit="cover" />
 </Carousel>`;
 
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="Utilized for showcasing and rotating content in a visually engaging, circular sequence. Commonly used in photo galleries, product displays, and testimonials on websites.">
-                <p>Carousel component</p>
-            </Tooltip>
-
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Carousel component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
@@ -55,7 +50,7 @@ const CarouselDemo: React.FC = () => {
 
             </Tabs>
 
-        </div >
+        </React.Fragment>
     );
 };
 

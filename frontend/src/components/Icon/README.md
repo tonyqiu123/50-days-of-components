@@ -65,7 +65,7 @@ export default function IconDemo() {
     return (
 
         <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Tooltip darkMode={isDarkMode} toolTipText='A flexible image icon component.'>
                 <p>Icon Component</p>
             </Tooltip>

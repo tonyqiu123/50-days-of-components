@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <>
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      
       <Button variant='secondary' darkMode={isDarkMode} text='Schedule meeting' handleClick={async () => setShowToast1(true)} />
       <Button variant='secondary' darkMode={isDarkMode} text='Schedule webinar' handleClick={async () => setShowToast2(true)} />
 

@@ -2,39 +2,23 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import MultiSelect from '@/components/MultiSelect/MultiSelect';
-import ShowMore from '@/components/ShowMore/ShowMore';
+import { useGlobal } from '../layout'; // Add this import
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import Icon from '@/components/Icon/Icon';
+import ShowMore from '@/components/ShowMore/ShowMore';
+import MultiSelect from '@/components/MultiSelect/MultiSelect';
 
-const MultiSelectDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
+    const { isDarkMode, setIsDarkMode } = useGlobal();
 
-    const [isDarkMode, setIsDarkMode] = useState(true)
+    const [selected1, setSelected1] = useState<string[]>([])
+    const [selected2, setSelected2] = useState<string[]>([])
 
-    const [selected1, setSelected1] = useState<string[]>(['opt'])
-    const [selected2, setSelected2] = useState<string[]>(['Python'])
-
-    const reactCode = `const [selected2, setSelected2] = useState<string[]>([])
-
-const languages = [
-    "JavaScript",
-    "Python",
-    "Java",
-    "C++",
-    "Ruby",
-    "Swift",
-    "PHP",
-    "C#",
-    "TypeScript",
-    "Go",
-    "Rust",
-    "Kotlin"
-];
-
-<MultiSelect selected={selected2} setSelected={setSelected2} queries={languages} darkMode={isDarkMode} />`;
+    const reactCode = `<Icon text='Github' image='/Icon/githubIcon.png' invert={isDarkMode && true} />
+    <Icon text='Twitter' image='/Icon/twitterIcon.png' invert={isDarkMode && true} />
+    <Icon text='Threads' image='/Icon/threadsIcon.png' invert={isDarkMode && true} />`;
 
     const languages = [
         "JavaScript",
@@ -51,16 +35,11 @@ const languages = [
         "Kotlin"
     ];
 
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
+
             <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The breadcrumb component generates a navigation trail reflecting the current page's URL segments.">
-                <p>MultiSelect component</p>
-            </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-
-
+            <h1>MultiSelect component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
@@ -85,8 +64,8 @@ const languages = [
 
             </Tabs>
 
-        </div >
+        </React.Fragment>
     );
 };
 
-export default MultiSelectDemo;
+export default CarouselDemo; 

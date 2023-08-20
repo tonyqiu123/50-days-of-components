@@ -2,29 +2,23 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Counter from '@/components/Counter/Counter';
-import ShowMore from '@/components/ShowMore/ShowMore';
 
-const CounterDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Use the global state
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
 
     const reactCode = `<Counter target={110} increment={2} duration={750} />`;
 
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The Counter component counts to a target with custom increments and speed.">
-                <p>Counter component</p>
-            </Tooltip>
-
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Command component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
@@ -35,16 +29,12 @@ const CounterDemo: React.FC = () => {
                         <Counter target={110} increment={2} duration={750} />
                     </div>
                 </TabsContent>
-                <TabsContent value='code'>
-                    <ShowMore text='Reveal' height={100} darkMode={isDarkMode}>
-                        <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
-                    </ShowMore>
-                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
             </Tabs>
 
-        </div>
+        </React.Fragment>
     );
 };
 
-export default CounterDemo;
+export default CarouselDemo;

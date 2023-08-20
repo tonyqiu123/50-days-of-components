@@ -49,33 +49,12 @@ export default function Home() {
 
 
   return (
-    <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-      <NavBar darkMode={isDarkMode}>
-        <NavBarLeft>
-          <Image alt='' src='/Home/logo.png' width={140} height={24} />
-          <a href=''><p>Examples</p></a>
-          <a href=''><p>Components</p></a>
-          <a href=''><p>Documentation</p></a>
-        </NavBarLeft>
-        <NavBarRight>
-          <SearchBar search={search} setSearch={setSearch} placeholder='Search components' className='homeSearchbar' darkMode={isDarkMode} queries={componentNames} />
-          <Icon href='https://github.com/tonyqiu123/100-days-of-components' invert={isDarkMode} image='/Icon/githubIcon.png' />
-          <Icon handleClick={async () => setIsDarkMode(!isDarkMode)} invert={isDarkMode} image={isDarkMode ? '/Home/moon.svg' : '/Home/sun.svg'} />
-        </NavBarRight>
-      </NavBar>
-      <div className='dummy'></div>
 
       <div className='shareidea'>
         <p>Idea</p>
         <TextArea  placeholder='Share your idea.' darkMode={isDarkMode} />
         <Button variant='primary' text='Submit' handleClick={async () => setIsDarkMode(!isDarkMode)} />
       </div>
-
-      <div className='catalog'>
-
-      </div>
-
-    </div>
   );
 };

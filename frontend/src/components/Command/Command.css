@@ -2,6 +2,7 @@
     box-shadow: -5px 15px 20px -3px rgba(51, 51, 51, 0.1), -4px 0 6px -2px rgba(32, 32, 32, 0.05);
     background-color: white;
     border: 1px solid #E2E2E2;
+    overflow-y: hidden;
 }
 
 .commandInput {
@@ -18,6 +19,9 @@
     padding: 4px;
     display: flex;
     flex-direction: column;
+}
+.commandGroup {
+    height: 100%;
 }
 
 .commandGroup>h3 {

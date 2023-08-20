@@ -1,50 +1,52 @@
 'use client'
 
-import React from 'react';
-import DragNDrop, { ChildComponentProps } from '@/components/DragNDrop/DragNDrop';
-import Tooltip from '@/components/Tooltip/Tooltip';
-import '@/components/DragNDrop/DragNDrop.css'
+import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import Counter from '@/components/Counter/Counter';
+import DragNDrop from '@/components/DragNDrop/DragNDrop';
 import Image from 'next/image';
 
+const CarouselDemo: React.FC = () => {
 
-export default function DragNDropDemo() {
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Use the global state
+
+
+    const reactCode = `<DragNDrop>
+    <Image className='item2' height={200} width={150} src='/DragNDrop/ace.png' alt='' />
+    <Image className='item2' height={200} width={150} src='/DragNDrop/jack.png' alt='' />
+    <Image className='item2' height={200} width={150} src='/DragNDrop/queen.png' alt='' />
+    <Image className='item2' height={200} width={150} src='/DragNDrop/king.png' alt='' />
+</DragNDrop>`;
 
     return (
+        <React.Fragment >
 
-        <div className='page'>
-            <Tooltip toolTipText='Takes in child elements and provides a mechanism to rearrange them in the order of display through a simple drag-and-drop action.'>
-                <p>DragNDrop Component</p>
-            </Tooltip>
-            <DragNDrop>
-                <div className="item1 row">
-                    <h1>Buy Groceries</h1>
-                    <div className='column'>
-                        <h4>Weekend Shopping List</h4>
-                        <p>Make sure to buy fruits, vegetables, dairy products, and bread for the upcoming week.</p>
-                    </div>
-                </div>
-                <div className="item1 row">
-                    <h1>Workout</h1>
-                    <div className='column'>
-                        <h4>Evening Routine</h4>
-                        <p>Spend at least 30 minutes on cardio and finish the session with some stretching exercises.</p>
-                    </div>
-                </div>
-                <div className="item1 row">
-                    <h1>Read a Book</h1>
-                    <div className='column'>
-                        <h4>Personal Development</h4>
-                        <p>Continue reading the latest book and aim to finish at least two chapters today.</p>
-                    </div>
-                </div>
-            </DragNDrop>
-            <DragNDrop>
-                <Image className='item2' height={200} width={150} src='/DragNDrop/ace.png' alt='' />
-                <Image className='item2' height={200} width={150} src='/DragNDrop/jack.png' alt='' />
-                <Image className='item2' height={200} width={150} src='/DragNDrop/queen.png' alt='' />
-                <Image className='item2' height={200} width={150} src='/DragNDrop/king.png' alt='' />
-            </DragNDrop>
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>DragNDrop component</h1>
+            <Tabs darkMode={isDarkMode}>
 
-        </div>
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                        <DragNDrop>
+                            <Image className='item2' height={200} width={150} src='/DragNDrop/ace.png' alt='' />
+                            <Image className='item2' height={200} width={150} src='/DragNDrop/jack.png' alt='' />
+                            <Image className='item2' height={200} width={150} src='/DragNDrop/queen.png' alt='' />
+                            <Image className='item2' height={200} width={150} src='/DragNDrop/king.png' alt='' />
+                        </DragNDrop>
+                    </div>
+                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+
+            </Tabs>
+
+        </React.Fragment>
     );
 };
+
+export default CarouselDemo;

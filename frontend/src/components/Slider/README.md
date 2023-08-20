@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div className={`page ${isDarkMode && 'darkMode'}`}>
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+      
       <Button variant='secondary' darkMode={isDarkMode} text={isFullWidth ? 'Untoggle full width' : 'Toggle full width'} handleClick={async () => setIsFullWidth(!isFullWidth)} />
       <Tooltip darkMode={isDarkMode} toolTipText='Drag the slider component to update a custom value from a custom range.'>
         <p>Slider Component</p>

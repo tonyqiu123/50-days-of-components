@@ -51,7 +51,7 @@ export default DrawerDemo;`;
     return (
         <div className={`sheetDemo page ${isDarkMode && 'darkMode'}`}>
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Tooltip darkMode={isDarkMode} toolTipText="A sheet component is a slide-out panel that emerges from the side of the screen, providing additional content or options without leaving the current view. It's often used in applications for navigation, contextual information, or additional settings and adjustments.">
                 <p>Sheet component</p>
             </Tooltip>

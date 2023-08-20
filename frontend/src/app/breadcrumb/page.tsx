@@ -3,31 +3,25 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
 
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal
+
 const BreadcrumbDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(true)
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
 
     const reactCode = `<Breadcrumb darkMode={isDarkMode} />
 <Breadcrumb darkMode={isDarkMode} start={3} end={4} />`;
 
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment  >
             <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The breadcrumb component generates a navigation trail reflecting the current page's URL segments.">
-                <p>Breadcrumb component</p>
-            </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-
+            <h1>Breadcrumb component</h1>
 
             <Tabs darkMode={isDarkMode}>
-
                 <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
                 <TabsTrigger value='preview2'><p>Preview 2</p></TabsTrigger>
                 <TabsTrigger value='code'><p>Code</p></TabsTrigger>
@@ -47,10 +41,8 @@ const BreadcrumbDemo: React.FC = () => {
                         <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
                     </ShowMore>
                 </TabsContent>
-
             </Tabs>
-
-        </div >
+        </React.Fragment>
     );
 };
 

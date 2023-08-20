@@ -56,7 +56,7 @@ export default function ToastDemo() {
 
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Badge text='Default' darkMode={isDarkMode} variant='default' />
             <Badge text='Secondary' darkMode={isDarkMode} variant='secondary' darkMode={isDarkMode} />
             <Badge text='Outline' darkMode={isDarkMode} variant='outline' />

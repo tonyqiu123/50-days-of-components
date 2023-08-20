@@ -269,7 +269,7 @@ const TableDemo: React.FC = () => {
             <Tooltip darkMode={isDarkMode} toolTipText="Display structured data in rows and columns, aiding in organized presentation and analysis of information.">
                 <p>Table component</p>
             </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
 
 
             <Tabs darkMode={isDarkMode}>

@@ -1,43 +1,50 @@
 'use client'
 
 import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Carousel from '@/components/Carousel/Carousel';
+import Image from 'next/image';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Checkbox from '@/components/Checkbox/Checkbox';
 
+const CarouselDemo: React.FC = () => {
 
-export default function CheckboxDemo() {
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Use the global state
 
+    const reactCode = `<Carousel className='carouselDemo'>
+    <Image src='/Carousel/dorm.png' alt='dorm' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/floorLounge.png' alt='floorLounge' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/gym.png' alt='gym' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/mainFloor.png' alt='mainFloor' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/outside.png' alt='outside' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/pianoRoom.png' alt='pianoRoom' layout="fill" objectFit="cover" />
+    <Image src='/Carousel/poolTable.png' alt='poolTable' layout="fill" objectFit="cover" />
+</Carousel>`;
 
-  const [isDarkMode, setIsDarkMode] = useState(false)
+    return (
+        <React.Fragment >
 
-  const handleCheckboxChange1 = (checked: any) => {
-    console.log('Accept terms and conditions:', checked);
-  };
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Checkbox component</h1>
+            <Tabs darkMode={isDarkMode}>
 
-  const handleCheckboxChange2 = (checked: any) => {
-    console.log('Enable notifications:', checked);
-  };
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
-  return (
-    <div className={`page ${isDarkMode && 'darkMode'}`}>
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                       <Checkbox primaryText='Accept terms and conditions' />
+                    </div>
+                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
-      <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Tooltip darkMode={isDarkMode} toolTipText='Collect consent digitally.'>
-        <p>Checkbox Component</p>
-      </Tooltip>
-      <Checkbox
-        primaryText="Accept terms and conditions"
-        subText="You agree to our Terms of Service and Privacy Policy."
-        onChange={handleCheckboxChange1}
-        darkMode={isDarkMode}
-      />
-      <Checkbox
-        primaryText="Enable notifications"
-        onChange={handleCheckboxChange2}
-        darkMode={isDarkMode}
-      />
+            </Tabs>
 
-    </div>
-  );
+        </React.Fragment>
+    );
 };
+
+export default CarouselDemo;

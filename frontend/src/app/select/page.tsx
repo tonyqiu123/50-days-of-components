@@ -54,7 +54,7 @@ const [selected1, setSelected1] = useState<string>('')
             <Tooltip darkMode={isDarkMode} toolTipText="Offer a user-friendly dropdown menu for option selection.">
                 <p>Select component</p>
             </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
 
 
             <Tabs darkMode={isDarkMode}>

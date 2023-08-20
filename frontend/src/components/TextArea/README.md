@@ -65,7 +65,7 @@ export default function TextAreaDemo() {
             <Tooltip darkMode={isDarkMode} toolTipText='Enter text into a textfield.'>
                 <h1>TextArea Component</h1>
             </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
 
             <TextArea darkMode={isDarkMode} placeholder='Enter a message here.' />
         </div>

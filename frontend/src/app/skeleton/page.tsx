@@ -62,7 +62,7 @@ const SkeletonDemo: React.FC = () => {
 
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Button variant='primary' text='Reset animation' handleClick={async () => setReload(!reload)} />
             <Tooltip darkMode={isDarkMode} toolTipText="Is anybody reading this?">
                 <p>Skeleton component</p>

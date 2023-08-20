@@ -2,22 +2,22 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import Drawer from '@/components/Drawer/Drawer';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import Button from '@/components/Button/Button';
 import Input from '@/components/Input/Input';
-import Checkbox from '@/components/Checkbox/Checkbox';
+import Drawer from '@/components/Drawer/Drawer';
 import SearchBar from '@/components/SearchBar/SearchBar';
 
-const DrawerDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { isDarkMode, setIsDarkMode } = useGlobal(); 
+    
     const [showDrawer, setShowDrawer] = useState(false)
     const [input1, setInput1] = useState('')
     const [input2, setInput2] = useState('')
-    const [search, setSearch] = useState<string>('')
+
 
     const reactCode = `<Drawer setShowDrawer={setShowDrawer} showDrawer={showDrawer} darkMode={isDarkMode}>
     <h3>Example Drawer</h3>
@@ -52,20 +52,11 @@ const DrawerDemo: React.FC = () => {
     />
 </Drawer>`;
 
-
-    const years = Array.from({ length: 21 }, (_, index) => 2023 - index).map(year => year.toString());
-
-
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The Drawer component offers a customizable sliding interface to present content with easy visibility control.">
-                <p>Drawer component</p>
-            </Tooltip>
-
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Drawer component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
@@ -73,7 +64,7 @@ const DrawerDemo: React.FC = () => {
 
                 <TabsContent value='preview'>
                     <div className='demoBox'>
-                        <Button handleClick={async () => setShowDrawer(true)} variant='secondary' darkMode={isDarkMode} text='Open drawer' />
+                    <Button handleClick={async () => setShowDrawer(true)} variant='secondary' darkMode={isDarkMode} text='Open drawer' />
                         <Drawer className='drawerDemo' setShowDrawer={setShowDrawer} showDrawer={showDrawer} darkMode={isDarkMode}>
                             <h3>Example Drawer</h3>
                             <p></p>
@@ -81,16 +72,6 @@ const DrawerDemo: React.FC = () => {
                             <Input search={input1} setSearch={setInput1} darkMode={isDarkMode} placeHolder='First Name' />
                             <p>Last Name</p>
                             <Input search={input2} setSearch={setInput2} darkMode={isDarkMode} placeHolder='Last Name' />
-                            <p>Birthday</p>
-                            <SearchBar
-                                search={search}
-                                setSearch={setSearch}
-                                placeholder='Select Year'
-                                fullWidth={true}
-                                darkMode={isDarkMode}
-                                queries={years}
-                                maxHeight='500px'
-                            />
                             <p></p>
                             <Button
                                 handleClick={async () => {
@@ -116,8 +97,9 @@ const DrawerDemo: React.FC = () => {
 
             </Tabs>
 
-        </div>
+        </React.Fragment>
     );
 };
 
-export default DrawerDemo;
+export default CarouselDemo;
+

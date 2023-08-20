@@ -25,7 +25,7 @@ const ShowMoreDemo: React.FC = () => {
 
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Tooltip darkMode={isDarkMode} toolTipText="The ShowMore.tsx component enables you to implement a 'Show more' effect found in Medium and Reddit.">
                 <p>ShowMore component</p>
             </Tooltip>

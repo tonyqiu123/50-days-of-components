@@ -20,7 +20,7 @@ const StarRatingDemo: React.FC = () => {
     return (
         <div className={`page ${isDarkMode && 'darkMode'}`}>
 
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
             <Tooltip darkMode={isDarkMode} toolTipText="Rate and display feedback using a visually intuitive star-based system.">
                 <p>StarRating component</p>
             </Tooltip>

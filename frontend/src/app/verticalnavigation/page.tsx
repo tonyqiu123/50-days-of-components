@@ -55,7 +55,7 @@ const VerticalNavigationDemo: React.FC = () => {
             <Tooltip darkMode={isDarkMode} toolTipText="Default navigation within settings, profiles, and documentation.">
                 <p>VerticalNavigation component</p>
             </Tooltip>
-            <Button variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
+            
 
 
             <Tabs darkMode={isDarkMode}>

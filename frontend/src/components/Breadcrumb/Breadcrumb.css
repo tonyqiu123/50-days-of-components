@@ -4,19 +4,30 @@
 }
 
 .breadcrumbItem {
+    color: #717171;
     padding: 6px 8px;
     cursor: pointer;
     transition: background-color 300ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .breadcrumbItem:hover {
-    background-color: #f3f3f3;
+    background-color: #f8f8f8;
 }
-.breadcrumb > .breadcrumbItem:last-child {
+
+.breadcrumb>.breadcrumbItem:last-child {
     font-weight: bold;
+    color: black;
 }
 
 /* darkMode */
 .darkMode.breadcrumb>.breadcrumbItem:hover {
     background-color: #313131;
+}
+
+.darkMode.breadcrumb>.breadcrumbItem {
+    color: #d4d4d4;
+}
+
+.darkMode.breadcrumb>.breadcrumbItem:last-child {
+    color: rgb(255, 255, 255);
 }

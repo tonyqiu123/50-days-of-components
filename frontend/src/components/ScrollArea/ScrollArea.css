@@ -8,19 +8,24 @@
     width: 8px;
 }
 
-.scrollArea::-webkit-scrollbar-track {
-    background-color: #f8f8f8;
+.scrollArea::-webkit-scrollbar-thumb {
+    background-color: rgba(212, 212, 212, 0);
 }
 
-.scrollArea::-webkit-scrollbar-thumb {
-    background-color: #d4d4d4;
-    
+.scrollArea::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
 }
 
 .scrollArea.darkMode::-webkit-scrollbar-track {
-    background-color: #3a3a3a;
+    background-color: rgb(0, 0, 0);
 }
 
-.scrollArea.darkMode::-webkit-scrollbar-thumb {
-    background-color: rgb(126, 126, 126);
+
+/* Make the scrollbar fully opaque on hover */
+.scrollArea:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(212, 212, 212, 1);
+}
+
+.scrollArea.darkMode:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(126, 126, 126, 1);
 }
