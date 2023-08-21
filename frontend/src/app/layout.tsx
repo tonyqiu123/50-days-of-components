@@ -36,11 +36,12 @@ const metadata: Metadata = {
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
 
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const [selected, setSelected] = useState<string>('Accordion')
   const [showSearchComponents, setShowSearchComponents] = useState<boolean>(false)
 
   const components = [
+    'Alert',
     'Avatar',
     'Accordion',
     'AspectRatio',

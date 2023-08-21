@@ -1,80 +1,58 @@
-# Day 38/100
+# Day 45/100
 
-August 14th / October 16th
+August 21st / October 16th
 
-# VerticalNavigation
-<a href="https://www.youtube.com/watch?v=eAro7avGxDA" target="_blank">Watch live demo on youtube</a>
+# Alert
+<a href="https://youtu.be/bJvV43ZRd0A" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/VerticalNavigation" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/VerticalNavigation" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1142485654324920431/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141804467243728906/image.png"/></a>  
 
 ## Description 
 
-###### The VerticalNavigation component facilitates easy navigation through vertical menus or sections, enhancing user experience by providing a structured and accessible interface for selecting options or browsing content. It typically displays links or buttons vertically, aiding users in quickly accessing different sections or pages of an application or website.
+###### The alert component in web development is a crucial tool for displaying important messages or notifications to users, ensuring timely communication of critical information. By providing a visually distinct and attention-grabbing element, the alert component enhances user experience by highlighting key updates or warnings on a website or application.
 
-Default navigation within settings, profiles, and documentation.
+
+Essentially the modal component but without the backdrop hiding the modal when clicked.
 
 ## Installation 
 
-To use the VerticalNavigation component in your project, follow these steps:
+To use the Alert component in your project, follow these steps:
 
-1. Create a new folder called 'VerticalNavigation' in your project's components directory.
-2. Copy the `VerticalNavigation.tsx` and `VerticalNavigation.css` file into the newly created 'VerticalNavigation' folder.
+1. Create a new folder called 'Alert' in your project's components directory.
+2. Copy the `Alert.tsx` and `Alert.css` file into the newly created 'Alert' folder.
 
 ## Props 
-### VerticalNavigation
-`selected` (string, required): Represents the currently selected item in the vertical navigation.
+### Alert
 
-`setSelected` (function, required): A state updater function used to set the selected item in the vertical navigation.
+`setShowAlert` (required function): A React state setter function used to control whether the alert should be shown or hidden. When called with true, the alert becomes visible. When called with false, the alert is hidden.
 
-`darkMode` (boolean, optional): Determines whether the dark mode styling should be applied to the component.
+`showAlert` (required boolean): A boolean value that determines whether the alert is currently visible or hidden. When true, the alert will be displayed. When false, the alert will be hidden.
 
-`children` (ReactNode, required): The content that will be rendered inside the VerticalNavigation component.
+`darkMode` (optional boolean, default: false): An optional boolean flag that indicates whether the alert should be displayed in a dark mode. If set to true, the alert's appearance will be adjusted for dark mode styling.
 
-Any other props passed to this component using the spread operator (...props) will be forwarded to the underlying HTML div element.
+`children` (optional React node): This prop allows you to pass React elements or components as children to the Alert component. These children will be rendered within the content of the alert, allowing you to customize the content of the alert.
 
-### VerticalNavigationHeader
-`text` (string, required): The text content to be displayed within the header.
-
-Any other props passed to this component using the spread operator (...props) will be forwarded to the underlying HTML p element.
-
-### VerticalNavigationLink
-`text` (string, required): The text content to be displayed within the link.
-
-Any other props passed to this component using the spread operator (...props) will be forwarded to the underlying HTML p element.
+`...props` (optional): This spread operator (...props) captures any additional HTML attributes that you might pass to the Alert component. These attributes will be applied to the outer div element wrapping the alert. This allows for further customization and styling of the alert component.
 
 ## Example Usage
+### page.tsx
 ```jsx
-<VerticalNavigation selected={selected1} setSelected={setSelected1} darkMode={isDarkMode}>
-    <VerticalNavigationHeader text='Account Settings' />
-    <VerticalNavigationLink text='Profile' />
-    <VerticalNavigationLink text='Verification' />
-    <VerticalNavigationLink text='Trust and Verification' />
-    <VerticalNavigationLink text='Security' />
-    <VerticalNavigationLink text='Notifications' />
+const [showAlert, setShowAlert] = useState<boolean>(false)
 
-    <VerticalNavigationHeader text='Hosting Settings' />
-    <VerticalNavigationLink text='Listing Details' />
-    <VerticalNavigationLink text='Pricing' />
-    <VerticalNavigationLink text='Availability' />
-    <VerticalNavigationLink text='Booking Settings' />
-    <VerticalNavigationLink text='House Rules' />
-
-    <VerticalNavigationHeader text='Guest Settings' />
-    <VerticalNavigationLink text='Search Preferences' />
-    <VerticalNavigationLink text='Saved Listings' />
-    <VerticalNavigationLink text='Wishlists' />
-    <VerticalNavigationLink text='Reviews' />
-    <VerticalNavigationLink text='Trips' />
-
-    <VerticalNavigationHeader text='Payment Settings' />
-    <VerticalNavigationLink text='Payment Methods' />
-    <VerticalNavigationLink text='Payout Preferences' />
-    <VerticalNavigationLink text='Transaction History' />
-    <VerticalNavigationLink text='Invoices' />
-    <VerticalNavigationLink text='Tax Documents' />
-</VerticalNavigation>
+ <Alert darkMode={isDarkMode} showAlert={showAlert} setShowAlert={setShowAlert}>
+    <Card darkMode={isDarkMode} style={{ maxWidth:'600px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <h4>Are you absolutely sure?</h4>
+            <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+            <div style={{ display: 'flex', gap: '8px', margin: '8px 0 0 auto' }}>
+                <Button darkMode={isDarkMode} handleClick={async () => setShowAlert(false)} text='Cancel' variant='outline' size='l' />
+                <Button darkMode={isDarkMode} handleClick={async () => setShowAlert(false)} text='Continue' variant='primary' size='l' />
+            </div>
+        </div>
+    </Card>
+</Alert>
 ```
 
 ## Prerequisites
