@@ -44,7 +44,7 @@ describe('Pagination Component', () => {
       <Pagination totalQueries={50} queriesPerPage={10} handleClick={mockHandleClick} />
     );
 
-    const nextArrow = container.querySelector('.pagination > div:nth-of-type(3) .avatar');
+    const nextArrow = container.querySelector('.pagination > div:nth-of-type(3) .icon');
     fireEvent.click(nextArrow);
 
     expect(mockHandleClick).toHaveBeenCalledTimes(1);

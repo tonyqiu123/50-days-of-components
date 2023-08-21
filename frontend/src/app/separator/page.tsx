@@ -2,19 +2,20 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import Separator from '@/components/Separator/Separator';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
+import Select from '@/components/Select/Select';
+import Card from '@/components/Card/Card';
+import Separator from '@/components/Separator/Separator';
 import Input from '@/components/Input/Input';
 import SearchBar from '@/components/SearchBar/SearchBar';
-import Card from '@/components/Card/Card';
+import Button from '@/components/Button/Button';
 
-const SeparatorDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { isDarkMode, setIsDarkMode } = useGlobal();
     const [name, setName] = useState('')
     const [search, setSearch] = useState<string>('')
 
@@ -34,15 +35,12 @@ const SeparatorDemo: React.FC = () => {
     }
 
 
+
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
 
-            <Button darkMode={isDarkMode} variant='primary' text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="The separator component visually divides content for improved organization and aesthetics, using lines or spaces to guide the eye.">
-                <p>Separator component</p>
-            </Tooltip>
-
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Selector component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
@@ -66,15 +64,15 @@ const SeparatorDemo: React.FC = () => {
                     </div>
                 </TabsContent>
                 <TabsContent value='code'>
-                    <ShowMore text='Reveal' height={300} darkMode={isDarkMode}>
+                    <ShowMore text='Reveal' darkMode={isDarkMode}>
                         <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
                     </ShowMore>
                 </TabsContent>
 
             </Tabs>
 
-        </div>
+        </React.Fragment>
     );
 };
 
-export default SeparatorDemo;
+export default CarouselDemo; 

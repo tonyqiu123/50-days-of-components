@@ -2,16 +2,15 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
 import Image from 'next/image';
 
-const ShowMoreDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
+    const { isDarkMode, setIsDarkMode } = useGlobal();
     const reactCode = `<ShowMore height={400} darkMode={isDarkMode}>
     <Image src='/ShowMore/california.jpg' alt='' height={750} width={750} />
 </ShowMore>
@@ -21,17 +20,11 @@ const ShowMoreDemo: React.FC = () => {
 </ShowMore>`;
 
 
-
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-            
-            <Tooltip darkMode={isDarkMode} toolTipText="The ShowMore.tsx component enables you to implement a 'Show more' effect found in Medium and Reddit.">
-                <p>ShowMore component</p>
-            </Tooltip>
+        <React.Fragment >
 
-          
-
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>ShowMore component</h1>
             <Tabs darkMode={isDarkMode}>
                 <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
                 <TabsTrigger value='preview2'><p>Preview 2</p></TabsTrigger>
@@ -57,8 +50,9 @@ const ShowMoreDemo: React.FC = () => {
                     </ShowMore>
                 </TabsContent>
             </Tabs>
-        </div>
+
+        </React.Fragment>
     );
 };
 
-export default ShowMoreDemo;
+export default CarouselDemo; 

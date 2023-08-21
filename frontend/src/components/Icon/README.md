@@ -36,15 +36,15 @@ To use the Icon component in your project, follow these steps:
 
 1. `image` (required string): This is the source of the image that will be displayed.
 
-2. `alt` (optional string): This is the alternative text that describes the image. If not provided, the default value will be 'avatar'.
+2. `alt` (optional string): This is the alternative text that describes the image. If not provided, the default value will be 'icon'.
 
-3. `width` (optional number): This sets the width of the avatar image. If not specified, the default value will be 20.
+3. `width` (optional number): This sets the width of the icon image. If not specified, the default value will be 20.
 
-4. `height` (optional number): This prop sets the height of the avatar image. If not provided, the default value will be 20.
+4. `height` (optional number): This prop sets the height of the icon image. If not provided, the default value will be 20.
 
-5. `href` (optional string): This is the hyperlink reference that the avatar image will redirect to when clicked. If not specified, no redirection will occur.
-6. `invert` (optional boolean): This prop indicates whether the colors of the avatar image should be inverted. If true, the inversion will take place, otherwise, the image will be displayed as is.
-7. `text` (optional string): This is the text that will be displayed below the avatar image. If not specified, no text will be displayed.
+5. `href` (optional string): This is the hyperlink reference that the icon image will redirect to when clicked. If not specified, no redirection will occur.
+6. `invert` (optional boolean): This prop indicates whether the colors of the icon image should be inverted. If true, the inversion will take place, otherwise, the image will be displayed as is.
+7. `text` (optional string): This is the text that will be displayed below the icon image. If not specified, no text will be displayed.
 
 # Example Usage
 ### page.tsx
@@ -88,7 +88,7 @@ import React, { useState } from 'react';
 import './Icon.css';
 import Image from 'next/image';
 
-interface AvatarProps {
+interface IconProps {
     image: string
     alt?: string
     width?: number
@@ -98,16 +98,16 @@ interface AvatarProps {
     text?: string
 }
 
-const Avatar: React.FC<AvatarProps> = ({ image, alt = 'avatar', width = 20, height = 20, href = '', invert = false, text = '', ...props }) => {
+const Icon: React.FC<IconProps> = ({ image, alt = 'icon', width = 20, height = 20, href = '', invert = false, text = '', ...props }) => {
 
     return (
-        <a href={href}  className={`${invert && 'inverted'} avatar`} style={{ height: `${height + 20}px` }}>
+        <a href={href}  className={`${invert && 'inverted'} icon`} style={{ height: `${height + 20}px` }}>
             <Image  width={width} height={height} alt={alt} src={image} />
             {text && <p>{text}</p>}
         </a>
     );
 };
 
-export default Avatar;
+export default Icon;
 ```
  

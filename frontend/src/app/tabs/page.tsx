@@ -1,98 +1,43 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
-const TabsDemo: React.FC = () => {
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal
 
+const BreadcrumbDemo: React.FC = () => {
 
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const reactCode = `import React, { useState, ReactNode } from "react";
-  import './Tabs.css'
-  
-  
-  interface TabsProps {
-      children: ReactNode;
-      darkMode: boolean;
-  }
-  
-  export const Tabs: React.FC<TabsProps> = ({ children, darkMode }) => {
-      const [activeTab, setActiveTab] = useState((children as any)[0].props.value);
-  
-      return (
-          <div className={\`tabs \${ darkMode && "darkMode"
-}\`}>
-              {React.Children.map(children, (child: any) => {
-                  // clone the child with the active state
-                  return React.cloneElement(child, { active: child.props.value === activeTab, setActiveTab: setActiveTab });
-              })}
-          </div>
-      );
-  };
-  
-  interface TabsTriggerProps {
-      value: string;
-      children: ReactNode;
-      active?: boolean;
-      setActiveTab?: React.Dispatch<React.SetStateAction<string>>;
-  }
-  
-  export const TabsTrigger: React.FC<TabsTriggerProps> = ({ value, children, active, setActiveTab }) => {
-      const handleClick = () => {
-          if (setActiveTab) {
-              setActiveTab(value);
-          }
-      };
-  
-      return (
-          <div className={\`tabsTrigger \${ active ? "active" : "" } \`} onClick={handleClick}>
-              {children}
-          </div>
-      );
-  };
-  
-  interface TabsContentProps {
-      value: string;
-      children: ReactNode;
-      active?: boolean;
-  }
-  
-  export const TabsContent: React.FC<TabsContentProps> = ({ children, active = false }) => {
-      if (!active) {
-          return null;
-      }
-  
-      return (
-          <div className="tabsContent">
-              {children}
-          </div>
-      );
-  };`;
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
 
 
+    const reactCode = ` <Tabs darkMode={isDarkMode}>
 
-  return (
-    <div className={`page ${isDarkMode && 'darkMode'}`}>
+    <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+    <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
-      <Button variant='secondary' darkMode={isDarkMode} text={isDarkMode ? 'Untoggle dark mode' : 'Toggle dark mode'} handleClick={async () => setIsDarkMode(!isDarkMode)} />
-      <Tooltip darkMode={isDarkMode} toolTipText='A stack of content sections, referred to as tab panels, that are displayed individually, one after the other.'><p>Tabs component</p></Tooltip>
+    <TabsContent value='preview'><div className='demoBox'></div></TabsContent>
+    <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
-      <Tabs darkMode={isDarkMode}>
+</Tabs>`
 
-        <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
-        <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+    return (
+        <React.Fragment  >
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Tabs component</h1>
 
-        <TabsContent value='preview'><div className='demoBox'></div></TabsContent>
-        <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+            <Tabs darkMode={isDarkMode}>
 
-      </Tabs>
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
-    </div>
-  );
+                <TabsContent value='preview'><div className='demoBox'></div></TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+
+            </Tabs>
+        </React.Fragment>
+    );
 };
 
-export default TabsDemo;
+export default BreadcrumbDemo;

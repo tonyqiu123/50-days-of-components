@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import { SkeletonProvider, Skeleton } from '@/components/Skeleton/Skeleton';
 
-const SkeletonDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { isDarkMode, setIsDarkMode } = useGlobal();
     const [isLoading, setIsLoading] = useState(true);
     const [reload, setReload] = useState(false);
 
@@ -60,14 +60,12 @@ const SkeletonDemo: React.FC = () => {
         delayFunction()
     }, [reload])
 
-    return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-            
-            <Button variant='primary' text='Reset animation' handleClick={async () => setReload(!reload)} />
-            <Tooltip darkMode={isDarkMode} toolTipText="Is anybody reading this?">
-                <p>Skeleton component</p>
-            </Tooltip>
 
+    return (
+        <React.Fragment >
+
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Skeleton component</h1>
             <Tabs darkMode={isDarkMode}>
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
                 <TabsTrigger value='code'><p>Code</p></TabsTrigger>
@@ -109,8 +107,9 @@ const SkeletonDemo: React.FC = () => {
                 </TabsContent>
                 <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
             </Tabs>
-        </div>
+
+        </React.Fragment>
     );
 };
 
-export default SkeletonDemo;
+export default CarouselDemo; 

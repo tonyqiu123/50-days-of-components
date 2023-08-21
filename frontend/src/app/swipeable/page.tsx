@@ -3,17 +3,21 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import ShowMore from '@/components/ShowMore/ShowMore';
+
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal
+import StarRating from '@/components/StarRating/StarRating';
 import Sheet from '@/components/Sheet/Sheet';
 import Input from '@/components/Input/Input';
-import Checkbox from '@/components/Checkbox/Checkbox';
 import SearchBar from '@/components/SearchBar/SearchBar';
+import Checkbox from '@/components/Checkbox/Checkbox';
 
-const SwipeableDemo: React.FC = () => {
+const BreadcrumbDemo: React.FC = () => {
 
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
     const [showSheet, setShowSheet] = useState(false)
     const [input1, setInput1] = useState('')
     const [input2, setInput2] = useState('')
@@ -43,19 +47,12 @@ const DrawerDemo: React.FC = () => {
 
 export default DrawerDemo;`;
 
-
     const years = Array.from({ length: 21 }, (_, index) => 2023 - index).map(year => year.toString());
 
-
-
     return (
-        <div className={`sheetDemo page ${isDarkMode && 'darkMode'}`}>
-
-            
-            <Tooltip darkMode={isDarkMode} toolTipText="A sheet component is a slide-out panel that emerges from the side of the screen, providing additional content or options without leaving the current view. It's often used in applications for navigation, contextual information, or additional settings and adjustments.">
-                <p>Sheet component</p>
-            </Tooltip>
-
+        <React.Fragment  >
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Swipeable component</h1>
 
             <Tabs darkMode={isDarkMode}>
 
@@ -105,9 +102,8 @@ export default DrawerDemo;`;
                 <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
 
             </Tabs>
-
-        </div>
+        </React.Fragment>
     );
 };
 
-export default SwipeableDemo;
+export default BreadcrumbDemo;

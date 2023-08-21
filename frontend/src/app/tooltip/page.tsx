@@ -6,26 +6,29 @@ import PrettyCode from '@/components/PrettyCode/PrettyCode';
 import { useGlobal } from '../layout'; // Add this import
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
-import Image from 'next/image';
-import TextArea from '@/components/TextArea/TextArea';
+import Tooltip from '@/components/Tooltip/Tooltip';
 
 const CarouselDemo: React.FC = () => {
 
     const { isDarkMode, setIsDarkMode } = useGlobal();
-    const reactCode = `<TextArea darkMode={isDarkMode} placeholder='Enter a message here.' />`;
+    const reactCode = `<Tooltip darkMode={isDarkMode} toolTipText='By strategically combining different EC2 purchase options within a single EC2 Auto Scaling Group (ASG), you can achieve an optimal balance between cost savings and performance for your infrastructure.'>
+    <p>Combine EC2 purchase options in a single EC2 ASG</p>
+</Tooltip>`;
 
 
     return (
         <React.Fragment >
 
             <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <h1>TextArea component</h1>
+            <h1>Tooltip component</h1>
             <Tabs darkMode={isDarkMode}>
                 <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
                 <TabsTrigger value='code'><p>Code</p></TabsTrigger>
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
-                        <TextArea darkMode={isDarkMode} placeholder='Enter a message here.' />
+                        <Tooltip darkMode={isDarkMode} toolTipText='By strategically combining different EC2 purchase options within a single EC2 Auto Scaling Group (ASG), you can achieve an optimal balance between cost savings and performance for your infrastructure.'>
+                            <p>Combine EC2 purchase options in a single EC2 ASG</p>
+                        </Tooltip>
                     </div>
 
                 </TabsContent>

@@ -22,7 +22,7 @@ export const VerticalNavigation: React.FC<VerticalNavigationProps> = ({ selected
 
     return (
         <VerticalNavigationContext.Provider value={{ selected, setSelected }}>
-            <div className={`verticalNavigation ${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''}`} {...props}>
+            <div  {...props} className={`verticalNavigation ${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''}`}>
                 {children}
             </div>
         </VerticalNavigationContext.Provider>

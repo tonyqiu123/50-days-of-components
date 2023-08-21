@@ -1,29 +1,46 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal
 import Switch from '@/components/Switch/Switch';
-import Tooltip from '@/components/Tooltip/Tooltip';
 
+const BreadcrumbDemo: React.FC = () => {
 
-export default function SwitchDemo() {
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
     const [isChecked, setIsChecked] = useState(false)
+
+    const reactCode = `<Switch isChecked={isChecked} setIsChecked={setIsChecked} darkMode={isDarkMode} />`
 
     useEffect(() => {
         setIsDarkMode(isChecked)
     }, [isChecked])
 
+
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Tooltip darkMode={isDarkMode} toolTipText='Toggle a boolean value.'>
-                <p>Switch Component</p>
-            </Tooltip>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                <Switch isChecked={isChecked} setIsChecked={setIsChecked} darkMode={isDarkMode} />
-                <p>Toggle dark mode</p>
-            </div>
-        </div>
+        <React.Fragment  >
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Switch component</h1>
+
+            <Tabs darkMode={isDarkMode}>
+
+                <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
+                <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+
+                <TabsContent value='preview'>
+                    <div className='demoBox'>
+                        <Switch isChecked={isChecked} setIsChecked={setIsChecked} darkMode={isDarkMode} />
+                    </div>
+                </TabsContent>
+                <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>
+
+            </Tabs>
+        </React.Fragment>
     );
 };
 
+export default BreadcrumbDemo;

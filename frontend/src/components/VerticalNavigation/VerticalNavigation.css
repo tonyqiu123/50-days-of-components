@@ -1,5 +1,4 @@
 .verticalNavigation {
-    padding: 0 24px;
     display: flex;
     flex-direction: column;
     gap: 2px;

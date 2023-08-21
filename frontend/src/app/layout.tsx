@@ -5,7 +5,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image';
-import SearchBar from '@/components/SearchBar/SearchBar';
 import Icon from '@/components/Icon/Icon';
 import { SetStateAction, createContext, useContext, useEffect, useState } from 'react';
 import ScrollArea from '@/components/ScrollArea/ScrollArea'
@@ -42,6 +41,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   const [showSearchComponents, setShowSearchComponents] = useState<boolean>(false)
 
   const components = [
+    'Avatar',
     'Accordion',
     'AspectRatio',
     'Backdrop',
@@ -56,7 +56,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Counter',
     'DragNDrop',
     'Drawer',
-    'Dropdown',
     'Expandable',
     'HoverCard',
     'Icon',
@@ -129,7 +128,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             <div style={{ display: 'flex', gap: '48px', width: '100%' }}>
 
               <ScrollArea darkMode={isDarkMode}>
-                <VerticalNavigation selected={selected} setSelected={setSelected} darkMode={isDarkMode}>
+                <VerticalNavigation className='verticalNavigationDemo' selected={selected} setSelected={setSelected} darkMode={isDarkMode}>
                   <VerticalNavigationHeader text='Components' />
                   {components.map((component, index) => (
                     <VerticalNavigationLink

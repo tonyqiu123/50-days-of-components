@@ -2,62 +2,53 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { VerticalNavigation, VerticalNavigationHeader, VerticalNavigationLink } from '@/components/VerticalNavigation/VerticalNavigation';
-import ShowMore from '@/components/ShowMore/ShowMore';
+import { useGlobal } from '../layout'; // Add this import
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import ShowMore from '@/components/ShowMore/ShowMore';
+import { VerticalNavigation, VerticalNavigationHeader, VerticalNavigationLink } from '@/components/VerticalNavigation/VerticalNavigation';
 
-const VerticalNavigationDemo: React.FC = () => {
+const CarouselDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(true)
-
+    const { isDarkMode, setIsDarkMode } = useGlobal();
     const [selected1, setSelected1] = useState<string>('Profile')
     const [selected2, setSelected2] = useState<string>('VerticalNavigation')
 
     const reactCode = `<VerticalNavigation selected={selected1} setSelected={setSelected1} darkMode={isDarkMode}>
-    <VerticalNavigationHeader text='Account Settings' />
-    <VerticalNavigationLink text='Profile' />
-    <VerticalNavigationLink text='Verification' />
-    <VerticalNavigationLink text='Trust and Verification' />
-    <VerticalNavigationLink text='Security' />
-    <VerticalNavigationLink text='Notifications' />
+  <VerticalNavigationHeader text='Account Settings' />
+  <VerticalNavigationLink text='Profile' />
+  <VerticalNavigationLink text='Verification' />
+  <VerticalNavigationLink text='Trust and Verification' />
+  <VerticalNavigationLink text='Security' />
+  <VerticalNavigationLink text='Notifications' />
 
-    <VerticalNavigationHeader text='Hosting Settings' />
-    <VerticalNavigationLink text='Listing Details' />
-    <VerticalNavigationLink text='Pricing' />
-    <VerticalNavigationLink text='Availability' />
-    <VerticalNavigationLink text='Booking Settings' />
-    <VerticalNavigationLink text='House Rules' />
+  <VerticalNavigationHeader text='Hosting Settings' />
+  <VerticalNavigationLink text='Listing Details' />
+  <VerticalNavigationLink text='Pricing' />
+  <VerticalNavigationLink text='Availability' />
+  <VerticalNavigationLink text='Booking Settings' />
+  <VerticalNavigationLink text='House Rules' />
 
-    <VerticalNavigationHeader text='Guest Settings' />
-    <VerticalNavigationLink text='Search Preferences' />
-    <VerticalNavigationLink text='Saved Listings' />
-    <VerticalNavigationLink text='Wishlists' />
-    <VerticalNavigationLink text='Reviews' />
-    <VerticalNavigationLink text='Trips' />
+  <VerticalNavigationHeader text='Guest Settings' />
+  <VerticalNavigationLink text='Search Preferences' />
+  <VerticalNavigationLink text='Saved Listings' />
+  <VerticalNavigationLink text='Wishlists' />
+  <VerticalNavigationLink text='Reviews' />
+  <VerticalNavigationLink text='Trips' />
 
-    <VerticalNavigationHeader text='Payment Settings' />
-    <VerticalNavigationLink text='Payment Methods' />
-    <VerticalNavigationLink text='Payout Preferences' />
-    <VerticalNavigationLink text='Transaction History' />
-    <VerticalNavigationLink text='Invoices' />
-    <VerticalNavigationLink text='Tax Documents' />
+  <VerticalNavigationHeader text='Payment Settings' />
+  <VerticalNavigationLink text='Payment Methods' />
+  <VerticalNavigationLink text='Payout Preferences' />
+  <VerticalNavigationLink text='Transaction History' />
+  <VerticalNavigationLink text='Invoices' />
+  <VerticalNavigationLink text='Tax Documents' />
 </VerticalNavigation>`;
 
-
-
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
+        <React.Fragment >
+
             <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <Tooltip darkMode={isDarkMode} toolTipText="Default navigation within settings, profiles, and documentation.">
-                <p>VerticalNavigation component</p>
-            </Tooltip>
-            
-
-
+            <h1>VerticalNavigation component</h1>
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
@@ -138,8 +129,8 @@ const VerticalNavigationDemo: React.FC = () => {
 
             </Tabs>
 
-        </div >
+        </React.Fragment>
     );
 };
 
-export default VerticalNavigationDemo;
+export default CarouselDemo; 

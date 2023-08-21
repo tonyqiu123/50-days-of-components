@@ -1,15 +1,22 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
+import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import { useGlobal } from '../layout'; // Add this import
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import Icon from '@/components/Icon/Icon';
+import ShowMore from '@/components/ShowMore/ShowMore';
+import MultiSelect from '@/components/MultiSelect/MultiSelect';
+import Popover from '@/components/Popover/Popover';
 import Button from '@/components/Button/Button';
+import { Command, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/Command/Command';
 import SearchBar from '@/components/SearchBar/SearchBar';
-import Tooltip from '@/components/Tooltip/Tooltip';
 
+const CarouselDemo: React.FC = () => {
 
-export default function SearchBarDemo() {
+  const { isDarkMode, setIsDarkMode } = useGlobal();
 
-
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isFullWidth, setIsFullWidth] = useState(false)
   const [search, setSearch] = useState<string>('')
 
@@ -67,23 +74,51 @@ export default function SearchBarDemo() {
   ];
 
 
-  return (
-    <div className={`page ${isDarkMode && 'darkMode'}`}>
+  const reactCode = `<SearchBar
+  search={search}
+  setSearch={setSearch}
+  placeholder='Search foods'
+  fullWidth={isFullWidth}
+  darkMode={isDarkMode}
+  queries={foodProducts}
+  maxHeight='500px'
+/>`;
 
-      
-      <Button variant='secondary' darkMode={isDarkMode} text={isFullWidth ? 'Untoggle full width' : 'Toggle full width'} handleClick={async () => setIsFullWidth(!isFullWidth)} />
-      <Tooltip darkMode={isDarkMode} toolTipText='A versatile search bar allowing users to efficiently search through an array of items for quick access and retrieval.'>
-        <p>SearchBar Component</p>
-      </Tooltip>
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-        placeholder='Search foods'
-        fullWidth={isFullWidth}
-        darkMode={isDarkMode}
-        queries={foodProducts}
-        maxHeight='500px'
-      />
-    </div>
+
+
+  return (
+    <React.Fragment >
+
+      <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+      <h1>SearchBar component</h1>
+      <Tabs darkMode={isDarkMode}>
+
+        <TabsTrigger value='preview1'><p>Preview 1</p></TabsTrigger>
+        <TabsTrigger value='code'><p>Code</p></TabsTrigger>
+
+        <TabsContent value='preview1'>
+          <div className='demoBox'>
+            <SearchBar
+              search={search}
+              setSearch={setSearch}
+              placeholder='Search foods'
+              fullWidth={isFullWidth}
+              darkMode={isDarkMode}
+              queries={foodProducts}
+              maxHeight='500px'
+            />
+          </div>
+        </TabsContent>
+        <TabsContent value='code'>
+          <ShowMore text='Reveal' darkMode={isDarkMode}>
+            <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
+          </ShowMore>
+        </TabsContent>
+
+      </Tabs>
+
+    </React.Fragment>
   );
 };
+
+export default CarouselDemo; 

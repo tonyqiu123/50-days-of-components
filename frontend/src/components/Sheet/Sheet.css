@@ -10,7 +10,7 @@
     box-shadow: -5px 0 30px -3px rgba(187, 187, 187, 0.1), -4px 0 6px -2px rgba(199, 199, 199, 0.05);
 }
 
-.sheetContent>.avatar {
+.sheetContent>.icon {
     position: absolute;
     top: 8px; 
     right: 8px;

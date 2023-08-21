@@ -215,3 +215,15 @@ a {
 .expandableDemo {
   max-width: 1000px;
 }
+
+/* verticalnavigation demo */
+.verticalNavigationDemo {
+  padding: 0 24px;
+}
+
+/* avatar demo */
+.avatarDemo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}

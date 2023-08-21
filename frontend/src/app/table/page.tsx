@@ -1,10 +1,9 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import {
     Table,
     TableBody,
@@ -13,14 +12,12 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/Table/Table';
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal 
 import ShowMore from '@/components/ShowMore/ShowMore';
-import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
-const TableDemo: React.FC = () => {
+const BreadcrumbDemo: React.FC = () => {
 
-
-    const [isDarkMode, setIsDarkMode] = useState(true)
-
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
     const reactCode = `const chessOpenings = [
         {
             opening: "Ruy Lopez",
@@ -263,14 +260,12 @@ const TableDemo: React.FC = () => {
         },
     ];
 
-    return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <Tooltip darkMode={isDarkMode} toolTipText="Display structured data in rows and columns, aiding in organized presentation and analysis of information.">
-                <p>Table component</p>
-            </Tooltip>
-            
 
+
+    return (
+        <React.Fragment  >
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>Table component</h1>
 
             <Tabs darkMode={isDarkMode}>
 
@@ -332,15 +327,14 @@ const TableDemo: React.FC = () => {
                     </div>
                 </TabsContent>
                 <TabsContent value='code'>
-                    <ShowMore text='Reveal' height={125} darkMode={isDarkMode}>
+                    <ShowMore text='Reveal' darkMode={isDarkMode}>
                         <PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} />
                     </ShowMore>
                 </TabsContent>
 
             </Tabs>
-
-        </div >
+        </React.Fragment>
     );
 };
 
-export default TableDemo;
+export default BreadcrumbDemo;

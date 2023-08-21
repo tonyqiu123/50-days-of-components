@@ -1,47 +1,47 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Avatar from '@/components/Icon/Icon';
+import Icon from '@/components/Icon/Icon';
 
-describe('Avatar Component', () => {
+describe('Icon Component', () => {
   it('renders with default props', () => {
     const { getByAltText } = render(
-      <Avatar image="/path/to/avatar.png" />
+      <Icon image="/path/to/icon.png" />
     );
 
-    const avatarImage = getByAltText('avatar');
-    expect(avatarImage).toBeInTheDocument();
-    expect(avatarImage).toHaveAttribute('width', '20');
-    expect(avatarImage).toHaveAttribute('height', '20');
+    const iconImage = getByAltText('icon');
+    expect(iconImage).toBeInTheDocument();
+    expect(iconImage).toHaveAttribute('width', '20');
+    expect(iconImage).toHaveAttribute('height', '20');
   });
 
   it('renders with text', () => {
     const { getByText } = render(
-      <Avatar image="/path/to/avatar.png" text="User" />
+      <Icon image="/path/to/icon.png" text="User" />
     );
 
-    const avatarText = getByText('User');
-    expect(avatarText).toBeInTheDocument();
+    const iconText = getByText('User');
+    expect(iconText).toBeInTheDocument();
   });
 
   it('calls handleClick when clicked', () => {
     const mockHandleClick = jest.fn();
     const { getByAltText } = render(
-      <Avatar image="/path/to/avatar.png" handleClick={mockHandleClick} />
+      <Icon image="/path/to/icon.png" handleClick={mockHandleClick} />
     );
 
-    const avatarImage = getByAltText('avatar');
-    fireEvent.click(avatarImage);
+    const iconImage = getByAltText('icon');
+    fireEvent.click(iconImage);
 
     expect(mockHandleClick).toHaveBeenCalledTimes(1);
   });
 
   it('renders with inverted style', () => {
     const { container } = render(
-      <Avatar image="/path/to/avatar.png" invert />
+      <Icon image="/path/to/icon.png" invert />
     );
 
-    const avatarContainer = container.querySelector('.avatar');
-    expect(avatarContainer).toHaveClass('inverted');
+    const iconContainer = container.querySelector('.icon');
+    expect(iconContainer).toHaveClass('inverted');
   });
 
   // Add more tests as needed

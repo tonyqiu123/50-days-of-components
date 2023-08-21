@@ -81,7 +81,7 @@ type CommandItemProps = {
     imageSrc?: string;
 } & HTMLAttributes<HTMLElement>
 
-const CommandItem: React.FC<CommandItemProps> = ({ text, imageSrc = '', ...props }) => {
+const CommandItem: React.FC<CommandItemProps> = ({ text, imageSrc, ...props }) => {
 
 
     const { search, handleSelect, darkMode } = useCommand();
@@ -89,7 +89,7 @@ const CommandItem: React.FC<CommandItemProps> = ({ text, imageSrc = '', ...props
     return (
         text.toLowerCase().includes(search) ?
             <div {...props} onClick={() => handleSelect(text)} className={`commandItem ${props.className ? props.className : ''} ${darkMode && 'darkMode'}`}>
-                <Image alt='' src={imageSrc} height={16} width={16} />
+                {imageSrc ? <Image alt='' src={imageSrc} height={16} width={16} /> : null}
                 <p>{text}</p>
             </div>
             : null

@@ -9,7 +9,7 @@
     padding: 8px 16px;
     gap: 24px;
     background-color: white;
-    z-index: 2000;
+    z-index: 900;
 }
 
 .navbarLeft {

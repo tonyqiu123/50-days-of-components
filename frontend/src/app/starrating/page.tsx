@@ -3,28 +3,25 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
-import Tooltip from '@/components/Tooltip/Tooltip';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import StarRating from '@/components/StarRating/StarRating';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
 
-const StarRatingDemo: React.FC = () => {
+import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal
+import StarRating from '@/components/StarRating/StarRating';
 
+const BreadcrumbDemo: React.FC = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
 
     const reactCode = `<StarRating handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={10} />
-<StarRating handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={200} />`;
+    <StarRating handleClick={(numOfStars) => console.log(numOfStars)} size={40} totalStars={200} />`;
 
 
     return (
-        <div className={`page ${isDarkMode && 'darkMode'}`}>
-
-            
-            <Tooltip darkMode={isDarkMode} toolTipText="Rate and display feedback using a visually intuitive star-based system.">
-                <p>StarRating component</p>
-            </Tooltip>
-
+        <React.Fragment  >
+            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+            <h1>StarRating component</h1>
 
             <Tabs darkMode={isDarkMode}>
 
@@ -49,9 +46,8 @@ const StarRatingDemo: React.FC = () => {
                 </TabsContent>
 
             </Tabs>
-
-        </div >
+        </React.Fragment>
     );
 };
 
-export default StarRatingDemo;
+export default BreadcrumbDemo;

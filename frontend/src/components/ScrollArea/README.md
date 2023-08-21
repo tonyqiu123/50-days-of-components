@@ -1,6 +1,6 @@
-# Day 38/100
+# Day 42/100
 
-August 14th / October 16th
+August 18th / October 16th
 
 # VerticalNavigation
 <a href="https://www.youtube.com/watch?v=eAro7avGxDA" target="_blank">Watch live demo on youtube</a>

@@ -42,7 +42,7 @@ describe('Sheet', () => {
       </Sheet>
     );
 
-    const closeIcon = container.querySelector('.avatar');
+    const closeIcon = container.querySelector('.icon');
     fireEvent.click(closeIcon);
 
     expect(setShowSheetMock).toHaveBeenCalledWith(false);
