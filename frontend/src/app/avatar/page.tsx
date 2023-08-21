@@ -13,7 +13,7 @@ import Badge from '@/components/Badge/Badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/Avatar/Avatar';
 
 
-const BackdropDemo: React.FC = () => {
+const AvatarDemo: React.FC = () => {
     const { isDarkMode, setIsDarkMode } = useGlobal();
 
     const reactCode = `<Avatar>
@@ -47,4 +47,4 @@ const BackdropDemo: React.FC = () => {
     );
 };
 
-export default BackdropDemo;
+export default AvatarDemo;

@@ -12,7 +12,7 @@ import ShowMore from '@/components/ShowMore/ShowMore';
 import Badge from '@/components/Badge/Badge';
 
 
-const BackdropDemo: React.FC = () => {
+const BadgeDemo: React.FC = () => {
     const { isDarkMode, setIsDarkMode } = useGlobal();
 
     const reactCode = `<Badge variant='default' text='Example' />
@@ -46,4 +46,4 @@ const BackdropDemo: React.FC = () => {
     );
 };
 
-export default BackdropDemo;
+export default BadgeDemo;

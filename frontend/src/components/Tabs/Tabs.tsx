@@ -45,9 +45,10 @@ type TabsContentProps = {
     value: string;
     children: ReactNode;
     active?: boolean;
+    setActiveTab?: React.Dispatch<React.SetStateAction<string>>;
 } & HTMLAttributes<HTMLElement>;
 
-export const TabsContent: React.FC<TabsContentProps> = ({ children, active = false, ...props }) => {
+export const TabsContent: React.FC<TabsContentProps> = ({ children, setActiveTab, active = false, ...props }) => {
     if (!active) {
         return null;
     }

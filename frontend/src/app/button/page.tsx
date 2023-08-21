@@ -12,7 +12,7 @@ import ShowMore from '@/components/ShowMore/ShowMore';
 
 
 
-const BackdropDemo: React.FC = () => {
+const ButtonDemo: React.FC = () => {
     const { isDarkMode, setIsDarkMode } = useGlobal();
 
     const reactCode = `<Button variant='default' text='Example' />
@@ -44,4 +44,4 @@ const BackdropDemo: React.FC = () => {
     );
 };
 
-export default BackdropDemo;
+export default ButtonDemo;
