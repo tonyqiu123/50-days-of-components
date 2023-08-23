@@ -55,6 +55,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Combobox',
     'Command',
     'Counter',
+    'DataIndicator',
     'DragNDrop',
     'Drawer',
     'Expandable',

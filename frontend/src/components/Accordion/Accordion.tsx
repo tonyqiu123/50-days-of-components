@@ -96,6 +96,8 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ name, childr
     useEffect(() => {
         if (isActive && contentRef?.current?.scrollHeight) {
             setHeight(contentRef.current.scrollHeight + 16);
+        } else {
+            setHeight(0)
         }
     }, [isActive]);
 

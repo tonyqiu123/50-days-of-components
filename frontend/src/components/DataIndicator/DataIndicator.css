@@ -1,0 +1,18 @@
+.dataIndicator {
+    display: flex;
+    flex-direction: column;
+}
+
+.currentData {
+    font-size: 40px;
+}
+
+.positive.difference {
+    color: green !important;
+}
+.negative.difference {
+    color: red !important;
+}
+.neutral.difference {
+    color: #979797 !important;
+}

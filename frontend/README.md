@@ -1,58 +1,42 @@
-# Day 45/100
+# Day 46/100
 
-August 21st / October 16th
+August 22nd / October 16th
 
-# Alert
-<a href="https://www.youtube.com/watch?v=TZ2XizQdzZg" target="_blank">Watch live demo on youtube</a>
+# DataIndicator
+<a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143159880937644042/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143730248274415766/image.png"/></a>  
 
 ## Description 
 
-###### The alert component in web development is a crucial tool for displaying important messages or notifications to users, ensuring timely communication of critical information. By providing a visually distinct and attention-grabbing element, the alert component enhances user experience by highlighting key updates or warnings on a website or application.
+###### A data indicator component visually represents real-time data fluctuations through color-coded signals, providing an instant overview of the data's current state.
 
 
-Essentially the modal component but without the backdrop hiding the modal when clicked.
+A genuinely helpful component that will add visual flavor whenever you need to visualize data compared to a previous timeframe. I found it useful while building a job portal admin dashboard and while building a web analytics dashboard.
 
 ## Installation 
 
-To use the Alert component in your project, follow these steps:
+To use the DataIndicator component in your project, follow these steps:
 
-1. Create a new folder called 'Alert' in your project's components directory.
-2. Copy the `Alert.tsx` and `Alert.css` file into the newly created 'Alert' folder.
+1. Create a new folder called 'DataIndicator' in your project's components directory.
+2. Copy the `DataIndicator.tsx` and `DataIndicator.css` file into the newly created 'DataIndicator' folder.
 
 ## Props 
-### Alert
+### DataIndicator
 
-`setShowAlert` (required function): A React state setter function used to control whether the alert should be shown or hidden. When called with true, the alert becomes visible. When called with false, the alert is hidden.
+`currentData` (required number): The current numerical data value that the indicator will represent.
 
-`showAlert` (required boolean): A boolean value that determines whether the alert is currently visible or hidden. When true, the alert will be displayed. When false, the alert will be hidden.
+`previousData` (required number): The previous numerical data value for comparison, enabling the calculation of the data change.
 
-`darkMode` (optional boolean, default: false): An optional boolean flag that indicates whether the alert should be displayed in a dark mode. If set to true, the alert's appearance will be adjusted for dark mode styling.
-
-`children` (optional React node): This prop allows you to pass React elements or components as children to the Alert component. These children will be rendered within the content of the alert, allowing you to customize the content of the alert.
-
-`...props` (optional): This spread operator (...props) captures any additional HTML attributes that you might pass to the Alert component. These attributes will be applied to the outer div element wrapping the alert. This allows for further customization and styling of the alert component.
+`text` (optional string): Additional text or context to be displayed alongside the data indicator, providing a brief description of the data being represented.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-const [showAlert, setShowAlert] = useState<boolean>(false)
-
- <Alert darkMode={isDarkMode} showAlert={showAlert} setShowAlert={setShowAlert}>
-    <Card darkMode={isDarkMode} style={{ maxWidth:'600px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <h4>Are you absolutely sure?</h4>
-            <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
-            <div style={{ display: 'flex', gap: '8px', margin: '8px 0 0 auto' }}>
-                <Button darkMode={isDarkMode} handleClick={async () => setShowAlert(false)} text='Cancel' variant='outline' size='l' />
-                <Button darkMode={isDarkMode} handleClick={async () => setShowAlert(false)} text='Continue' variant='primary' size='l' />
-            </div>
-        </div>
-    </Card>
-</Alert>
+<DataIndicator currentData={50} previousData={20} text='from last month' />
+<DataIndicator currentData={5} previousData={20} text='from last month' />
 ```
 
 ## Prerequisites
