@@ -172,7 +172,14 @@ a {
   background-color: rgb(13, 13, 14);
 }
 
-.darkMode.page * {
+.darkMode.page p,
+.darkMode.page a,
+.darkMode.page h1,
+.darkMode.page h2,
+.darkMode.page h3,
+.darkMode.page h4,
+.darkMode.page h5,
+.darkMode.page h6 {
   color: rgb(250, 250, 250);
 }
 
@@ -180,6 +187,7 @@ a {
 .footer {
   padding: 0px 24px;
 }
+
 .darkMode.footer {
   background-color: black;
 }

@@ -33,7 +33,9 @@ const PrettyCode: React.FC<PrettyCodeProps> = ({ code, darkMode = false, languag
     <div {...props} className={`prettycodeContainer ${darkMode && 'darkMode'} ${props.className ? props.className : ''}`}>
       {showTab &&
         <div className='prettycodeHeader'>
-          {language}
+          <p>
+            {language}
+          </p>
           <p onClick={handleCopy} style={{ cursor: 'pointer' }}>{copied}</p>
         </div>
       }

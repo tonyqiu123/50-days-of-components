@@ -52,6 +52,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Card',
     'Carousel',
     'Checkbox',
+    'CodeEditor',
     'Combobox',
     'Command',
     'Counter',
