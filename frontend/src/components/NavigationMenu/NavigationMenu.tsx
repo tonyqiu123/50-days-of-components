@@ -39,21 +39,21 @@ type ItemsProps = {} & HTMLAttributes<HTMLElement>;
 const Items: React.FC<ItemsProps> = ({ children }) => {
     const { linkRefs } = useNavigationMenu();
 
-    // Create an object to store the refs
-    const refs = {};
-
-    // Loop through children and populate refs object
-    Children.forEach(children, (child: any) => {
+    // Create an array of refs based on children's itemName
+    const itemRefs = Children.map(children, (child: any) => {
         if (child?.props?.itemName) {
-            refs[child.props.itemName] = useRef(null);
+            return { itemName: child.props.itemName, ref: useRef(null) };
         }
-    });
+        return null;
+    }).filter(Boolean);
 
-    // Update linkRefs with the populated refs object
-    linkRefs.current = refs;
+    itemRefs.forEach((itemRef: any) => {
+        linkRefs[itemRef.itemName] = itemRef.ref;
+    });
 
     return <div className='navigationMenuItems'>{children}</div>;
 };
+
 
 type ItemProps = {
     itemName: string;
@@ -94,12 +94,19 @@ type MovingWindowProps = {} & HTMLAttributes<HTMLElement>;
 const MovingWindow: React.FC<MovingWindowProps> = ({ children }) => {
     const { linkRefs, setActiveItem, activeItem, dropdownRefs, movingWindowRef } = useNavigationMenu();
 
-    // Dynamically create dropdownRefs based on children's itemName
-    Children.forEach(children, (child: any) => {
+
+    // Create an array of refs based on children's itemName
+    const itemRefs = Children.map(children, (child: any) => {
         if (child?.props?.itemName) {
-            dropdownRefs[child.props.itemName] = useRef(null);
+            return { itemName: child.props.itemName, ref: useRef(null) };
         }
-    });
+        return null;
+    }).filter(Boolean);
+
+    itemRefs.forEach((itemRef: any) => {
+        dropdownRefs[itemRef.itemName] = itemRef.ref;
+    })
+
 
     useMemo(() => {
         const activeDropdownRect = dropdownRefs[activeItem]?.current.getBoundingClientRect();
