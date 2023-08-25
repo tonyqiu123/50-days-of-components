@@ -47,7 +47,9 @@ export const Expandable: React.FC<ExpandableProps> = ({ children, iconSrc, text,
                     <div className="expandableIcon">
                         {iconSrc && <Image src={iconSrc} width={20} height={20} alt='' />}
                     </div>
-                    {text}
+                    <p>
+                        {text}
+                    </p>
                 </div>
                 {children && <Image className={`expandableArrow ${expand ? 'expanded' : ''}`} src='/Expandable/downArrow.svg' width={16} height={16} alt='' />}
             </div>

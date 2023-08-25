@@ -30,7 +30,7 @@ type AccordionContentProps = {
 
 const AccordionContext = createContext<AccordionContextType>({ activeName: null, setActiveName: () => { }, darkMode: false });
 
-export const useAccordion = () => useContext(AccordionContext);
+const useAccordion = () => useContext(AccordionContext);
 
 export const AccordionProvider: React.FC<AccordionProviderProps> = ({ children, darkMode = false }) => {
     const [activeName, setActiveName] = useState<string | null>(null);

@@ -35,6 +35,9 @@
 .darkMode.table {
     background-color: black;
 }
+.darkMode.table * {
+    color: white;
+}
 
 .darkMode.table .tr {
     border-top: 1px solid #313131;

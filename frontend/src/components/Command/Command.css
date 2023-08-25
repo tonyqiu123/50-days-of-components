@@ -1,5 +1,4 @@
 .command {
-    box-shadow: -5px 15px 20px -3px rgba(51, 51, 51, 0.1), -4px 0 6px -2px rgba(32, 32, 32, 0.05);
     background-color: white;
     border: 1px solid #E2E2E2;
     overflow-y: hidden;
@@ -51,7 +50,6 @@
 
 /* darkMode */
 .darkMode.command {
-    box-shadow: -5px 10px 20px -3px rgba(204, 204, 204, 0.1), -4px 0 6px -2px rgba(32, 32, 32, 0.05);
     border: 1px solid #313131;
     background-color: #000000;
 }

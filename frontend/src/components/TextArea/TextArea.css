@@ -1,7 +1,6 @@
 .textarea {
     padding: 10px;
     border: 1px solid #d6d6d6;
-    border-radius: 5px;
     font-size: 14px;
     resize: vertical;
 }
@@ -30,12 +29,10 @@
 
 .textarea::-webkit-scrollbar-track {
     background-color: #e4e4e4;
-    border-radius: 4px;
 }
 
 .textarea::-webkit-scrollbar-thumb {
     background-color: rgb(185, 184, 184);
-    border-radius: 4px;
 }
 
 /* Darkmode */

@@ -8,11 +8,9 @@
 .tooltip-hoverBox {
   max-width: 400px;
   position: absolute;
-  box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.1), -4px 0 6px -2px rgba(32, 32, 32, 0.05);
   background-color: white;
   padding: 8px 12px;
   border: 1px solid #d4d4d4;
-  border-radius: 4px;
   right: -4px;
   transform: translate(100%, 0%) scale(0.95);
   opacity: 0;
@@ -31,5 +29,4 @@
   border: 1px solid #313131;
   background-color: rgb(0, 0, 0);
   color: rgb(236, 236, 236);
-  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.1), -4px 0 6px -2px rgba(255, 255, 255, 0.05);
 }

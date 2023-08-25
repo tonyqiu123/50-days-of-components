@@ -3,7 +3,6 @@ input[type="range"] {
     appearance: none;
     height: 8px;
     background: #000000;
-    border-radius: 8px;
     outline: none;
   }
   
@@ -23,7 +22,6 @@ input[type="range"] {
     appearance: none;
     height: 8px;
     background: #fffefe;
-    border-radius: 8px;
     outline: none;
   }
   

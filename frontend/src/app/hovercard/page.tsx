@@ -35,7 +35,7 @@ const CarouselDemo: React.FC = () => {
                     <div className='demoBox'>
                         <HoverCard darkMode={isDarkMode}>
                             {/* First child is the trigger */}
-                            <Image width={24} height={24} src='/HoverCard/Heart.svg' alt='heart' />
+                            <Image style={{ filter: `${isDarkMode ? 'invert(1)' : 'unset'}` }} width={24} height={24} src='/HoverCard/Heart.svg' alt='heart' />
                             {/* Second child is the popover content */}
                             <div className='column'>
                                 <p>Add to liked songs</p>

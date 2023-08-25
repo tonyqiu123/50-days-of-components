@@ -36,7 +36,7 @@ const CarouselDemo: React.FC = () => {
 
                 <TabsContent value='preview'>
                     <div className='demoBox'>
-                       <Checkbox primaryText='Accept terms and conditions' />
+                       <Checkbox darkMode={isDarkMode} primaryText='Accept terms and conditions' />
                     </div>
                 </TabsContent>
                 <TabsContent value='code'><PrettyCode className='prettycodeDemo' language='jsx' code={reactCode} darkMode={isDarkMode} /></TabsContent>

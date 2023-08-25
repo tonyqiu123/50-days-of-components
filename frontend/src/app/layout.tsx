@@ -66,6 +66,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Modal',
     'MultiSelect',
     'NavBar',
+    'NavigationMenu',
     'OutsideClick',
     'Pagination',
     'Popover',
@@ -149,7 +150,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 </VerticalNavigation>
               </ScrollArea>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
                 {children}
               </div>
 
