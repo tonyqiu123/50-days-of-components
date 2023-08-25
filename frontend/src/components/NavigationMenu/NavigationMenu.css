@@ -17,15 +17,18 @@
     display: flex;
     gap: 6px;
     align-items: center;
+    white-space: nowrap;
 }
 
 .active.navigationMenuLink,
 .navigationMenuLink:hover {
     opacity: .6;
 }
+
 .navigationMenuLink:first-of-type {
     padding: 0 12px 0 0;
 }
+
 .navigationMenuLink:last-of-type {
     padding: 0 0 0 12px;
 }
@@ -60,6 +63,7 @@
 }
 
 /* darkMode */
-.darkMode.navigationMenu .navigationMenuDropdown, .darkMode.navigationMenu .movingWindow {
+.darkMode.navigationMenu .navigationMenuDropdown,
+.darkMode.navigationMenu .movingWindow {
     background-color: rgb(0, 0, 0);
 }

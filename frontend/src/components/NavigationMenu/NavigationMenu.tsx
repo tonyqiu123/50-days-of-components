@@ -39,12 +39,18 @@ type ItemsProps = {} & HTMLAttributes<HTMLElement>;
 const Items: React.FC<ItemsProps> = ({ children }) => {
     const { linkRefs } = useNavigationMenu();
 
-    // Dynamically create dropdownRefs based on children's itemName
+    // Create an object to store the refs
+    const refs = {};
+
+    // Loop through children and populate refs object
     Children.forEach(children, (child: any) => {
         if (child?.props?.itemName) {
-            linkRefs[child.props.itemName] = useRef(null);
+            refs[child.props.itemName] = useRef(null);
         }
     });
+
+    // Update linkRefs with the populated refs object
+    linkRefs.current = refs;
 
     return <div className='navigationMenuItems'>{children}</div>;
 };
