@@ -63,7 +63,7 @@ const Item: React.FC<ItemProps> = ({ itemName, children }) => {
         if (!dropdownRefs[itemName]) {
             setHasDropdown(false)
         }
-    }, [])
+    }, [dropdownRefs, itemName])
 
     return (
         <div
@@ -78,7 +78,7 @@ const Item: React.FC<ItemProps> = ({ itemName, children }) => {
             onMouseLeave={() => setActiveItem('')}
         >
             {children}
-            {hasDropdown ? <img src='/NavigationMenu/downArrow.svg' width={14} height={16} />: null}
+            {hasDropdown ? <img alt='' src='/NavigationMenu/downArrow.svg' width={14} height={16} /> : null}
         </div>
     );
 };
@@ -127,7 +127,7 @@ const MovingWindow: React.FC<MovingWindowProps> = ({ children }) => {
             }
 
         }
-    }, [activeItem]);
+    }, [activeItem, dropdownRefs, linkRefs, movingWindowRef]);
 
 
 
