@@ -1,15 +1,36 @@
 import React, { createContext, useContext, useState, useEffect, useRef, HTMLAttributes, Children, useMemo } from 'react';
 import './NavigationMenu.css';
+import Image from 'next/image';
 
+const buildObject = (ref: any) => {
+    const refObject: any = {}
+    refObject['width'] = ref.current.getBoundingClientRect().width
+    refObject['left'] = ref.current.getBoundingClientRect().left
+    refObject['right'] = ref.current.getBoundingClientRect().right
+    refObject['height'] = ref.current.getBoundingClientRect().height
+    return refObject
+}
 type ContextProps = {
-    activeItem: string;
-    setActiveItem: React.Dispatch<React.SetStateAction<string>>;
-    linkRefs: any;
-    dropdownRefs: any;
+    activeLink: string;
+    setActiveLink: React.Dispatch<React.SetStateAction<string>>;
+    linkDimensions: any;
+    setLinkDimensions: React.Dispatch<React.SetStateAction<any>>;
+    dropdownDimensions: any;
+    setDropdownDimensions: React.Dispatch<React.SetStateAction<any>>;
     movingWindowRef: any;
 };
 
-const Context = createContext<ContextProps>(null);
+const initialContextValue: ContextProps = {
+    activeLink: '',
+    setActiveLink: () => { },
+    linkDimensions: {},
+    setLinkDimensions: () => { },
+    dropdownDimensions: {},
+    setDropdownDimensions: () => { },
+    movingWindowRef: null,
+};
+
+const Context = createContext<ContextProps>(initialContextValue);
 const useNavigationMenu = () => useContext(Context);
 
 type NavigationMenuProps = {
@@ -17,164 +38,161 @@ type NavigationMenuProps = {
 } & HTMLAttributes<HTMLElement>;
 
 const NavigationMenu: React.FC<NavigationMenuProps> & {
-    Item: React.FC<ItemProps>;
-    Items: React.FC<ItemsProps>;
+    Link: React.FC<LinkProps>;
+    Links: React.FC<LinksProps>;
     MovingWindow: React.FC<MovingWindowProps>;
     Dropdown: React.FC<DropdownProps>;
-} = ({ children, darkMode = false }) => {
-    const [activeItem, setActiveItem] = useState('');
-    const linkRefs = {};
-    const dropdownRefs = {};
+} = ({ children, darkMode = false, ...props }) => {
+    const [activeLink, setActiveLink] = useState('');
+    const [linkDimensions, setLinkDimensions] = useState({});
+    const [dropdownDimensions, setDropdownDimensions] = useState({});
     const movingWindowRef = useRef(null);
 
     return (
-        <Context.Provider value={{ activeItem, setActiveItem, linkRefs, dropdownRefs, movingWindowRef }}>
-            <div className={`navigationMenu ${darkMode ? 'darkMode' : ''}`}>{children}</div>
+        <Context.Provider value={{ activeLink, setActiveLink, linkDimensions, dropdownDimensions, movingWindowRef, setLinkDimensions, setDropdownDimensions }}>
+            <div {...props} className={`navigationMenu ${darkMode ? 'darkMode' : ''} ${props.className}`}>{children}</div>
         </Context.Provider>
     );
 };
 
-type ItemsProps = {} & HTMLAttributes<HTMLElement>;
+type LinksProps = {} & HTMLAttributes<HTMLElement>;
 
-const Items: React.FC<ItemsProps> = ({ children }) => {
-    const { linkRefs } = useNavigationMenu();
-
-    // Create an array of refs based on children's itemName
-    const itemRefs = Children.map(children, (child: any) => {
-        if (child?.props?.itemName) {
-            return { itemName: child.props.itemName, ref: useRef(null) };
-        }
-        return null;
-    }).filter(Boolean);
-
-    itemRefs.forEach((itemRef: any) => {
-        linkRefs[itemRef.itemName] = itemRef.ref;
-    });
-
-    return <div className='navigationMenuItems'>{children}</div>;
+const Links: React.FC<LinksProps> = ({ children, ...props }) => {
+    return <div {...props} className={`${props.className} navigationMenuLinks`}>{children}</div>;
 };
 
-
-type ItemProps = {
-    itemName: string;
+type LinkProps = {
+    linkName: string;
 } & HTMLAttributes<HTMLElement>;
 
-const Item: React.FC<ItemProps> = ({ itemName, children }) => {
-    const { activeItem, setActiveItem, linkRefs, dropdownRefs } = useNavigationMenu();
-    const linkRef = linkRefs[itemName];
-
-    const [hasDropdown, setHasDropdown] = useState(true)
+const Link: React.FC<LinkProps> = ({ linkName, children, ...props }) => {
+    const { activeLink, setActiveLink, dropdownDimensions, setLinkDimensions } = useNavigationMenu();
+    const [hasDropdown, setHasDropdown] = useState(false)
+    const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        if (!dropdownRefs[itemName]) {
-            setHasDropdown(false)
+        if (dropdownDimensions[linkName]) {
+            setHasDropdown(true);
         }
-    }, [dropdownRefs, itemName])
+        if (ref.current) {
+            setLinkDimensions((prevObj: Record<string, any>) => ({
+                ...prevObj,
+                [linkName]: buildObject(ref)
+            }));
+        }
+    }, [dropdownDimensions, linkName, activeLink]);
+
+
 
     return (
         <div
+            {...props}
+            ref={ref}
             style={{ cursor: `${hasDropdown ? 'default' : 'pointer'}` }}
-            ref={linkRef}
-            className={`navigationMenuLink ${activeItem === itemName ? 'active' : ''}`}
+            className={`navigationMenuLink ${activeLink === linkName ? 'active' : ''} ${props.className}`}
             onMouseOver={() => {
                 if (hasDropdown) {
-                    setActiveItem(itemName)
+                    setActiveLink(linkName)
                 }
             }}
-            onMouseLeave={() => setActiveItem('')}
+            onMouseLeave={() => {
+                setActiveLink('')
+            }
+            }
         >
             {children}
-            {hasDropdown ? <img alt='' src='/NavigationMenu/downArrow.svg' width={14} height={16} /> : null}
         </div>
     );
 };
 
 type MovingWindowProps = {} & HTMLAttributes<HTMLElement>;
 
-const MovingWindow: React.FC<MovingWindowProps> = ({ children }) => {
-    const { linkRefs, setActiveItem, activeItem, dropdownRefs, movingWindowRef } = useNavigationMenu();
+const MovingWindow: React.FC<MovingWindowProps> = ({ children, ...props }) => {
+    const { linkDimensions, setActiveLink, activeLink, dropdownDimensions, movingWindowRef } = useNavigationMenu();
 
-
-    // Create an array of refs based on children's itemName
-    const itemRefs = Children.map(children, (child: any) => {
-        if (child?.props?.itemName) {
-            return { itemName: child.props.itemName, ref: useRef(null) };
-        }
-        return null;
-    }).filter(Boolean);
-
-    itemRefs.forEach((itemRef: any) => {
-        dropdownRefs[itemRef.itemName] = itemRef.ref;
-    })
 
 
     useMemo(() => {
-        const activeDropdownRect = dropdownRefs[activeItem]?.current.getBoundingClientRect();
-        const activeLinkRect = linkRefs[activeItem]?.current.getBoundingClientRect();
-
-        if (activeDropdownRect && activeLinkRect) {
-            const movingWindowStyle = movingWindowRef?.current.style
-            const linkRefKeys = Object.keys(linkRefs);
-            const firstLinkRect = linkRefs[linkRefKeys[0]]?.current.getBoundingClientRect();
-            const lastLinkRect = linkRefs[linkRefKeys[linkRefKeys.length - 1]]?.current.getBoundingClientRect();
+        const activeDropdownDimensions = dropdownDimensions[activeLink]
+        const activeLinkDimensions = linkDimensions[activeLink]
+        if (dropdownDimensions[activeLink] && linkDimensions[activeLink] && movingWindowRef) {
+            const movingWindowStyle = movingWindowRef?.current?.style
+            const linkRefKeys = Object.keys(linkDimensions);
+            const firstLinkRect = linkDimensions[linkRefKeys[0]];
+            const lastLinkRect = linkDimensions[linkRefKeys[linkRefKeys.length - 1]];
             const totalWidth = lastLinkRect.left - firstLinkRect.left + lastLinkRect.width
 
-            movingWindowStyle.width = `${activeDropdownRect.width}px`;
-            movingWindowStyle.height = `${activeDropdownRect.height}px`;
 
-            const centeredLeft = activeLinkRect.left + activeLinkRect.width / 2 - activeDropdownRect.width / 2;
-            const centeredRight = activeLinkRect.right - activeLinkRect.width / 2 + activeDropdownRect.width / 2;
+            movingWindowStyle.width = `${activeDropdownDimensions.width}px`;
+            movingWindowStyle.height = `${activeDropdownDimensions.height}px`;
+
+            const centeredLeft = activeLinkDimensions.left + activeLinkDimensions.width / 2 - activeDropdownDimensions.width / 2;
+            const centeredRight = activeLinkDimensions.right - activeLinkDimensions.width / 2 + activeDropdownDimensions.width / 2;
 
             // left aligned
-            if (activeDropdownRect.width > totalWidth || centeredLeft < firstLinkRect.left) {
+            if (activeDropdownDimensions.width > totalWidth || centeredLeft < firstLinkRect.left) {
                 movingWindowStyle.transform = 'unset';
             }
 
             // right aligned
             else if (centeredRight > lastLinkRect.right) {
-                movingWindowStyle.transform = `translateX(${totalWidth - activeDropdownRect.width}px)`
+                movingWindowStyle.transform = `translateX(${totalWidth - activeDropdownDimensions.width}px)`
             }
             // centered aligned
             else {
-                movingWindowStyle.transform = `translateX(${activeLinkRect.left - firstLinkRect.left + activeLinkRect.width / 2 - activeDropdownRect.width / 2}px)`
+                movingWindowStyle.transform = `translateX(${activeLinkDimensions.left - firstLinkRect.left + activeLinkDimensions.width / 2 - activeDropdownDimensions.width / 2}px)`
             }
 
         }
-    }, [activeItem, dropdownRefs, linkRefs, movingWindowRef]);
+    }, [activeLink, dropdownDimensions, linkDimensions, movingWindowRef]);
 
 
 
     return (
         <div
-            onMouseOver={() => setActiveItem(activeItem)}
-            ref={movingWindowRef} className={`movingWindow ${activeItem === '' ? 'active' : ''}`}>
+            {...props}
+            onMouseOver={() => setActiveLink(activeLink)}
+            ref={movingWindowRef} className={`${props.className} movingWindow ${activeLink === '' ? 'active' : ''}`}>
             {children}
         </div>
     );
 };
 
 type DropdownProps = {
-    itemName: string;
+    linkName: string;
 } & HTMLAttributes<HTMLElement>;
 
-const Dropdown: React.FC<DropdownProps> = ({ itemName, children }) => {
-    const { activeItem, setActiveItem, dropdownRefs } = useNavigationMenu();
-    const dropdownRef = dropdownRefs[itemName];
+const Dropdown: React.FC<DropdownProps> = ({ linkName, children, ...props }) => {
+
+
+    const { activeLink, setActiveLink, setLinkDimensions, setDropdownDimensions } = useNavigationMenu();
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (ref.current) {
+            setDropdownDimensions((prevObj: Record<string, any>) => ({
+                ...prevObj,
+                [linkName]: buildObject(ref)
+            }));
+        }
+    }, [linkName, setLinkDimensions]);
 
     return (
         <div
-            ref={dropdownRef}
-            className={`navigationMenuDropdown ${activeItem === itemName ? 'active' : ''}`}
-            onMouseOver={() => { if (activeItem === itemName) setActiveItem(itemName) }}
-            onMouseLeave={() => setActiveItem('')}
+            {...props}
+            ref={ref}
+            className={`${props.className} navigationMenuDropdown ${activeLink === linkName ? 'active' : ''}`}
+            onMouseOver={() => { if (activeLink === linkName) setActiveLink(linkName) }}
+            onMouseLeave={() => setActiveLink('')}
         >
             {children}
         </div>
     );
 };
 
-NavigationMenu.Items = Items;
-NavigationMenu.Item = Item;
+
+NavigationMenu.Links = Links;
+NavigationMenu.Link = Link;
 NavigationMenu.Dropdown = Dropdown;
 NavigationMenu.MovingWindow = MovingWindow;
 

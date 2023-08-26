@@ -3,7 +3,7 @@
 August 24th / October 16th
 
 # NavigationMenu
-<a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
+<a href="https://youtu.be/jW93ckQQdYY" target="_blank">Watch live demo on youtube</a>
 
 <a href="https://100daysofcomponents.netlify.app/NavigationMenu" target="_blank">Demo it yourself</a>
 
@@ -46,176 +46,224 @@ All HTMLAttributes: You can pass any valid HTML attribute to customize the behav
 ## Example Usage
 ### page.tsx
 ```jsx
- <NavigationMenu darkMode={isDarkMode}>
-    <NavigationMenu.Items>
-        <NavigationMenu.Item itemName="Home"><h3>Home</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Products"><h3>Products</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="About Us"><h3>About Us</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Developers"><h3>Developers</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Services"><h3>Services</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Contact"><h3>Contact</h3></NavigationMenu.Item>
-    </NavigationMenu.Items>
-    <NavigationMenu.MovingWindow>
+<NavigationMenu darkMode={isDarkMode}>
+    <NavigationMenu.Links>
+        <NavigationMenu.Link linkName="Products"><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Products</p></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Solutions"><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Solutions</p></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Developers"><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Developers</p></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Resources"><p style={{ fontWeight: 'bold', fontSize: '18px' }}>Resources</p></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Pricing"><a href="https://www.youtube.com/channel/UC-eVD85P5uhqs5s4kSDx05g" target="__blank" style={{ fontWeight: 'bold', fontSize: '18px' }}>Pricing</a></NavigationMenu.Link>
+    </NavigationMenu.Links>
+    <NavigationMenu.MovingWindow className='navigationMenuMovingWindowDemo'>
+        <NavigationMenu.Dropdown linkName="Products">
+            <div className='row' style={{ width: '1000px', padding: '8px' }}>
 
-        <NavigationMenu.Dropdown itemName="Solutions">
-            <div style={{ width: '1000px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
-                <div className='column'>
-                    <h4>Software Solutions</h4>
-                    <p>Explore our latest software offerings designed to streamline your tasks.</p>
+                <div className='column' style={{ width: '400px', padding: '12px' }}>
+                    <a style={{ padding: '16px', gap: '4px' }} className='column'>
+                        <h4>Secure Transactions</h4>
+                        <p>Safely process payments online, in-store, or on your platform.</p>
+                    </a>
+                    <a style={{ padding: '16px', gap: '4px' }} className='column'>
+                        <h4>Seamless Payments</h4>
+                        <p>Effortlessly accept payments online, in person, or on your platform.</p>
+                    </a>
+                    <a style={{ padding: '16px', gap: '4px' }} className='column'>
+                        <h4>Versatile Payment Solutions</h4>
+                        <p>Adaptable payment options for online, in-person, or platform transactions.</p>
+                    </a>
                 </div>
-                <div className='column'>
-                    <h4>Hardware Selection</h4>
-                    <p>Discover a range of high-quality hardware products built to meet your needs.</p>
-                </div>
-                <div className='column'>
-                    <h4>Accessories Collection</h4>
-                    <p>Enhance your setup with our thoughtfully curated accessories.</p>
-                </div>
-                <div className='column'>
-                    <h4>Exclusive Deals</h4>
-                    <p>Take advantage of limited-time special offers that we have for you.</p>
-                </div>
-                <div className='column'>
-                    <h4>Mobile Apps</h4>
-                    <p>Download our mobile apps for on-the-go productivity and entertainment.</p>
-                </div>
-                <div className='column'>
-                    <h4>Training Resources</h4>
-                    <p>Access training materials to make the most of our products and services.</p>
-                </div>
-                <div className='column'>
-                    <h4>Customer Support</h4>
-                    <p>Get assistance from our dedicated support team whenever you need it.</p>
-                </div>
-                <div className='column'>
-                    <h4>Community Forums</h4>
-                    <p>Join discussions and share insights with our community of users.</p>
-                </div>
-                <div className='column'>
-                    <h4>Software Solutions</h4>
-                    <p>Explore our latest software offerings designed to streamline your tasks.</p>
-                </div>
-                <div className='column'>
-                    <h4>Hardware Selection</h4>
-                    <p>Discover a range of high-quality hardware products built to meet your needs.</p>
-                </div>
-                <div className='column'>
-                    <h4>Accessories Collection</h4>
-                    <p>Enhance your setup with our thoughtfully curated accessories.</p>
-                </div>
-                <div className='column'>
-                    <h4>Exclusive Deals</h4>
-                    <p>Take advantage of limited-time special offers that we have for you.</p>
-                </div>
-                <div className='column'>
-                    <h4>Mobile Apps</h4>
-                    <p>Download our mobile apps for on-the-go productivity and entertainment.</p>
-                </div>
-                <div className='column'>
-                    <h4>Training Resources</h4>
-                    <p>Access training materials to make the most of our products and services.</p>
-                </div>
-                <div className='column'>
-                    <h4>Customer Support</h4>
-                    <p>Get assistance from our dedicated support team whenever you need it.</p>
-                </div>
-                <div className='column'>
-                    <h4>Community Forums</h4>
-                    <p>Join discussions and share insights with our community of users.</p>
+                <div style={{ width: '600px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '24px', gap: '24px' }}>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Payments</h4>
+                        <p>Process Payments</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Transactions</h4>
+                        <p>View Transaction History</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Customers</h4>
+                        <p>Manage Customer Profiles</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Invoices</h4>
+                        <p>Generate and Send Invoices</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Subscriptions</h4>
+                        <p>Manage Subscription Plans</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Connect</h4>
+                        <p>Integrate with Stripe Connect</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Payouts</h4>
+                        <p>Track Payouts and Transfers</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Radar</h4>
+                        <p>Fraud Detection and Prevention</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Settings</h4>
+                        <p>Configure Account Settings</p>
+                    </a>
+                    <a className='column' style={{ gap: '4px' }}>
+                        <h4>Help</h4>
+                        <p>Get Assistance and Support</p>
+                    </a>
+
                 </div>
             </div>
         </NavigationMenu.Dropdown>
 
-        <NavigationMenu.Dropdown itemName="Products">
-            <div style={{ width: '500px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
-                <div className='column'>
-                    <h4>Software</h4>
-                    <p>Explore our cutting-edge software solutions</p>
+        <NavigationMenu.Dropdown linkName="Solutions">
+            <div style={{ width: '800px', padding: '40px', gap: '40px' }} className='column'>
+                <div className='column' style={{ gap: '16px' }}>
+                    <h4>USE CASES</h4>
+                    <div style={{ gap: '8px', display: 'grid', gridTemplateColumns: ' 1fr 1fr' }}>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Enterprises</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Platforms</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Saas</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Ecommerce</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Creator Economy</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Marketplaces</h4>
+                        </a>
+                    </div>
                 </div>
-                <div className='column'>
-                    <h4>Hardware</h4>
-                    <p>Discover our high-quality hardware products</p>
-                </div>
-                <div className='column'>
-                    <h4>Accessories</h4>
-                    <p>Enhance your experience with our accessories</p>
-                </div>
-                <div className='column'>
-                    <h4>Special Offers</h4>
-                    <p>Check out our limited-time special offers</p>
-                </div>
-            </div>
-        </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="About Us">
-            <div style={{ width: '600px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
-                <div className='column'>
-                    <h4>Innovative Solutions</h4>
-                    <p>Explore our latest groundbreaking software solutions</p>
-                </div>
-                <div className='column'>
-                    <h4>Premium Hardware</h4>
-                    <p>Discover our collection of top-tier hardware products</p>
-                </div>
-                <div className='column'>
-                    <h4>Complementary Accessories</h4>
-                    <p>Elevate your experience with our range of accessories</p>
-                </div>
-                <div className='column'>
-                    <h4>Exclusive Deals</h4>
-                    <p>Take advantage of limited-time special offers</p>
-                </div>
-            </div>
-        </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="Pricing">
-            <div style={{ width: '800px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
-                <div className='column'>
-                    <h4>Software Solutions</h4>
-                    <p>Discover our innovative software solutions tailored to your needs</p>
-                </div>
-                <div className='column'>
-                    <h4>Hardware Selection</h4>
-                    <p>Explore our premium hardware products for your technological requirements</p>
-                </div>
-                <div className='column'>
-                    <h4>Accessories Collection</h4>
-                    <p>Enhance your setup with our range of high-quality accessories</p>
-                </div>
-                <div className='column'>
-                    <h4>Exclusive Deals</h4>
-                    <p>Take advantage of our limited-time special offers and promotions</p>
-                </div>
-                <div className='column'>
-                    <h4>Service Packages</h4>
-                    <p>Customized service bundles to provide you with comprehensive solutions</p>
-                </div>
-                <div className='column'>
-                    <h4>Support & Maintenance</h4>
-                    <p>Learn about our dedicated support and maintenance options for your products</p>
+
+                <div className='column' style={{ gap: '16px' }}>
+                    <h4>INTEGRATIONS AND CUSTOM SOLUTIONS</h4>
+                    <div style={{ gap: '8px', display: 'grid', gridTemplateColumns: ' 1fr 1fr' }}>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Enterprises</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Platforms</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Saas</h4>
+                        </a>
+                        <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                            <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                            <h4>Ecommerce</h4>
+                        </a>
+                    </div>
                 </div>
             </div>
         </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="Services">
-            <div style={{ width: '700px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '32px', gap: '32px' }}>
-                <div className='column'>
-                    <h4>Consulting</h4>
-                    <p>Get expert advice for your business</p>
+
+        <NavigationMenu.Dropdown linkName="Developers">
+            <div style={{ width: '800px', padding: '40px', gap: '48px' }} className='column'>
+                <div className='column' style={{ gap: '32px' }}>
+                    <div className='column' style={{ gap: '4px' }}>
+                        <h4>Documentation</h4>
+                        <p>Start integrating Stripe&apos;s products and tools</p>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                        <div className='column' style={{ gap: '8px' }}>
+                            <h4>GET STARTED</h4>
+                            <a>Prebuilt checkout</a>
+                            <a>Libraries and SDKs</a>
+                            <a>Plugins</a>
+                            <a>Code samples</a>
+                        </div>
+                        <div className='column' style={{ gap: '8px' }}>
+                            <h4>GUIDES</h4>
+                            <a>Accept online payments</a>
+                            <a>Manage Subscriptions</a>
+                            <a>Send payments</a>
+                        </div>
+                    </div>
                 </div>
-                <div className='column'>
-                    <h4>Support</h4>
-                    <p>24/7 technical support for our products</p>
-                </div>
-                <div className='column'>
-                    <h4>Training</h4>
-                    <p>Enhance your skills with our training programs</p>
-                </div>
-                <div className='column'>
-                    <h4>Customization</h4>
-                    <p>Tailor our solutions to meet your needs</p>
+
+                <div style={{ display: 'grid', gap: '8px', gridTemplateColumns: '1fr 1fr' }}>
+                    <a><h4>Full API Reference</h4></a>
+                    <a><h4>API Changelog</h4></a>
+                    <a><h4>API status</h4></a>
+                    <a><h4>Build a Stripe app</h4></a>
                 </div>
             </div>
         </NavigationMenu.Dropdown>
+
+        <NavigationMenu.Dropdown linkName="Resources">
+            <div className='column' style={{ width: '800px', padding: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', padding: '24px' }}>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', backgroundColor: `${isDarkMode ? '#313131' : '#f3f3f3'}`, padding: '24px' }}>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                    <a className='row' style={{ alignItems: 'center', gap: '8px' }}>
+                        <div style={{ backgroundColor: 'grey', borderRadius: '50%', height: '14px', width: '14px' }}></div>
+                        <h4>Enterprises</h4>
+                    </a>
+                </div>
+            </div>
+        </NavigationMenu.Dropdown>
+
     </NavigationMenu.MovingWindow>
 </NavigationMenu>
 ```
@@ -230,4 +278,3 @@ The following dependencies were used for this component:
 5. "react": "18.2.0",
 6. "react-dom": "18.2.0",
 7. "typescript": "5.1.6"
-
