@@ -15,16 +15,16 @@ const CarouselDemo: React.FC = () => {
 
 
     const reactCode = `<NavigationMenu darkMode={isDarkMode}>
-    <NavigationMenu.Items>
-        <NavigationMenu.Item itemName="Home"><h3>Home</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Products"><h3>Products</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="About Us"><h3>About Us</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Developers"><h3>Developers</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Services"><h3>Services</h3></NavigationMenu.Item>
-        <NavigationMenu.Item itemName="Contact"><h3>Contact</h3></NavigationMenu.Item>
-    </NavigationMenu.Items>
+    <NavigationMenu.Links>
+        <NavigationMenu.Link itemName="Home"><h3>Home</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Products"><h3>Products</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="About Us"><h3>About Us</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Developers"><h3>Developers</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Services"><h3>Services</h3></NavigationMenu.Link>
+        <NavigationMenu.Link itemName="Contact"><h3>Contact</h3></NavigationMenu.Link>
+    </NavigationMenu.Links>
     <NavigationMenu.MovingWindow>
 
         <NavigationMenu.Dropdown itemName="Solutions">
@@ -204,16 +204,16 @@ const CarouselDemo: React.FC = () => {
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
                         <NavigationMenu darkMode={isDarkMode}>
-                            <NavigationMenu.Items>
-                                <NavigationMenu.Item itemName="Home"><h3>Home</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Products"><h3>Products</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="About Us"><h3>About Us</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Developers"><h3>Developers</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Services"><h3>Services</h3></NavigationMenu.Item>
-                                <NavigationMenu.Item itemName="Contact"><h3>Contact</h3></NavigationMenu.Item>
-                            </NavigationMenu.Items>
+                            <NavigationMenu.Links>
+                                <NavigationMenu.Link itemName="Home"><h3>Home</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Products"><h3>Products</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="About Us"><h3>About Us</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Developers"><h3>Developers</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Services"><h3>Services</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link itemName="Contact"><h3>Contact</h3></NavigationMenu.Link>
+                            </NavigationMenu.Links>
                             <NavigationMenu.MovingWindow>
 
                                 <NavigationMenu.Dropdown itemName="Solutions">
