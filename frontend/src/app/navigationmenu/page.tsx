@@ -16,18 +16,18 @@ const CarouselDemo: React.FC = () => {
 
     const reactCode = `<NavigationMenu darkMode={isDarkMode}>
     <NavigationMenu.Links>
-        <NavigationMenu.Link itemName="Home"><h3>Home</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Products"><h3>Products</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="About Us"><h3>About Us</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Developers"><h3>Developers</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Services"><h3>Services</h3></NavigationMenu.Link>
-        <NavigationMenu.Link itemName="Contact"><h3>Contact</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Home"><h3>Home</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Products"><h3>Products</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="About Us"><h3>About Us</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Developers"><h3>Developers</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Services"><h3>Services</h3></NavigationMenu.Link>
+        <NavigationMenu.Link linkName="Contact"><h3>Contact</h3></NavigationMenu.Link>
     </NavigationMenu.Links>
     <NavigationMenu.MovingWindow>
 
-        <NavigationMenu.Dropdown itemName="Solutions">
+        <NavigationMenu.Dropdown linkName="Solutions">
             <div style={{ width: '1000px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
                 <div className='column'>
                     <h4>Software Solutions</h4>
@@ -96,7 +96,7 @@ const CarouselDemo: React.FC = () => {
             </div>
         </NavigationMenu.Dropdown>
 
-        <NavigationMenu.Dropdown itemName="Products">
+        <NavigationMenu.Dropdown linkName="Products">
             <div style={{ width: '500px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
                 <div className='column'>
                     <h4>Software</h4>
@@ -116,7 +116,7 @@ const CarouselDemo: React.FC = () => {
                 </div>
             </div>
         </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="About Us">
+        <NavigationMenu.Dropdown linkName="About Us">
             <div style={{ width: '600px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
                 <div className='column'>
                     <h4>Innovative Solutions</h4>
@@ -136,7 +136,7 @@ const CarouselDemo: React.FC = () => {
                 </div>
             </div>
         </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="Pricing">
+        <NavigationMenu.Dropdown linkName="Pricing">
             <div style={{ width: '800px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
                 <div className='column'>
                     <h4>Software Solutions</h4>
@@ -164,7 +164,7 @@ const CarouselDemo: React.FC = () => {
                 </div>
             </div>
         </NavigationMenu.Dropdown>
-        <NavigationMenu.Dropdown itemName="Services">
+        <NavigationMenu.Dropdown linkName="Services">
             <div style={{ width: '700px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '32px', gap: '32px' }}>
                 <div className='column'>
                     <h4>Consulting</h4>
@@ -205,18 +205,18 @@ const CarouselDemo: React.FC = () => {
                     <div className='demoBox'>
                         <NavigationMenu darkMode={isDarkMode}>
                             <NavigationMenu.Links>
-                                <NavigationMenu.Link itemName="Home"><h3>Home</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Products"><h3>Products</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="About Us"><h3>About Us</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Developers"><h3>Developers</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Services"><h3>Services</h3></NavigationMenu.Link>
-                                <NavigationMenu.Link itemName="Contact"><h3>Contact</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Home"><h3>Home</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Products"><h3>Products</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="About Us"><h3>About Us</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Solutions"><h3>Solutions</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Pricing"><h3>Pricing</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Developers"><h3>Developers</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Services"><h3>Services</h3></NavigationMenu.Link>
+                                <NavigationMenu.Link linkName="Contact"><h3>Contact</h3></NavigationMenu.Link>
                             </NavigationMenu.Links>
                             <NavigationMenu.MovingWindow>
 
-                                <NavigationMenu.Dropdown itemName="Solutions">
+                                <NavigationMenu.Dropdown linkName="Solutions">
                                     <div style={{ width: '1000px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
                                         <div className='column'>
                                             <h4>Software Solutions</h4>
@@ -285,7 +285,7 @@ const CarouselDemo: React.FC = () => {
                                     </div>
                                 </NavigationMenu.Dropdown>
 
-                                <NavigationMenu.Dropdown itemName="Products">
+                                <NavigationMenu.Dropdown linkName="Products">
                                     <div style={{ width: '500px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
                                         <div className='column'>
                                             <h4>Software</h4>
@@ -305,7 +305,7 @@ const CarouselDemo: React.FC = () => {
                                         </div>
                                     </div>
                                 </NavigationMenu.Dropdown>
-                                <NavigationMenu.Dropdown itemName="About Us">
+                                <NavigationMenu.Dropdown linkName="About Us">
                                     <div style={{ width: '600px', display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '32px', gap: '32px' }}>
                                         <div className='column'>
                                             <h4>Innovative Solutions</h4>
@@ -325,7 +325,7 @@ const CarouselDemo: React.FC = () => {
                                         </div>
                                     </div>
                                 </NavigationMenu.Dropdown>
-                                <NavigationMenu.Dropdown itemName="Pricing">
+                                <NavigationMenu.Dropdown linkName="Pricing">
                                     <div style={{ width: '800px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '24px', gap: '24px' }}>
                                         <div className='column'>
                                             <h4>Software Solutions</h4>
@@ -353,7 +353,7 @@ const CarouselDemo: React.FC = () => {
                                         </div>
                                     </div>
                                 </NavigationMenu.Dropdown>
-                                <NavigationMenu.Dropdown itemName="Services">
+                                <NavigationMenu.Dropdown linkName="Services">
                                     <div style={{ width: '700px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', padding: '32px', gap: '32px' }}>
                                         <div className='column'>
                                             <h4>Consulting</h4>
