@@ -197,7 +197,7 @@ const BreadcrumbDemo: React.FC = () => {
         },
         {
             country: "India",
-            population: "1.393 billion",
+            population: "1.393 billion", 
             gdp: "$2.875 trillion",
             unemploymentRate: "6.7%",
             medianAge: 28,
