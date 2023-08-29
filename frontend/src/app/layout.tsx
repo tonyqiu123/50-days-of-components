@@ -73,6 +73,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Popover',
     'PrettyCode',
     'ScrollArea',
+    'ScrollIndicator',
     'SearchBar',
     'Select',
     'Separator',
