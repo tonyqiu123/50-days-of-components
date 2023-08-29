@@ -13,7 +13,7 @@ const CarouselDemo: React.FC = () => {
     const { isDarkMode, setIsDarkMode } = useGlobal();
 
 
-    const reactCode = ` `;
+    const reactCode = `<ScrollIndicator darkMode={isDarkMode} />`;
 
 
     return (
@@ -29,7 +29,7 @@ const CarouselDemo: React.FC = () => {
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
 
-                        <ScrollIndicator/>
+                        <ScrollIndicator darkMode={isDarkMode} />
 
                     </div>
                 </TabsContent>

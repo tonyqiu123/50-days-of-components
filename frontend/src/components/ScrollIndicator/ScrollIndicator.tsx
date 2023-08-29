@@ -1,28 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, HTMLAttributes } from 'react';
 import './ScrollIndicator.css';
 
-const ScrollIndicator: React.FC = () => {
-  const [scrollWidth, setScrollWidth] = useState<number>(0);
+type ScrolIndicatorProps = {
+    darkMode?: boolean
+} & HTMLAttributes<HTMLElement>
 
-  const handleScroll = () => {
-    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    setScrollWidth(scrolled);
-  };
+const ScrollIndicator: React.FC<ScrolIndicatorProps> = ({ darkMode = false, ...props }) => {
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+
+    const handleScroll = () => {
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        setScrollWidth(scrolled);
     };
-  }, []);
 
-  return (
-    <div className="scroll-indicator-container">
-      <div className="scroll-indicator-bar">
-        <div className="scroll-indicator-overlay" style={{ transform: `translateX(${scrollWidth})%` }}></div>
-      </div>
-    </div>
-  );
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <div {...props} className={`scroll-indicator-container ${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''}`}>
+            <div className="scroll-indicator-bar">
+                <div className="scroll-indicator-overlay" style={{ transform: `translateX(${scrollWidth - 100}%)` }}></div>
+            </div>
+        </div>
+    );
 };
 
 export default ScrollIndicator;
