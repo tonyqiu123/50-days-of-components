@@ -1,42 +1,71 @@
-# Day 46/100
+# Day 50/100
 
-August 22nd / October 16th
+August 26th / October 16th
 
-# DataIndicator
+# DataTable
 <a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank">Demo it yourself</a>
+<a href="https://100daysofcomponents.netlify.app/DataTable" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143730248274415766/image.png"/></a>  
+<a href="https://100daysofcomponents.netlify.app/DataTable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1146530634530033784/image.png"/></a>  
 
 ## Description 
 
-###### A data indicator component visually represents real-time data fluctuations through color-coded signals, providing an instant overview of the data's current state.
+###### The DataTable component is a versatile React component that facilitates dynamic sorting and display of tabular data, complete with optional action buttons. It utilizes state management for sorting, offers customizable actions, and dynamically determines cell alignment based on data types, providing a user-friendly and adaptable data presentation solution.
 
 
-A genuinely helpful component that will add visual flavor whenever you need to visualize data compared to a previous timeframe. I found it useful while building a job portal admin dashboard and while building a web analytics dashboard.
+A highly-abstracted table that requires 1 line to implement. Includes sorting (asc and desc) and ability to run asynchronous functions on each row.
 
 ## Installation 
 
-To use the DataIndicator component in your project, follow these steps:
+To use the DataTable component in your project, follow these steps:
 
-1. Create a new folder called 'DataIndicator' in your project's components directory.
-2. Copy the `DataIndicator.tsx` and `DataIndicator.css` file into the newly created 'DataIndicator' folder.
+1. Create a new folder called 'DataTable' in your project's components directory.
+2. Copy the `DataTable.tsx` and `DataTable.css` file into the newly created 'DataTable' folder.
 
 ## Props 
-### DataIndicator
+### DataTable
 
-`currentData` (required number): The current numerical data value that the indicator will represent.
+`data` (required array of objects): An array of objects representing the data to be displayed in the table. Each object represents a row in the table.
 
-`previousData` (required number): The previous numerical data value for comparison, enabling the calculation of the data change.
+`actions` (optional array of objects): An array of action objects that define custom actions associated with each row in the table. Each action object should have a name property (string) representing the action's name and an action property (function) that is executed when the action is triggered.
 
-`text` (optional string): Additional text or context to be displayed alongside the data indicator, providing a brief description of the data being represented.
+`darkMode` (optional boolean): A boolean indicating whether the table should be displayed in dark mode. When set to true, the table will apply styles for dark mode.
 
 ## Example Usage
 ### page.tsx
 ```jsx
-<DataIndicator currentData={50} previousData={20} text='from last month' />
-<DataIndicator currentData={5} previousData={20} text='from last month' />
+import DataTable from '@/components/DataTable/DataTable';
+
+const actions = [
+    {
+        name: "Edit job",
+        action: async () => { }
+    },
+    {
+        name: "Delete job",
+        action: async () => { }
+    }
+]
+
+const jobs = [
+    {
+        jobTitle: "Software Engineer",
+        salary: 90000,
+        yoeRequired: 2,
+        location: "San Francisco",
+        jobDescription: "Develop and maintain software applications.",
+    },
+    {
+        jobTitle: "Data Scientist",
+        salary: 85000,
+        yoeRequired: 3,
+        location: "New York",
+        jobDescription: "Analyze and interpret complex data to inform business decisions.",
+    }
+];
+
+<DataTable darkMode={isDarkMode} data={jobs} actions={actions} />
 ```
 
 ## Prerequisites
