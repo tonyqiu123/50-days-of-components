@@ -58,6 +58,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Command',
     'Counter',
     'DataIndicator',
+    'DataTable',
     'DragNDrop',
     'Drawer',
     'Expandable',

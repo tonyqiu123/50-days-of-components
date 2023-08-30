@@ -16,7 +16,7 @@
 
 
 .tr {
-    border-top: 1px solid #E2E2E2;
+    border-top: 1px solid #f3f3f3;
     transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
@@ -27,7 +27,7 @@
 
 .td {
     font-size: 14px;
-    padding: 16px;
+    padding: 12px;
     text-align: left;
 }
 

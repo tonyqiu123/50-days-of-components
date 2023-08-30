@@ -4,14 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from '@/components/Table/Table';
+import Table from '@/components/Table/Table';
 import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal 
 import ShowMore from '@/components/ShowMore/ShowMore';
 
@@ -88,24 +81,24 @@ const BreadcrumbDemo: React.FC = () => {
     ];
     
     <Table darkMode={isDarkMode}>
-    <TableHeader>
-        <TableRow>
-            <TableHead>Opening</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Complexity</TableHead>
-            <TableHead>Starting Moves</TableHead>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
+    <Table.Header>
+        <Table.Row>
+            <Table.Head>Opening</Table.Head>
+            <Table.Head>Status</Table.Head>
+            <Table.Head>Complexity</Table.Head>
+            <Table.Head>Starting Moves</Table.Head>
+        </Table.Row>
+    </Table.Header>
+    <Table.Body>
         {chessOpenings.map((opening) => (
-            <TableRow key={opening.opening}>
-                <TableCell>{opening.opening}</TableCell>
-                <TableCell>{opening.status}</TableCell>
-                <TableCell>{opening.complexity}</TableCell>
-                <TableCell>{opening.startingMoves}</TableCell>
-            </TableRow>
+            <Table.Row key={opening.opening}>
+                <Table.Cell>{opening.opening}</Table.Cell>
+                <Table.Cell>{opening.status}</Table.Cell>
+                <Table.Cell>{opening.complexity}</Table.Cell>
+                <Table.Cell>{opening.startingMoves}</Table.Cell>
+            </Table.Row>
         ))}
-    </TableBody>
+    </Table.Body>
 </Table>`;
 
     const chessOpenings = [
@@ -276,52 +269,52 @@ const BreadcrumbDemo: React.FC = () => {
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
                         <Table darkMode={isDarkMode}>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead>Opening</TableHead>
-                                    <TableHead>Status</TableHead>
-                                    <TableHead>Complexity</TableHead>
-                                    <TableHead>Starting Moves</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
+                            <Table.Header>
+                                <Table.Row>
+                                    <Table.Head>Opening</Table.Head>
+                                    <Table.Head>Status</Table.Head>
+                                    <Table.Head>Complexity</Table.Head>
+                                    <Table.Head>Starting Moves</Table.Head>
+                                </Table.Row>
+                            </Table.Header>
+                            <Table.Body>
                                 {chessOpenings.map((opening) => (
-                                    <TableRow key={opening.opening}>
-                                        <TableCell>{opening.opening}</TableCell>
-                                        <TableCell>{opening.status}</TableCell>
-                                        <TableCell>{opening.complexity}</TableCell>
-                                        <TableCell>{opening.startingMoves}</TableCell>
-                                    </TableRow>
+                                    <Table.Row key={opening.opening}>
+                                        <Table.Cell>{opening.opening}</Table.Cell>
+                                        <Table.Cell>{opening.status}</Table.Cell>
+                                        <Table.Cell>{opening.complexity}</Table.Cell>
+                                        <Table.Cell>{opening.startingMoves}</Table.Cell>
+                                    </Table.Row>
                                 ))}
-                            </TableBody>
+                            </Table.Body>
                         </Table>
                     </div>
                 </TabsContent>
                 <TabsContent value='preview2'>
                     <div className='demoBox'>
                         <Table darkMode={isDarkMode}>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead>Country</TableHead>
-                                    <TableHead>Official Language</TableHead>
-                                    <TableHead style={{ textAlign: 'right' }}>Population</TableHead>
-                                    <TableHead style={{ textAlign: 'right' }}>GDP</TableHead>
-                                    <TableHead style={{ textAlign: 'right' }}>Unemployment Rate</TableHead>
-                                    <TableHead style={{ textAlign: 'right' }}>Median Age</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
+                            <Table.Header>
+                                <Table.Row>
+                                    <Table.Head>Country</Table.Head>
+                                    <Table.Head>Official Language</Table.Head>
+                                    <Table.Head style={{ textAlign: 'right' }}>Population</Table.Head>
+                                    <Table.Head style={{ textAlign: 'right' }}>GDP</Table.Head>
+                                    <Table.Head style={{ textAlign: 'right' }}>Unemployment Rate</Table.Head>
+                                    <Table.Head style={{ textAlign: 'right' }}>Median Age</Table.Head>
+                                </Table.Row>
+                            </Table.Header>
+                            <Table.Body>
                                 {countryStatistics.map((countryStat) => (
-                                    <TableRow key={countryStat.country}>
-                                        <TableCell>{countryStat.country}</TableCell>
-                                        <TableCell>{countryStat.officialLanguage}</TableCell>
-                                        <TableCell style={{ textAlign: 'right' }}>{countryStat.population}</TableCell>
-                                        <TableCell style={{ textAlign: 'right' }}>{countryStat.gdp}</TableCell>
-                                        <TableCell style={{ textAlign: 'right' }}>{countryStat.unemploymentRate}</TableCell>
-                                        <TableCell style={{ textAlign: 'right' }}>{countryStat.medianAge}</TableCell>
-                                    </TableRow>
+                                    <Table.Row key={countryStat.country}>
+                                        <Table.Cell>{countryStat.country}</Table.Cell>
+                                        <Table.Cell>{countryStat.officialLanguage}</Table.Cell>
+                                        <Table.Cell style={{ textAlign: 'right' }}>{countryStat.population}</Table.Cell>
+                                        <Table.Cell style={{ textAlign: 'right' }}>{countryStat.gdp}</Table.Cell>
+                                        <Table.Cell style={{ textAlign: 'right' }}>{countryStat.unemploymentRate}</Table.Cell>
+                                        <Table.Cell style={{ textAlign: 'right' }}>{countryStat.medianAge}</Table.Cell>
+                                    </Table.Row>
                                 ))}
-                            </TableBody>
+                            </Table.Body>
                         </Table>
 
                     </div>

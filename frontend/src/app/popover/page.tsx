@@ -16,8 +16,6 @@ const CarouselDemo: React.FC = () => {
 
     const { isDarkMode, setIsDarkMode } = useGlobal();
 
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-
     const reactCode = `<Popover isOpen={isOpen} setIsOpen={setIsOpen}>
     {/* First child is the trigger  */}
     <Button text='Toggle popover' variant='primary' />
@@ -42,7 +40,7 @@ const CarouselDemo: React.FC = () => {
 
                 <TabsContent value='preview1'>
                     <div className='demoBox'>
-                        <Popover isOpen={isOpen} setIsOpen={setIsOpen}>
+                        <Popover >
                             {/* First child is the trigger  */}
                             <Button text='Toggle popover' variant='primary' />
                             {/* Second child is the popover content */}

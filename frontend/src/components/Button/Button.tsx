@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 type ButtonProps = {
   text: string;
-  variant: 'primary' | 'secondary' | 'outline';
+  variant: 'primary' | 'secondary' | 'outline' | 'destructive';
   imageSrc?: string
   isDisabled?: boolean;
   isFullWidth?: boolean;

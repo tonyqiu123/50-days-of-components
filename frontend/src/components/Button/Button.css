@@ -26,6 +26,7 @@
 .button,
 .button>.loading,
 .button>p {
+    white-space: nowrap;
     transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
@@ -83,6 +84,30 @@
 
 .darkMode.outline.button:hover {
     background-color: #3a3a3a;
+}
+
+/* destructive */
+
+.destructive.button {
+    background-color: #e90f0f;
+    border: 1px solid #E2E2E2;
+}
+
+.destructive.button:hover {
+    background-color: #c42727;
+}
+
+.destructive.button>.loading {
+    filter: brightness(0);
+}
+
+.darkMode.destructive.button {
+    background-color: #d11c1c;
+    border: 1px solid #3a3a3a;
+}
+
+.darkMode.destructive.button:hover {
+    background-color: #d83030;
 }
 
 

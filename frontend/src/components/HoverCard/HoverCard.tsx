@@ -3,7 +3,7 @@ import './HoverCard.css'
 
 type HoverCardProps = {
     children: React.ReactElement[];
-    darkMode?: boolean
+    darkMode?: boolean 
 } & HTMLAttributes<HTMLElement>
 
 const HoverCard: React.FC<HoverCardProps> = ({ children, darkMode = false, ...props }) => {

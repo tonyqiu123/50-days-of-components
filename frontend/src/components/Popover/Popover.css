@@ -6,13 +6,10 @@
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin: auto;
     perspective: 1000px;
-    transform: translate(-50%, -8px) scale(0.95);
+    transform: translate(0, -2px) scale(0.95);
     z-index: 1001;
-    transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
+    transition: all 250ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 
@@ -22,5 +19,23 @@
 }
 
 .popoverContent.showPopoverContent {
-    transform: translate(-50%, 2px) scale(1);
+    transform: translate(0, 2px) scale(1);
+}
+
+.up-right.popoverContent {
+    top: -100%;
+}
+
+.up-left.popoverContent {
+    top: -100%;
+}
+
+.down-right.popoverContent {
+    top: 100%;
+    left: 0;
+}
+
+.down-left.popoverContent {
+    top: 100%;
+    right: 0;
 }

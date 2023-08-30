@@ -7,7 +7,7 @@ type TableProps = {
 } & HTMLAttributes<HTMLElement>;
 
 
-export const Table: React.FC<TableProps> = ({ darkMode = false, children, ...props }) => {
+const Table: React.FC<TableProps> & { Header: React.FC<TableHeaderProps>, Head: React.FC<TableHeadProps>, Body: React.FC<TableBodyProps>, Row: React.FC<TableRowProps>, Cell: React.FC<TableCellProps> } = ({ darkMode = false, children, ...props }) => {
 
     return (
         <table {...props} className={`table ${darkMode ? 'darkMode' : ''} ${props.className ? props.className : ''}`}>
@@ -20,7 +20,7 @@ type TableHeaderProps = {
     children: React.ReactNode
 } & HTMLAttributes<HTMLElement>;
 
-export const TableHeader: React.FC<TableHeaderProps> = ({ children, ...props }) => {
+const TableHeader: React.FC<TableHeaderProps> = ({ children, ...props }) => {
     return (
         <thead {...props} className={`thead ${props.className ? props.className : ''}`}>
             {children}
@@ -32,7 +32,7 @@ type TableHeadProps = {
     children: React.ReactNode
 } & HTMLAttributes<HTMLElement>;
 
-export const TableHead: React.FC<TableHeadProps> = ({ children, ...props }) => {
+const TableHead: React.FC<TableHeadProps> = ({ children, ...props }) => {
     return (
         <th {...props} className={`th ${props.className ? props.className : ''}`}>
             {children}
@@ -44,7 +44,7 @@ type TableBodyProps = {
     children: React.ReactNode
 } & HTMLAttributes<HTMLElement>;
 
-export const TableBody: React.FC<TableBodyProps> = ({ children, ...props }) => {
+const TableBody: React.FC<TableBodyProps> = ({ children, ...props }) => {
     return (
         <tbody {...props} className={`tbody ${props.className ? props.className : ''}`}>
             {children}
@@ -56,7 +56,7 @@ type TableRowProps = {
     children: React.ReactNode
 } & HTMLAttributes<HTMLElement>;
 
-export const TableRow: React.FC<TableRowProps> = ({ children, ...props }) => {
+const TableRow: React.FC<TableRowProps> = ({ children, ...props }) => {
     return (
         <tr {...props} className={`tr ${props.className ? props.className : ''}`}>
             {children}
@@ -68,10 +68,17 @@ type TableCellProps = {
     children: React.ReactNode
 } & HTMLAttributes<HTMLElement>;
 
-export const TableCell: React.FC<TableCellProps> = ({ children, ...props }) => {
+const TableCell: React.FC<TableCellProps> = ({ children, ...props }) => {
     return (
         <td {...props} className={`td ${props.className ? props.className : ''}`}>
             {children}
         </td>
     )
 }
+
+Table.Cell = TableCell
+Table.Body = TableBody
+Table.Row = TableRow
+Table.Head = TableHead
+Table.Header = TableHeader
+export default Table

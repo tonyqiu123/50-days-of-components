@@ -3,21 +3,25 @@ import './Popover.css'
 import OutsideClick from '@/components/OutsideClick/OutsideClick';
 
 type PopoverProps = {
-    isOpen: boolean
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    isOpen?: boolean;
+    setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
     children: React.ReactElement[];
+    position?: 'up-left' | 'down-left' | 'up-right' | 'down-right'
 } & HTMLAttributes<HTMLElement>;
 
-const Popover: React.FC<PopoverProps> = ({ isOpen, setIsOpen, children, ...props }) => {
+const Popover: React.FC<PopoverProps> = ({ isOpen: isOpenProp, setIsOpen: setIsOpenProp, children, position = 'down-right', ...props }) => {
+    const [isOpenState, setIsOpenState] = useState(false);
+
+    const isOpen = isOpenProp !== undefined ? isOpenProp : isOpenState;
+    const setIsOpen = setIsOpenProp !== undefined ? setIsOpenProp : setIsOpenState;
 
     const trigger = React.cloneElement(children[0], {
         onClick: () => setIsOpen(isOpen => !isOpen),
     });
 
-    // Check if children[1] is valid before using it as content
     const content = children[1]
         ? React.cloneElement(children[1], {
-            className: `popoverContent ${isOpen ? 'showPopoverContent' : ''} ${children[1].props.className}`
+            className: `popoverContent ${position} ${isOpen ? 'showPopoverContent' : ''} ${children[1].props.className}`
         })
         : null;
 
