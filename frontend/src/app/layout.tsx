@@ -104,7 +104,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             <NavBar darkMode={isDarkMode}>
               <NavBarLeft>
                 <Image alt='' src='/Home/logo.png' width={140} height={24} />
-                <NavigationMenu darkMode={isDarkMode}>
+                <NavigationMenu style={{ fontSize:'12px' }} darkMode={isDarkMode}>
                   <NavigationMenu.Links>
                     <NavigationMenu.Link linkName="Home"><h3>Home</h3></NavigationMenu.Link>
                     <NavigationMenu.Link linkName="Products"><h3>Products</h3></NavigationMenu.Link>
