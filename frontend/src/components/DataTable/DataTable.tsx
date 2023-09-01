@@ -106,18 +106,17 @@ const DataTable: React.FC<TableProps> = ({ data, actions, darkMode = false }) =>
         return 'left';
     }
 
-
     return (
         <table className={`table ${darkMode ? 'darkMode' : ''}`}>
             <thead>
                 <tr>
                     {tableColumns &&
                         tableColumns.map((key) => (
-                            <th key={key}>
-                                <p onClick={() => handleSort(key)}>
-                                    {key}&nbsp;&nbsp;
-                                    {sortCriteria === key && sortOrder === 'asc' ? '↑' : ''}
-                                    {sortCriteria === key && sortOrder === 'desc' ? '↓' : ''}
+                            <th key={key} >
+                                <p onClick={() => handleSort(key)} style={{ marginLeft: `${determineAlignment(data[0][key]) === 'right' ? 'auto' : ''}` }}>
+                                    {key}
+                                    {sortCriteria === key && sortOrder === 'asc' ? ' ↑' : ''}
+                                    {sortCriteria === key && sortOrder === 'desc' ? ' ↓' : ''}
                                 </p>
                             </th>
                         ))}

@@ -21,14 +21,19 @@ const DataIndicator: React.FC<DataIndicatorProps> = ({ currentData, previousData
         }
     }, [currentData, previousData]);
 
+    const numberConverter = (num: number) => {
+        if (Number.isInteger(num)) return num
+        return num.toFixed(2)
+    }
+
     return (
         <div className='dataIndicator'>
 
-            <p className='currentData'>{currentData}</p>
+            <p className='currentData'>{numberConverter(currentData)}</p>
             <div className={`difference ${difference}`}>
                 {difference === 'negative' && '-'}
                 {difference === 'positive' && '+'}
-                {Math.abs(currentData - previousData)} ({(currentData / previousData - 1) * 100}%){difference === 'positive' && '↑'} {difference === 'negative' && '↓'} {text}
+                {numberConverter(Math.abs(currentData - previousData))} ({numberConverter((currentData / previousData - 1) * 100)}%){difference === 'positive' && '↑'} {difference === 'negative' && '↓'} {text}
             </div>
 
         </div>
