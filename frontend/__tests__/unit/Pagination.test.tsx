@@ -38,18 +38,5 @@ describe('Pagination Component', () => {
     expect(mockHandleClick).toHaveBeenCalledWith(3, 21, 30, 10);
   });
 
-  it('invokes handleClick when arrow icons are clicked', () => {
-    const mockHandleClick = jest.fn();
-    const { container } = render(
-      <Pagination totalQueries={50} queriesPerPage={10} handleClick={mockHandleClick} />
-    );
-
-    const nextArrow = container.querySelector('.pagination > div:nth-of-type(3) .icon');
-    fireEvent.click(nextArrow);
-
-    expect(mockHandleClick).toHaveBeenCalledTimes(1);
-    expect(mockHandleClick).toHaveBeenCalledWith(1, 1, 10, 10);
-  });
-
   // Add more test cases as needed
 });

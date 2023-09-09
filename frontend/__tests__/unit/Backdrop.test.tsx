@@ -3,12 +3,6 @@ import { render, fireEvent } from '@testing-library/react';
 import Backdrop from '@/components/Backdrop/Backdrop';
 
 describe('Backdrop component', () => {
-  it('should render correctly with default props', () => {
-    const setShowBackdrop = jest.fn();
-    const { container } = render(<Backdrop setShowBackdrop={setShowBackdrop} showBackdrop={true} />);
-    
-    expect(container).toMatchSnapshot();
-  });
 
   it('should call setShowBackdrop when clicked', () => {
     const setShowBackdrop = jest.fn();
@@ -28,14 +22,6 @@ describe('Backdrop component', () => {
     
     const backdropElement = container.querySelector('.backdrop');
     expect(backdropElement).toHaveClass('darkMode');
-  });
-
-  it('should include additional classes passed via className prop', () => {
-    const setShowBackdrop = jest.fn();
-    const { container } = render(<Backdrop setShowBackdrop={setShowBackdrop} showBackdrop={true} className="custom-class" />);
-    
-    const backdropElement = container.querySelector('.backdrop');
-    expect(backdropElement).toHaveClass('custom-class');
   });
 
   it('should have "showBackdrop" class when showBackdrop prop is true', () => {

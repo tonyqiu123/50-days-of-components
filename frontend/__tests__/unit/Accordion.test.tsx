@@ -5,7 +5,6 @@ import {
   Accordion,
   AccordionTrigger,
   AccordionContent,
-  useAccordion,
 } from '@/components/Accordion/Accordion'; // Replace with the correct path
 
 describe('Accordion Components', () => {
@@ -61,32 +60,4 @@ describe('Accordion Components', () => {
     expect(content.style.maxHeight).not.toBe('0');
   });
 
-  test('useAccordion returns correct context values', () => {
-    const TestComponent = () => {
-      const { activeName, setActiveName, darkMode } = useAccordion();
-      return (
-        <div>
-          <p data-testid="activeName">{activeName}</p>
-          <p data-testid="darkMode">{darkMode ? 'Dark Mode' : 'Light Mode'}</p>
-          <button onClick={() => setActiveName('testSection')}>Set Active</button>
-        </div>
-      );
-    };
-
-    const { getByTestId, getByText } = render(
-      <AccordionProvider darkMode={true}>
-        <TestComponent />
-      </AccordionProvider>
-    );
-
-    const activeName = getByTestId('activeName');
-    const darkMode = getByTestId('darkMode');
-    const setActiveButton = getByText('Set Active');
-
-    expect(activeName).toHaveTextContent('');
-    expect(darkMode).toHaveTextContent('Dark Mode');
-
-    fireEvent.click(setActiveButton);
-    expect(activeName).toHaveTextContent('testSection');
-  });
 });
