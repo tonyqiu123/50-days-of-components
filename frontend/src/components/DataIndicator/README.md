@@ -1,6 +1,6 @@
 # Day 46 / 50
 
-August 22nd / October 16th
+August 22ndAugust 26th
 
 # DataIndicator
 <a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>

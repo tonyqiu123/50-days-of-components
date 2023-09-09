@@ -1,6 +1,6 @@
 ## Day 4 / 50
 
-July 10th / October 16th
+July 10thAugust 26th
 
 # Modal Component for React 
 

@@ -1,6 +1,6 @@
 # Day 16 / 50
 
-July 23th / October 16th
+July 23thAugust 26th
 
 # Popover
 <a href="https://www.youtube.com/watch?v=M7FKxklNTOU" target="_blank">Watch live demo on youtube</a>

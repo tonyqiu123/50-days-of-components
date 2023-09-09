@@ -1,6 +1,6 @@
 # Day 36 / 50
 
-August 12th / October 16th
+August 12thAugust 26th
 
 # Separator
 <a href="https://youtu.be/S4sjJpji5Hs" target="_blank">Watch live demo on youtube</a>

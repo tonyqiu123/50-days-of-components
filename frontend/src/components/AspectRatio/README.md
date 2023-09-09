@@ -1,6 +1,6 @@
 # Day 41 / 50
 
-August 17th / October 16th
+August 17thAugust 26th
 
 # AspectRatio
 <a href="https://youtu.be/bJvV43ZRd0A" target="_blank">Watch live demo on youtube</a>

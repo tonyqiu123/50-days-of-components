@@ -1,6 +1,6 @@
 # Day 23 / 50
 
-July 30th / October 16th
+July 30thAugust 26th
 
 # Carousel
 <a href="https://youtu.be/M_HVJ14cwps" target="_blank">Watch live demo on youtube</a>

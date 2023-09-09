@@ -1,6 +1,6 @@
 ## Day 5 / 50
 
-July 12th / October 16th
+July 12thAugust 26th
 
 # Tooltip Component for React 
 <a href="https://www.youtube.com/watch?v=nGdD2W0BxUc">Watch live demo on youtube</a>

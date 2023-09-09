@@ -1,6 +1,6 @@
 # Day 26 / 50
 
-August 2nd / October 16th
+August 2ndAugust 26th
 
 # OutsideClick
 <a href="https://youtu.be/FwKfbIFAN38" target="_blank">Watch live demo on youtube</a>

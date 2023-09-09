@@ -1,6 +1,6 @@
 # Day 11 / 50
 
-July 18th / October 16th
+July 18thAugust 26th
 
 # Checkbox Component for React 
 <a href="https://youtu.be/cXnAICsWmyA" target="_blank">Watch live demo on youtube</a>

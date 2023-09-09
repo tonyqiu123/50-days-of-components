@@ -1,6 +1,6 @@
 ## Day 7 / 50
 
-July 14th / October 16th
+July 14thAugust 26th
 
 # Slider Component for React 
 <a href="https://www.youtube.com/watch?v=t_Mkn9QZZmE">Watch live demo on youtube</a>

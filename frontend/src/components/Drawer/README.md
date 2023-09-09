@@ -1,6 +1,6 @@
 # Day 29 / 50
 
-August 5th / October 16th
+August 5thAugust 26th
 
 # Drawer
 <a href="https://youtu.be/9gqlq7rqHrg" target="_blank">Watch live demo on youtube</a>

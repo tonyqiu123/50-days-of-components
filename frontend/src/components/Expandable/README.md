@@ -1,6 +1,6 @@
 # Day 31 / 50
 
-August 7th / October 16th
+August 7thAugust 26th
 
 # Expandable
 <a href="https://youtu.be/yiolgCDMEbw" target="_blank">Watch live demo on youtube</a>

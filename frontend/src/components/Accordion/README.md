@@ -1,6 +1,6 @@
 # Day 22 / 50
 
-July 29th / October 16th
+July 29thAugust 26th
 
 # Accordion
 <a href="https://youtu.be/AM2SlbabyAE" target="_blank">Watch live demo on youtube</a>

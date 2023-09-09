@@ -1,6 +1,6 @@
 ## Day 9 / 50
 
-July 16th / October 16th
+July 16thAugust 26th
 
 # Toast Component for React 
 <a href="https://www.youtube.com/watch?v=O49qJP5IMbQ" target="_blank">Watch live demo on youtube</a>

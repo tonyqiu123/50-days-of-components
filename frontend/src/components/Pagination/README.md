@@ -1,6 +1,6 @@
 # Day 34 / 50
 
-August 10th / October 16th
+August 10thAugust 26th
 
 # Pagination
 <a href="https://youtu.be/FK7lXagTPp4" target="_blank">Watch live demo on youtube</a>

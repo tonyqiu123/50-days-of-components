@@ -1,6 +1,6 @@
 # Day 18 / 50
 
-July 25th / October 16th
+July 25thAugust 26th
 
 # PrettyCode
 <a href="https://www.youtube.com/watch?v=vE99eu9BC9Y" target="_blank">Watch live demo on youtube</a>

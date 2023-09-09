@@ -1,6 +1,6 @@
 # Day 48 / 50
 
-August 24th / October 16th
+August 24thAugust 26th
 
 # NavigationMenu
 <a href="https://youtu.be/jW93ckQQdYY" target="_blank">Watch live demo on youtube</a>

@@ -1,7 +1,7 @@
 <!-- NavBar Component -->
 <h2>Day 3 / 50</h2>
 
-<p>July 9th 2023 / October 16th, 2023</p>
+<p>July 9th 2023August 26th, 2023</p>
 <h2>NavBar Component</h2>
 <img src="/public/navbar.png" alt="navbar demo" />
 <p>A navigation bar (NavBar) component that displays a logo, links, and buttons. The NavBar component is customizable and allows for the inclusion of dropdown menus within the links.</p>

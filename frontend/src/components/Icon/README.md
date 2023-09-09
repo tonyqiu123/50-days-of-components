@@ -1,6 +1,6 @@
 # Day 14 / 50
 
-July 21th / October 16th
+July 21thAugust 26th
 
 # Icon
 <a href="https://www.youtube.com/watch?v=sVRQp1Cxd-w" target="_blank">Watch live demo on youtube</a>

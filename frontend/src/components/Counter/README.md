@@ -1,6 +1,6 @@
 # Day 30 / 50
 
-August 6th / October 16th
+August 6thAugust 26th
 
 # Counter
 <a href="https://youtu.be/9gqlq7rqHrg" target="_blank">Watch live demo on youtube</a>

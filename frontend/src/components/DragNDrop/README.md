@@ -1,6 +1,6 @@
 # Day 15 / 50
 
-July 22th / October 16th
+July 22thAugust 26th
 
 # DragNDrop
 <a href="https://www.youtube.com/watch?v=i70Cjnq2tYE" target="_blank">Watch live demo on youtube</a>

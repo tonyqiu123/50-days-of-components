@@ -1,6 +1,6 @@
 # Day 38 / 50
 
-August 14th / October 16th
+August 14thAugust 26th
 
 # MultiSelect
 <a href="https://youtu.be/HLqfz7WPbsw" target="_blank">Watch live demo on youtube</a>

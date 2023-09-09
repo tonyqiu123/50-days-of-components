@@ -1,6 +1,6 @@
 # Day 13 / 50
 
-July 20th / October 16th
+July 20thAugust 26th
 
 # TextArea
 <a href="https://youtu.be/1alfhsya4II" target="_blank">Watch live demo on youtube</a>

@@ -1,6 +1,6 @@
 # Day 28 / 50
 
-August 4th / October 16th
+August 4thAugust 26th
 
 # Swipeable
 <a href="https://youtu.be/z5tCuBnRNTg" target="_blank">Watch live demo on youtube</a>

@@ -1,6 +1,6 @@
 # Day 12 / 50
 
-July 19th / October 16th
+July 19thAugust 26th
 
 # Switch
 <a href="https://www.youtube.com/watch?v=vqeAzYbHaGY" target="_blank">Watch live demo on youtube</a>

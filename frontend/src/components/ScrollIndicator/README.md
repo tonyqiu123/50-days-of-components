@@ -1,6 +1,6 @@
 # Day 49 / 50
 
-August 25th / October 16th
+August 25thAugust 26th
 
 # NavigationMenu
 <a href="https://youtu.be/jW93ckQQdYY" target="_blank">Watch live demo on youtube</a>

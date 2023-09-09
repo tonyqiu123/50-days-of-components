@@ -1,6 +1,6 @@
 # Day 44 / 50
 
-August 20th / October 16th
+August 20thAugust 26th
 
 # Avatar
 <a href="https://youtu.be/atePQYxreVQ" target="_blank">Watch live demo on youtube</a>

@@ -2,5 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:testing-library/react"
-  ]
+  ],
+  "rules": {
+    "react/no-unescaped-entities": 0
+  }
 }

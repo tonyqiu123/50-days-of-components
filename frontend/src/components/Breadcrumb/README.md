@@ -1,6 +1,6 @@
 # Day 37 / 50
 
-August 13th / October 16th
+August 13thAugust 26th
 
 # Breadcrumb
 <a href="https://www.youtube.com/watch?v=BPU72Nlz4pM" target="_blank">Watch live demo on youtube</a>

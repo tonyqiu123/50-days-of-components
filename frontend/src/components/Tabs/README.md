@@ -1,6 +1,6 @@
 # Day 19 / 50
 
-July 26th / October 16th
+July 26thAugust 26th
 
 # Tabs
 <a href="https://www.youtube.com/watch?v=q2HqHt8Bcmc" target="_blank">Watch live demo on youtube</a>

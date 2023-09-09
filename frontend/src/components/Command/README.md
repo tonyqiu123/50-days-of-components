@@ -1,6 +1,6 @@
 # Day 25 / 50
 
-August 1st / October 16th
+August 1stAugust 26th
 
 # Command
 <a href="https://youtu.be/0yIhtC0RUVY" target="_blank">Watch live demo on youtube</a>

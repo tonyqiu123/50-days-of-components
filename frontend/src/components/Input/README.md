@@ -1,6 +1,6 @@
 ## Day 6 / 50
 
-July 13th / October 16th
+July 13thAugust 26th
 
 # Input Component for React 
 <a href="https://www.youtube.com/watch?v=Al1uSRnARyQ">Watch live demo on youtube</a>

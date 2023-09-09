@@ -1,6 +1,6 @@
 # Day 35 / 50
 
-August 11th / October 16th
+August 11thAugust 26th
 
 # Card
 <a href="https://www.youtube.com/watch?v=CQMOWi0HVhQ" target="_blank">Watch live demo on youtube</a>

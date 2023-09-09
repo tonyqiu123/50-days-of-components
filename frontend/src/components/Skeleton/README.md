@@ -1,6 +1,6 @@
 # Day 24 / 50
 
-July 31th / October 16th
+July 31thAugust 26th
 
 # Skeleton
 <a href="https://youtu.be/geQ69BSOM8c" target="_blank">Watch live demo on youtube</a>

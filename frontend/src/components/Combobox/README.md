@@ -1,6 +1,6 @@
 # Day 32 / 50
 
-August 8th / October 16th
+August 8thAugust 26th
 
 # Combobox
 <a href="https://www.youtube.com/watch?v=vlroK2Umfew" target="_blank">Watch live demo on youtube</a>

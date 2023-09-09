@@ -1,6 +1,6 @@
 ## Day 8 / 50
 
-July 15th / October 16th
+July 15thAugust 26th
 
 #  SearchBar Component for React 
 <a href="https://www.youtube.com/watch?v=eiwNHE6AiKk" target="_blank">Watch live demo on youtube</a>

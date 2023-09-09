@@ -1,6 +1,6 @@
 # Day 42 / 50
 
-August 18th / October 16th
+August 18thAugust 26th
 
 # VerticalNavigation
 <a href="https://www.youtube.com/watch?v=eAro7avGxDA" target="_blank">Watch live demo on youtube</a>

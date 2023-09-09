@@ -1,6 +1,6 @@
 # Day 33 / 50
 
-August 9th / October 16th
+August 9thAugust 26th
 
 # StarRating
 <a href="https://youtu.be/YjLM6zQjXoQ" target="_blank">Watch live demo on youtube</a>

@@ -1,6 +1,6 @@
 # Day 39 / 50
 
-August 15th / October 16th
+August 15thAugust 26th
 
 # Select
 <a href="https://youtu.be/_eCPKuCeCGs" target="_blank">Watch live demo on youtube</a>

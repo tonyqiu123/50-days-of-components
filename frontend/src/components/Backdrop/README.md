@@ -1,6 +1,6 @@
 # Day 20 / 50
 
-July 27th / October 16th
+July 27thAugust 26th
 
 # Backdrop
 <a href="https://youtu.be/N4yV-UQnAFA" target="_blank">Watch live demo on youtube</a>

@@ -1,6 +1,6 @@
 # Day 45 / 50
 
-August 21st / October 16th
+August 21stAugust 26th
 
 # Alert
 <a href="https://www.youtube.com/watch?v=TZ2XizQdzZg" target="_blank">Watch live demo on youtube</a>

@@ -1,6 +1,6 @@
 # Day 20 / 50
 
-July 28th / October 16th
+July 28thAugust 26th
 
 # Sheet
 <a href="https://youtu.be/pUb4ClANeB8" target="_blank">Watch live demo on youtube</a>

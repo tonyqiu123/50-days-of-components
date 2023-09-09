@@ -1,6 +1,6 @@
 # Day 27 / 50
 
-August 3rd / October 16th
+August 3rdAugust 26th
 
 # ShowMore
 <a href="https://youtu.be/UK7svbfuLI0" target="_blank">Watch live demo on youtube</a>
