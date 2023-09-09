@@ -1,13 +1,13 @@
-# Day 28/100
+# Day 28 / 50
 
 August 4th / October 16th
 
 # Swipeable
 <a href="https://youtu.be/z5tCuBnRNTg" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Swipeable" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Swipeable" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Swipeable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1137962714313007154/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Swipeable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1137962714313007154/image.png"/></a>  
 
 ## Description 
 

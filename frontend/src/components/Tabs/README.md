@@ -1,13 +1,13 @@
-# Day 19/100
+# Day 19 / 50
 
 July 26th / October 16th
 
 # Tabs
 <a href="https://www.youtube.com/watch?v=q2HqHt8Bcmc" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Tabs" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Tabs" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Tabs" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134152788717359144/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Tabs" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134152788717359144/image.png"/></a>  
 
 # Description 
 

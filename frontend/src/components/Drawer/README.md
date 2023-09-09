@@ -1,13 +1,13 @@
-# Day 29/100
+# Day 29 / 50
 
 August 5th / October 16th
 
 # Drawer
 <a href="https://youtu.be/9gqlq7rqHrg" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Drawer" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Drawer" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Drawer" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1137971069593067540/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Drawer" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1137971069593067540/image.png"/></a>  
 
 ## Description 
 

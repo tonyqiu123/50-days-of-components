@@ -1,11 +1,11 @@
-## Day 8/100
+## Day 8 / 50
 
 July 15th / October 16th
 
 #  SearchBar Component for React 
 <a href="https://www.youtube.com/watch?v=eiwNHE6AiKk" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/searchBar" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/searchBar" target="_blank">Demo it yourself</a>
 
 <a href="https://www.youtube.com/watch?v=eiwNHE6AiKk" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130155494800101476/image.png"/></a> 
 

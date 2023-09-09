@@ -1,13 +1,13 @@
-# Day 20/100
+# Day 20 / 50
 
 July 27th / October 16th
 
 # Backdrop
 <a href="https://youtu.be/N4yV-UQnAFA" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Backdrop" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Backdrop" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Backdrop" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134247172527902850/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Backdrop" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134247172527902850/image.png"/></a>  
 
 # Description 
 

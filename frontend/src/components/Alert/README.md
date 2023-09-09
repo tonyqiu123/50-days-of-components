@@ -1,13 +1,13 @@
-# Day 45/100
+# Day 45 / 50
 
 August 21st / October 16th
 
 # Alert
 <a href="https://www.youtube.com/watch?v=TZ2XizQdzZg" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Alert" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Alert" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143159880937644042/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Alert" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143159880937644042/image.png"/></a>  
 
 ## Description 
 

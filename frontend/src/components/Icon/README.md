@@ -1,13 +1,13 @@
-# Day 14/100
+# Day 14 / 50
 
 July 21th / October 16th
 
 # Icon
 <a href="https://www.youtube.com/watch?v=sVRQp1Cxd-w" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/icon" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/icon" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/icon" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132007688990117998/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/icon" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132007688990117998/image.png"/></a>  
 
 # Description 
 

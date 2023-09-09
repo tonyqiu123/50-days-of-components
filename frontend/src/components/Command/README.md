@@ -1,13 +1,13 @@
-# Day 25/100
+# Day 25 / 50
 
 August 1st / October 16th
 
 # Command
 <a href="https://youtu.be/0yIhtC0RUVY" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Command" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Command" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Command" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136028712056393840/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Command" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1136028712056393840/image.png"/></a>  
 
 # Description 
 

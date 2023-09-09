@@ -1,13 +1,13 @@
-# Day 31/100
+# Day 31 / 50
 
 August 7th / October 16th
 
 # Expandable
 <a href="https://youtu.be/yiolgCDMEbw" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Expandable" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Expandable" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Expandable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138175093445492786/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Expandable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138175093445492786/image.png"/></a>  
 
 ## Description 
 

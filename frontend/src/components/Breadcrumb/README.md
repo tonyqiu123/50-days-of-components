@@ -1,13 +1,13 @@
-# Day 37/100
+# Day 37 / 50
 
 August 13th / October 16th
 
 # Breadcrumb
 <a href="https://www.youtube.com/watch?v=BPU72Nlz4pM" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Breadcrumb" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Breadcrumb" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Breadcrumb" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1140407148275302510/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Breadcrumb" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1140407148275302510/image.png"/></a>  
 
 ## Description 
 

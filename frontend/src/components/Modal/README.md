@@ -1,4 +1,4 @@
-## Day 4/100
+## Day 4 / 50
 
 July 10th / October 16th
 

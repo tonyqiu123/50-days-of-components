@@ -1,13 +1,13 @@
-# Day 50/100
+# Day 50 / 50
 
 August 26th / October 16th
 
 # DataTable
 <a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataTable" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/DataTable" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataTable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1146530634530033784/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/DataTable" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1146530634530033784/image.png"/></a>  
 
 ## Description 
 

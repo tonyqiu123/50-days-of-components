@@ -1,13 +1,13 @@
-# Day 40/100
+# Day 40 / 50
 
 August 16th / October 16th
 
 # Table
 <a href="https://youtu.be/VtWweL7ZNb0" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Table" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Table" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Table" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141496528909905930/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Table" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141496528909905930/image.png"/></a>  
 
 ## Description 
 

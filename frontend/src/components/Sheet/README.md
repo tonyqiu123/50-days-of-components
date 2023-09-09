@@ -1,13 +1,13 @@
-# Day 20/100
+# Day 20 / 50
 
 July 28th / October 16th
 
 # Sheet
 <a href="https://youtu.be/pUb4ClANeB8" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Sheet" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Sheet" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Sheet" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134520983810736200/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Sheet" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1134520983810736200/image.png"/></a>  
 
 # Description 
 

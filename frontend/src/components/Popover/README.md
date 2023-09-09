@@ -1,13 +1,13 @@
-# Day 16/100
+# Day 16 / 50
 
 July 23th / October 16th
 
 # Popover
 <a href="https://www.youtube.com/watch?v=M7FKxklNTOU" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Popover" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Popover" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Popover" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132791609730273390/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Popover" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132791609730273390/image.png"/></a>  
 
 # Description 
 

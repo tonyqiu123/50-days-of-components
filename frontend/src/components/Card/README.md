@@ -1,13 +1,13 @@
-# Day 35/100
+# Day 35 / 50
 
 August 11th / October 16th
 
 # Card
 <a href="https://www.youtube.com/watch?v=CQMOWi0HVhQ" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Card" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Card" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139675213106262037/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Card" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139675213106262037/image.png"/></a>  
 
 ## Description 
 

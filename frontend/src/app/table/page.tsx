@@ -1,17 +1,21 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-import Table from '@/components/Table/Table';
-import { useGlobal } from '../layout'; // Assuming the correct path to useGlobal 
+import { useGlobal } from '../layout'; // Add this import
 import ShowMore from '@/components/ShowMore/ShowMore';
+import Spacer from '@/components/Spacer/Spacer';
+import Icon from '@/components/Icon/Icon';
+import Separator from '@/components/Separator/Separator';
+import Table from '@/components/Table/Table';
 
-const BreadcrumbDemo: React.FC = () => {
+const TableDemo: React.FC = () => {
+    const { isDarkMode, setIsDarkMode } = useGlobal();
 
-    const { isDarkMode, setIsDarkMode } = useGlobal(); // Assuming useGlobal returns isDarkMode and setIsDarkMode
-    const reactCode = `const chessOpenings = [
+    const reactCode = `import Table from '@/components/Table/Table';
+    
+const chessOpenings = [
         {
             opening: "Ruy Lopez",
             status: "Popular",
@@ -253,13 +257,203 @@ const BreadcrumbDemo: React.FC = () => {
         },
     ];
 
+    const tsxCode = `import React, { useState, useEffect, useRef, HTMLAttributes } from 'react';
+import './Table.css'
 
+type TableProps = {
+    darkMode?: boolean
+    children: React.ReactNode;
+} & HTMLAttributes<HTMLElement>;
+
+
+const Table: React.FC<TableProps> & { Header: React.FC<TableHeaderProps>, Head: React.FC<TableHeadProps>, Body: React.FC<TableBodyProps>, Row: React.FC<TableRowProps>, Cell: React.FC<TableCellProps> } = ({ darkMode = false, children, ...props }) => {
 
     return (
-        <React.Fragment  >
-            <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
-            <h1>Table component</h1>
+        <table {...props} className={\`table \${darkMode ? 'darkMode' : ''} \${props.className ? props.className : ''}\`}>
+            {children}
+        </table>
+    );
+};
 
+type TableHeaderProps = {
+    children: React.ReactNode
+} & HTMLAttributes<HTMLElement>;
+
+const TableHeader: React.FC<TableHeaderProps> = ({ children, ...props }) => {
+    return (
+        <thead {...props} className={\`thead \${props.className ? props.className : ''}\`}>
+            {children}
+        </thead>
+    )
+}
+
+type TableHeadProps = {
+    children: React.ReactNode
+} & HTMLAttributes<HTMLElement>;
+
+const TableHead: React.FC<TableHeadProps> = ({ children, ...props }) => {
+    return (
+        <th {...props} className={\`th \${props.className ? props.className : ''}\`}>
+            {children}
+        </th>
+    )
+}
+
+type TableBodyProps = {
+    children: React.ReactNode
+} & HTMLAttributes<HTMLElement>;
+
+const TableBody: React.FC<TableBodyProps> = ({ children, ...props }) => {
+    return (
+        <tbody {...props} className={\`tbody \${props.className ? props.className : ''}\`}>
+            {children}
+        </tbody>
+    )
+}
+
+type TableRowProps = {
+    children: React.ReactNode
+} & HTMLAttributes<HTMLElement>;
+
+const TableRow: React.FC<TableRowProps> = ({ children, ...props }) => {
+    return (
+        <tr {...props} className={\`tr \${props.className ? props.className : ''}\`}>
+            {children}
+        </tr>
+    )
+}
+
+type TableCellProps = {
+    children: React.ReactNode
+} & HTMLAttributes<HTMLElement>;
+
+const TableCell: React.FC<TableCellProps> = ({ children, ...props }) => {
+    return (
+        <td {...props} className={\`td \${props.className ? props.className : ''}\`}>
+            {children}
+        </td>
+    )
+}
+
+Table.Cell = TableCell
+Table.Body = TableBody
+Table.Row = TableRow
+Table.Head = TableHead
+Table.Header = TableHeader
+export default Table`
+
+    const cssCode = `.table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thead>.tr {
+    border-top: none;
+}
+
+.th {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+
+.tr {
+    border-top: 1px solid #f3f3f3;
+    transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+.tr:hover {
+    background-color: #f8f8f8;
+}
+
+.td {
+    font-size: 14px;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Dark Mode Styles */
+.darkMode.table {
+    background-color: black;
+}
+.darkMode.table * {
+    color: white;
+}
+
+.darkMode.table .tr {
+    border-top: 1px solid #313131;
+}
+
+.darkMode.table .tr:hover {
+    background-color: #313131;
+}`
+
+
+    const unitTestCode = `import React from 'react';
+import { render } from '@testing-library/react';
+import Table from '@/components/Table/Table';
+
+describe('Table components', () => {
+    it('renders Table component', () => {
+    const { getByText } = render(<Table>Table Content</Table>);
+    const tableElement = getByText('Table Content');
+    expect(tableElement).toBeInTheDocument();
+    });
+
+    it('renders TableHeader component', () => {
+    const { getByText } = render(<Table.Header>Header Content</Table.Header>);
+    const headerElement = getByText('Header Content');
+    expect(headerElement).toBeInTheDocument();
+    });
+
+    it('renders TableHead component', () => {
+    const { getByText } = render(<Table.Head>Head Content</Table.Head>);
+    const headElement = getByText('Head Content');
+    expect(headElement).toBeInTheDocument();
+    });
+
+    it('renders TableBody component', () => {
+    const { getByText } = render(<Table.Body>Body Content</Table.Body>);
+    const bodyElement = getByText('Body Content');
+    expect(bodyElement).toBeInTheDocument();
+    });
+
+    it('renders TableRow component', () => {
+    const { getByText } = render(<Table.Row>Row Content</Table.Row>);
+    const rowElement = getByText('Row Content');
+    expect(rowElement).toBeInTheDocument();
+    });
+
+    it('renders TableCell component', () => {
+    const { getByText } = render(<Table.Cell>Cell Content</Table.Cell>);
+    const cellElement = getByText('Cell Content');
+    expect(cellElement).toBeInTheDocument();
+    });
+});
+`
+
+    return (
+        <React.Fragment>
+
+            <h4>Day 40 / 50</h4>
+            <Spacer y={2} />
+            <h1>Table component</h1>
+            <Spacer y={4} />
+            <p>The table component is a versatile solution for systematically arranging and displaying data, proving particularly advantageous in scenarios like financial portfolio tracking, academic result summaries, and e-commerce product listings, where organized data presentation aids in easy comparison, assessment, and informed decision-making.</p>
+            <Spacer y={4} />
+            <div className='row' style={{ gap: '8px' }}>
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Table' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://www.youtube.com/watch?v=VtWweL7ZNb0' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
+            </div>
+            <Spacer y={4} />
+            <Separator darkMode={isDarkMode} orientation='h' />
+            <Spacer y={8} />
+
+            <h1>Usage</h1>
+            <Spacer y={4} />
             <Tabs darkMode={isDarkMode}>
 
                 <TabsTrigger value='preview1'><p>Chess Openings</p></TabsTrigger>
@@ -326,8 +520,37 @@ const BreadcrumbDemo: React.FC = () => {
                 </TabsContent>
 
             </Tabs>
+
+            <Spacer y={4} />
+            <Separator darkMode={isDarkMode} orientation='h' />
+            <Spacer y={8} />
+            <h1>Component Code</h1>
+            <Spacer y={4} />
+            <Tabs darkMode={isDarkMode}>
+                <TabsTrigger value='tsx'><p>tsx</p></TabsTrigger>
+                <TabsTrigger value='css'><p>css</p></TabsTrigger>
+                <TabsTrigger value='test'><p>Unit tests</p></TabsTrigger>
+
+                <TabsContent value='tsx'>
+                    <ShowMore height={600} darkMode={isDarkMode}>
+                        <PrettyCode className='prettycodeDemo' language='jsx' code={tsxCode} darkMode={isDarkMode} />
+                    </ShowMore>
+                </TabsContent>
+
+                <TabsContent value='css'>
+                    <ShowMore height={600} darkMode={isDarkMode}>
+                        <PrettyCode className='prettycodeDemo' language='css' code={cssCode} darkMode={isDarkMode} />
+                    </ShowMore>
+                </TabsContent>
+
+                <TabsContent value='test'>
+                    <ShowMore height={600} darkMode={isDarkMode}>
+                        <PrettyCode className='prettycodeDemo' language='jsx' code={unitTestCode} darkMode={isDarkMode} />
+                    </ShowMore>
+                </TabsContent>
+            </Tabs>
         </React.Fragment>
     );
 };
 
-export default BreadcrumbDemo;
+export default TableDemo;

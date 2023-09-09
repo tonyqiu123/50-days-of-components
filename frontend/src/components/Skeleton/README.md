@@ -1,13 +1,13 @@
-# Day 24/100
+# Day 24 / 50
 
 July 31th / October 16th
 
 # Skeleton
 <a href="https://youtu.be/geQ69BSOM8c" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Skeleton" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Skeleton" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Skeleton" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1135780618760888340/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Skeleton" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1135780618760888340/image.png"/></a>  
 
 # Description 
 

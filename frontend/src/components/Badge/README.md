@@ -1,11 +1,11 @@
-# Day 10/100
+# Day 10 / 50
 
 July 17th / October 16th
 
 # Toast Component for React 
 <a href="https://www.youtube.com/watch?v=xHjMM87AXGw" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/badge" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/badge" target="_blank">Demo it yourself</a>
 
 <a href="https://www.youtube.com/watch?v=xHjMM87AXGw" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130640257830899802/image.png"/></a>  
 

@@ -1,13 +1,13 @@
-# Day 33/100
+# Day 33 / 50
 
 August 9th / October 16th
 
 # StarRating
 <a href="https://youtu.be/YjLM6zQjXoQ" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/StarRating" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/StarRating" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/StarRating" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138861548849332326/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/StarRating" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138861548849332326/image.png"/></a>  
 
 ## Description 
 

@@ -1,13 +1,13 @@
-# Day 46/100
+# Day 46 / 50
 
 August 22nd / October 16th
 
 # DataIndicator
 <a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/DataIndicator" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/DataIndicator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143730248274415766/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/DataIndicator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143730248274415766/image.png"/></a>  
 
 ## Description 
 

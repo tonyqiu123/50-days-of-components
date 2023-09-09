@@ -1,13 +1,13 @@
-# Day 41/100
+# Day 41 / 50
 
 August 17th / October 16th
 
 # AspectRatio
 <a href="https://youtu.be/bJvV43ZRd0A" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/AspectRatio" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/AspectRatio" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/AspectRatio" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141804467243728906/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/AspectRatio" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141804467243728906/image.png"/></a>  
 
 ## Description 
 

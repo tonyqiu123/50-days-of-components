@@ -1,13 +1,13 @@
-# Day 42/100
+# Day 42 / 50
 
 August 18th / October 16th
 
 # VerticalNavigation
 <a href="https://www.youtube.com/watch?v=eAro7avGxDA" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/VerticalNavigation" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/VerticalNavigation" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/VerticalNavigation" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1142485654324920431/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/VerticalNavigation" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1142485654324920431/image.png"/></a>  
 
 ## Description 
 

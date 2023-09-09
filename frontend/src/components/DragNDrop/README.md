@@ -1,13 +1,13 @@
-# Day 15/100
+# Day 15 / 50
 
 July 22th / October 16th
 
 # DragNDrop
 <a href="https://www.youtube.com/watch?v=i70Cjnq2tYE" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/DragNDrop" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/DragNDrop" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/DragNDrop" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132372058031001650/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/DragNDrop" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1132372058031001650/image.png"/></a>  
 
 # Description 
 

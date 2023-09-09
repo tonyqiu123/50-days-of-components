@@ -1,13 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import {
-  Table,
-  TableHeader,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from '@/components/Table/Table';
+import Table from '@/components/Table/Table';
 
 describe('Table components', () => {
   it('renders Table component', () => {
@@ -17,31 +10,31 @@ describe('Table components', () => {
   });
 
   it('renders TableHeader component', () => {
-    const { getByText } = render(<TableHeader>Header Content</TableHeader>);
+    const { getByText } = render(<Table.Header>Header Content</Table.Header>);
     const headerElement = getByText('Header Content');
     expect(headerElement).toBeInTheDocument();
   });
 
   it('renders TableHead component', () => {
-    const { getByText } = render(<TableHead>Head Content</TableHead>);
+    const { getByText } = render(<Table.Head>Head Content</Table.Head>);
     const headElement = getByText('Head Content');
     expect(headElement).toBeInTheDocument();
   });
 
   it('renders TableBody component', () => {
-    const { getByText } = render(<TableBody>Body Content</TableBody>);
+    const { getByText } = render(<Table.Body>Body Content</Table.Body>);
     const bodyElement = getByText('Body Content');
     expect(bodyElement).toBeInTheDocument();
   });
 
   it('renders TableRow component', () => {
-    const { getByText } = render(<TableRow>Row Content</TableRow>);
+    const { getByText } = render(<Table.Row>Row Content</Table.Row>);
     const rowElement = getByText('Row Content');
     expect(rowElement).toBeInTheDocument();
   });
 
   it('renders TableCell component', () => {
-    const { getByText } = render(<TableCell>Cell Content</TableCell>);
+    const { getByText } = render(<Table.Cell>Cell Content</Table.Cell>);
     const cellElement = getByText('Cell Content');
     expect(cellElement).toBeInTheDocument();
   });

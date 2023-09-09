@@ -1,13 +1,13 @@
-# Day 39/100
+# Day 39 / 50
 
 August 15th / October 16th
 
 # Select
 <a href="https://youtu.be/_eCPKuCeCGs" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Select" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Select" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Select" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141153709259243711/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Select" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1141153709259243711/image.png"/></a>  
 
 ## Description 
 

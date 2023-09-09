@@ -15,7 +15,7 @@ interface IconProps extends React.HTMLProps<HTMLAnchorElement> {
 const Icon: React.FC<IconProps> = ({ image, alt = 'icon', width = 20, height = 20, invert = false, text = '', handleClick = () => { }, ...props }) => {
 
     return (
-        <a {...props} onClick={handleClick} className={`${props.className ? props.className : ''} ${invert && 'inverted'} icon`} >
+        <a onClick={handleClick} {...props} className={`${props.className ? props.className : ''} ${invert && 'inverted'} icon`} >
             <Image width={width} height={height} alt={alt} src={image} />
             {text && <p>{text}</p>}
         </a>

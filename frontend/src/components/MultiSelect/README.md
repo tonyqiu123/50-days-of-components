@@ -1,13 +1,13 @@
-# Day 38/100
+# Day 38 / 50
 
 August 14th / October 16th
 
 # MultiSelect
 <a href="https://youtu.be/HLqfz7WPbsw" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/MultiSelect" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/MultiSelect" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/MultiSelect" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1140725960501637271/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/MultiSelect" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1140725960501637271/image.png"/></a>  
 
 ## Description 
 

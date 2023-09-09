@@ -5,6 +5,7 @@
     justify-content: space-between;
     background-color: white;
     flex: 0 0 auto;
+    height: fit-content;
 }
 
 .verticalNavigationHeader {
@@ -16,6 +17,11 @@
     margin-top: 12px;
     width: 100%;
     color: #717171;
+}
+
+.verticalNavigationHeader:first-of-type {
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .verticalNavigationLink {

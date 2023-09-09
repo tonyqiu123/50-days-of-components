@@ -1,13 +1,13 @@
-# Day 44/100
+# Day 44 / 50
 
 August 20th / October 16th
 
 # Avatar
 <a href="https://youtu.be/atePQYxreVQ" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Avatar" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Avatar" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Avatar" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143146579721732126/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Avatar" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1143146579721732126/image.png"/></a>  
 
 # Description 
 ##### The Avatar component is a versatile React element that encapsulates both an AvatarImage and an AvatarFallback component. It intelligently manages the display of the avatar image alongside a fallback content, ensuring a seamless user experience during image loading or errors.

@@ -2,44 +2,66 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
-import Button from '@/components/Button/Button';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import Carousel from '@/components/Carousel/Carousel';
-import Image from 'next/image';
 import { useGlobal } from '../layout'; // Add this import
-import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-import Checkbox from '@/components/Checkbox/Checkbox';
-import Popover from '@/components/Popover/Popover';
+import ShowMore from '@/components/ShowMore/ShowMore';
 import { Command, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/Command/Command';
+import Spacer from '@/components/Spacer/Spacer';
+import Icon from '@/components/Icon/Icon';
+import Separator from '@/components/Separator/Separator';
+import Button from '@/components/Button/Button';
+import Popover from '@/components/Popover/Popover';
 
-const CarouselDemo: React.FC = () => {
-
-  const { isDarkMode, setIsDarkMode } = useGlobal(); // Use the global state
-
+const ComboboxDemo: React.FC = () => {
+  const { isDarkMode, setIsDarkMode } = useGlobal();
   const [isOpen, setIsOpen] = useState(false)
 
-  const reactCode = `<Carousel className='carouselDemo'>
-    <Image src='/Carousel/dorm.png' alt='dorm' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/floorLounge.png' alt='floorLounge' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/gym.png' alt='gym' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/mainFloor.png' alt='mainFloor' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/outside.png' alt='outside' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/pianoRoom.png' alt='pianoRoom' layout="fill" objectFit="cover" />
-    <Image src='/Carousel/poolTable.png' alt='poolTable' layout="fill" objectFit="cover" />
-</Carousel>`;
+  const reactCode = `import { Command, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/Command/Command';';
+
+<Command darkMode={isDarkMode}> 
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandGroup heading="Suggestions">
+      <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
+      <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
+      <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem text='Profile' imageSrc='/command/profile.svg' />
+      <CommandItem text='Billing' imageSrc='/command/card.svg' />
+      <CommandItem text='Settings' imageSrc='/command/settings.svg' />
+    </CommandGroup>
+  </CommandList>
+</Command>`
+
 
   return (
-    <React.Fragment >
+    <React.Fragment>
 
-      <Breadcrumb darkMode={isDarkMode} start={2} end={4} />
+      <h4>Day 32 / 50</h4>
+      <Spacer y={2} />
       <h1>Combobox component</h1>
+      <Spacer y={4} />
+      <p>The ComboBox component is a user interface element that combines an input field with a dropdown list, allowing users to either type in a value or select from a predefined list of options.</p>
+      <Spacer y={4} />
+      <div className='row' style={{ gap: '8px' }}>
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Combobox' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://www.youtube.com/watch?v=vlroK2Umfew' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
+      </div>
+      <Spacer y={4} />
+      <Separator darkMode={isDarkMode} orientation='h' />
+      <Spacer y={8} />
+
+      <h1>Usage</h1>
+      <Spacer y={4} />
       <Tabs darkMode={isDarkMode}>
 
         <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
         <TabsTrigger value='code'><p>Code</p></TabsTrigger>
 
         <TabsContent value='preview'>
-          <div className='demoBox'>
+          <div className='demoBox' style={{ minHeight: '700px' }}>
             <Popover isOpen={isOpen} setIsOpen={setIsOpen}>
               <Button text='Toggle command' variant='primary' />
               <div>
@@ -71,4 +93,4 @@ const CarouselDemo: React.FC = () => {
   );
 };
 
-export default CarouselDemo;
+export default ComboboxDemo;

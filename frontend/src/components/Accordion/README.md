@@ -1,13 +1,13 @@
-# Day 22/100
+# Day 22 / 50
 
 July 29th / October 16th
 
 # Accordion
 <a href="https://youtu.be/AM2SlbabyAE" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Accordion" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Accordion" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Accordion" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1135233960318865418/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Accordion" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1135233960318865418/image.png"/></a>  
 
 # Description 
 

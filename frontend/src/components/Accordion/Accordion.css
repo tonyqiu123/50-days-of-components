@@ -6,7 +6,7 @@
 .accordion {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid rgb(143, 146, 146);
+    border-bottom: 1px solid #d4d4d4;
 }
 
 .accordionTrigger {
@@ -25,11 +25,13 @@
     max-height: 0;
     overflow: hidden;
     transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
+    opacity: 0;
 }
 
 /* active */
 .active.accordionContent {
     padding-bottom: 16px;
+    opacity: 1;
 }
 .active.accordionTrigger>a {
     transform: rotate(-180deg) scaleX(-1);
@@ -37,5 +39,5 @@
 
 /* darkMode */
 .darkMode.accordion {
-    border-bottom: 1px solid rgb(163, 164, 165);
+    border-bottom: 1px solid #313131;
 }

@@ -1,4 +1,4 @@
-## Day 5/100
+## Day 5 / 50
 
 July 12th / October 16th
 

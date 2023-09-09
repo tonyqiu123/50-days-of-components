@@ -1,13 +1,13 @@
-# Day 30/100
+# Day 30 / 50
 
 August 6th / October 16th
 
 # Counter
 <a href="https://youtu.be/9gqlq7rqHrg" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Counter" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Counter" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Counter" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138112132811083816/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Counter" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1138112132811083816/image.png"/></a>  
 
 ## Description 
 

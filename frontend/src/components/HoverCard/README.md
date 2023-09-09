@@ -1,13 +1,13 @@
-# Day 17/100
+# Day 17 / 50
 
 July 24th / October 16th
 
 # HoverCard
 <a href="https://www.youtube.com/watch?v=QVJPWRHIs-8" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/HoverCard" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/HoverCard" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/HoverCard" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1133469502957420605/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/HoverCard" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1133469502957420605/image.png"/></a>  
 
 # Description 
 

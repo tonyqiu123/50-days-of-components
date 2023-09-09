@@ -1,4 +1,4 @@
-## Day 6/100
+## Day 6 / 50
 
 July 13th / October 16th
 

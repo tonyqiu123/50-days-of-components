@@ -1,5 +1,5 @@
 <!-- Select Dropdown Component -->
-<h2>Day 2/100</h2>
+<h2>Day 2 / 50</h2>
 
 <p>July 8th 2023 / October 16th, 2023</p>
 

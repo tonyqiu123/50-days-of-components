@@ -6,10 +6,10 @@ type PopoverProps = {
     isOpen?: boolean;
     setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
     children: React.ReactElement[];
-    position?: 'up-left' | 'down-left' | 'up-right' | 'down-right'
+    position?: 'up-left' | 'down-left' | 'up-right' | 'down-right' | 'up-center' | 'down-center'
 } & HTMLAttributes<HTMLElement>;
 
-const Popover: React.FC<PopoverProps> = ({ isOpen: isOpenProp, setIsOpen: setIsOpenProp, children, position = 'down-right', ...props }) => {
+const Popover: React.FC<PopoverProps> = ({ isOpen: isOpenProp, setIsOpen: setIsOpenProp, children, position = 'down-center', ...props }) => {
     const [isOpenState, setIsOpenState] = useState(false);
 
     const isOpen = isOpenProp !== undefined ? isOpenProp : isOpenState;

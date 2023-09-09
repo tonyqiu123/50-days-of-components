@@ -1,13 +1,13 @@
-# Day 12/100
+# Day 12 / 50
 
 July 19th / October 16th
 
 # Switch
 <a href="https://www.youtube.com/watch?v=vqeAzYbHaGY" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/switch" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/switch" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/switch" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1131267975509463130/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/switch" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1131267975509463130/image.png"/></a>  
 
 # Description 
 

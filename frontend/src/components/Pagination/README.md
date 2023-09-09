@@ -1,13 +1,13 @@
-# Day 34/100
+# Day 34 / 50
 
 August 10th / October 16th
 
 # Pagination
 <a href="https://youtu.be/FK7lXagTPp4" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Pagination" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Pagination" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Pagination" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139266077185036338/image.png"/></a>  
 
 ## Description 
 

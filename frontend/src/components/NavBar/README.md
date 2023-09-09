@@ -1,5 +1,5 @@
 <!-- NavBar Component -->
-<h2>Day 3/100</h2>
+<h2>Day 3 / 50</h2>
 
 <p>July 9th 2023 / October 16th, 2023</p>
 <h2>NavBar Component</h2>

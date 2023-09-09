@@ -1,11 +1,11 @@
-# Day 11/100
+# Day 11 / 50
 
 July 18th / October 16th
 
 # Checkbox Component for React 
 <a href="https://youtu.be/cXnAICsWmyA" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/checkbox" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/checkbox" target="_blank">Demo it yourself</a>
 
 <a href="https://youtu.be/cXnAICsWmyA" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1130897523393970336/image.png"/></a>  
 

@@ -15,6 +15,7 @@ import Button from '@/components/Button/Button'
 import { Command, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/Command/Command'
 import { useRouter } from 'next/navigation';
 import NavigationMenu from '@/components/NavigationMenu/NavigationMenu'
+import Spacer from '@/components/Spacer/Spacer'
 
 
 
@@ -42,10 +43,10 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   const [showSearchComponents, setShowSearchComponents] = useState<boolean>(false)
 
   const components = [
-    'Alert',
-    'Avatar',
     'Accordion',
+    'Alert',
     'AspectRatio',
+    'Avatar',
     'Backdrop',
     'Badge',
     'Breadcrumb',
@@ -92,6 +93,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     'Tooltip',
     'VerticalNavigation'
   ];
+
   const router = useRouter();
 
   return (
@@ -104,7 +106,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             <NavBar darkMode={isDarkMode}>
               <NavBarLeft>
                 <Image alt='' src='/Home/logo.png' width={140} height={24} />
-                <NavigationMenu style={{ fontSize:'12px' }} darkMode={isDarkMode}>
+                <NavigationMenu style={{ fontSize: '12px' }} darkMode={isDarkMode}>
                   <NavigationMenu.Links>
                     <NavigationMenu.Link linkName="Home"><h3>Home</h3></NavigationMenu.Link>
                     <NavigationMenu.Link linkName="Products"><h3>Products</h3></NavigationMenu.Link>
@@ -296,14 +298,16 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                     </CommandList>
                   </Command>
                 </Modal>
-                <Icon href='https://github.com/tonyqiu123/100-days-of-components' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon href='https://github.com/tonyqiu123/50-days-of-components' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon handleClick={() => setIsDarkMode(prevDarkMode => !prevDarkMode)} invert={isDarkMode} image={isDarkMode ? '/Home/moon.svg' : '/Home/sun.svg'} />
               </NavBarRight>
             </NavBar>
+            <Spacer y={0} />
 
             <div style={{ display: 'flex', gap: '48px', width: '100%' }}>
 
               <ScrollArea darkMode={isDarkMode}>
+
                 <VerticalNavigation className='verticalNavigationDemo' selected={selected} setSelected={setSelected} darkMode={isDarkMode}>
                   <VerticalNavigationHeader text='Components' />
                   {components.map((component, index) => (

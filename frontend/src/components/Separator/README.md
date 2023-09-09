@@ -1,13 +1,13 @@
-# Day 36/100
+# Day 36 / 50
 
 August 12th / October 16th
 
 # Separator
 <a href="https://youtu.be/S4sjJpji5Hs" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/Separator" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/Separator" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/Separator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139928649697599498/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/Separator" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1139928649697599498/image.png"/></a>  
 
 ## Description 
 

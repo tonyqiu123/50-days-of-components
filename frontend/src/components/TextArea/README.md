@@ -1,13 +1,13 @@
-# Day 13/100
+# Day 13 / 50
 
 July 20th / October 16th
 
 # TextArea
 <a href="https://youtu.be/1alfhsya4II" target="_blank">Watch live demo on youtube</a>
 
-<a href="https://100daysofcomponents.netlify.app/textarea" target="_blank">Demo it yourself</a>
+<a href="https:/ / 50daysofcomponents.netlify.app/textarea" target="_blank">Demo it yourself</a>
 
-<a href="https://100daysofcomponents.netlify.app/textarea" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1131614950763286568/image.png"/></a>  
+<a href="https:/ / 50daysofcomponents.netlify.app/textarea" target="_blank"><img src="https://cdn.discordapp.com/attachments/715319623637270638/1131614950763286568/image.png"/></a>  
 
 # Description 
 
