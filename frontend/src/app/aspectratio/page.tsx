@@ -168,21 +168,9 @@ const AspectRatioDemo: React.FC = () => {
             <h1>Usage</h1>
             <Spacer y={4} />
             <Tabs darkMode={isDarkMode}>
-                <TabsTrigger value='preview1'><p>1 / 1</p></TabsTrigger>
                 <TabsTrigger value='preview2'><p>3 / 1</p></TabsTrigger>
                 <TabsTrigger value='preview3'><p>2 / 1</p></TabsTrigger>
                 <TabsTrigger value='code'><p>Code</p></TabsTrigger>
-
-                <TabsContent value='preview1'>
-                    <div className='demoBox'>
-                        <AspectRatio maxHeight={700} ratio={1 / 1}>
-                            <img
-                                src="https://cdn.discordapp.com/attachments/715319623637270638/1141796329564147772/image.png"
-                                alt="Photo by Drew Beamer"
-                            />
-                        </AspectRatio>
-                    </div>
-                </TabsContent>
 
                 <TabsContent value='preview2'>
                     <div className='demoBox'>

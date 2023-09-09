@@ -189,7 +189,7 @@ describe('Card Component Tests', () => {
                 <TabsTrigger value='preview'><p>Preview</p></TabsTrigger>
                 <TabsTrigger value='code'><p>Code</p></TabsTrigger>
                 <TabsContent value='preview'>
-                    <div className='demoBox'>
+                    <div className='demoBox' style={{ height: '600px' }}>
                         <Card style={{ display: 'flex', flexDirection: 'column', gap: '4px' }} darkMode={isDarkMode}>
                             <h2>Create project</h2>
                             <p>Deploy your new project in one-click.</p>
