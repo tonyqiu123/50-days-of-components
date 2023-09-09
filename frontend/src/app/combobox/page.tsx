@@ -22,15 +22,15 @@ const ComboboxDemo: React.FC = () => {
   <CommandInput placeholder="Type a command or search..." />
   <CommandList>
     <CommandGroup heading="Suggestions">
-      <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
-      <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
-      <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
+      <CommandItem text='Calendar' imageSrc='/Command/calendar.svg' />
+      <CommandItem text='Search Emojis' imageSrc='/Command/emoji.svg' />
+      <CommandItem text='Calculator' imageSrc='/Command/calculator.svg' />
     </CommandGroup>
     <CommandSeparator />
     <CommandGroup heading="Settings">
-      <CommandItem text='Profile' imageSrc='/command/profile.svg' />
-      <CommandItem text='Billing' imageSrc='/command/card.svg' />
-      <CommandItem text='Settings' imageSrc='/command/settings.svg' />
+      <CommandItem text='Profile' imageSrc='/Command/profile.svg' />
+      <CommandItem text='Billing' imageSrc='/Command/card.svg' />
+      <CommandItem text='Settings' imageSrc='/Command/settings.svg' />
     </CommandGroup>
   </CommandList>
 </Command>`
@@ -69,15 +69,15 @@ const ComboboxDemo: React.FC = () => {
                   <CommandInput placeholder="Type a command or search..." />
                   <CommandList>
                     <CommandGroup heading="Suggestions">
-                      <CommandItem text='Calendar' imageSrc='/command/Calendar.svg' />
-                      <CommandItem text='Search Emojis' imageSrc='/command/Emoji.svg' />
-                      <CommandItem text='Calculator' imageSrc='/command/Calculator.svg' />
+                      <CommandItem text='Calendar' imageSrc='/Command/calendar.svg' />
+                      <CommandItem text='Search Emojis' imageSrc='/Command/emoji.svg' />
+                      <CommandItem text='Calculator' imageSrc='/Command/calculator.svg' />
                     </CommandGroup>
                     <CommandSeparator />
                     <CommandGroup heading="Settings">
-                      <CommandItem text='Profile' imageSrc='/command/profile.svg' />
-                      <CommandItem text='Billing' imageSrc='/command/card.svg' />
-                      <CommandItem text='Settings' imageSrc='/command/settings.svg' />
+                      <CommandItem text='Profile' imageSrc='/Command/profile.svg' />
+                      <CommandItem text='Billing' imageSrc='/Command/card.svg' />
+                      <CommandItem text='Settings' imageSrc='/Command/settings.svg' />
                     </CommandGroup>
                   </CommandList>
                 </Command>
