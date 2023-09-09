@@ -56,7 +56,6 @@ const BackdropDemo: React.FC = () => {
     };
     
     export default Backdrop;
-    
 `
 
     const cssCode = `.backdrop {
@@ -115,13 +114,13 @@ const BackdropDemo: React.FC = () => {
     
       it('should include additional classes passed via className prop', () => {
         const setShowBackdrop = jest.fn();
-        const { container } = render(<Backdrop setShowBackdrop={setShowBackdrop} showBackdrop={true} className="custom-class" />);
+        const { container } = render(<Backdrop setShowBackdrop={setShowBackdrop} showBackdrop={true} className=&quot;custom-class&quot; />);
         
         const backdropElement = container.querySelector('.backdrop');
         expect(backdropElement).toHaveClass('custom-class');
       });
     
-      it('should have "showBackdrop" class when showBackdrop prop is true', () => {
+      it('should have &quot;showBackdrop&quot; class when showBackdrop prop is true', () => {
         const setShowBackdrop = jest.fn();
         const { container } = render(<Backdrop setShowBackdrop={setShowBackdrop} showBackdrop={true} />);
         
@@ -139,7 +138,7 @@ const BackdropDemo: React.FC = () => {
             <Spacer y={2} />
             <h1>Backdrop component</h1>
             <Spacer y={4} />
-            <p>Day 20, one fifth complete of the journey! The "Backdrop" component serves to display a blurred, 'pointer-event-less' overlap on the web. Used in nearly all applications, and used in many components including modals, sheets, alerts, and dialogs.</p>
+            <p>Day 20, one fifth complete of the journey! The &quot;Backdrop&quot; component serves to display a blurred, 'pointer-event-less' overlap on the web. Used in nearly all applications, and used in many components including modals, sheets, alerts, and dialogs.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
                 <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Backdrop' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />

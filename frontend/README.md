@@ -1,6 +1,6 @@
 # Day 50 / 50
 
-August 26thAugust 26th
+August 26th / August 26th
 
 # DataTable
 <a href="https://youtu.be/z-UiOh0E-fM" target="_blank">Watch live demo on youtube</a>
