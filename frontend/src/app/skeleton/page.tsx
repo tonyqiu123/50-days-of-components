@@ -184,7 +184,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({ className = '', width = "100
             <p>There is a lot more to this component than you expect. Firstly, the skeleton's are positioned absolutely. This is to allow the developer to mimic Stripe's incredible UI in their payment page, where you have a loading animation that sits on top of components. This component is heavily in beta.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Skeleton' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Skeleton' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=geQ69BSOM8c' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

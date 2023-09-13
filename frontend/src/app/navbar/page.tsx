@@ -192,7 +192,7 @@ describe('NavBar Components', () => {
             <p>A simple navigation bar with a left and right child component.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/NavBar' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/NavBar' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
             </div>
             <Spacer y={4} />
             <Separator darkMode={isDarkMode} orientation='h' />

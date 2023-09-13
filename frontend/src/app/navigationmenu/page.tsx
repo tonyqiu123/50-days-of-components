@@ -477,7 +477,7 @@ export default NavigationMenu;`
             <p>The NavigationMenu component is a versatile and customizable navigation solution for React applications. It provides a user-friendly interface with features such as dropdown menus, dynamic moving window highlighting, and support for both light and dark modes, making it a powerful tool for building intuitive navigation systems</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/NavigationMenu' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/NavigationMenu' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=jW93ckQQdYY&t=2s' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

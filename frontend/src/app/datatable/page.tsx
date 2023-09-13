@@ -413,7 +413,7 @@ export default DataTable;
             <p>The DataTable component is a versatile React component that facilitates dynamic sorting and display of tabular data, complete with optional action buttons. It utilizes state management for sorting, offers customizable actions, and dynamically determines cell alignment based on data types, providing a user-friendly and adaptable data presentation solution.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/DataTable' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/DataTable' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
             </div>
             <Spacer y={4} />
             <Separator darkMode={isDarkMode} orientation='h' />

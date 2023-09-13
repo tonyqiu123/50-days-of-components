@@ -98,7 +98,7 @@ describe('OutsideClick Component', () => {
       <p>The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentially cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare a state, and add wrapper with the setState passed as a prop. That's it.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/OutsideClick' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/OutsideClick' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=FwKfbIFAN38' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

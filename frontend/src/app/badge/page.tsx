@@ -153,7 +153,7 @@ export default Badge`
             <p>Can't believe it's already been 10 days! It's super rewarding to see this project gradually grow in terms of quality and features. For example, in Day 1, I created a basic button component and a shitty AI-generated readme haha. Now, each component has its own video, polished readme, demo, and much more practicality. Anyways, today is going to end the streak of complex components: a badge component. Badge components are often used to indicate status or an element's category.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Badge' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Badge' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=xHjMM87AXGw' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

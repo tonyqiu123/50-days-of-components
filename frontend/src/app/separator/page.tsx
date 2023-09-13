@@ -140,7 +140,7 @@ export default Separator`
             <p>The select web development component plays a pivotal role in enhancing user interaction by presenting a dropdown menu that enables users to conveniently choose from a range of options. This intuitive interface element not only simplifies data input but also contributes to a seamless and engaging user experience, making it an indispensable tool for creating dynamic and user-centric web applications.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Separator' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Separator' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=S4sjJpji5Hs' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

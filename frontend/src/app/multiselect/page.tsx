@@ -276,7 +276,7 @@ describe('MultiSelect component', () => {
             <p>The multiselect component streamlines user interaction by allowing them to effortlessly pick multiple choices from a list, enhancing versatility in data selection.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/MultiSelect' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/MultiSelect' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=HLqfz7WPbsw' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

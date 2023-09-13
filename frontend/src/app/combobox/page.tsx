@@ -46,7 +46,7 @@ const ComboboxDemo: React.FC = () => {
       <p>The ComboBox component is a user interface element that combines an input field with a dropdown list, allowing users to either type in a value or select from a predefined list of options.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Combobox' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Combobox' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=vlroK2Umfew' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

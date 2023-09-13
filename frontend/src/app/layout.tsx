@@ -333,7 +333,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
             </div>
             <Separator darkMode={isDarkMode} orientation='h' />
             <div className={`footer ${isDarkMode ? 'darkMode' : ''}`}>
-              <p>Built by Tony Qiu. The source code is available on Github.</p>
+              <p>Built by Tony Qiu. The Documentation is available on Github.</p>
             </div>
           </div>
         </body>

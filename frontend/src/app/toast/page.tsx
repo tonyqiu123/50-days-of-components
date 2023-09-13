@@ -263,7 +263,7 @@ describe('Toast Component', () => {
       <p>The Toast component provides a toast notification feature. It allows you to display brief messages or notifications to the user in a non-intrusive way. What makes this toast unique among ones developed by shadcn or mantine, is that you can have multiple toasts at the same time that will stack on top of each other in the correct order as you activate them. This component is in beta.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Toast' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Toast' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=O49qJP5IMbQ' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

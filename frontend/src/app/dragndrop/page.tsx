@@ -184,7 +184,7 @@ describe('DragNDrop Component', () => {
 One of my favorite usecases of the DragNDrop component is formtasy.com - a web app using AI to build online forms. Formtasy uses the DragNDrop component to rearrange inputs in a form and it works so incredibly well, both in the visuals and the functionality.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/DragNDrop' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/DragNDrop' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=i70Cjnq2tYE' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

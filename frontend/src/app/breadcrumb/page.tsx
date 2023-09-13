@@ -169,7 +169,7 @@ describe('Breadcrumb component', () => {
             <p>The breadcrumb component is a navigational aid that displays the hierarchical path of a user's current location within a website, enhancing user experience and providing easy access to previous pages. By showing the user's journey through various levels of content, breadcrumbs improve website usability and simplify navigation.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Breadcrumb' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Breadcrumb' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=BPU72Nlz4pM' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

@@ -445,7 +445,7 @@ describe('Table components', () => {
             <p>The table component is a versatile solution for systematically arranging and displaying data, proving particularly advantageous in scenarios like financial portfolio tracking, academic result summaries, and e-commerce product listings, where organized data presentation aids in easy comparison, assessment, and informed decision-making.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Table' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Table' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=VtWweL7ZNb0' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

@@ -207,7 +207,7 @@ describe('Popover Component', () => {
             <p>This has got to be the 10th modal I've built. Besides that, what makes popovers unique is that you can attach a modal to a component. You will find this particularily useful when building shopping carts in ecommerce sites, adding language selection, or when developing user settings preferences.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Popover' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Popover' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=M7FKxklNTOU' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

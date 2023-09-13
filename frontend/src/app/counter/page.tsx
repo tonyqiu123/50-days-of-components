@@ -120,7 +120,7 @@ describe('Counter component', () => {
             <p>The Counter component is a customizable React element that animates incrementing from a starting value to a target value, displaying the changing numerical count with a specified speed and duration. It offers flexibility through props such as 'increment', 'duration', and 'className', making it adaptable for various interactive applications and user interfaces.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Counter' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Counter' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=8d89PH6ExMc' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

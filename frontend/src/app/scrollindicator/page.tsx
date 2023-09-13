@@ -128,7 +128,7 @@ describe('ScrollIndicator', () => {
             <p>The ScrollIndicator component in React dynamically visualizes the user's scroll progress by overlaying a fixed-width bar with an adjustable colored overlay, elegantly revealing the extent of the scroll. This engaging UI element enhances user experience by providing a clear indication of the scrolled content's proportion.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/ScrollIndicator' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/ScrollIndicator' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
             </div>
             <Spacer y={4} />
             <Separator darkMode={isDarkMode} orientation='h' />

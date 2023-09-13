@@ -139,7 +139,7 @@ describe('Alert Component', () => {
             <p>The alert component in web development is a crucial tool for displaying important messages or notifications to users, ensuring timely communication of critical information. By providing a visually distinct and attention-grabbing element, the alert component enhances user experience by highlighting key updates or warnings on a website or application.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Alert' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Alert' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=TZ2XizQdzZg' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

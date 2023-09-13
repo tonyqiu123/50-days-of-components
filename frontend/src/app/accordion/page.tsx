@@ -299,7 +299,7 @@ describe('Accordion Components', () => {
             <p>The accordion component in web development is a UI element that expands to reveal hidden content when clicked. Accordions are typically used in software like e-commerce websites to hide and show product details, FAQs to display answers, mobile apps for navigation menus, and dashboards for presenting layers of data, offering a clean, organized way to condense complex content on a single page.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Accordion' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Accordion' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=VB-EndVW9Gg' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

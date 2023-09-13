@@ -141,7 +141,7 @@ const BackdropDemo: React.FC = () => {
             <p>Day 20, one fifth complete of the journey! The &quot;Backdrop&quot; component serves to display a blurred, 'pointer-event-less' overlap on the web. Used in nearly all applications, and used in many components including modals, sheets, alerts, and dialogs.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Backdrop' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Backdrop' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=N4yV-UQnAFA' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

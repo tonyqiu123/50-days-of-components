@@ -450,7 +450,7 @@ describe('SearchBar', () => {
       <p>A SearchBar component that can be easily integrated into any React project. It provides a convenient and interactive way for users to search through an array of items for quick access and retrieval. Let's dive into its features, installation, usage, props, and code.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/SearchBar' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/SearchBar' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=eiwNHE6AiKk' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

@@ -158,7 +158,7 @@ const AspectRatioDemo: React.FC = () => {
             <p>The AspectRatio component intelligently maintains a given aspect ratio for its content, dynamically adjusting both width and height. It seamlessly adapts to varying dimensions while elegantly handling maximum height constraints, making it ideal for responsive designs requiring consistent proportions.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/AspectRatio' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/AspectRatio' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=bJvV43ZRd0A' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

@@ -146,7 +146,7 @@ export default PrettyCode;
       <p>The "PrettyCode" component serves to display code snippets in a clean and appealing way. It employs the "react-syntax-highlighter" library to bring syntax-highlighted code to life, making it a key player in a coding tutorial site, blog post, or documentation.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/PrettyCode' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/PrettyCode' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=vE99eu9BC9Y' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

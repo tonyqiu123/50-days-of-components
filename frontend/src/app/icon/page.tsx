@@ -132,7 +132,7 @@ describe('Icon Component', () => {
             <p>Icons are often used for social media and in tabs. They are vital to building modern UI. Github uses them everywhere in their interface to represent different actions, Slack uses icons for emojis, reactions, and interactive elements in its team collaboration platform, and Google's productivity tools, such as Google Docs and Sheets, incorporate icons for formatting options and file management.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Icon' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Icon' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=sVRQp1Cxd-w' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

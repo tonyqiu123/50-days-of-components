@@ -296,7 +296,7 @@ describe('Command Module', () => {
       <p>The command web dev component is a searchable modal interface, optimized for user accessibility and functionality, allowing categorized queries to be input through keyboard commands. This unique blend of features enhances user experience by making information readily available and easily navigable, all through a simple keypress.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Command' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Command' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=0yIhtC0RUVY' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

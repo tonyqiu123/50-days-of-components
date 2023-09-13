@@ -149,7 +149,7 @@ export const TabsContent: React.FC<TabsContentProps> = ({ children, setActiveTab
             <p>The "Tabs" component serves to display a jsx element on demand. The visual design is borrowed from shadcn while the developer experience is enhanced by eliminating unnecessary nested components. I highly recommend using this component in your next.js projects. Enjoy.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Tabs' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Tabs' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=q2HqHt8Bcmc' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

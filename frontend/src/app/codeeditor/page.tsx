@@ -46,7 +46,7 @@ const CodeEditorDemo: React.FC = () => {
             <p>This is not my component, rather it was created by Microsoft <a href='https://github.com/suren-atoyan/monaco-react' target="_blank">(https://github.com/suren-atoyan/monaco-react)</a> I am adding it to the component library for quick reference and accessibility.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/CodeEditor' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/CodeEditor' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=gXJhl3tD5XA' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

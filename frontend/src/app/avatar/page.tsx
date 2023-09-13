@@ -114,7 +114,7 @@ describe('AvatarFallback Component', () => {
             <p>The Avatar component is a versatile React element that encapsulates both an AvatarImage and an AvatarFallback component. It intelligently manages the display of the avatar image alongside a fallback content, ensuring a seamless user experience during image loading or errors.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Avatar' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/Avatar' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=atePQYxreVQ' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />

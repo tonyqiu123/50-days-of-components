@@ -142,7 +142,7 @@ export default ScrollArea;
       <p>The VerticalNavigation component facilitates easy navigation through vertical menus or sections, enhancing user experience by providing a structured and accessible interface for selecting options or browsing content. It typically displays links or buttons vertically, aiding users in quickly accessing different sections or pages of an application or website.</p>
       <Spacer y={4} />
       <div className='row' style={{ gap: '8px' }}>
-        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/ScrollArea' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+        <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/ScrollArea' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
         <Icon target='_blank' href='https://www.youtube.com/watch?v=nwlP8QuqV4c' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
       </div>
       <Spacer y={4} />

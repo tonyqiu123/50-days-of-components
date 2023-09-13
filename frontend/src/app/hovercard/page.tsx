@@ -157,7 +157,7 @@ describe('HoverCard Component', () => {
             <p>The HoverCard component is essentially a Popover component that toggles on hover after a certain delay except with 1 big change: a short 750ms delay. The thing is that HoverCards are used much more often than Popovers. For example, Spotify implements HoverCards over the 'like' and 'download' icons in their desktop app. Instagram also uses delayed HoverCards to show user profiles when you hover over comments.</p>
             <Spacer y={4} />
             <div className='row' style={{ gap: '8px' }}>
-                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/HoverCard' text='Source code' invert={isDarkMode} image='/Icon/githubIcon.png' />
+                <Icon target='_blank' href='https://github.com/tonyqiu123/50-days-of-components/tree/main/frontend/src/components/HoverCard' text='Documentation' invert={isDarkMode} image='/Icon/githubIcon.png' />
                 <Icon target='_blank' href='https://www.youtube.com/watch?v=QVJPWRHIs-8' width={20} height={16} text='Video demo' invert={isDarkMode} image='/Icon/youtubeIcon.png' />
             </div>
             <Spacer y={4} />
