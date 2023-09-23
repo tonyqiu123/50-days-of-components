@@ -18,6 +18,10 @@ import NavigationMenu from '@/components/NavigationMenu/NavigationMenu'
 import Spacer from '@/components/Spacer/Spacer'
 import Script from 'next/script'
 
+export const metadata: Metadata = {
+  title: '50 Days of Components',
+  description: 'Highly Customizable Next.js/React Components',
+}
 
 
 type GlobalContextType = {
