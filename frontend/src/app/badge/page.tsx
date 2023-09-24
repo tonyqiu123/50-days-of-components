@@ -146,8 +146,6 @@ export default Badge`
     return (
         <React.Fragment>
 
-            <h4>Day 10 / 50</h4>
-            <Spacer y={2} />
             <h1>Badge component</h1>
             <Spacer y={4} />
             <p>Can't believe it's already been 10 days! It's super rewarding to see this project gradually grow in terms of quality and features. For example, in Day 1, I created a basic button component and a shitty AI-generated readme haha. Now, each component has its own video, polished readme, demo, and much more practicality. Anyways, today is going to end the streak of complex components: a badge component. Badge components are often used to indicate status or an element's category.</p>

@@ -161,8 +161,6 @@ describe('Input Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 6 / 50</h4>
-            <Spacer y={2} />
             <h1>Input component</h1>
             <Spacer y={4} />
             <p>This is a customizable Input component that can be easily integrated into any React project. It provides an input field with the ability to toggle between dark and light modes.</p>

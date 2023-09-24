@@ -438,8 +438,6 @@ describe('Table components', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 40 / 50</h4>
-            <Spacer y={2} />
             <h1>Table component</h1>
             <Spacer y={4} />
             <p>The table component is a versatile solution for systematically arranging and displaying data, proving particularly advantageous in scenarios like financial portfolio tracking, academic result summaries, and e-commerce product listings, where organized data presentation aids in easy comparison, assessment, and informed decision-making.</p>

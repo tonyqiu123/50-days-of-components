@@ -132,8 +132,6 @@ describe('Alert Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 45 / 50</h4>
-            <Spacer y={2} />
             <h1>Alert component</h1>
             <Spacer y={4} />
             <p>The alert component in web development is a crucial tool for displaying important messages or notifications to users, ensuring timely communication of critical information. By providing a visually distinct and attention-grabbing element, the alert component enhances user experience by highlighting key updates or warnings on a website or application.</p>

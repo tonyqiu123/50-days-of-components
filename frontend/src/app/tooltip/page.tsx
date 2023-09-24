@@ -103,8 +103,6 @@ export default Tooltip;`
     return (
         <React.Fragment>
 
-            <h4>Day 5 / 50</h4>
-            <Spacer y={2} />
             <h1>ToolTip component</h1>
             <Spacer y={4} />
             <p>This is a customizable Tooltip component that can be easily integrated into any React project. It supports dark and light modes and provides a tooltip with hover functionality.</p>

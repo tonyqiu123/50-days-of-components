@@ -292,8 +292,6 @@ describe('Accordion Components', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 22 / 50</h4>
-            <Spacer y={2} />
             <h1>Accordion component</h1>
             <Spacer y={4} />
             <p>The accordion component in web development is a UI element that expands to reveal hidden content when clicked. Accordions are typically used in software like e-commerce websites to hide and show product details, FAQs to display answers, mobile apps for navigation menus, and dashboards for presenting layers of data, offering a clean, organized way to condense complex content on a single page.</p>

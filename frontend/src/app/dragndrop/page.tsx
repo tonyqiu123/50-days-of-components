@@ -175,8 +175,6 @@ describe('DragNDrop Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 15 / 50</h4>
-            <Spacer y={2} />
             <h1>DragNDrop component</h1>
             <Spacer y={4} />
             <p>The DragNDrop component! I put in a bit of extra effort to optimize the developer experience. In particular, I made it so that developers can simply throw any jsx elements inside a element, and boom, those elements are draggable with proper context.

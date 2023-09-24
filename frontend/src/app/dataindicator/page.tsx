@@ -152,8 +152,6 @@ describe('Expandable Components', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 46 / 50</h4>
-            <Spacer y={2} />
             <h1>DataIndicator component</h1>
             <Spacer y={4} />
             <p>A genuinely helpful component that will add visual flavor whenever you need to visualize data compared to a previous timeframe. I found it useful while building a job portal admin dashboard and while building a web analytics dashboard.</p>

@@ -443,8 +443,6 @@ describe('SearchBar', () => {
   return (
     <React.Fragment>
 
-      <h4>Day 8 / 50</h4>
-      <Spacer y={2} />
       <h1>SearchBar component</h1>
       <Spacer y={4} />
       <p>A SearchBar component that can be easily integrated into any React project. It provides a convenient and interactive way for users to search through an array of items for quick access and retrieval. Let's dive into its features, installation, usage, props, and code.</p>

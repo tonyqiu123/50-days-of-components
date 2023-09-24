@@ -155,8 +155,6 @@ describe('Drawer Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 29 / 50</h4>
-            <Spacer y={2} />
             <h1>Drawer component</h1>
             <Spacer y={4} />
             <p>The drawer component provides a versatile and user-friendly interface element, often used for presenting supplementary content, menus, or controls. Its intuitive sliding motion and customizable design make it an effective tool for enhancing user interactions within a web or app interface.</p>

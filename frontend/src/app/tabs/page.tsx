@@ -142,8 +142,6 @@ export const TabsContent: React.FC<TabsContentProps> = ({ children, setActiveTab
     return (
         <React.Fragment>
 
-            <h4>Day 19 / 50</h4>
-            <Spacer y={2} />
             <h1>Tabs component</h1>
             <Spacer y={4} />
             <p>The "Tabs" component serves to display a jsx element on demand. The visual design is borrowed from shadcn while the developer experience is enhanced by eliminating unnecessary nested components. I highly recommend using this component in your next.js projects. Enjoy.</p>

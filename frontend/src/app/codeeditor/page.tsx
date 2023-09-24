@@ -39,8 +39,6 @@ const CodeEditorDemo: React.FC = () => {
     return (
         <React.Fragment>
 
-            <h4>Day 47 / 50</h4>
-            <Spacer y={2} />
             <h1>CodeEditor component</h1>
             <Spacer y={4} />
             <p>This is not my component, rather it was created by Microsoft <a href='https://github.com/suren-atoyan/monaco-react' target="_blank">(https://github.com/suren-atoyan/monaco-react)</a> I am adding it to the component library for quick reference and accessibility.</p>

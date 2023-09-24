@@ -229,8 +229,6 @@ describe('VerticalNavigationLink', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 42 / 50</h4>
-            <Spacer y={2} />
             <h1>VerticalNavigation component</h1>
             <Spacer y={4} />
             <p>The VerticalNavigation component facilitates easy navigation through vertical menus or sections, enhancing user experience by providing a structured and accessible interface for selecting options or browsing content. It typically displays links or buttons vertically, aiding users in quickly accessing different sections or pages of an application or website.</p>

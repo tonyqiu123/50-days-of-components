@@ -150,8 +150,6 @@ describe('TextArea Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 7 / 50</h4>
-            <Spacer y={2} />
             <h1>TextArea component</h1>
             <Spacer y={4} />
             <p>Today, I want to introduce a TextArea component that can be easily integrated into any React project. It allows users to select a value from a specified range by dragging a slider handle. Let's dive into its features, installation, usage, props, and code.</p>

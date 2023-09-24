@@ -212,8 +212,6 @@ describe('Pagination Component', () => {
   return (
     <React.Fragment>
 
-      <h4>Day 34 / 50</h4>
-      <Spacer y={2} />
       <h1>Pagination component</h1>
       <Spacer y={4} />
       <p>The pagination component in web development facilitates the organization and navigation of large sets of content by dividing it into manageable pages, enhancing user experience. It typically includes controls like "Previous" and "Next" buttons, enabling users to navigate through the content sequentially.</p>

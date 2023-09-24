@@ -191,8 +191,6 @@ describe('Expandable Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 31 / 50</h4>
-            <Spacer y={2} />
             <h1>Expandable component</h1>
             <Spacer y={4} />
             <p>The Expandable component empowers interactive user interfaces by creating expandable elements with customizable text and optional icons. It offers a seamless integration of content expansion and collapse, enhancing user experience and engagement.</p>

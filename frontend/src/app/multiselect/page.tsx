@@ -269,8 +269,6 @@ describe('MultiSelect component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 38 / 50</h4>
-            <Spacer y={2} />
             <h1>MultiSelect component</h1>
             <Spacer y={4} />
             <p>The multiselect component streamlines user interaction by allowing them to effortlessly pick multiple choices from a list, enhancing versatility in data selection.</p>

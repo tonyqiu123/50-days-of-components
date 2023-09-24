@@ -139,8 +139,6 @@ export default PrettyCode;
   return (
     <React.Fragment>
 
-      <h4>Day 18 / 50</h4>
-      <Spacer y={2} />
       <h1>PrettyCode component</h1>
       <Spacer y={4} />
       <p>The "PrettyCode" component serves to display code snippets in a clean and appealing way. It employs the "react-syntax-highlighter" library to bring syntax-highlighted code to life, making it a key player in a coding tutorial site, blog post, or documentation.</p>

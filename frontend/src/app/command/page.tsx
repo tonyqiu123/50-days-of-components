@@ -289,8 +289,6 @@ describe('Command Module', () => {
   return (
     <React.Fragment>
 
-      <h4>Day 25 / 50</h4>
-      <Spacer y={2} />
       <h1>Command component</h1>
       <Spacer y={4} />
       <p>The command web dev component is a searchable modal interface, optimized for user accessibility and functionality, allowing categorized queries to be input through keyboard commands. This unique blend of features enhances user experience by making information readily available and easily navigable, all through a simple keypress.</p>

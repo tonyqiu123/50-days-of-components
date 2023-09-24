@@ -470,8 +470,6 @@ export default NavigationMenu;`
     return (
         <React.Fragment>
 
-            <h4>Day 48 / 50</h4>
-            <Spacer y={2} />
             <h1>NavigationMenu component</h1>
             <Spacer y={4} />
             <p>The NavigationMenu component is a versatile and customizable navigation solution for React applications. It provides a user-friendly interface with features such as dropdown menus, dynamic moving window highlighting, and support for both light and dark modes, making it a powerful tool for building intuitive navigation systems</p>

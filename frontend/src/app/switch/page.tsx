@@ -124,8 +124,6 @@ describe('Switch component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 12 / 50</h4>
-            <Spacer y={2} />
             <h1>Switch component</h1>
             <Spacer y={4} />
             <p>Switches are often used in settings and preferences. Because they're relatively more animated compared to other components, switches can be a solid choice to make the user experience more enjoyable.</p>

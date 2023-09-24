@@ -256,8 +256,6 @@ describe('Toast Component', () => {
   return (
     <React.Fragment>
 
-      <h4>Day 9 / 50</h4>
-      <Spacer y={2} />
       <h1>Toast component</h1>
       <Spacer y={4} />
       <p>The Toast component provides a toast notification feature. It allows you to display brief messages or notifications to the user in a non-intrusive way. What makes this toast unique among ones developed by shadcn or mantine, is that you can have multiple toasts at the same time that will stack on top of each other in the correct order as you activate them. This component is in beta.</p>

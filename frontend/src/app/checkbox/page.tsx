@@ -184,8 +184,6 @@ describe('Checkbox Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 11 / 50</h4>
-            <Spacer y={2} />
             <h1>Checkbox component</h1>
             <Spacer y={4} />
             <p>A Next.js checkbox component. Checkboxes are often used in forms to get consent from users. I implemented custom styling on the checkbox, so feel free to add further customization in your project.</p>

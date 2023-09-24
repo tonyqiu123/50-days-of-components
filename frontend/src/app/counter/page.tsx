@@ -113,8 +113,6 @@ describe('Counter component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 30 / 50</h4>
-            <Spacer y={2} />
             <h1>Counter component</h1>
             <Spacer y={4} />
             <p>The Counter component is a customizable React element that animates incrementing from a starting value to a target value, displaying the changing numerical count with a specified speed and duration. It offers flexibility through props such as 'increment', 'duration', and 'className', making it adaptable for various interactive applications and user interfaces.</p>

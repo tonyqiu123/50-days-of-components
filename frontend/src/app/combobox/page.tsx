@@ -39,8 +39,6 @@ const ComboboxDemo: React.FC = () => {
   return (
     <React.Fragment>
 
-      <h4>Day 32 / 50</h4>
-      <Spacer y={2} />
       <h1>Combobox component</h1>
       <Spacer y={4} />
       <p>The ComboBox component is a user interface element that combines an input field with a dropdown list, allowing users to either type in a value or select from a predefined list of options.</p>

@@ -275,8 +275,6 @@ describe('Button component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 1 / 50</h4>
-            <Spacer y={2} />
             <h1>Button component</h1>
             <Spacer y={4} />
             <p>A versatile button component that can be easily integrated into any project. The component offers various functionalities and customization options, making it suitable for virtually all use cases.</p>

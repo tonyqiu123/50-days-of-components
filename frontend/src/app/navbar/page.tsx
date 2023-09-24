@@ -185,8 +185,6 @@ describe('NavBar Components', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 3 / 50</h4>
-            <Spacer y={2} />
             <h1>NavBar component</h1>
             <Spacer y={4} />
             <p>A simple navigation bar with a left and right child component.</p>

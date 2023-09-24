@@ -134,8 +134,6 @@ const BackdropDemo: React.FC = () => {
     return (
         <React.Fragment>
 
-            <h4>Day 20 / 50</h4>
-            <Spacer y={2} />
             <h1>Backdrop component</h1>
             <Spacer y={4} />
             <p>Day 20, one fifth complete of the journey! The &quot;Backdrop&quot; component serves to display a blurred, 'pointer-event-less' overlap on the web. Used in nearly all applications, and used in many components including modals, sheets, alerts, and dialogs.</p>

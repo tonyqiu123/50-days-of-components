@@ -91,8 +91,6 @@ describe('OutsideClick Component', () => {
   return (
     <React.Fragment>
 
-      <h4>Day 26 / 50</h4>
-      <Spacer y={2} />
       <h1>OutsideClick component</h1>
       <Spacer y={4} />
       <p>The OutsideClick component allows developers to execute a function whenever a user clicks outside a component. It is super powerful if you are building your own components, as you essentially cut down 15 lines of ugly react ref logic into 3 simple lines: import, declare a state, and add wrapper with the setState passed as a prop. That's it.</p>

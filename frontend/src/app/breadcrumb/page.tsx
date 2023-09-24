@@ -162,8 +162,6 @@ describe('Breadcrumb component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 31 / 50</h4>
-            <Spacer y={2} />
             <h1>Breadcrumb component</h1>
             <Spacer y={4} />
             <p>The breadcrumb component is a navigational aid that displays the hierarchical path of a user's current location within a website, enhancing user experience and providing easy access to previous pages. By showing the user's journey through various levels of content, breadcrumbs improve website usability and simplify navigation.</p>

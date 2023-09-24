@@ -151,8 +151,6 @@ const AspectRatioDemo: React.FC = () => {
     return (
         <React.Fragment>
 
-            <h4>Day 41 / 50</h4>
-            <Spacer y={2} />
             <h1>AspectRatio component</h1>
             <Spacer y={4} />
             <p>The AspectRatio component intelligently maintains a given aspect ratio for its content, dynamically adjusting both width and height. It seamlessly adapts to varying dimensions while elegantly handling maximum height constraints, making it ideal for responsive designs requiring consistent proportions.</p>

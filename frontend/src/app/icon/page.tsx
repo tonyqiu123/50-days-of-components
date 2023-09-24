@@ -125,8 +125,6 @@ describe('Icon Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 14 / 50</h4>
-            <Spacer y={2} />
             <h1>Icon component</h1>
             <Spacer y={4} />
             <p>Icons are often used for social media and in tabs. They are vital to building modern UI. Github uses them everywhere in their interface to represent different actions, Slack uses icons for emojis, reactions, and interactive elements in its team collaboration platform, and Google's productivity tools, such as Google Docs and Sheets, incorporate icons for formatting options and file management.</p>

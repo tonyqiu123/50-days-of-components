@@ -328,8 +328,6 @@ describe('Carousel Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 23 / 50</h4>
-            <Spacer y={2} />
             <h1>Carousel component</h1>
             <Spacer y={4} />
             <p>The Carousel component in web development is a UI element that rotates through a series of content items when interacted with. Carousels are typically used in software like e-commerce websites to display a variety of products in a limited space, photo galleries for showcasing a collection of images, mobile apps for onboarding screens, and homepages for highlighting multiple pieces of important content, offering a visually engaging way to compact multiple pieces of content on a single screen.</p>

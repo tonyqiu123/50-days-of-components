@@ -205,8 +205,6 @@ describe('Select component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 39 / 50</h4>
-            <Spacer y={2} />
             <h1>Select component</h1>
             <Spacer y={4} />
             <p>The select web development component plays a pivotal role in enhancing user interaction by presenting a dropdown menu that enables users to conveniently choose from a range of options. This intuitive interface element not only simplifies data input but also contributes to a seamless and engaging user experience, making it an indispensable tool for creating dynamic and user-centric web applications.</p>

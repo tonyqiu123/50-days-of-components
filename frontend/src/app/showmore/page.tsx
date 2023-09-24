@@ -143,8 +143,6 @@ describe('ShowMore Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 27 / 50</h4>
-            <Spacer y={2} />
             <h1>ShowMore component</h1>
             <Spacer y={4} />
             <p>The sheet component is a crucial user interface design element widely utilized in popular software applications such as Google ShowMores for data management, Microsoft Excel for financial analysis, and Adobe XD for planning and prototyping user interfaces. In these varied contexts, it provides a structured, flexible canvas where users can input, modify, and visualize information.</p>

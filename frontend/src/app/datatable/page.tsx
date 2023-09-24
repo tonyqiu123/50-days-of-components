@@ -406,8 +406,6 @@ export default DataTable;
     return (
         <React.Fragment>
 
-            <h4>Day 50 / 50</h4>
-            <Spacer y={2} />
             <h1>DataTable component</h1>
             <Spacer y={4} />
             <p>The DataTable component is a versatile React component that facilitates dynamic sorting and display of tabular data, complete with optional action buttons. It utilizes state management for sorting, offers customizable actions, and dynamically determines cell alignment based on data types, providing a user-friendly and adaptable data presentation solution.</p>

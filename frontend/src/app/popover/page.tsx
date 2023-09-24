@@ -200,8 +200,6 @@ describe('Popover Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 16 / 50</h4>
-            <Spacer y={2} />
             <h1>Popover component</h1>
             <Spacer y={4} />
             <p>This has got to be the 10th modal I've built. Besides that, what makes popovers unique is that you can attach a modal to a component. You will find this particularily useful when building shopping carts in ecommerce sites, adding language selection, or when developing user settings preferences.</p>

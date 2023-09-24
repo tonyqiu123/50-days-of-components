@@ -177,8 +177,6 @@ export const Skeleton: React.FC<SkeletonProps> = ({ className = '', width = "100
     return (
         <React.Fragment>
 
-            <h4>Day 24 / 50</h4>
-            <Spacer y={2} />
             <h1>Skeleton component</h1>
             <Spacer y={4} />
             <p>There is a lot more to this component than you expect. Firstly, the skeleton's are positioned absolutely. This is to allow the developer to mimic Stripe's incredible UI in their payment page, where you have a loading animation that sits on top of components. This component is heavily in beta.</p>

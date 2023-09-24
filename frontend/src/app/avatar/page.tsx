@@ -107,8 +107,6 @@ describe('AvatarFallback Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 44 / 50</h4>
-            <Spacer y={2} />
             <h1>Avatar component</h1>
             <Spacer y={4} />
             <p>The Avatar component is a versatile React element that encapsulates both an AvatarImage and an AvatarFallback component. It intelligently manages the display of the avatar image alongside a fallback content, ensuring a seamless user experience during image loading or errors.</p>

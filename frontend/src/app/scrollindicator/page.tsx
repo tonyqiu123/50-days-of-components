@@ -121,8 +121,6 @@ describe('ScrollIndicator', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 49 / 50</h4>
-            <Spacer y={2} />
             <h1>ScrollIndicator component</h1>
             <Spacer y={4} />
             <p>The ScrollIndicator component in React dynamically visualizes the user's scroll progress by overlaying a fixed-width bar with an adjustable colored overlay, elegantly revealing the extent of the scroll. This engaging UI element enhances user experience by providing a clear indication of the scrolled content's proportion.</p>

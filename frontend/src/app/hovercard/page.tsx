@@ -150,8 +150,6 @@ describe('HoverCard Component', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 17 / 50</h4>
-            <Spacer y={2} />
             <h1>HoverCard component</h1>
             <Spacer y={4} />
             <p>The HoverCard component is essentially a Popover component that toggles on hover after a certain delay except with 1 big change: a short 750ms delay. The thing is that HoverCards are used much more often than Popovers. For example, Spotify implements HoverCards over the 'like' and 'download' icons in their desktop app. Instagram also uses delayed HoverCards to show user profiles when you hover over comments.</p>

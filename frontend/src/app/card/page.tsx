@@ -169,8 +169,6 @@ describe('Card Component Tests', () => {
     return (
         <React.Fragment>
 
-            <h4>Day 35 / 50</h4>
-            <Spacer y={2} />
             <h1>Card component</h1>
             <Spacer y={4} />
             <p>The card component elegantly structures and presents content, offering an organized format for displaying information or data. Its versatility makes it a valuable tool for creating visually appealing user interfaces.</p>
