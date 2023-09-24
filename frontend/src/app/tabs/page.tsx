@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { useGlobal } from '../layout'; // Add this import
+import { useGlobal } from '../RootLayout'; // Add this import
 import ShowMore from '@/components/ShowMore/ShowMore';
 import Spacer from '@/components/Spacer/Spacer';
 import Icon from '@/components/Icon/Icon';

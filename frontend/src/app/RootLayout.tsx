@@ -2,7 +2,6 @@
 
 import { NavBar, NavBarLeft, NavBarRight } from '@/components/NavBar/NavBar'
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image';
 import Icon from '@/components/Icon/Icon';
@@ -101,7 +100,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
           <div className={`page ${isDarkMode ? 'darkMode' : ''}`}>
             <NavBar darkMode={isDarkMode}>
               <NavBarLeft>
-                <Image alt='' src='/Home/logo.png' width={140} height={24} />
                 <NavigationMenu style={{ fontSize: '12px' }} darkMode={isDarkMode}>
                   <NavigationMenu.Links>
                     <NavigationMenu.Link linkName="Home"><h3>Home</h3></NavigationMenu.Link>

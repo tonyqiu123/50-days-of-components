@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { useGlobal } from '../layout'; // Add this import
+import { useGlobal } from '../RootLayout'; // Add this import
 import ShowMore from '@/components/ShowMore/ShowMore';
 import AspectRatio from '@/components/AspectRatio/AspectRatio';
 import Spacer from '@/components/Spacer/Spacer';

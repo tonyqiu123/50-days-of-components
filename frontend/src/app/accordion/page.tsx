@@ -5,7 +5,7 @@ import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import Button from '@/components/Button/Button';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
 import { AccordionContent, Accordion, AccordionTrigger, AccordionProvider } from '@/components/Accordion/Accordion';
-import { useGlobal } from '../layout';
+import { useGlobal } from '../RootLayout';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
 import Spacer from '@/components/Spacer/Spacer';

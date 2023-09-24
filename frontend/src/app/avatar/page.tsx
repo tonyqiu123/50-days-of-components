@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { useGlobal } from '../layout'; // Add this import
+import { useGlobal } from '../RootLayout'; // Add this import
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import ShowMore from '@/components/ShowMore/ShowMore';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/Avatar/Avatar';

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Tabs, TabsTrigger, TabsContent } from '@/components/Tabs/Tabs';
 import PrettyCode from '@/components/PrettyCode/PrettyCode';
-import { useGlobal } from '../layout'; // Add this import
+import { useGlobal } from '../RootLayout'; // Add this import
 import { Skeleton, SkeletonProvider } from '@/components/Skeleton/Skeleton';
 import Spacer from '@/components/Spacer/Spacer';
 import Icon from '@/components/Icon/Icon';
