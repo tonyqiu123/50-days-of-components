@@ -7,7 +7,6 @@
 
 body {
   overflow-x: hidden;
-  background-color: black;
 
 }
 
@@ -27,7 +26,9 @@ body::-webkit-scrollbar-thumb {
 body.darkMode::-webkit-scrollbar-track {
   background-color: #000000;
 }
-
+body.darkMode {
+  background-color: black;
+}
 body.darkMode::-webkit-scrollbar-thumb {
   background-color: rgba(126, 126, 126, 1);
 }

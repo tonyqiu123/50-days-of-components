@@ -10,8 +10,6 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   return (
-
-
       <div className='shareidea'>
         <p>Idea</p>
         <TextArea  placeholder='Share your idea.' darkMode={isDarkMode} />
